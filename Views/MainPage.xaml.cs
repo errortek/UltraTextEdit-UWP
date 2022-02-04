@@ -47,7 +47,8 @@ namespace UltraTextEdit_UWP.Views
                 28,
                 36,
                 48,
-                72 };
+                72,
+                96};
 
         public event PropertyChangedEventHandler PropertyChanged;
 
