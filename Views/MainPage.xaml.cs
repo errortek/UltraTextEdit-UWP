@@ -21,6 +21,7 @@ namespace UltraTextEdit_UWP.Views
             InitializeComponent();
             string[] fonts = {
                 "Arial",
+                "Blackadder ITC",
                 "Calibri",
                 "Century Gothic",
                 "Comic Sans MS",
