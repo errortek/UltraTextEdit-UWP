@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4" 
+  xmlns:iot2="http://schemas.microsoft.com/appx/manifest/iot/windows10/2" 
+  xmlns:genTemplate="http://schemas.microsoft.com/appx/developer/windowsTemplateStudio"
+  IgnorableNamespaces="uap mp genTemplate desktop4 iot2">
+
+  <Identity
+    Name="JPB.Office.UTE.UWP"
+    Publisher="CN=jpb"
+    Version="1.0.1000.120" />
+
+  <mp:PhoneIdentity PhoneProductId="C905AC9D-3357-436A-8C18-A59C4F700E06" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>UltraTextEdit UWP</DisplayName>
+    <PublisherDisplayName>jpb</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      desktop4:SupportsMultipleInstances="true"
+      iot2:SupportsMultipleInstances="true"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="UltraTextEdit_UWP.App">
+      <uap:VisualElements
+        DisplayName="ms-resource:AppDisplayName"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="ms-resource:AppDescription"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png"/>
+      </uap:VisualElements>
+
+      <Extensions>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+
+  <genTemplate:Metadata>
+    <genTemplate:Item Name="generator" Value="Windows Template Studio"/>
+    <genTemplate:Item Name="wizardVersion" Version="v4.1.21179.1" />
+    <genTemplate:Item Name="templatesVersion" Version="v4.1.21179.1" />
+    <genTemplate:Item Name="projectType" Value="Blank" />
+    <genTemplate:Item Name="framework" Value="CodeBehind" />
+    <genTemplate:Item Name="platform" Value="Uwp" />
+  </genTemplate:Metadata>
+</Package>
