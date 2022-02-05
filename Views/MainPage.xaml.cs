@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation.Metadata;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
 using Windows.UI;
+using Windows.UI.Core;
+using Windows.UI.Core.Preview;
 using Windows.UI.Text;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
@@ -16,9 +20,26 @@ namespace UltraTextEdit_UWP.Views
 {
     public sealed partial class MainPage : Page, INotifyPropertyChanged
     {
+        private bool saved = true;
         public MainPage()
         {
             InitializeComponent();
+            var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
+
+            appViewTitleBar.ButtonBackgroundColor = Colors.Transparent;
+            appViewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+
+            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+            UpdateTitleBarLayout(coreTitleBar);
+
+            Window.Current.SetTitleBar(AppTitleBar);
+
+            coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
+            coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
+            Window.Current.Activated += Current_Activated;
+
+            SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
             string[] fonts = {
                 "Arial",
                 "Blackadder ITC",
@@ -32,6 +53,49 @@ namespace UltraTextEdit_UWP.Views
             };
             fontbox.ItemsSource = fonts;
         }
+        private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+        {
+            UpdateTitleBarLayout(sender);
+        }
+
+        private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, object args)
+        {
+            if (sender.IsVisible)
+            {
+                AppTitleBar.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AppTitleBar.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        // Update the TitleBar based on the inactive/active state of the app
+        private void Current_Activated(object sender, WindowActivatedEventArgs e)
+        {
+            SolidColorBrush defaultForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorPrimaryBrush"];
+            SolidColorBrush inactiveForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorDisabledBrush"];
+
+            if (e.WindowActivationState == CoreWindowActivationState.Deactivated)
+            {
+                AppTitle.Foreground = inactiveForegroundBrush;
+            }
+            else
+            {
+                AppTitle.Foreground = defaultForegroundBrush;
+            }
+        }
+
+        private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
+        {
+            // Update title bar control size as needed to account for system size changes.
+            AppTitleBar.Height = coreTitleBar.Height;
+
+            // Ensure the custom title bar does not overlap window caption controls
+            Thickness currMargin = AppTitleBar.Margin;
+            AppTitleBar.Margin = new Thickness(currMargin.Left, currMargin.Top, coreTitleBar.SystemOverlayRightInset, currMargin.Bottom);
+        }
+
         public List<double> FontSizes { get; } = new List<double>()
             {
                 8,
@@ -370,44 +434,58 @@ namespace UltraTextEdit_UWP.Views
             }
         }
 
-        private async void SaveButton_Click(object sender, RoutedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            FileSavePicker savePicker = new FileSavePicker();
-            savePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            Save(true);
 
-            // Dropdown of file types the user can save the file as
-            savePicker.FileTypeChoices.Add("Rich Text", new List<string>() { ".rtf" });
-            savePicker.FileTypeChoices.Add("Office Open XML Document", new List<string>() { ".docx" });
-            savePicker.FileTypeChoices.Add("Plain Text File", new List<string>() { ".txt" });
 
-            // Default file name if the user does not type one in or select a file to replace
-            savePicker.SuggestedFileName = "New Document";
-
-            StorageFile file = await savePicker.PickSaveFileAsync();
-            if (file != null)
+        }
+        private async void Save(bool isCopy)
+        {
+            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP", "");
+            if (isCopy || fileName == "Untitled")
             {
-                // Prevent updates to the remote version of the file until we
-                // finish making changes and call CompleteUpdatesAsync.
-                CachedFileManager.DeferUpdates(file);
-                // write to file
-                using (Windows.Storage.Streams.IRandomAccessStream randAccStream =
-                    await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite))
-                {
-                    box.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
-                }
+                FileSavePicker savePicker = new FileSavePicker();
+                savePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
 
-                // Let Windows know that we're finished changing the file so the
-                // other app can update the remote version of the file.
-                FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
-                if (status != FileUpdateStatus.Complete)
+                // Dropdown of file types the user can save the file as
+                savePicker.FileTypeChoices.Add("Rich Text", new List<string>() { ".rtf" });
+                savePicker.FileTypeChoices.Add("Office Open XML Document", new List<string>() { ".docx" });
+                savePicker.FileTypeChoices.Add("Plain Text File", new List<string>() { ".txt" });
+
+                // Default file name if the user does not type one in or select a file to replace
+                savePicker.SuggestedFileName = "New Document";
+
+                StorageFile file = await savePicker.PickSaveFileAsync();
+                if (file != null)
                 {
-                    Windows.UI.Popups.MessageDialog errorBox =
-                        new Windows.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
-                    await errorBox.ShowAsync();
+                    // Prevent updates to the remote version of the file until we
+                    // finish making changes and call CompleteUpdatesAsync.
+                    CachedFileManager.DeferUpdates(file);
+                    // write to file
+                    using (Windows.Storage.Streams.IRandomAccessStream randAccStream =
+                        await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite))
+                    {
+                        box.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
+                    }
+
+                    // Let Windows know that we're finished changing the file so the
+                    // other app can update the remote version of the file.
+                    FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
+                    if (status != FileUpdateStatus.Complete)
+                    {
+                        Windows.UI.Popups.MessageDialog errorBox =
+                            new Windows.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
+                        await errorBox.ShowAsync();
+                    }
+                    AppTitle.Text = file.Name + " - " + "UTE UWP";
                 }
             }
         }
-
+        private void OnCloseRequest(object sender, SystemNavigationCloseRequestedPreviewEventArgs e)
+        {
+            if (saved == false) { e.Handled = true; ShowUnsavedDialog(); }
+        }
         private void BoldButton_Off(object sender, RoutedEventArgs e)
         {
             Windows.UI.Text.ITextCharacterFormat selectedText = box.Document.Selection.CharacterFormat;
@@ -452,6 +530,32 @@ namespace UltraTextEdit_UWP.Views
                 Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
                 charFormatting.Subscript = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText.CharacterFormat = charFormatting;
+            }
+        }
+        private async void ShowUnsavedDialog()
+        {
+            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP", "");
+            ContentDialog aboutDialog = new ContentDialog()
+            {
+                Title = "Do you want to save changes to " + fileName + "?",
+                Content = "There are unsaved changes to your document, want to save them?",
+                CloseButtonText = "Cancel",
+                PrimaryButtonText = "Save changes",
+                SecondaryButtonText = "No",
+            };
+
+            ContentDialogResult result = await aboutDialog.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                Save(true);
+            }
+            else if (result == ContentDialogResult.Secondary)
+            {
+                await ApplicationView.GetForCurrentView().TryConsolidateAsync();
+            }
+            else
+            {
+                // Do nothing
             }
         }
     }
