@@ -36,7 +36,7 @@
                                VerticalAlignment="Center" Padding="5,0" />
             </StackPanel>
         </Border>
-        <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleBar">
+        <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="48" />
                 <RowDefinition Height="*" />

@@ -431,6 +431,7 @@ namespace UltraTextEdit_UWP.Views
                     // Load the file into the Document property of the RichEditBox.
                     box.Document.LoadFromStream(Windows.UI.Text.TextSetOptions.FormatRtf, randAccStream);
                 }
+                AppTitle.Text = file.Name + " - " + "UTE UWP";
             }
         }
 
