@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="UltraTextEdit_UWP.Views.jpbWebView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UltraTextEdit_UWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel x:Name="containerPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+
+        <Border x:Name="AppTitleBar"
+                IsHitTestVisible="True"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                Height="40"
+                Canvas.ZIndex="1" 
+                Margin="12,2,0,0"
+                RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton
+                    Click="OnBackRequested" Icon="Back"/>
+                <Image x:Name="AppFontIcon"
+                         HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"
+                         Source="ms-appx:///Assets/jpb.png" 
+                         Width="16" 
+                         Height="16"
+                         Margin="0,2,0,0" />
+                <TextBlock x:Name="AppTitle"
+                               Text="jpb WebView"
+                               VerticalAlignment="Center"
+                               Margin="12,2,0,0"
+                               Style="{StaticResource CaptionTextBlockStyle}" />
+            </StackPanel>
+        </Border>
+        <WebView Source="https://occoam.com/jpb" RelativePanel.Below="AppTitleBar"/>
+    </RelativePanel>
+</Page>

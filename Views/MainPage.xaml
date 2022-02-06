@@ -1,4 +1,4 @@
-﻿ <Page
+﻿<Page
     x:Class="UltraTextEdit_UWP.Views.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -223,9 +223,9 @@
                             <AppBarButton Icon="Font" Label="Font">
                                 <AppBarButton.Flyout>
                                     <MenuFlyout Placement="BottomEdgeAlignedLeft">
-                                        <MenuFlyoutItem Text="More fonts like Comic Sans MS will come to the app in the next release!">
+                                        <MenuFlyoutItem Text="More fonts will come to the app in the next release!">
                                         </MenuFlyoutItem>
-                                        <MenuFlyoutItem Text="Superscript, subscript will be available in the next release!">
+                                        <MenuFlyoutItem Text="Strikethrough will be available in the next release!">
                                         </MenuFlyoutItem>
                                     </MenuFlyout>
                                 </AppBarButton.Flyout>
@@ -297,6 +297,21 @@
                                     </SplitButton.Flyout>
                                 </SplitButton>
                             </AppBarElementContainer>
+                        </controls:TabbedCommandBarItem>
+                        <controls:TabbedCommandBarItem Header="Help">
+                            <AppBarButton Label="HelpNoti" Click="helpnoti">
+                                <AppBarButton.Icon>
+                                    <BitmapIcon UriSource="/Assets/ic_fluent_chat_help_24_filled.png"/>
+                                </AppBarButton.Icon>
+
+                            </AppBarButton>
+                            <AppBarButton Icon="Help" Label="About" Click="aboutclick"/>
+                            <AppBarSeparator/>
+                            <AppBarButton Label="jpb Website" Click="jpbbutclick">
+                                <AppBarButton.Icon>
+                                    <FontIcon Glyph="J" FontFamily="Segoe UI Black"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
                 </controls:TabbedCommandBar>

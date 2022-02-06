@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -10,11 +11,14 @@ using Windows.Storage.Provider;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Core.Preview;
+using Windows.UI.Notifications;
 using Windows.UI.Text;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using UltraTextEdit_UWP.Services;
+using System.Reflection;
 
 namespace UltraTextEdit_UWP.Views
 {
@@ -569,6 +573,91 @@ namespace UltraTextEdit_UWP.Views
             {
                 // Do nothing
             }
+        }
+
+        private void helpnoti(object sender, RoutedEventArgs e)
+        {
+            void ShowToastNotificationSample()
+            {
+                // Create the toast content
+                var content = new ToastContent()
+                {
+                    // More about the Launch property at https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.notifications.toastcontent
+                    Launch = "ToastContentActivationParams",
+
+                    Visual = new ToastVisual()
+                    {
+                        BindingGeneric = new ToastBindingGeneric()
+                        {
+                            Children =
+                        {
+                            new AdaptiveImage()
+                            {
+                                Source = "ms-appx:///Assets/Square44x44Logo.altform-lightunplated_targetsize-48.png"
+                            },
+                            new AdaptiveText()
+                            {
+                                Text = "Welcome to UltraTextEdit UWP!"
+                            },
+
+                            new AdaptiveText()
+                            {
+                                 Text = @"If you need any help on how to use this app, just go to the jpb website! You can find the link to the website in Settings."
+                            }
+                        }
+                        }
+                    },
+
+                    Actions = new ToastActionsCustom()
+                    {
+                        Buttons =
+                    {
+                        // More about Toast Buttons at https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.notifications.toastbutton
+                        new ToastButtonDismiss("OK")
+                    }
+                    }
+                };
+
+                // Add the content to the toast
+                var toast = new ToastNotification(content.GetXml())
+                {
+                    // TODO WTS: Set a unique identifier for this notification within the notification group. (optional)
+                    // More details at https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification.tag
+                    Tag = "UTE UWP HelpNoti"
+                };
+
+                // And show the toast
+                try
+                {
+                    ToastNotificationManager.CreateToastNotifier().Show(toast);
+                }
+                catch (Exception)
+                {
+                    // TODO WTS: Adding ToastNotification can fail in rare conditions, please handle exceptions as appropriate to your scenario.
+                }
+            }
+            ShowToastNotificationSample();
+        }
+
+        private void jpbbutclick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(jpbWebView));
+        }
+        private async void DisplayAboutDialog()
+        {
+            ContentDialog aboutDialog = new ContentDialog()
+            {
+                Title = "UltraTextEdit UWP",
+                Content = $"Version 1.0 (Build 1000.120)\n\n© 2021-2022 jpb",
+                CloseButtonText = "OK"
+            };
+
+            await aboutDialog.ShowAsync();
+        }
+
+        private void aboutclick(object sender, RoutedEventArgs e)
+        {
+            DisplayAboutDialog();
         }
     }
 }
