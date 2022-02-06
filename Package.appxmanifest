@@ -7,7 +7,8 @@
   xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4" 
   xmlns:iot2="http://schemas.microsoft.com/appx/manifest/iot/windows10/2" 
   xmlns:genTemplate="http://schemas.microsoft.com/appx/developer/windowsTemplateStudio"
-  IgnorableNamespaces="uap mp genTemplate desktop4 iot2">
+  IgnorableNamespaces="uap mp genTemplate desktop4 iot2"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
 
   <Identity
     Name="JPB.Office.UTE.UWP"
@@ -54,6 +55,7 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
+	  <rescap:Capability Name="confirmAppClose"/>
   </Capabilities>
 
   <genTemplate:Metadata>

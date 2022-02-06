@@ -155,6 +155,7 @@
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
+    <Compile Include="Helpers\VisibilityToBooleanConverter.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultActivationHandler.cs" />
     <Compile Include="Services\FirstRunDisplayService.cs" />

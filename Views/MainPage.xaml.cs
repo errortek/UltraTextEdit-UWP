@@ -25,8 +25,8 @@ namespace UltraTextEdit_UWP.Views
         {
             InitializeComponent();
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
-
-            appViewTitleBar.ButtonBackgroundColor = Colors.Transparent;
+            appViewTitleBar.BackgroundColor = Color.FromArgb(100, 242, 242, 242);
+            appViewTitleBar.ButtonForegroundColor = (Color)Resources["SystemAccentColor"];
             appViewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
 
             var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
@@ -39,7 +39,6 @@ namespace UltraTextEdit_UWP.Views
             coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
             Window.Current.Activated += Current_Activated;
 
-            SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
             string[] fonts = {
                 "Arial",
                 "Blackadder ITC",
@@ -52,7 +51,16 @@ namespace UltraTextEdit_UWP.Views
                 "Verdana"
             };
             fontbox.ItemsSource = fonts;
+            box.CharacterReceived += Box_CharacterReceived;
+            SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
         }
+
+        private void Box_CharacterReceived(UIElement sender, Windows.UI.Xaml.Input.CharacterReceivedRoutedEventArgs args)
+        {
+            UnsavedTextBlock.Visibility = Visibility.Visible;
+            saved = false;
+        }
+
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
         {
             UpdateTitleBarLayout(sender);
@@ -75,6 +83,8 @@ namespace UltraTextEdit_UWP.Views
         {
             SolidColorBrush defaultForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorPrimaryBrush"];
             SolidColorBrush inactiveForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorDisabledBrush"];
+            string themedark = ApplicationTheme.Dark.ToString();
+            string themelight = ApplicationTheme.Light.ToString();
 
             if (e.WindowActivationState == CoreWindowActivationState.Deactivated)
             {
@@ -92,8 +102,6 @@ namespace UltraTextEdit_UWP.Views
             AppTitleBar.Height = coreTitleBar.Height;
 
             // Ensure the custom title bar does not overlap window caption controls
-            Thickness currMargin = AppTitleBar.Margin;
-            AppTitleBar.Margin = new Thickness(currMargin.Left, currMargin.Top, coreTitleBar.SystemOverlayRightInset, currMargin.Bottom);
         }
 
         public List<double> FontSizes { get; } = new List<double>()
@@ -432,6 +440,7 @@ namespace UltraTextEdit_UWP.Views
                     box.Document.LoadFromStream(Windows.UI.Text.TextSetOptions.FormatRtf, randAccStream);
                 }
                 AppTitle.Text = file.Name + " - " + "UTE UWP";
+                UnsavedTextBlock.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -480,6 +489,7 @@ namespace UltraTextEdit_UWP.Views
                         await errorBox.ShowAsync();
                     }
                     AppTitle.Text = file.Name + " - " + "UTE UWP";
+                    saved = true;
                 }
             }
         }
@@ -543,6 +553,7 @@ namespace UltraTextEdit_UWP.Views
                 CloseButtonText = "Cancel",
                 PrimaryButtonText = "Save changes",
                 SecondaryButtonText = "No",
+                DefaultButton = ContentDialogButton.Primary
             };
 
             ContentDialogResult result = await aboutDialog.ShowAsync();

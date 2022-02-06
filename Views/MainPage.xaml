@@ -9,33 +9,46 @@
     mc:Ignorable="d">
     <RelativePanel x:Name="containerPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
 
-        <Border x:Name="AppTitleBar"
+        <Grid x:Name="AppTitleBar"
                 IsHitTestVisible="True"
                 VerticalAlignment="Top"
-                Background="Transparent"
+                Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
                 Height="40"
-                Canvas.ZIndex="1" 
-                Margin="12,2,0,0"
-                RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
-            <StackPanel Orientation="Horizontal">
+                Canvas.ZIndex="3" 
+                Margin="0,0,0,0"
+                Width="Auto"
+                RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" 
+                RequestedTheme="Light">
+            <StackPanel Orientation="Horizontal" Width="Auto">
+                <Rectangle RequestedTheme="Light" Width="12"/>
                 <Image x:Name="AppFontIcon"
                          HorizontalAlignment="Left" 
                          VerticalAlignment="Center"
                          Source="ms-appx:///Assets/Square44x44Logo.png" 
-                         Width="16" 
-                         Height="16"
+                         Width="24" 
+                         Height="24"
                          Margin="0,2,0,0" />
                 <TextBlock x:Name="AppTitle"
                                Text="Untitled - UTE UWP"
                                VerticalAlignment="Center"
                                Margin="12,2,0,0"
-                               Style="{StaticResource CaptionTextBlockStyle}" />
+                               Style="{StaticResource CaptionTextBlockStyle}"
+                            RequestedTheme="Light"/>
                 <TextBlock x:Name="UnsavedTextBlock"
-                               Text="*"
+                               Text="* Not Saved"
                                ToolTipService.ToolTip="There are unsaved changes to your document!"
-                               VerticalAlignment="Center" Padding="5,0" />
+                               VerticalAlignment="Center" Padding="5,0" Opacity="0.5" FontSize="8" />
+                <Rectangle RequestedTheme="Light" Width="12"/>
+                <Rectangle RequestedTheme="Light" Width="12"/>
+                <Rectangle RequestedTheme="Light" Width="12"/>
+                <Rectangle RequestedTheme="Light" Width="12"/>
+                <Rectangle RequestedTheme="Light" Width="12"/>
+                <Rectangle RequestedTheme="Light" Width="12"/>
+                <Rectangle RequestedTheme="Light" Width="12"/>
+                <Rectangle RequestedTheme="Light" Width="12"/>
+                <Rectangle RequestedTheme="Light" Width="12"/>
             </StackPanel>
-        </Border>
+        </Grid>
         <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="48" />

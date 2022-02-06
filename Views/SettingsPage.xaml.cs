@@ -39,9 +39,6 @@ namespace UltraTextEdit_UWP.Views
         public SettingsPage()
         {
             InitializeComponent();
-            var currentView = SystemNavigationManager.GetForCurrentView();
-            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-            currentView.BackRequested += OnBackRequested;
             if (ElementSoundPlayer.State == ElementSoundPlayerState.On)
                 soundToggle.IsOn = true;
             if (ElementSoundPlayer.SpatialAudioMode == ElementSpatialAudioMode.On)
@@ -92,13 +89,12 @@ namespace UltraTextEdit_UWP.Views
             OnPropertyChanged(propertyName);
         }
 
-        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        private void OnBackRequested(object sender,  RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
             if (rootFrame.CanGoBack)
             {
                 rootFrame.GoBack();
-                e.Handled = true;
             }
         }
         private void spatialSoundBox_Checked(object sender, RoutedEventArgs e)
