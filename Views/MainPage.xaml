@@ -37,16 +37,7 @@
                 <TextBlock x:Name="UnsavedTextBlock"
                                Text="* Not Saved"
                                ToolTipService.ToolTip="There are unsaved changes to your document!"
-                               VerticalAlignment="Center" Padding="5,0" Opacity="0.5" FontSize="8" />
-                <Rectangle RequestedTheme="Light" Width="12"/>
-                <Rectangle RequestedTheme="Light" Width="12"/>
-                <Rectangle RequestedTheme="Light" Width="12"/>
-                <Rectangle RequestedTheme="Light" Width="12"/>
-                <Rectangle RequestedTheme="Light" Width="12"/>
-                <Rectangle RequestedTheme="Light" Width="12"/>
-                <Rectangle RequestedTheme="Light" Width="12"/>
-                <Rectangle RequestedTheme="Light" Width="12"/>
-                <Rectangle RequestedTheme="Light" Width="12"/>
+                               VerticalAlignment="Center" Padding="5,0" Opacity="0.5" />
             </StackPanel>
         </Grid>
         <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">

@@ -170,10 +170,13 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• The libraries Microsoft.Toolkit.Uwp, Microsoft.Toolkit.Uwp.Notifications, and Microsoft.Toolkit.Uwp.UI.Controls have all been updated to version 7.1.2
-• Added notification popups (non-intrusive, just when you use app for first time or update it!)
-• Added ability to switch to Xbox RevealFocus (WARNING: RIBBON WON'T WORK IF YOU ENABLE THE XBOX REVEALFOCUS! I AM WAITING FOR A Microsoft.Toolkit.Uwp.UI.Controls UPDATE TO SOLVE THIS ISSUE!)
-• Added ability to make text superscript or subscript</value>
+    <value>• Finally added a brand new, Windows 11-style titlebar!
+• Added Blackadder ITC to Fonts, and a new pre-defined font size, 96
+• New Help section in the ribbon
+• Added button that spawns HelpNoti notification popup to the new Help/About menu in the ribbon
+• Added an About dialog to Help section in the ribbon
+• On app close, you now get a dialog that reminds you to save your work before closing the app
+• Introduces Git VCS to UltraTextEdit UWP!</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
