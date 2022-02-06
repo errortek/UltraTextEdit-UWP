@@ -37,7 +37,13 @@
                 <TextBlock x:Name="UnsavedTextBlock"
                                Text="* Not Saved"
                                ToolTipService.ToolTip="There are unsaved changes to your document!"
-                               VerticalAlignment="Center" Padding="5,0" Opacity="0.5" />
+                               VerticalAlignment="Center" Padding="5,0" Opacity="0.75" />
+                <TextBlock x:Name="PreviewBlock"
+                               Text="PREVIEW"
+                               VerticalAlignment="Center"
+                               Margin="12,2,0,0"
+                               Style="{StaticResource CaptionTextBlockStyle}"
+                            RequestedTheme="Light" Opacity="0.5"/>
             </StackPanel>
         </Grid>
         <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
