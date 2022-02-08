@@ -52,7 +52,8 @@ namespace UltraTextEdit_UWP.Views
                 "Segoe UI",
                 "Sitka Display",
                 "Trebuchet MS",
-                "Verdana"
+                "Verdana",
+                "Symbol"
             };
             fontbox.ItemsSource = fonts;
             box.CharacterReceived += Box_CharacterReceived;
