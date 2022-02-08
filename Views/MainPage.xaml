@@ -86,6 +86,11 @@
                             <AppBarToggleButton Icon="Bold" Label="Bold" Checked="BoldButton_Click" Unchecked="BoldButton_Off"/>
                             <AppBarToggleButton Icon="Italic" Label="Italic" Checked="ItalicButton_Click" Unchecked="ItalicButton_Off"/>
                             <AppBarToggleButton Icon="Underline" Label="Underline" Checked="UnderlineButton_Click" Unchecked="UnderlineButton_Off"/>
+                            <AppBarToggleButton Label="Strikethrough" Checked="StrikeButton_Click" Unchecked="StrikeButton_Off">
+                                <AppBarToggleButton.Icon>
+                                    <FontIcon Glyph="&#xEDE0;"/>
+                                </AppBarToggleButton.Icon>
+                            </AppBarToggleButton>
                             <AppBarToggleButton Label="Superscript" Click="SuperscriptCheck">
                                 <AppBarToggleButton.Icon>
                                     <BitmapIcon UriSource="/Assets/ic_fluent_text_superscript_24_filled.png"/>

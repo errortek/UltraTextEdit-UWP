@@ -650,7 +650,8 @@ namespace UltraTextEdit_UWP.Views
             {
                 Title = "UltraTextEdit UWP",
                 Content = $"Version 1.0 (Build 1000.132)\n\n© 2021-2022 jpb",
-                CloseButtonText = "OK"
+                CloseButtonText = "OK",
+                DefaultButton = ContentDialogButton.Close
             };
 
             await aboutDialog.ShowAsync();
@@ -659,6 +660,26 @@ namespace UltraTextEdit_UWP.Views
         private void aboutclick(object sender, RoutedEventArgs e)
         {
             DisplayAboutDialog();
+        }
+
+        private void StrikeButton_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Strikethrough = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText.CharacterFormat = charFormatting;
+            }
+        }
+
+        private void StrikeButton_Off(object sender, RoutedEventArgs e)
+        {
+            Windows.UI.Text.ITextCharacterFormat selectedText = box.Document.Selection.CharacterFormat;
+            if (selectedText != null)
+            {
+                selectedText.FontStyle = FontStyle.Normal;
+            }
         }
     }
 }
