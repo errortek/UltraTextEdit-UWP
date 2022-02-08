@@ -51,20 +51,14 @@ namespace UltraTextEdit_UWP.Views
                 "Comic Sans MS",
                 "Segoe UI",
                 "Sitka Display",
+                "Symbol",
                 "Trebuchet MS",
-                "Verdana",
-                "Symbol"
+                "Verdana"
             };
             fontbox.ItemsSource = fonts;
-            box.CharacterReceived += Box_CharacterReceived;
             SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
         }
 
-        private void Box_CharacterReceived(UIElement sender, Windows.UI.Xaml.Input.CharacterReceivedRoutedEventArgs args)
-        {
-            UnsavedTextBlock.Visibility = Visibility.Visible;
-            saved = false;
-        }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
         {
@@ -680,6 +674,24 @@ namespace UltraTextEdit_UWP.Views
             {
                 selectedText.FontStyle = FontStyle.Normal;
             }
+        }
+
+        private void edittextchanged(object sender, RoutedEventArgs e)
+        {
+            box.Document.GetText(TextGetOptions.UseObjectText, out string textStart);
+
+            if (textStart == "" || string.IsNullOrWhiteSpace(textStart))
+            {
+                saved = true;
+            }
+            else
+            {
+                saved = false;
+            }
+
+            if (!saved) UnsavedTextBlock.Visibility = Visibility.Visible;
+            else UnsavedTextBlock.Visibility = Visibility.Collapsed;
+
         }
     }
 }

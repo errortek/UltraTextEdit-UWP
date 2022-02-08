@@ -326,7 +326,7 @@
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
                 </controls:TabbedCommandBar>
-                <RichEditBox x:Name="box"/>
+                <RichEditBox x:Name="box" TextChanged="edittextchanged"/>
             </StackPanel>
         </Grid>
     </RelativePanel>
