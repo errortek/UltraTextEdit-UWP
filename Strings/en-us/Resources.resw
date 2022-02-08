@@ -170,13 +170,12 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Finally added a brand new, Windows 11-style titlebar!
-• Added Blackadder ITC to Fonts, and a new pre-defined font size, 96
-• New Help section in the ribbon
-• Added button that spawns HelpNoti notification popup to the new Help/About menu in the ribbon
-• Added an About dialog to Help section in the ribbon
-• On app close, you now get a dialog that reminds you to save your work before closing the app
-• Introduces Git VCS to UltraTextEdit UWP!</value>
+    <value>• Added Strikethrough function
+• Added Symbol/Sylfaen to Fonts
+• OK button on the About dialog now more prominent (matches your accent color)
+• Fixes bug where the '* Not Saved' text would show up at wrong times, and not show up at correct times
+• *LIFECYCLE INFO*
+   This version of UTE UWP will be the last one to have the build number of 1000, switching to build number 10240 with the next patch (previously mentioned as 1.0.1000.160, now 1.0.10240.160)</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
