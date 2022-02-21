@@ -16,5 +16,3 @@ And many more...
 ## Info
 This app is still in active development!
 If you find an issue in this app (*and* have a GitHub account), please post an Issue in this repo
-### Note:
-I will add the code for the app soon!
