@@ -712,15 +712,5 @@ namespace UltraTextEdit_UWP.Views
             else UnsavedTextBlock.Visibility = Visibility.Collapsed;
 
         }
-
-        private async void utever(object sender, RoutedEventArgs e)
-        {
-            utever dialog = new utever();
-
-            dialog.DefaultButton = ContentDialogButton.Primary;
-
-
-            var result = await dialog.ShowAsync();
-        }
     }
 }
