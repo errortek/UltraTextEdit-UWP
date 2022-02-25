@@ -47,6 +47,7 @@ namespace UltraTextEdit_UWP.Views
                 "Arial",
                 "Blackadder ITC",
                 "Calibri",
+                "Cambria",
                 "Century Gothic",
                 "Comic Sans MS",
                 "Segoe UI",
