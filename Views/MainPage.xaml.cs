@@ -247,6 +247,7 @@ namespace UltraTextEdit_UWP.Views
             documentRange.CharacterFormat.BackgroundColor = defaultBackground.Color;
             documentRange.CharacterFormat.ForegroundColor = defaultForeground.Color;
         }
+
         private void ColorButton_Click(object sender, RoutedEventArgs e)
         {
             // Extract the color of the button that was clicked.
@@ -259,6 +260,23 @@ namespace UltraTextEdit_UWP.Views
             fontColorButton.Flyout.Hide();
             box.Focus(Windows.UI.Xaml.FocusState.Keyboard);
         }
+
+        private void ConfirmColor_Click(object sender, RoutedEventArgs e)
+        {
+            // Confirm color picker choice and apply color to text
+            Color color = myColorPicker.Color;
+            box.Document.Selection.CharacterFormat.ForegroundColor = color;
+
+            // Hide flyout
+            colorPickerButton.Flyout.Hide();
+        }
+
+        private void CancelColor_Click(object sender, RoutedEventArgs e)
+        {
+            // Cancel flyout
+            colorPickerButton.Flyout.Hide();
+        }
+
         private void ListStyleButton_IsCheckedChanged(Microsoft.UI.Xaml.Controls.ToggleSplitButton sender, Microsoft.UI.Xaml.Controls.ToggleSplitButtonIsCheckedChangedEventArgs args)
         {
             // Use the toggle button to turn the selected list style on or off.
