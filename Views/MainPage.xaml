@@ -375,6 +375,7 @@
                                     <FontIcon Glyph="J" FontFamily="Segoe UI Black"/>
                                 </AppBarButton.Icon>
                             </AppBarButton>
+                            <AppBarButton Icon="Help" Label="utever (new About)" Click="utever"/>
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
                 </controls:TabbedCommandBar>
