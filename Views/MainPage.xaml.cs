@@ -722,5 +722,16 @@ namespace UltraTextEdit_UWP.Views
 
             var result = await dialog.ShowAsync();
         }
+
+        private void UndoButton_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Undo();
+        }
+
+        private void RedoButton_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Redo();
+        }
+
     }
 }

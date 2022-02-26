@@ -95,6 +95,18 @@
                     </controls:TabbedCommandBar.AutoSuggestBox>
                     <controls:TabbedCommandBar.PaneFooter>
                         <CommandBar Background="Transparent" DefaultLabelPosition="Right">
+                            <AppBarButton Click="UndoButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Undo">
+                                <Viewbox MaxHeight="17" MaxWidth="17">
+                                    <SymbolIcon Symbol="Undo" />
+                                </Viewbox>
+                            </AppBarButton>
+
+                            <AppBarButton Click="RedoButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Redo">
+                                <Viewbox MaxHeight="17" MaxWidth="17">
+                                    <SymbolIcon Symbol="Redo" />
+                                </Viewbox>
+                            </AppBarButton>
+                            <AppBarSeparator/>
                             <AppBarButton Label="What's New" Icon="Message" Click="AppBarButton_Click_1"/>
                             <AppBarButton Label="Settings" Icon="Setting" Click="AppBarButton_Click"/>
                         </CommandBar>
