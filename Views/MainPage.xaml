@@ -294,31 +294,14 @@
 
 
                         </controls:TabbedCommandBarItem>
-                        <controls:TabbedCommandBarItem Header="Coming Soon...">
-                            <AppBarButton Icon="Font" Label="Font">
+                        <controls:TabbedCommandBarItem Header="Insert">
+                            <AppBarButton Label="Image" Icon="Pictures">
                                 <AppBarButton.Flyout>
                                     <MenuFlyout Placement="BottomEdgeAlignedLeft">
-                                        <MenuFlyoutItem Text="More fonts will come to the app in the next release!">
-                                        </MenuFlyoutItem>
-                                        <MenuFlyoutItem Text="Strikethrough will be available in the next release!">
-                                        </MenuFlyoutItem>
-                                    </MenuFlyout>
-                                </AppBarButton.Flyout>
-                            </AppBarButton>
-                            <AppBarButton Icon="Setting" Label="Performance and stability improvements">
-                                <AppBarButton.Flyout>
-                                    <MenuFlyout Placement="BottomEdgeAlignedLeft">
-                                        <MenuFlyoutItem Text="Library updates planned">
-                                        </MenuFlyoutItem>
-                                        <MenuFlyoutItem Text="Other bug fixes also planned">
-                                        </MenuFlyoutItem>
-                                    </MenuFlyout>
-                                </AppBarButton.Flyout>
-                            </AppBarButton>
-                            <AppBarButton Icon="FontColor" Label="Colour">
-                                <AppBarButton.Flyout>
-                                    <MenuFlyout Placement="BottomEdgeAlignedLeft">
-                                        <MenuFlyoutItem Text="More colours will be added!">
+                                        <MenuFlyoutItem Text="This Device" Click="image">
+                                            <MenuFlyoutItem.Icon>
+                                                <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xEC4E;" />
+                                            </MenuFlyoutItem.Icon>
                                         </MenuFlyoutItem>
                                     </MenuFlyout>
                                 </AppBarButton.Flyout>

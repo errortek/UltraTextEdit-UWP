@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using UltraTextEdit_UWP.Services;
 using System.Reflection;
+using Windows.Storage.Streams;
 
 namespace UltraTextEdit_UWP.Views
 {
@@ -733,5 +734,33 @@ namespace UltraTextEdit_UWP.Views
             box.Document.Redo();
         }
 
+        private async void image(object sender, RoutedEventArgs e)
+        {
+            // Open an image file.
+            Windows.Storage.Pickers.FileOpenPicker open =
+                new Windows.Storage.Pickers.FileOpenPicker();
+            open.SuggestedStartLocation =
+                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            open.FileTypeFilter.Add(".png");
+            open.FileTypeFilter.Add(".jpg");
+            open.FileTypeFilter.Add(".jpeg");
+
+            Windows.Storage.StorageFile file = await open.PickSingleFileAsync();
+
+            if (file != null)
+            {
+                using (Windows.Storage.Streams.IRandomAccessStream randAccStream =
+                    await file.OpenAsync(FileAccessMode.Read))
+                using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                {
+                    var properties = await file.Properties.GetImagePropertiesAsync();
+                    int width = (int)properties.Width;
+                    int height = (int)properties.Height;
+
+                    // Load the file into the Document property of the RichEditBox.
+                    box.Document.Selection.InsertImage(width, height, 0, Windows.UI.Text.VerticalCharacterAlignment.Baseline, "img", randAccStream);
+                }
+            }
+        }
     }
 }
