@@ -309,6 +309,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <PRIResource Include="Strings\pl-pl\Resources.resw" />
     <None Include="UltraTextEdit UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
