@@ -146,87 +146,87 @@
                                     <SymbolIcon Symbol="FontColor" x:Name="symbol"/>
                                     <muxc:DropDownButton.Flyout>
                                         <Flyout Placement="Bottom">
-                                                    <RelativePanel>
-                                                        <VariableSizedWrapGrid x:Name="colorGrid" Orientation="Horizontal" MaximumRowsOrColumns="4">
-                                                            <VariableSizedWrapGrid.Resources>
-                                                                <Style TargetType="Rectangle">
-                                                                    <Setter Property="Width" Value="32"/>
-                                                                    <Setter Property="Height" Value="32"/>
-                                                                </Style>
+                                            <RelativePanel>
+                                                <VariableSizedWrapGrid x:Name="colorGrid" Orientation="Horizontal" MaximumRowsOrColumns="4">
+                                                    <VariableSizedWrapGrid.Resources>
+                                                        <Style TargetType="Rectangle">
+                                                            <Setter Property="Width" Value="32"/>
+                                                            <Setter Property="Height" Value="32"/>
+                                                        </Style>
 
-                                                                <Style TargetType="Button">
-                                                                    <Setter Property="Padding" Value="0"/>
-                                                                    <Setter Property="MinWidth" Value="0"/>
-                                                                    <Setter Property="MinHeight" Value="0"/>
-                                                                    <Setter Property="Margin" Value="5"/>
-                                                                    <Setter Property="CornerRadius" Value="8"/>
-                                                                </Style>
-                                                            </VariableSizedWrapGrid.Resources>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Red" AutomationProperties.Name="Red">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Red"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Orange" AutomationProperties.Name="Orange">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Orange"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Yellow" AutomationProperties.Name="Yellow">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Yellow"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Green" AutomationProperties.Name="Green">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Green"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Blue" AutomationProperties.Name="Blue">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Blue"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Light Blue" AutomationProperties.Name="LightBlue">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="LightBlue"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Indigo" AutomationProperties.Name="Indigo">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Indigo"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Violet" AutomationProperties.Name="Violet">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Violet"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Gray" AutomationProperties.Name="Gray">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Gray"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Beige" AutomationProperties.Name="Beige">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Beige"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="Black" AutomationProperties.Name="Black">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="Black"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                            <Button Click="ColorButton_Click" ToolTipService.ToolTip="White" AutomationProperties.Name="White">
-                                                                <Button.Content>
-                                                                    <Rectangle Fill="White"/>
-                                                                </Button.Content>
-                                                            </Button>
-                                                        </VariableSizedWrapGrid>
-                                                        <Button Flyout="{StaticResource myColorPickerFlyout}" Margin="0,8,0,0" RelativePanel.Below="colorGrid" Content="More colors" Width="173" x:Name="colorPickerButton"/>
-                                                    </RelativePanel>
-                                                </Flyout>
-                                            </muxc:DropDownButton.Flyout>
+                                                        <Style TargetType="Button">
+                                                            <Setter Property="Padding" Value="0"/>
+                                                            <Setter Property="MinWidth" Value="0"/>
+                                                            <Setter Property="MinHeight" Value="0"/>
+                                                            <Setter Property="Margin" Value="5"/>
+                                                            <Setter Property="CornerRadius" Value="8"/>
+                                                        </Style>
+                                                    </VariableSizedWrapGrid.Resources>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Red" AutomationProperties.Name="Red">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Red"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Orange" AutomationProperties.Name="Orange">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Orange"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Yellow" AutomationProperties.Name="Yellow">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Yellow"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Green" AutomationProperties.Name="Green">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Green"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Blue" AutomationProperties.Name="Blue">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Blue"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Light Blue" AutomationProperties.Name="LightBlue">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="LightBlue"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Indigo" AutomationProperties.Name="Indigo">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Indigo"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Violet" AutomationProperties.Name="Violet">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Violet"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Gray" AutomationProperties.Name="Gray">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Gray"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Beige" AutomationProperties.Name="Beige">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Beige"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="Black" AutomationProperties.Name="Black">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="Black"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                    <Button Click="ColorButton_Click" ToolTipService.ToolTip="White" AutomationProperties.Name="White">
+                                                        <Button.Content>
+                                                            <Rectangle Fill="White"/>
+                                                        </Button.Content>
+                                                    </Button>
+                                                </VariableSizedWrapGrid>
+                                                <Button Flyout="{StaticResource myColorPickerFlyout}" Margin="0,8,0,0" RelativePanel.Below="colorGrid" Content="More colors" Width="173" x:Name="colorPickerButton"/>
+                                            </RelativePanel>
+                                        </Flyout>
+                                    </muxc:DropDownButton.Flyout>
                                 </muxc:DropDownButton>
                             </AppBarElementContainer>
                             <AppBarElementContainer>
@@ -365,11 +365,6 @@
                             </AppBarButton>
                             <AppBarButton Icon="Help" Label="About" Click="aboutclick"/>
                             <AppBarSeparator/>
-                            <AppBarButton Label="jpb Website" Click="jpbbutclick">
-                                <AppBarButton.Icon>
-                                    <FontIcon Glyph="J" FontFamily="Segoe UI Black"/>
-                                </AppBarButton.Icon>
-                            </AppBarButton>
                             <AppBarButton Icon="Help" Label="utever (new About)" Click="utever"/>
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>

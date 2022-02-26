@@ -653,11 +653,6 @@ namespace UltraTextEdit_UWP.Views
             }
             ShowToastNotificationSample();
         }
-
-        private void jpbbutclick(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(jpbWebView));
-        }
         private async void DisplayAboutDialog()
         {
             ContentDialog aboutDialog = new ContentDialog()
