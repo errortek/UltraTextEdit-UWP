@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/100033309/154805920-652c8685-1a98-4d21-b5c0-3bb97d0242fa.png)
 
 *UltraTextEdit UWP 1.0.10240.160 running on Windows 11*
-![image](https://user-images.githubusercontent.com/100033309/155850931-2d30e5c4-27a8-436f-87e9-0883912c68bd.png)
+![image](https://user-images.githubusercontent.com/100033309/155850965-c69d3bb2-acb4-42fe-a804-293b89e5b51e.png)
 
 # UltraTextEdit UWP
 
