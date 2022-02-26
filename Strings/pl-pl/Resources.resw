@@ -193,4 +193,28 @@
     <value>OK</value>
     <comment>First use prompt message primary button text</comment>
   </data>
+  <data name="Bold" xml:space="preserve">
+    <value>Pogrubienie</value>
+  </data>
+  <data name="Fontcolor" xml:space="preserve">
+    <value>Kolor tekstu</value>
+  </data>
+  <data name="Italic" xml:space="preserve">
+    <value>Kursywa</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Nowy dokument</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Otwórz</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Underline" xml:space="preserve">
+    <value>Podkreślenie</value>
+  </data>
+  <data name="Unsaved" xml:space="preserve">
+    <value>* Nie zapisane</value>
+  </data>
 </root>

@@ -199,4 +199,28 @@ UltraTextEdit UWP is an app that you may use as a replacement for MS Word or Wor
     <value>OK</value>
     <comment>First use prompt message primary button text</comment>
   </data>
+  <data name="Bold" xml:space="preserve">
+    <value>Bold</value>
+  </data>
+  <data name="Fontcolor" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="Italic" xml:space="preserve">
+    <value>Italiic</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New document</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Underline" xml:space="preserve">
+    <value>Underline</value>
+  </data>
+  <data name="Unsaved" xml:space="preserve">
+    <value>* Not Saved</value>
+  </data>
 </root>
