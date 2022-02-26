@@ -120,7 +120,7 @@
                                 <ComboBox x:Name="fontbox" SelectedIndex="6" MinWidth="175" SelectionChanged="ComboBox1_SelectionChanged"/>
                             </AppBarElementContainer>
                             <AppBarElementContainer>
-                                <ComboBox x:Name="Combo3" IsEditable="True" ItemsSource="{x:Bind FontSizes}" Width="200" Loaded="Combo3_Loaded"  />
+                                <ComboBox x:Name="Combo3" IsEditable="True" ItemsSource="{x:Bind FontSizes}" Width="100" Loaded="Combo3_Loaded"  />
                             </AppBarElementContainer>
                             <AppBarToggleButton Icon="Bold" Label="Bold" Checked="BoldButton_Click" Unchecked="BoldButton_Off"/>
                             <AppBarToggleButton Icon="Italic" Label="Italic" Checked="ItalicButton_Click" Unchecked="ItalicButton_Off"/>
