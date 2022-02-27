@@ -170,12 +170,17 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Added Strikethrough function
-• Added Symbol/Sylfaen to Fonts
-• OK button on the About dialog now more prominent (matches your accent color)
-• Fixes bug where the '* Not Saved' text would show up at wrong times, and not show up at correct times
-• *LIFECYCLE INFO*
-   This version of UTE UWP will be the last one to have the build number of 1000, switching to build number 10240 with the next patch (previously mentioned as 1.0.1000.160, now 1.0.10240.160)</value>
+    <value>• Added Undo/Redo to the ribbon
+• Added image insertion capability (in the new 'Insert' ribbon tab)
+• Added Cambria to Fonts
+• Segoe UI now default font in Font box (bugfix)
+• Decerease width of font size box, to optimize UI for smaller-screened devices (such as laptops, large tablets, 2-in-1s)
+• Removed 'Coming Soon' ribbon tab
+• Removed jpb WebView because of bugs!
+• Revamped Font Color UI
+• Added a 'utever' dialog
+• Changed build number from 1000 to 10240
+• First UTE UWP release to be released via GitHub, as well as the app's principal release source, the jpb Website</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
