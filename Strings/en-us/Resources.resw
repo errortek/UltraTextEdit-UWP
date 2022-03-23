@@ -170,17 +170,8 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Added Undo/Redo to the ribbon
-• Added image insertion capability (in the new 'Insert' ribbon tab)
-• Added Cambria to Fonts
-• Segoe UI now default font in Font box (bugfix)
-• Decerease width of font size box, to optimize UI for smaller-screened devices (such as laptops, large tablets, 2-in-1s)
-• Removed 'Coming Soon' ribbon tab
-• Removed jpb WebView because of bugs!
-• Revamped Font Color UI
-• Added a 'utever' dialog
-• Changed build number from 1000 to 10240
-• First UTE UWP release to be released via GitHub, as well as the app's principal release source, the jpb Website</value>
+    <value>• Added link insertion capability (in the 'Insert' ribbon tab)
+• Updates Microsoft.UI.Xaml to version 2.7.1</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
