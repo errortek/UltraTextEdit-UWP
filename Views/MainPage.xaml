@@ -306,6 +306,16 @@
                                     </MenuFlyout>
                                 </AppBarButton.Flyout>
                             </AppBarButton>
+                            <AppBarButton Icon="Link" Label="Link" x:Name="linkbutton">
+                                <Button.Flyout>
+                                    <Flyout Placement="Bottom">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBox PlaceholderText="Link" x:Name="hyperlinkText" AllowFocusOnInteraction="True"/>
+                                            <Button Click="link" Margin="0,10,0,0">Add link to selected text</Button>
+                                        </StackPanel>
+                                    </Flyout>
+                                </Button.Flyout>
+                            </AppBarButton>
                             <controls:TabbedCommandBarItem.SecondaryCommands>
                                 <AppBarButton Icon="Add" Label="New item" />
                             </controls:TabbedCommandBarItem.SecondaryCommands>

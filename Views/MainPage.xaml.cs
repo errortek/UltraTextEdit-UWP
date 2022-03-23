@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Media;
 using UltraTextEdit_UWP.Services;
 using System.Reflection;
 using Windows.Storage.Streams;
+using Windows.UI.Xaml.Markup;
 
 namespace UltraTextEdit_UWP.Views
 {
@@ -756,6 +757,15 @@ namespace UltraTextEdit_UWP.Views
                     box.Document.Selection.InsertImage(width, height, 0, Windows.UI.Text.VerticalCharacterAlignment.Baseline, "img", randAccStream);
                 }
             }
+        }
+
+        private void link(object sender, RoutedEventArgs e)
+        {
+            if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Windows.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
+                hyperlinkText.AllowFocusOnInteraction = true;
+            box.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
+            box.Document.Selection.CharacterFormat.ForegroundColor = (Color)XamlBindingHelper.ConvertValue(typeof(Color), "#6194c7");
+            linkbutton.Flyout.Hide();
         }
     }
 }
