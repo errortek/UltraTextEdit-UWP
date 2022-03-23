@@ -105,7 +105,7 @@
 
             <StackPanel Margin="{StaticResource XSmallTopMargin}">
                 <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind VersionDescription, Mode=OneWay}" />
-                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Released March 8, 2022" />
+                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Released March 25, 2022" />
                 <TextBlock
                     x:Uid="Settings_AboutDescription"
                     Margin="{StaticResource XSmallTopMargin}"
@@ -121,7 +121,7 @@
                 <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.Toolkit.Uwp version 7.1.2, released November 18, 2021" />
                 <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.Toolkit.Uwp.Notifications version 7.1.2, released November 18, 2021" />
                 <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.Toolkit.Uwp.Controls version 7.1.2, released November 18, 2021" />
-                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.UI.Xaml version 2.7.0, released September 15, 2021" />
+                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.UI.Xaml version 2.7.1, released March 17, 2022" />
                 <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.Xaml.Behaviors.Uwp.Managed version 2.0.1, released April 29, 2019" />
                 <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Win2D.uwp version 1.26.0, released April 28, 2021" />
             </StackPanel>
