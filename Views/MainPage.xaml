@@ -70,7 +70,7 @@
                                Margin="12,2,0,0"
                                Style="{StaticResource CaptionTextBlockStyle}"
                             RequestedTheme="Light" Opacity="0.5"
-                           Visibility="Visible"/>
+                           Visibility="Collapsed"/>
             </StackPanel>
         </Grid>
         <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
