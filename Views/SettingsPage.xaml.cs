@@ -91,8 +91,7 @@ namespace UltraTextEdit_UWP.Views
 
         private void OnBackRequested(object sender,  RoutedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
-            if (rootFrame.CanGoBack)
+            if (Window.Current.Content is Frame rootFrame && rootFrame.CanGoBack)
             {
                 rootFrame.GoBack();
             }

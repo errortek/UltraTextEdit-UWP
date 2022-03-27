@@ -354,7 +354,10 @@ namespace UltraTextEdit_UWP.Views
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SettingsPage));
+            if (Window.Current.Content is Frame rootFrame)
+            {
+                rootFrame.Navigate(typeof(SettingsPage));
+            }
         }
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
