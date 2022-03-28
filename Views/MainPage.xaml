@@ -321,51 +321,11 @@
                                 <AppBarButton Icon="Add" Label="New item" />
                             </controls:TabbedCommandBarItem.SecondaryCommands>
                         </controls:TabbedCommandBarItem>
-                        <controls:TabbedCommandBarItem x:Name="PictureFormat"
-                                               Header="Picture Format"
+                        <controls:TabbedCommandBarItem x:Name="bottombartabitem"
+                                               Header="Bottom Bar"
                                                IsContextual="True"
                                                Visibility="Collapsed">
-                            <AppBarButton Label="Remove Background">
-                                <AppBarButton.Icon>
-                                    <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE706;" />
-                                </AppBarButton.Icon>
-                            </AppBarButton>
-                            <AppBarButton Label="Picture Effects">
-                                <AppBarButton.Icon>
-                                    <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xF158;" />
-                                </AppBarButton.Icon>
-                            </AppBarButton>
-                            <AppBarButton Label="Rotate">
-                                <AppBarButton.Icon>
-                                    <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE7AD;" />
-                                </AppBarButton.Icon>
-                            </AppBarButton>
-                            <AppBarElementContainer>
-                                <SplitButton>
-                                    <StackPanel Spacing="12" Orientation="Horizontal">
-                                        <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE7A8;" />
-                                        <TextBlock FontSize="12" Text="Crop"/>
-                                    </StackPanel>
-                                    <SplitButton.Flyout>
-                                        <MenuFlyout>
-                                            <MenuFlyoutItem Text="Crop">
-                                                <MenuFlyoutItem.Icon>
-                                                    <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE7A8;" />
-                                                </MenuFlyoutItem.Icon>
-                                            </MenuFlyoutItem>
-                                            <MenuFlyoutItem Text="Crop to Shape">
-                                                <MenuFlyoutItem.Icon>
-                                                    <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xF407;" />
-                                                </MenuFlyoutItem.Icon>
-                                            </MenuFlyoutItem>
-                                            <MenuFlyoutItem Text="Aspect Ratio" />
-                                            <MenuFlyoutSeparator/>
-                                            <MenuFlyoutItem Text="Fill" />
-                                            <MenuFlyoutItem Text="Fit" />
-                                        </MenuFlyout>
-                                    </SplitButton.Flyout>
-                                </SplitButton>
-                            </AppBarElementContainer>
+                            <AppBarButton Label="Show" Icon="ShowBcc" Click="showbottombar"/>
                         </controls:TabbedCommandBarItem>
                         <controls:TabbedCommandBarItem Header="Help">
                             <AppBarButton Label="HelpNoti" Click="helpnoti">
@@ -383,5 +343,14 @@
                 <RichEditBox x:Name="box" TextChanged="edittextchanged"/>
             </StackPanel>
         </Grid>
+        <CommandBar RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" x:Name="bottombar">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Label="Dash Underline" Click="Dash"/>
+            <AppBarButton Label="DashDot Underline" Click="DashDot"/>
+            <AppBarButton Label="Words Underline" Click="wordunderline"/>
+            <AppBarButton Icon="HideBcc" Label="Hide" Click="hidebottombar"/>
+        </CommandBar>
     </RelativePanel>
 </Page>

@@ -349,9 +349,6 @@ namespace UltraTextEdit_UWP.Views
             }
         }
 
-
-        
-
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             if (Window.Current.Content is Frame rootFrame)
@@ -359,6 +356,7 @@ namespace UltraTextEdit_UWP.Views
                 rootFrame.Navigate(typeof(SettingsPage));
             }
         }
+
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
@@ -516,10 +514,12 @@ namespace UltraTextEdit_UWP.Views
                 }
             }
         }
+
         private void OnCloseRequest(object sender, SystemNavigationCloseRequestedPreviewEventArgs e)
         {
             if (saved == false) { e.Handled = true; ShowUnsavedDialog(); }
         }
+
         private void BoldButton_Off(object sender, RoutedEventArgs e)
         {
             Windows.UI.Text.ITextCharacterFormat selectedText = box.Document.Selection.CharacterFormat;
@@ -528,6 +528,7 @@ namespace UltraTextEdit_UWP.Views
                 selectedText.FontStyle = FontStyle.Normal;
             }
         }
+
         private void ItalicButton_Off(object sender, RoutedEventArgs e)
         {
             Windows.UI.Text.ITextCharacterFormat selectedText = box.Document.Selection.CharacterFormat;
@@ -566,6 +567,7 @@ namespace UltraTextEdit_UWP.Views
                 selectedText.CharacterFormat = charFormatting;
             }
         }
+
         private async void ShowUnsavedDialog()
         {
             string fileName = AppTitle.Text.Replace(" - " + "UTE UWP", "");
@@ -657,6 +659,7 @@ namespace UltraTextEdit_UWP.Views
             }
             ShowToastNotificationSample();
         }
+
         private async void DisplayAboutDialog()
         {
             ContentDialog aboutDialog = new ContentDialog()
@@ -769,6 +772,72 @@ namespace UltraTextEdit_UWP.Views
             box.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
             box.Document.Selection.CharacterFormat.ForegroundColor = (Color)XamlBindingHelper.ConvertValue(typeof(Color), "#6194c7");
             linkbutton.Flyout.Hide();
+        }
+
+        private void Dash(object sender, RoutedEventArgs e)
+        {
+            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.Dash;
+                }
+                else
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
+                }
+                selectedText.CharacterFormat = charFormatting;
+            }
+        }
+
+        private void DashDot(object sender, RoutedEventArgs e)
+        {
+            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.DashDot;
+                }
+                else
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
+                }
+                selectedText.CharacterFormat = charFormatting;
+            }
+        }
+
+        private void wordunderline(object sender, RoutedEventArgs e)
+        {
+            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.Words;
+                }
+                else
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
+                }
+                selectedText.CharacterFormat = charFormatting;
+            }
+        }
+
+        private void hidebottombar(object sender, RoutedEventArgs e)
+        {
+            bottombartabitem.Visibility = Visibility.Visible;
+            bottombar.Visibility = Visibility.Collapsed;
+        }
+
+        private void showbottombar(object sender, RoutedEventArgs e)
+        {
+            bottombartabitem.Visibility = Visibility.Collapsed;
+            bottombar.Visibility = Visibility.Visible;
         }
     }
 }
