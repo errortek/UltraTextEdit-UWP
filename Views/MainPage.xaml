@@ -118,7 +118,7 @@
                             <AppBarButton Icon="Save" Label="Save" Click="SaveButton_Click"/>
                             <AppBarSeparator />
                             <AppBarElementContainer>
-                                <ComboBox x:Name="fontbox" SelectedIndex="6" MinWidth="175" SelectionChanged="ComboBox1_SelectionChanged"/>
+                                <ComboBox x:Name="fontbox" SelectedIndex="7" MinWidth="175" SelectionChanged="ComboBox1_SelectionChanged"/>
                             </AppBarElementContainer>
                             <AppBarElementContainer>
                                 <ComboBox x:Name="Combo3" IsEditable="True" ItemsSource="{x:Bind FontSizes}" Width="100" Loaded="Combo3_Loaded"  />

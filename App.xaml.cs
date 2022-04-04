@@ -1,5 +1,5 @@
 ﻿using System;
-
+using UltraTextEdit_UWP.Helpers;
 using UltraTextEdit_UWP.Services;
 using UltraTextEdit_UWP.Views;
 using Windows.ApplicationModel;
@@ -31,6 +31,7 @@ namespace UltraTextEdit_UWP
 
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            BuildInfo.RetrieveApiInfo();
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (Window.Current.Content is not Frame rootFrame)

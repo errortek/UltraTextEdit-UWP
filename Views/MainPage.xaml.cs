@@ -21,6 +21,8 @@ using UltraTextEdit_UWP.Services;
 using System.Reflection;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Markup;
+using Microsoft.Toolkit.Uwp.Helpers;
+using UltraTextEdit_UWP.Helpers;
 
 namespace UltraTextEdit_UWP.Views
 {
@@ -45,20 +47,43 @@ namespace UltraTextEdit_UWP.Views
             coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
             Window.Current.Activated += Current_Activated;
 
-            string[] fonts = {
+
+            if (BuildInfo.BeforeWin11)
+            {
+                string[] fonts = {
                 "Arial",
                 "Blackadder ITC",
                 "Calibri",
                 "Cambria",
                 "Century Gothic",
                 "Comic Sans MS",
+                "Ink Free",
                 "Segoe UI",
                 "Sitka Display",
                 "Symbol",
                 "Trebuchet MS",
                 "Verdana"
             };
-            fontbox.ItemsSource = fonts;
+                fontbox.ItemsSource = fonts;
+            } else
+            {
+                string[] fonts = {
+                "Arial",
+                "Blackadder ITC",
+                "Calibri",
+                "Cambria",
+                "Century Gothic",
+                "Comic Sans MS",
+                "Ink Free",
+                "Segoe UI",
+                "Segoe UI Variable",
+                "Sitka Display",
+                "Symbol",
+                "Trebuchet MS",
+                "Verdana"
+            };
+                fontbox.ItemsSource = fonts;
+            }
             SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
         }
 
