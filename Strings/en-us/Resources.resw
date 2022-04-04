@@ -170,8 +170,11 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Added link insertion capability (in the 'Insert' ribbon tab)
-• Updates Microsoft.UI.Xaml to version 2.7.1</value>
+    <value>• Added Ink Free and Segoe UI Variable* fonts to Fonts menu
+• Adds more underline styles as part of the new Bottom Bar
+• Fixes bug with TabbedCommandBar having different color than the background
+• Build number updated to 19044
+*The Segoe UI Variable font is only available on Windows 11 (NT 10.0.22000 and higher)</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
