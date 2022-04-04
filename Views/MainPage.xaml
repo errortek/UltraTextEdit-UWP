@@ -34,7 +34,7 @@
         </Flyout>
     </Page.Resources>
 
-    <RelativePanel x:Name="containerPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+    <RelativePanel x:Name="containerPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" >
 
         <Grid x:Name="AppTitleBar"
                 IsHitTestVisible="True"
@@ -79,15 +79,15 @@
                 <RowDefinition Height="48" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
+ 
 
             <StackPanel 
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}" Grid.RowSpan="2">
+            Background="Transparent" Grid.RowSpan="2">
                 <!--
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
             -->
-                <controls:TabbedCommandBar>
+                <controls:TabbedCommandBar  Background="Transparent">
                     <!-- IsBackButtonVisible="Visible" -->
                     <controls:TabbedCommandBar.AutoSuggestBox>
                         <AutoSuggestBox QueryIcon="Find" AutomationProperties.Name="Search" x:Name="Find" TextChanged="{x:Bind FindBoxHighlightMatches}"
@@ -113,7 +113,7 @@
                         </CommandBar>
                     </controls:TabbedCommandBar.PaneFooter>
                     <controls:TabbedCommandBar.MenuItems>
-                        <controls:TabbedCommandBarItem Header="Home">
+                        <controls:TabbedCommandBarItem Header="Home"  Background="Transparent">
                             <AppBarButton Icon="OpenFile" Label="Open" Click="OpenButton_Click"/>
                             <AppBarButton Icon="Save" Label="Save" Click="SaveButton_Click"/>
                             <AppBarSeparator />
@@ -295,7 +295,7 @@
 
 
                         </controls:TabbedCommandBarItem>
-                        <controls:TabbedCommandBarItem Header="Insert">
+                        <controls:TabbedCommandBarItem Header="Insert"  Background="Transparent">
                             <AppBarButton Label="Image" Icon="Pictures">
                                 <AppBarButton.Flyout>
                                     <MenuFlyout Placement="BottomEdgeAlignedLeft">
@@ -324,10 +324,11 @@
                         <controls:TabbedCommandBarItem x:Name="bottombartabitem"
                                                Header="Bottom Bar"
                                                IsContextual="True"
-                                               Visibility="Collapsed">
+                                               Visibility="Collapsed"
+                                                        Background="Transparent">
                             <AppBarButton Label="Show" Icon="ShowBcc" Click="showbottombar"/>
                         </controls:TabbedCommandBarItem>
-                        <controls:TabbedCommandBarItem Header="Help">
+                        <controls:TabbedCommandBarItem Header="Help"  Background="Transparent">
                             <AppBarButton Label="HelpNoti" Click="helpnoti">
                                 <AppBarButton.Icon>
                                     <BitmapIcon UriSource="/Assets/ic_fluent_chat_help_24_filled.png"/>
