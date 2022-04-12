@@ -17,13 +17,13 @@
                 IsHitTestVisible="True"
                 VerticalAlignment="Top"
                 Background="Transparent"
-                Height="40"
+                Height="48"
                 Canvas.ZIndex="1" 
                 Margin="12,2,0,0"
                 RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
             <StackPanel Orientation="Horizontal">
                 <AppBarButton
-                    Click="OnBackRequested" Icon="Back"/>
+                    Click="OnBackRequested" Icon="Back" Height="48" Width="48"/>
                 <Image x:Name="AppFontIcon"
                          HorizontalAlignment="Left" 
                          VerticalAlignment="Center"
