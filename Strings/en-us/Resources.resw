@@ -170,10 +170,9 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Added Ink Free and Segoe UI Variable* fonts to Fonts menu
-• Adds more underline styles as part of the new Bottom Bar
-• Fixes bug with TabbedCommandBar having different color than the background
-• Build number updated to 19044
+    <value>• Added Segoe UI Variable* font variants to Fonts menu
+• Fixes critical bug where the text from the RichEditBox would disappear when going in and then out of the Settings page
+• Updates back button UI on Settings page
 *The Segoe UI Variable font is only available on Windows 11 (NT 10.0.22000 and higher)</value>
     <comment>What's new prompt message body</comment>
   </data>
