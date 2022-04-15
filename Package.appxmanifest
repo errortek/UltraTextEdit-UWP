@@ -49,6 +49,36 @@
       </uap:VisualElements>
 
       <Extensions>
+
+        <uap:Extension Category="windows.fileTypeAssociation">
+
+          <uap:FileTypeAssociation Name="txt">
+
+            <uap:SupportedFileTypes>
+
+              <uap:FileType>.txt</uap:FileType>
+            </uap:SupportedFileTypes>
+
+            <uap:DisplayName>Plain Text File</uap:DisplayName>
+
+            <uap:Logo>Assets\txt-icon.png</uap:Logo>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+
+        <uap:Extension Category="windows.fileTypeAssociation">
+
+          <uap:FileTypeAssociation Name="rtf">
+
+            <uap:SupportedFileTypes>
+
+              <uap:FileType>.rtf</uap:FileType>
+            </uap:SupportedFileTypes>
+
+            <uap:DisplayName>Rich Text File</uap:DisplayName>
+
+            <uap:Logo>Assets\rtf-icon.png</uap:Logo>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
       </Extensions>
     </Application>
   </Applications>
