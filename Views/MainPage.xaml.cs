@@ -17,6 +17,7 @@ using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
 using UltraTextEdit_UWP.Services;
 using System.Reflection;
 using Windows.Storage.Streams;
@@ -87,6 +88,8 @@ namespace UltraTextEdit_UWP.Views
                 fontbox.ItemsSource = fonts;
             }
             SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
+
+            NavigationCacheMode = NavigationCacheMode.Required;
         }
 
 
