@@ -105,7 +105,7 @@
 
             <StackPanel Margin="{StaticResource XSmallTopMargin}">
                 <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind VersionDescription, Mode=OneWay}" />
-                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Released April 21, 2022" />
+                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Released April 15, 2022" />
                 <TextBlock
                     x:Uid="Settings_AboutDescription"
                     Margin="{StaticResource XSmallTopMargin}"
