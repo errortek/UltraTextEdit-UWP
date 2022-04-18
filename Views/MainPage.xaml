@@ -60,6 +60,7 @@
                                VerticalAlignment="Center"
                                Margin="12,2,0,0"
                                Style="{StaticResource CaptionTextBlockStyle}"
+                           Foreground="Black"
                             RequestedTheme="Light"/>
                 <TextBlock x:Name="UnsavedTextBlock"
                                Text="* Not Saved"
