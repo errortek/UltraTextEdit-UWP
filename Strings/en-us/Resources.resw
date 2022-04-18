@@ -170,10 +170,8 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Added Segoe UI Variable* font variants to Fonts menu
-• Fixes critical bug where the text from the RichEditBox would disappear when going in and then out of the Settings page
-• Updates back button UI on Settings page
-*The Segoe UI Variable font is only available on Windows 11 (NT 10.0.22000 and higher)</value>
+    <value>• Added semi-functional file extension associations (when you select UTE UWP to open .txt or .rtf files from the File Explorer's Open With dialog box, the app would just be stuck on the splash screen)
+• Fixes critical bug where the title on the app's title bar would be illegible when changing theme to the opposite (Light UTE theme, Dark Windows theme, or Dark UTE theme, Light Windows theme) on physical (non-VM) Windows 11 devices</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
