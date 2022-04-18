@@ -60,7 +60,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="2"
-                        Text="15/04/2022"/>
+                        Text="18/04/2022"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="3" x:Uid="OSBuild" Text="Build"/>
                         <TextBlock 
 						Name="Build"
