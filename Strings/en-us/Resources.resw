@@ -170,8 +170,7 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Added semi-functional file extension associations (when you select UTE UWP to open .txt or .rtf files from the File Explorer's Open With dialog box, the app would just be stuck on the splash screen)
-• Fixes critical bug where the title on the app's title bar would be illegible when changing theme to the opposite (Light UTE theme, Dark Windows theme, or Dark UTE theme, Light Windows theme) on physical (non-VM) Windows 11 devices</value>
+    <value>• Added 2 new fonts: Gill Sans MT and Imapct</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
