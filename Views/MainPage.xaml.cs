@@ -877,5 +877,38 @@ namespace UltraTextEdit_UWP.Views
             bottombartabitem.Visibility = Visibility.Collapsed;
             bottombar.Visibility = Visibility.Visible;
         }
+
+        private void box_Loaded(object sender, RoutedEventArgs e)
+        {
+            ScrollViewer ScrollViewer = UIHelper.FindVisualChild<ScrollViewer>(box);
+            if (ScrollViewer != null)
+            {
+                ScrollViewer.ViewChanged += ScrollViewer_ViewChanged;
+            }
+
+        }
+    private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
+    {
+        //TODO
+    }
+}
+    public static class UIHelper
+    {
+        public static childItem FindVisualChild<childItem>(this DependencyObject obj) where childItem : DependencyObject
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(obj, i);
+                if (child != null && child is childItem)
+                    return (childItem)child;
+                else
+                {
+                    childItem childOfChild = FindVisualChild<childItem>(child);
+                    if (childOfChild != null)
+                        return childOfChild;
+                }
+            }
+            return null;
+        }
     }
 }

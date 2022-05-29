@@ -82,13 +82,14 @@
             </Grid.RowDefinitions>
  
 
-            <StackPanel 
-            Background="Transparent" Grid.RowSpan="2">
+            <RelativePanel 
+            Background="Transparent" Grid.RowSpan="2" x:Name="mainpanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
                 <!--
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
             -->
-                <controls:TabbedCommandBar  Background="Transparent">
+                <controls:TabbedCommandBar  Background="Transparent" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                             x:Name="ribbon" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
                     <!-- IsBackButtonVisible="Visible" -->
                     <controls:TabbedCommandBar.AutoSuggestBox>
                         <AutoSuggestBox QueryIcon="Find" AutomationProperties.Name="Search" x:Name="Find" TextChanged="{x:Bind FindBoxHighlightMatches}"
@@ -342,8 +343,9 @@
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
                 </controls:TabbedCommandBar>
-                <RichEditBox x:Name="box" TextChanged="edittextchanged"/>
-            </StackPanel>
+                    <RichEditBox x:Name="box" TextChanged="edittextchanged" Loaded="box_Loaded" RelativePanel.Below="ribbon"
+                                 RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
+            </RelativePanel>
         </Grid>
         <CommandBar RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" x:Name="bottombar">
             <CommandBar.Content>
