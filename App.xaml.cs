@@ -110,5 +110,16 @@ namespace UltraTextEdit_UWP
         {
             return new ActivationService(this, typeof(Views.MainPage));
         }
+
+        protected override void OnFileActivated(FileActivatedEventArgs args)
+        {
+            // TODO: Handle file activation
+            // The number of files received is args.Files.Size
+            // The name of the first file is args.Files[0].Name
+            Frame rootFrame = new Frame();
+            rootFrame.Navigate(typeof(MainPage), args);
+            Window.Current.Content = rootFrame;
+            Window.Current.Activate();
+        }
     }
 }

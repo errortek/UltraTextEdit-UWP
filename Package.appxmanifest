@@ -86,6 +86,7 @@
   <Capabilities>
     <Capability Name="internetClient" />
 	  <rescap:Capability Name="confirmAppClose"/>
+    <uap:Capability Name="removableStorage"/>
   </Capabilities>
 
   <genTemplate:Metadata>
