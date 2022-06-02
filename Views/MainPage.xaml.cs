@@ -895,7 +895,15 @@ namespace UltraTextEdit_UWP.Views
     {
         //TODO
     }
-}
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.Current.Content is Frame rootFrame)
+            {
+                rootFrame.Navigate(typeof(HomePage));
+            }
+        }
+    }
     public static class UIHelper
     {
         public static childItem FindVisualChild<childItem>(this DependencyObject obj) where childItem : DependencyObject
