@@ -7,6 +7,7 @@ using UltraTextEdit_UWP.Helpers;
 using UltraTextEdit_UWP.Services;
 
 using Windows.ApplicationModel;
+using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -39,10 +40,24 @@ namespace UltraTextEdit_UWP.Views
         public SettingsPage()
         {
             InitializeComponent();
+            ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             if (ElementSoundPlayer.State == ElementSoundPlayerState.On)
+            {
                 soundToggle.IsOn = true;
+                localSettings.Values["sound"] = true;
+            }
+            else
+            {
+                soundToggle.IsOn = false;
+                localSettings.Values["sound"] = false;
+                localSettings.Values["spatialsound"] = false;
+            }
+
             if (ElementSoundPlayer.SpatialAudioMode == ElementSpatialAudioMode.On)
+            {
                 spatialSoundBox.IsChecked = true;
+                localSettings.Values["spatialsound"] = true;
+            }
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)

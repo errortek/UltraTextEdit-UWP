@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using UltraTextEdit_UWP.Helpers;
 using UltraTextEdit_UWP.Services;
 using UltraTextEdit_UWP.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -34,6 +37,22 @@ namespace UltraTextEdit_UWP
             BuildInfo.RetrieveApiInfo();
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
+            ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            if (localSettings.Values["sound"] == null)
+            {
+                localSettings.Values["sound"] = false;
+            } else
+            {
+                Boolean sound = (bool)localSettings.Values["sound"];
+                if (sound == true)
+                {
+                    ElementSoundPlayer.State = ElementSoundPlayerState.On;
+                }
+                else if (sound == false)
+                {
+                    ElementSoundPlayer.State = ElementSoundPlayerState.Off;
+                }
+            }
             if (Window.Current.Content is not Frame rootFrame)
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
