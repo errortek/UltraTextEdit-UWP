@@ -14,7 +14,11 @@ namespace UltraTextEdit_UWP.Helpers
 
         private BuildInfo()
         {
-            if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 14))
+            if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 15))
+            {
+                Build = Build.Win11Anniversary;
+            }
+            else if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 14))
             {
                 Build = Build.Win11;
             }
@@ -96,6 +100,8 @@ namespace UltraTextEdit_UWP.Helpers
 
         public static bool BeforeWin11 => Build < Build.Win11;
 
+        public static bool BeforeWin1122H2 => Build < Build.Win11Anniversary;
+
         public static BuildInfo RetrieveApiInfo() => _buildInfo ??= new BuildInfo();
     }
 
@@ -115,6 +121,7 @@ namespace UltraTextEdit_UWP.Helpers
         Oct2020 = 2009,       // 19042 20H2
         May2021 = 2104,       // 19043 21H1
         Nov2021 = 2110,       // 19044 21H2 (Win10)
-        Win11 = 2200          // 22000 21H2 (Win11)
+        Win11 = 2200,          // 22000 21H2 (Win11)
+        Win11Anniversary = 2262    //22621 22H2 (Win11)
     }
 }
