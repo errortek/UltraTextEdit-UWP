@@ -108,7 +108,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Home page",
                 Icon = "\uEA8A",
                 Tag = "HomePage",
-                Description = $"Now you can see your recent files, and what's new in UltraTextEdit UWP!"
+                Description = "Now you can see your recent files, and what's new in UltraTextEdit UWP!"
             });
 
             WhatsNew.Add(new()
@@ -116,7 +116,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Localization & Accessbility",
                 Icon = "\uE774",
                 Tag = "LocAndAcc",
-                Description = $"You can contribute translations to , and help make this app reach more countries! And elements in the app will be more accessible."
+                Description = "You can contribute translations to , and help make this app reach more countries! And elements in the app will be more accessible."
             });
 
             WhatsNew.Add(new()
@@ -132,7 +132,7 @@ namespace UltraTextEdit_UWP.Views
                 Title = "Compact mode",
                 Icon = "\uE737",
                 Tag = "CompactMode",
-                Description = $"Now you can make  overlay over windows! (experimental)"
+                Description = "Now you can make  overlay over windows! (experimental)"
             });
 
             IsListEmpty = list.Count <= 0;

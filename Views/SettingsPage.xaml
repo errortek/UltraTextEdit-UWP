@@ -6,7 +6,7 @@
     xmlns:helper="using:UltraTextEdit_UWP.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
-    xmlns:xaml="using:Windows.UI.Xaml" xmlns:controls="using:Microsoft.UI.Xaml.Controls" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:xaml="using:Windows.UI.Xaml" xmlns:controls="using:Microsoft.UI.Xaml.Controls" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     mc:Ignorable="d">
     <Page.Resources>
         <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
@@ -22,8 +22,30 @@
                 Margin="12,2,0,0"
                 RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
             <StackPanel Orientation="Horizontal">
-                <AppBarButton
-                    Click="OnBackRequested" Icon="Back" Height="48" Width="48"/>
+                <Button x:Name="BackButton"
+                CornerRadius="5"
+                Height="36"
+                ToolTipService.ToolTip="Back"
+                Margin="5,5,2,0"
+                Width="36"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                VerticalAlignment="Center"
+                AutomationProperties.Name="Back"
+                AutomationProperties.AutomationId="BackButton"
+                AutomationProperties.ItemType="Navigation Button"
+                Canvas.ZIndex="2"
+                Click="OnBackRequested">
+                    <muxc:AnimatedIcon x:Name="BackAnimatedIcon" Height="16" Width="16">
+                        <muxc:AnimatedIcon.Source>
+                            <animatedvisuals:AnimatedBackVisualSource/>
+                        </muxc:AnimatedIcon.Source>
+                        <muxc:AnimatedIcon.FallbackIconSource>
+                            <muxc:SymbolIconSource Symbol="Back"/>
+                        </muxc:AnimatedIcon.FallbackIconSource>
+                    </muxc:AnimatedIcon>
+
+                </Button>
                 <Image x:Name="AppFontIcon"
                          HorizontalAlignment="Left" 
                          VerticalAlignment="Center"
@@ -38,6 +60,7 @@
                                Style="{StaticResource CaptionTextBlockStyle}" />
             </StackPanel>
         </Border>
+        
         <Grid Margin="{StaticResource MediumLeftRightMargin}" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="AppTitleBar">
         <Grid.RowDefinitions>
             <RowDefinition Height="48" />
