@@ -24,12 +24,23 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml.Markup;
 using Microsoft.Toolkit.Uwp.Helpers;
 using UltraTextEdit_UWP.Helpers;
+using Microsoft.Graphics.Canvas.Text;
+using System.Linq;
 
 namespace UltraTextEdit_UWP.Views
 {
     public sealed partial class MainPage : Page, INotifyPropertyChanged
     {
         private bool saved = true;
+
+        public List<string> fonts
+        {
+            get
+            {
+                return CanvasTextFormat.GetSystemFontFamilies().OrderBy(f => f).ToList();
+            }
+        }
+
         public MainPage()
         {
             InitializeComponent();
@@ -49,56 +60,9 @@ namespace UltraTextEdit_UWP.Views
             Window.Current.Activated += Current_Activated;
 
 
-            if (BuildInfo.BeforeWin11)
-            {
-                string[] fonts = {
-                "Arial",
-                "Blackadder ITC",
-                "Calibri",
-                "Cambria",
-                "Century Gothic",
-                "Comic Sans MS",
-                "Consolas",
-                "Franklin Gothic",
-                "Gill Sans MT",
-                "Impact",
-                "Ink Free",
-                "Lucida Console",
-                "Lucida Sans Unicode",
-                "Segoe UI",
-                "Sitka Display",
-                "Symbol",
-                "Trebuchet MS",
-                "Verdana"
-            };
-                fontbox.ItemsSource = fonts;
-            } else
-            {
-                string[] fonts = {
-                "Arial",
-                "Blackadder ITC",
-                "Calibri",
-                "Cambria",
-                "Century Gothic",
-                "Comic Sans MS",
-                "Consolas",
-                "Franklin Gothic",
-                "Gill Sans MT",
-                "Impact",
-                "Ink Free",
-                "Lucida Console",
-                "Lucida Sans Unicode",
-                "Segoe UI",
-                "Segoe UI Variable Display",
-                "Segoe UI Variable Small",
-                "Segoe UI Variable Text",
-                "Sitka Display",
-                "Symbol",
-                "Trebuchet MS",
-                "Verdana"
-            };
-                fontbox.ItemsSource = fonts;
-            }
+
+        fontbox.ItemsSource = fonts;
+            
             SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
 
             NavigationCacheMode = NavigationCacheMode.Required;
