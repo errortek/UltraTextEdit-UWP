@@ -32,6 +32,7 @@ namespace UltraTextEdit_UWP.Views
     public sealed partial class MainPage : Page, INotifyPropertyChanged
     {
         private bool saved = true;
+        private string fileNameWithPath = "";
 
         public List<string> fonts
         {
@@ -519,6 +520,47 @@ namespace UltraTextEdit_UWP.Views
                     saved = true;
                 }
             }
+            else if (!isCopy || fileName != "Untitled")
+            {
+                string path = fileNameWithPath.Replace("\\" + fileName, "");
+                try
+                {
+                    StorageFile file = await Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.GetFileAsync("CurrentlyOpenFile");
+                    if (file != null)
+                    {
+                        // Prevent updates to the remote version of the file until we
+                        // finish making changes and call CompleteUpdatesAsync.
+                        CachedFileManager.DeferUpdates(file);
+                        // write to file
+                        using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                            if (file.Name.EndsWith(".txt"))
+                            {
+                                box.Document.SaveToStream(TextGetOptions.None, randAccStream);
+                            }
+                            else
+                            {
+                                box.Document.SaveToStream(TextGetOptions.FormatRtf, randAccStream);
+                            }
+
+
+                        // Let Windows know that we're finished changing the file so the
+                        // other app can update the remote version of the file.
+                        FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
+                        if (status != FileUpdateStatus.Complete)
+                        {
+                            Windows.UI.Popups.MessageDialog errorBox = new("File " + file.Name + " couldn't be saved.");
+                            await errorBox.ShowAsync();
+                        }
+                        saved = true;
+                        AppTitle.Text = file.Name + " -  UTE UWP";
+                        Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Remove("CurrentlyOpenFile");
+                    }
+                }
+                catch (Exception)
+                {
+                    Save(true);
+                }
+            }
         }
 
         private void OnCloseRequest(object sender, SystemNavigationCloseRequestedPreviewEventArgs e)
@@ -590,7 +632,7 @@ namespace UltraTextEdit_UWP.Views
             ContentDialogResult result = await aboutDialog.ShowAsync();
             if (result == ContentDialogResult.Primary)
             {
-                Save(true);
+                Save(false);
             }
             else if (result == ContentDialogResult.Secondary)
             {
