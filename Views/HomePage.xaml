@@ -75,7 +75,7 @@
                     <TextBlock Text="Recently accessed files" />
 
                     <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="0,0,0,3" Padding="0,0,0,10" HorizontalScrollMode="Enabled">
-                        <ListView Margin="-8,0,0,0" ItemsSource="{x:Bind list, Mode=OneWay}" SelectionMode="None">
+                        <ListView Margin="-8,0,0,0" ItemsSource="{x:Bind list}" SelectionMode="None">
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <ItemsStackPanel Orientation="Horizontal" />
@@ -138,7 +138,7 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <ListView SelectionChanged="ListView_SelectionChanged" ItemsSource="{x:Bind WhatsNew, Mode=OneWay}" Margin="0,0,10,10">
+                        <ListView SelectionChanged="ListView_SelectionChanged" ItemsSource="{x:Bind WhatsNew}" Margin="0,0,10,10">
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="viewmodels1:WhatsNewItemViewModel">
                                     <StackPanel Margin="-11,0,0,0" Orientation="Horizontal" Spacing="10" Padding="10,13">

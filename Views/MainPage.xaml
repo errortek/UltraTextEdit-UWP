@@ -357,6 +357,7 @@
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
+            <AppBarButton Icon="Home" Click="HomeButton_Click"/>
             <AppBarButton Label="Dash Underline" Click="Dash"/>
             <AppBarButton Label="DashDot Underline" Click="DashDot"/>
             <AppBarButton Label="Words Underline" Click="wordunderline"/>
