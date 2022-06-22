@@ -140,7 +140,7 @@
                     <TextBlock Text="Libraries used:" Style="{ThemeResource SubtitleTextBlockStyle}" />
                     <StackPanel Margin="{StaticResource XSmallTopMargin}">
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="AdaptiveCards version 2.7.2, released August 25, 2021" />
-                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.NETCore.UniversalWindowsPlatform version 6.2.13, released October 13, 2021" />
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.NETCore.UniversalWindowsPlatform version 6.2.14, released June 13, 2022" />
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.Toolkit.Uwp version 7.1.2, released November 18, 2021" />
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.Toolkit.Uwp.Notifications version 7.1.2, released November 18, 2021" />
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="Microsoft.Toolkit.Uwp.Controls version 7.1.2, released November 18, 2021" />
