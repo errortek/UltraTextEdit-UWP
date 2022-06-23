@@ -170,8 +170,12 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Adds two new fonts (Lucida Console, Lucida Sans Unicode) to Fonts menu
-• IMPORTANT: With UTE 1.0.22000.527, there will be a new certificate. To install the update, you will need to download the .cer file from the GitHub release as well!</value>
+    <value>• Adds all fonts on device to Fonts menu
+• New, updated build certificate
+• New back button style on the Settings page
+• Settings now fully usable on small-screened devices
+• Adds version check for Windows 11, version 22H2 (build 22621)
+• Updates Microsoft.NETCore.UniversalWindowsPlatform to version 6.2.14</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
