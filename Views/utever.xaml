@@ -53,22 +53,30 @@
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="1"
                         Text="1.0"/>
-                        <TextBlock Margin="0,0,20,5" Grid.Row="2" x:Uid="InstalledOn" Text="Build Date"/>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="2" x:Uid="Version2" Text="Version/Development semester"/>
+                        <TextBlock 
+						Name="Version2"
+                        Margin="0,0,0,5"
+                        Grid.Column="1"
+                        Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
+                        Grid.Row="2"
+                        Text="22H1 (Nickel)"/>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="3" x:Uid="InstalledOn" Text="Build Date"/>
                         <TextBlock 
 						Name="InstalledOn"
                         Margin="0,0,0,5"
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
-                        Grid.Row="2"
-                        Text="20/06/2022"/>
-                        <TextBlock Margin="0,0,20,5" Grid.Row="3" x:Uid="OSBuild" Text="Build"/>
+                        Grid.Row="3"
+                        Text="02/07/2022"/>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="4" x:Uid="OSBuild" Text="Build"/>
                         <TextBlock 
 						Name="Build"
                         Margin="0,0,0,5"
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
-                        Grid.Row="3"
-                        Text="22000.527"/>
+                        Grid.Row="4"
+                        Text="22000.556"/>
                     </Grid>
                 </muxc:Expander>
 
