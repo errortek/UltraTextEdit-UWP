@@ -27,7 +27,7 @@
                 Height="36"
                 ToolTipService.ToolTip="Back"
                 Margin="5,5,2,0"
-                Width="36"
+                Width="48"
                 Background="Transparent"
                 BorderBrush="Transparent"
                 VerticalAlignment="Center"
