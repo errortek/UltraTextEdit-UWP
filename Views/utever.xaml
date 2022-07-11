@@ -30,6 +30,10 @@
                     <muxc:Expander.Header>
                         <Grid>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" x:Uid="WindowsSpecifications" Text="Version Info"/>
+                            <Button Width="80" VerticalAlignment="Center" HorizontalAlignment="Right" Name="CopyButton" Click="CopyButton_Click">
+                                <TextBlock x:Uid="CopyButton" HorizontalAlignment="Stretch" x:Name="CopyButtonLabel" Text="Copy">
+                                </TextBlock>
+                            </Button>
                         </Grid>
                     </muxc:Expander.Header>
                     <Grid HorizontalAlignment="Stretch">
