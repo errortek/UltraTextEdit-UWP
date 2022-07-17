@@ -170,12 +170,7 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Adds all fonts on device to Fonts menu
-• New, updated build certificate
-• New back button style on the Settings page
-• Settings now fully usable on small-screened devices
-• Adds version check for Windows 11, version 22H2 (build 22621)
-• Updates Microsoft.NETCore.UniversalWindowsPlatform to version 6.2.14</value>
+    <value>• Add copy functionality to utever</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
@@ -206,7 +201,7 @@ UltraTextEdit UWP is an app that you may use as a replacement for MS Word or Wor
     <value>Text color</value>
   </data>
   <data name="Italic" xml:space="preserve">
-    <value>Italiic</value>
+    <value>Italic</value>
   </data>
   <data name="New" xml:space="preserve">
     <value>New document</value>
