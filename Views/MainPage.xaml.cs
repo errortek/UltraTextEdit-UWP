@@ -909,7 +909,28 @@ namespace UltraTextEdit_UWP.Views
                 rootFrame.Navigate(typeof(HomePage));
             }
         }
+
+        private async void NewDoc_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationView currentAV = ApplicationView.GetForCurrentView();
+            CoreApplicationView newAV = CoreApplication.CreateNewView();
+            await newAV.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                var newWindow = Window.Current;
+                var newAppView = ApplicationView.GetForCurrentView();
+                newAppView.Title = $"Untitled - UTE UWP";
+
+                var frame = new Frame();
+                frame.Navigate(typeof(MainPage));
+                newWindow.Content = frame;
+                newWindow.Activate();
+
+                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
+                    ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
+            });
+        }
     }
+
     public static class UIHelper
     {
         public static childItem FindVisualChild<childItem>(this DependencyObject obj) where childItem : DependencyObject
