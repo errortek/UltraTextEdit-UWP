@@ -122,6 +122,8 @@
                     </controls:TabbedCommandBar.PaneFooter>
                     <controls:TabbedCommandBar.MenuItems>
                         <controls:TabbedCommandBarItem Header="Home"  Background="Transparent">
+                            <AppBarButton Label="New Document">
+                            </AppBarButton>
                             <AppBarButton Icon="OpenFile" Label="Open" Click="OpenButton_Click"/>
                             <AppBarButton Icon="Save" Label="Save" Click="SaveButton_Click"/>
                             <AppBarSeparator />
