@@ -72,7 +72,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="3"
-                        Text="25/07/2022"/>
+                        Text="28/08/2022"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="4" x:Uid="OSBuild" Text="Build"/>
                         <TextBlock 
 						Name="Build"
@@ -80,7 +80,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
-                        Text="22000.613"/>
+                        Text="22000.675"/>
                     </Grid>
                 </muxc:Expander>
 
@@ -129,11 +129,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."/>
                         <TextBlock Margin="0,20,0,0" TextWrapping="WrapWholeWords" x:Uid="LicenseTo"/>
                         <StackPanel Margin="0,5,0,0">
-                            <TextBlock 
-							TextWrapping="Wrap"
-                            Name="OwnerText"
-                            Visibility="Visible"
-                            Text="Github link: https://github.com/jpbandroid/UltraTextEdit-UWP"/>
+                            <HyperlinkButton Content="UltraTextEdit UWP GitHub repo" NavigateUri="https://github.com/jpbandroid/UltraTextEdit-UWP" Name="OwnerText"/>
                             <TextBlock 
 							TextWrapping="Wrap"
                             Name="OrgText"
