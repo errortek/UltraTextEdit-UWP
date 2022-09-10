@@ -98,6 +98,10 @@
                     </controls:TabbedCommandBar.AutoSuggestBox>
                     <controls:TabbedCommandBar.PaneFooter>
                         <CommandBar Background="Transparent" DefaultLabelPosition="Right">
+                            <AppBarElementContainer VerticalAlignment="Center">
+                                <AutoSuggestBox QueryIcon="Go" AutomationProperties.Name="Search" x:Name="Replace"
+                                                Width="200"/>
+                            </AppBarElementContainer>
                             <AppBarButton Click="HomeButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Home" Visibility="Collapsed">
                                 <Viewbox MaxHeight="17" MaxWidth="17">
                                     <SymbolIcon Symbol="Home" />
@@ -115,6 +119,8 @@
                                     <SymbolIcon Symbol="Redo" />
                                 </Viewbox>
                             </AppBarButton>
+                            <AppBarButton Icon="Copy" Click="CopyButton_Click"/>
+                            <AppBarButton Icon="Paste" Click="PasteButton_Click"/>
                             <AppBarSeparator/>
                             <AppBarButton Label="What's New" Icon="Message" Click="AppBarButton_Click_1"/>
                             <AppBarButton Label="Settings" Icon="Setting" Click="AppBarButton_Click"/>
@@ -354,7 +360,7 @@
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
                 </controls:TabbedCommandBar>
-                    <RichEditBox x:Name="box" TextChanged="edittextchanged" Loaded="box_Loaded" RelativePanel.Below="ribbon"
+                    <RichEditBox x:Name="box" RelativePanel.Below="ribbon"
                                  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
             </RelativePanel>
         </Grid>

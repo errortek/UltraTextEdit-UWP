@@ -62,8 +62,8 @@ namespace UltraTextEdit_UWP.Views
 
 
 
-        fontbox.ItemsSource = fonts;
-            
+            fontbox.ItemsSource = fonts;
+
             SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
 
             NavigationCacheMode = NavigationCacheMode.Required;
@@ -133,7 +133,7 @@ namespace UltraTextEdit_UWP.Views
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Set<T>(ref T storage, T value, [CallerMemberName]string propertyName = null)
+        private void Set<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
             {
@@ -888,20 +888,6 @@ namespace UltraTextEdit_UWP.Views
             bottombar.Visibility = Visibility.Visible;
         }
 
-        private void box_Loaded(object sender, RoutedEventArgs e)
-        {
-            ScrollViewer ScrollViewer = UIHelper.FindVisualChild<ScrollViewer>(box);
-            if (ScrollViewer != null)
-            {
-                ScrollViewer.ViewChanged += ScrollViewer_ViewChanged;
-            }
-
-        }
-    private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
-    {
-        //TODO
-    }
-
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             if (Window.Current.Content is Frame rootFrame)
@@ -929,25 +915,38 @@ namespace UltraTextEdit_UWP.Views
                     ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
             });
         }
-    }
 
-    public static class UIHelper
-    {
-        public static childItem FindVisualChild<childItem>(this DependencyObject obj) where childItem : DependencyObject
+        private void CopyButton_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
+
+        }
+
+        private void PasteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ReplaceSelected_Click(object sender, string replace, RoutedEventArgs e)
+        {
+            box.Document.Selection.SetText(TextSetOptions.None, replace);
+        }
+
+        private void ReplaceAll_Click(object sender, string find, string replace, RoutedEventArgs e)
+        {
+            box.Document.GetText(TextGetOptions.FormatRtf, out string value);
+            if (!(string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(find) && string.IsNullOrWhiteSpace(replace)))
             {
-                DependencyObject child = VisualTreeHelper.GetChild(obj, i);
-                if (child != null && child is childItem)
-                    return (childItem)child;
-                else
-                {
-                    childItem childOfChild = FindVisualChild<childItem>(child);
-                    if (childOfChild != null)
-                        return childOfChild;
-                }
+                box.Document.SetText(TextSetOptions.FormatRtf, value.Replace(find, replace));
             }
-            return null;
+        }
+
+        private void Replace_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args, string find, string replace)
+        {
+            box.Document.GetText(TextGetOptions.FormatRtf, out string value);
+            if (!(string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(find) && string.IsNullOrWhiteSpace(replace)))
+            {
+                box.Document.SetText(TextSetOptions.FormatRtf, value.Replace(find, replace));
+            }
         }
     }
 }
