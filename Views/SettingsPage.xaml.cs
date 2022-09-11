@@ -152,5 +152,13 @@ namespace UltraTextEdit_UWP.Views
             Application.Current.FocusVisualKind = FocusVisualKind.Reveal;
         }
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        private void UTEUpdateNav(object sender, RoutedEventArgs e)
+        {
+            if (Window.Current.Content is Frame rootFrame)
+            {
+                rootFrame.Navigate(typeof(UTEUpdate));
+            }
+        }
     }
 }

@@ -180,6 +180,9 @@
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UTEUpdate.xaml.cs">
+      <DependentUpon>UTEUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\utever.xaml.cs">
       <DependentUpon>utever.xaml</DependentUpon>
     </Compile>
@@ -229,6 +232,10 @@
     <Page Include="Views\SettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UTEUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\utever.xaml">
       <SubType>Designer</SubType>

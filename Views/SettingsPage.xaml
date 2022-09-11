@@ -136,6 +136,7 @@
 
                         <HyperlinkButton x:Uid="Settings_PrivacyTermsLink" Margin="{StaticResource XSmallTopMargin}" />
                         <HyperlinkButton Content="Subscribe to the channel!" Margin="{StaticResource XSmallTopMargin}" NavigateUri="https://www.youtube.com/channel/UCojnty8ChkeDPEXHa56kOoA"/>
+                        <Button Content="UTE Update" Style="{ThemeResource AccentButtonStyle}" Click="UTEUpdateNav"/>
                     </StackPanel>
                     <TextBlock Text="Libraries used:" Style="{ThemeResource SubtitleTextBlockStyle}" />
                     <StackPanel Margin="{StaticResource XSmallTopMargin}">
