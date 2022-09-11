@@ -99,7 +99,7 @@
                     <controls:TabbedCommandBar.PaneFooter>
                         <CommandBar Background="Transparent" DefaultLabelPosition="Right">
                             <AppBarElementContainer VerticalAlignment="Center">
-                                <AutoSuggestBox QueryIcon="Go" AutomationProperties.Name="Search" x:Name="Replace"
+                                <AutoSuggestBox QueryIcon="Go" AutomationProperties.Name="Search" x:Name="Replace" QuerySubmitted="Replace_QuerySubmitted"
                                                 Width="200"/>
                             </AppBarElementContainer>
                             <AppBarButton Click="HomeButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Home" Visibility="Collapsed">

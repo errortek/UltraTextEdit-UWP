@@ -931,21 +931,21 @@ namespace UltraTextEdit_UWP.Views
             box.Document.Selection.SetText(TextSetOptions.None, replace);
         }
 
-        private void ReplaceAll_Click(object sender, string find, string replace, RoutedEventArgs e)
+        private void ReplaceAll_Click(object sender, RoutedEventArgs e)
         {
             box.Document.GetText(TextGetOptions.FormatRtf, out string value);
-            if (!(string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(find) && string.IsNullOrWhiteSpace(replace)))
+            if (!(string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(Find.Text) && string.IsNullOrWhiteSpace(Replace.Text)))
             {
-                box.Document.SetText(TextSetOptions.FormatRtf, value.Replace(find, replace));
+                box.Document.SetText(TextSetOptions.FormatRtf, value.Replace(Find.Text, Replace.Text));
             }
         }
 
-        private void Replace_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args, string find, string replace)
+        private void Replace_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
             box.Document.GetText(TextGetOptions.FormatRtf, out string value);
-            if (!(string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(find) && string.IsNullOrWhiteSpace(replace)))
+            if (!(string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(Find.Text) && string.IsNullOrWhiteSpace(Replace.Text)))
             {
-                box.Document.SetText(TextSetOptions.FormatRtf, value.Replace(find, replace));
+                box.Document.SetText(TextSetOptions.FormatRtf, value.Replace(Find.Text, Replace.Text));
             }
         }
     }

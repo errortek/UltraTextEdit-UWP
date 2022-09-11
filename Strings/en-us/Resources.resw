@@ -170,7 +170,7 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Add copy functionality to utever</value>
+    <value>• Fix bugs with the Replace textbox in the ribbon</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
