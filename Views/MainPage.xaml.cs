@@ -918,12 +918,12 @@ namespace UltraTextEdit_UWP.Views
 
         private void CopyButton_Click(object sender, RoutedEventArgs e)
         {
-
+            box.Document.Selection.Copy();
         }
 
         private void PasteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            box.Document.Selection.Paste(0);
         }
 
         private void ReplaceSelected_Click(object sender, string replace, RoutedEventArgs e)
