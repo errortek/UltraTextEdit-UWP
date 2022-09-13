@@ -119,9 +119,9 @@
                                     <SymbolIcon Symbol="Redo" />
                                 </Viewbox>
                             </AppBarButton>
-                            <AppBarButton Icon="Copy" Click="CopyButton_Click"/>
-                            <AppBarButton Icon="Paste" Click="PasteButton_Click"/>
-                            <AppBarButton Icon="Cut" Click="CutButton_Click"/>
+                            <AppBarButton Icon="Copy" Click="CopyButton_Click" ToolTipService.ToolTip="Copy"/>
+                            <AppBarButton Icon="Paste" Click="PasteButton_Click" ToolTipService.ToolTip="Paste"/>
+                            <AppBarButton Icon="Cut" Click="CutButton_Click" ToolTipService.ToolTip="Cut"/>
                             <AppBarSeparator/>
                             <AppBarButton Label="What's New" Icon="Message" Click="AppBarButton_Click_1"/>
                             <AppBarButton Label="Settings" Icon="Setting" Click="AppBarButton_Click"/>
