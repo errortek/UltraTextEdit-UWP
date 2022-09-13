@@ -948,5 +948,10 @@ namespace UltraTextEdit_UWP.Views
                 box.Document.SetText(TextSetOptions.FormatRtf, value.Replace(Find.Text, Replace.Text));
             }
         }
+
+        private void CutButton_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Selection.Cut();
+        }
     }
 }

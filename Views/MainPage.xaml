@@ -121,6 +121,7 @@
                             </AppBarButton>
                             <AppBarButton Icon="Copy" Click="CopyButton_Click"/>
                             <AppBarButton Icon="Paste" Click="PasteButton_Click"/>
+                            <AppBarButton Icon="Cut" Click="CutButton_Click"/>
                             <AppBarSeparator/>
                             <AppBarButton Label="What's New" Icon="Message" Click="AppBarButton_Click_1"/>
                             <AppBarButton Label="Settings" Icon="Setting" Click="AppBarButton_Click"/>
