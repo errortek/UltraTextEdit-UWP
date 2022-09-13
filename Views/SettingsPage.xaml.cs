@@ -58,6 +58,14 @@ namespace UltraTextEdit_UWP.Views
                 spatialSoundBox.IsChecked = true;
                 localSettings.Values["spatialsound"] = true;
             }
+
+            if (Application.Current.FocusVisualKind == FocusVisualKind.HighVisibility)
+            {
+                HighVisibility.IsChecked = true;
+            }
+            else {
+                RevealFocus.IsChecked = true;
+            }
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
