@@ -799,17 +799,27 @@ namespace UltraTextEdit_UWP.Views
 
             if (file != null)
             {
-                using (Windows.Storage.Streams.IRandomAccessStream randAccStream =
-                    await file.OpenAsync(FileAccessMode.Read))
-                using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
-                {
-                    var properties = await file.Properties.GetImagePropertiesAsync();
-                    int width = (int)properties.Width;
-                    int height = (int)properties.Height;
+                using IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read);
+                var properties = await file.Properties.GetImagePropertiesAsync();
+                int width = (int)properties.Width;
+                int height = (int)properties.Height;
 
-                    // Load the file into the Document property of the RichEditBox.
-                    box.Document.Selection.InsertImage(width, height, 0, Windows.UI.Text.VerticalCharacterAlignment.Baseline, "img", randAccStream);
+                ImageOptionsDialog dialog = new()
+                {
+                    DefaultWidth = width,
+                    DefaultHeight = height
+                };
+
+                ContentDialogResult result = await dialog.ShowAsync();
+
+                if (result == ContentDialogResult.Primary)
+                {
+                    box.Document.Selection.InsertImage((int)dialog.DefaultWidth, (int)dialog.DefaultHeight, 0, VerticalCharacterAlignment.Baseline, string.IsNullOrWhiteSpace(dialog.Tag) ? "Image" : dialog.Tag, randAccStream);
+                    return;
                 }
+
+                // Insert an image
+                box.Document.Selection.InsertImage(width, height, 0, VerticalCharacterAlignment.Baseline, "Image", randAccStream);
             }
         }
 
