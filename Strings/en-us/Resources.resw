@@ -170,9 +170,7 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Make the Focus Visuals RadioButtons in the Settings page show currently enabled focus visuals syle on entrance to the Settings page
-• Add Cut button to the ribbon
-• Add tooltips to the Copy and Paste buttons in the ribbon</value>
+    <value>• Add Image Options dialog</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
