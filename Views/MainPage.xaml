@@ -373,6 +373,8 @@
             <AppBarButton Label="Dash Underline" Click="Dash"/>
             <AppBarButton Label="DashDot Underline" Click="DashDot"/>
             <AppBarButton Label="Words Underline" Click="wordunderline"/>
+            <AppBarButton Label="DoubleWave Underline" Click="doublewaveunderline"/>
+            <AppBarButton Label="HeavyWave Underline" Click="heavywaveunderline"/>
             <AppBarButton Icon="HideBcc" Label="Hide" Click="hidebottombar"/>
         </CommandBar>
     </RelativePanel>

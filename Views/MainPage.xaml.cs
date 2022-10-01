@@ -886,6 +886,42 @@ namespace UltraTextEdit_UWP.Views
             }
         }
 
+        private void doublewaveunderline(object sender, RoutedEventArgs e)
+        {
+            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.DoubleWave;
+                }
+                else
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
+                }
+                selectedText.CharacterFormat = charFormatting;
+            }
+        }
+
+        private void heavywaveunderline(object sender, RoutedEventArgs e)
+        {
+            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.HeavyWave;
+                }
+                else
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
+                }
+                selectedText.CharacterFormat = charFormatting;
+            }
+        }
+
         private void hidebottombar(object sender, RoutedEventArgs e)
         {
             bottombartabitem.Visibility = Visibility.Visible;
