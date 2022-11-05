@@ -170,7 +170,10 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Add more underline styles to Bottom Bar</value>
+    <value>• Update Microsoft.Toolkit.Uwp to version 7.1.3
+• Update Microsoft.Toolkit.Uwp.Notifications to version 7.1.3
+• Update Microsoft.Toolkit.Uwp.Controls to version 7.1.3
+• Update Microsoft.UI.Xaml to version 2.7.3</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
