@@ -170,10 +170,8 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Update Microsoft.Toolkit.Uwp to version 7.1.3
-• Update Microsoft.Toolkit.Uwp.Notifications to version 7.1.3
-• Update Microsoft.Toolkit.Uwp.Controls to version 7.1.3
-• Update Microsoft.UI.Xaml to version 2.7.3</value>
+    <value>• Make textbox larger in size (like UTE UWP 22H2 and TowPad)
+UltraTextEdit UWP 22H2 (succesor of this version, 22H1) download link: https://github.com/jpbandroid/UltraTextEdit-UWP-22H2/releases</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
