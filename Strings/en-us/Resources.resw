@@ -170,7 +170,7 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Make textbox larger in size (like UTE UWP 22H2 and TowPad)
+    <value>• Add new dependency because of dependency deprecations
 UltraTextEdit UWP 22H2 (succesor of this version, 22H1) download link: https://github.com/jpbandroid/UltraTextEdit-UWP-22H2/releases</value>
     <comment>What's new prompt message body</comment>
   </data>
