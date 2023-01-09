@@ -26,6 +26,8 @@ using Microsoft.Toolkit.Uwp.Helpers;
 using UltraTextEdit_UWP.Helpers;
 using Microsoft.Graphics.Canvas.Text;
 using System.Linq;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.Foundation;
 
 namespace UltraTextEdit_UWP.Views
 {
@@ -67,6 +69,8 @@ namespace UltraTextEdit_UWP.Views
             SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
 
             NavigationCacheMode = NavigationCacheMode.Required;
+
+            ShareSourceLoad();
         }
 
 
@@ -998,6 +1002,26 @@ namespace UltraTextEdit_UWP.Views
         private void CutButton_Click(object sender, RoutedEventArgs e)
         {
             box.Document.Selection.Cut();
+        }
+
+        private void ShareSourceLoad()
+        {
+            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
+            dataTransferManager.DataRequested += new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
+        }
+
+        private void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
+        {
+            DataRequest request = e.Request;
+            request.Data.Properties.Title = "UltraTextEdit Share Service";
+            request.Data.Properties.Description = "Text sharing for the UTE UWP app";
+            request.Data.SetText(box.TextDocument.ToString());
+        }
+
+        private void ShareButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShareSourceLoad();
+            DataTransferManager.ShowShareUI();
         }
     }
 }
