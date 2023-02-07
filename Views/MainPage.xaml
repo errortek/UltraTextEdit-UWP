@@ -124,6 +124,7 @@
                             <AppBarButton Icon="Cut" Click="CutButton_Click" ToolTipService.ToolTip="Cut"/>
                             <AppBarSeparator/>
                             <AppBarButton Label="Share" Icon="Share" Click="ShareButton_Click"/>
+                            <AppBarButton Label="Comments" Icon="Message" Click="CommentButton_Click"/>
                             <AppBarButton Label="What's New" Icon="Message" Click="AppBarButton_Click_1"/>
                             <AppBarButton Label="Settings" Icon="Setting" Click="AppBarButton_Click"/>
                         </CommandBar>
@@ -349,6 +350,13 @@
                                                         Background="Transparent">
                             <AppBarButton Label="Show" Icon="ShowBcc" Click="showbottombar"/>
                         </controls:TabbedCommandBarItem>
+                        <controls:TabbedCommandBarItem x:Name="commentstabitem"
+                                               Header="Comments"
+                                               IsContextual="True"
+                                               Visibility="Collapsed"
+                                                        Background="Transparent">
+                            <AppBarButton Label="Hide Comments UI" Icon="LeaveChat" Click="closecomments"/>
+                        </controls:TabbedCommandBarItem>
                         <controls:TabbedCommandBarItem Header="Help"  Background="Transparent">
                             <AppBarButton Label="HelpNoti" Click="helpnoti">
                                 <AppBarButton.Icon>
@@ -362,8 +370,22 @@
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
                 </controls:TabbedCommandBar>
+                <SplitView RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+            RelativePanel.Below="ribbon"
+            muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+            Background="Transparent"
+            PaneBackground="Transparent"
+            IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Left" x:Name="commentsplitview">
+                    <SplitView.Pane>
+                        <RichEditBox x:Name="comments">
+
+                        </RichEditBox>
+                    </SplitView.Pane>
                     <RichEditBox x:Name="box" RelativePanel.Below="ribbon"
                                  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
+                </SplitView>
             </RelativePanel>
         </Grid>
         <CommandBar RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" x:Name="bottombar">

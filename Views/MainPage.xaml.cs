@@ -1023,5 +1023,17 @@ namespace UltraTextEdit_UWP.Views
             ShareSourceLoad();
             DataTransferManager.ShowShareUI();
         }
+
+        private void CommentButton_Click(object sender, RoutedEventArgs e)
+        {
+            commentsplitview.IsPaneOpen = true;
+            commentstabitem.Visibility = Visibility.Visible;
+        }
+
+        private void closecomments(object sender, RoutedEventArgs e)
+        {
+            commentsplitview.IsPaneOpen = false;
+            commentstabitem.Visibility = Visibility.Collapsed;
+        }
     }
 }
