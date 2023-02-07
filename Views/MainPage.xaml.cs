@@ -28,6 +28,7 @@ using Microsoft.Graphics.Canvas.Text;
 using System.Linq;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
+using System.Text;
 
 namespace UltraTextEdit_UWP.Views
 {
@@ -1034,6 +1035,75 @@ namespace UltraTextEdit_UWP.Views
         {
             commentsplitview.IsPaneOpen = false;
             commentstabitem.Visibility = Visibility.Collapsed;
+        }
+
+        // Method to create a table format string which can directly be set to 
+        // RichTextBox Control
+        private void InsertTableInRichtextbox()
+        {
+            //CreateStringBuilder object
+            StringBuilder strTable = new StringBuilder();
+
+            //Beginning of rich text format,don’t alter this line
+            strTable.Append(@"{\rtf1 ");
+
+            //Create 5 rows with 4 columns
+            for (int i = 0; i < 5; i++)
+            {
+                //Start the row
+                strTable.Append(@"\trowd");
+
+                //First cell with width 1000.
+                strTable.Append(@"\cellx1000");
+
+                //Second cell with width 1000.Ending point is 2000, which is 1000+1000.
+                strTable.Append(@"\cellx2000");
+
+                //Third cell with width 1000.Endingat3000,which is 2000+1000.
+                strTable.Append(@"\cellx3000");
+
+                //Last cell with width 1000.Ending at 4000 (which is 3000+1000)
+                strTable.Append(@"\cellx4000");
+
+                //Append the row in StringBuilder
+                strTable.Append(@"\intbl \cell \row"); //create the row
+            }
+
+            strTable.Append(@"\pard");
+
+            strTable.Append(@"}");
+
+            var strTableString = strTable.ToString();
+
+
+            box.Document.Selection.SetText(TextSetOptions.FormatRtf, strTableString);
+        }
+
+        private void AddTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            InsertTableInRichtextbox();
+        }
+
+        private void AddSymbolButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SymbolButton_Click(object sender, RoutedEventArgs e)
+        {
+                // Extract the color of the button that was clicked.
+                Button clickedSymbol = (Button)sender;
+                string rectangle = clickedSymbol.Content.ToString();
+                string text = rectangle;
+
+                var myDocument = box.Document;
+                string oldText;
+                myDocument.GetText(TextGetOptions.None, out oldText);
+                myDocument.SetText(TextSetOptions.None, oldText + text);
+
+                symbolbut.Flyout.Hide();
+                box.Focus(FocusState.Keyboard);
+            
         }
     }
 }

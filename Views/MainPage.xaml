@@ -339,6 +339,55 @@
                                     </Flyout>
                                 </Button.Flyout>
                             </AppBarButton>
+                            <AppBarButton
+                    Click="AddTableButton_Click"
+                    Label="Table">
+                                <FontIcon FontSize="17" Glyph="&#xF261;" />
+                            </AppBarButton>
+                            <AppBarButton
+                    Click="AddSymbolButton_Click"
+                            x:Name="symbolbut"
+                    Label="Symbol">
+                                <FontIcon FontSize="17" Glyph="&#xED58;" />
+                                <AppBarButton.Flyout>
+                                    <Flyout Placement="Bottom" x:Name="symbolsflyout">
+                                        <RelativePanel>
+                                            <VariableSizedWrapGrid
+                                    x:Name="symbolGrid"
+                                    MaximumRowsOrColumns="4"
+                                    Orientation="Horizontal">
+                                                <VariableSizedWrapGrid.Resources>
+                                                    <Style TargetType="Rectangle">
+                                                        <Setter Property="Width" Value="32" />
+                                                        <Setter Property="Height" Value="32" />
+                                                    </Style>
+
+                                                    <Style TargetType="Button">
+                                                        <Setter Property="Padding" Value="0" />
+                                                        <Setter Property="MinWidth" Value="0" />
+                                                        <Setter Property="MinHeight" Value="0" />
+                                                        <Setter Property="Margin" Value="5" />
+                                                        <Setter Property="CornerRadius" Value="8" />
+                                                    </Style>
+                                                </VariableSizedWrapGrid.Resources>
+                                                <Button
+                                        AutomationProperties.Name="Mutiply"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Multiplication symbol"
+                                         Content="×">
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Divide"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Division symbol"
+                                                Content="÷">
+                                                </Button>
+
+                                            </VariableSizedWrapGrid>
+                                        </RelativePanel>
+                                    </Flyout>
+                                </AppBarButton.Flyout>
+                            </AppBarButton>
                             <controls:TabbedCommandBarItem.SecondaryCommands>
                                 <AppBarButton Icon="Add" Label="New item" />
                             </controls:TabbedCommandBarItem.SecondaryCommands>
