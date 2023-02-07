@@ -72,7 +72,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="3"
-                        Text="09/01/2023"/>
+                        Text="07/02/2023"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="4" x:Uid="OSBuild" Text="Build"/>
                         <TextBlock 
 						Name="Build"
@@ -80,7 +80,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
-                        Text="22000.1100"/>
+                        Text="22000.1165"/>
                     </Grid>
                 </muxc:Expander>
 
