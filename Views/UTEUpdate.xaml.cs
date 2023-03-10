@@ -99,7 +99,7 @@ namespace UltraTextEdit_UWP.Views
         {
             updatetext.Text = "Checking for updates";
             WebClient client = new WebClient();
-            Stream stream = client.OpenRead("https://occoam.com/jpb/wp-content/uploads/Version.txt");
+            Stream stream = client.OpenRead("https://github.com/jpbandroid/UpdateZips/raw/main/UTE-22H1-version.txt");
             StreamReader reader = new StreamReader(stream);
             var newVersion = new Version(await reader.ReadToEndAsync());
             Package package = Package.Current;
@@ -137,7 +137,7 @@ namespace UltraTextEdit_UWP.Views
             {
                 PackageManager packagemanager = new PackageManager();
                 await packagemanager.AddPackageAsync(
-                    new Uri("https://occoam.com/jpb/wp-content/uploads/UTEUWP22000_latest.msixbundle"),
+                    new Uri("https://github.com/jpbandroid/UpdateZips/raw/main/UTE-22H1-latest.msixbundle"),
                     null,
                     DeploymentOptions.ForceApplicationShutdown
                 );
