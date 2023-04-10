@@ -39,15 +39,13 @@
         <Grid x:Name="AppTitleBar"
                 IsHitTestVisible="True"
                 VerticalAlignment="Top"
-                Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
                 Height="40"
                 Canvas.ZIndex="3" 
                 Margin="0,0,0,0"
                 Width="Auto"
-                RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" 
-                RequestedTheme="Light">
+                RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
             <StackPanel Orientation="Horizontal" Width="Auto">
-                <Rectangle RequestedTheme="Light" Width="12"/>
+                <Rectangle Width="12"/>
                 <Image x:Name="AppFontIcon"
                          HorizontalAlignment="Left" 
                          VerticalAlignment="Center"
@@ -55,13 +53,13 @@
                          Width="24" 
                          Height="24"
                          Margin="0,2,0,0" />
-                <TextBlock x:Name="AppTitle"
-                               Text="Untitled - UTE UWP"
-                               VerticalAlignment="Center"
-                               Margin="12,2,0,0"
-                               Style="{StaticResource CaptionTextBlockStyle}"
-                           Foreground="Black"
-                            RequestedTheme="Light"/>
+                <TextBlock
+                        x:Name="AppTitle"
+                        Margin="12,2,4,0"
+                        VerticalAlignment="Center"
+                        Text="Untitled - UTE UWP"
+                        FontSize="12"
+                        FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
                 <TextBlock x:Name="UnsavedTextBlock"
                                Text="* Not Saved"
                                ToolTipService.ToolTip="There are unsaved changes to your document!"
@@ -70,8 +68,7 @@
                                Text="PREVIEW"
                                VerticalAlignment="Center"
                                Margin="12,2,0,0"
-                               Style="{StaticResource CaptionTextBlockStyle}"
-                            RequestedTheme="Light" Opacity="0.5"
+                               Style="{StaticResource CaptionTextBlockStyle}" Opacity="0.5"
                            Visibility="Collapsed"/>
             </StackPanel>
         </Grid>
