@@ -48,7 +48,7 @@ namespace UltraTextEdit_UWP.Views
         public MainPage()
         {
             InitializeComponent();
-            var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
+            var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;                           
             appViewTitleBar.ButtonForegroundColor = (Color)Resources["SystemAccentColor"];
             appViewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
 
