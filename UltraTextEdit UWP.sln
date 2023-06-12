@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltraTextEdit UWP", "UltraTextEdit UWP.csproj", "{AD92561F-1366-49B0-9466-90FD6BBEF0D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltraTextEdit UWP.Core", "..\UltraTextEdit UWP.Core\UltraTextEdit UWP.Core.csproj", "{86E81AA8-CA16-4667-9D20-8552B5849DEB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,26 +45,6 @@ Global
 		{AD92561F-1366-49B0-9466-90FD6BBEF0D5}.Release|x86.ActiveCfg = Release|x86
 		{AD92561F-1366-49B0-9466-90FD6BBEF0D5}.Release|x86.Build.0 = Release|x86
 		{AD92561F-1366-49B0-9466-90FD6BBEF0D5}.Release|x86.Deploy.0 = Release|x86
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|ARM.Build.0 = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|x64.Build.0 = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Debug|x86.Build.0 = Debug|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|ARM.ActiveCfg = Release|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|ARM.Build.0 = Release|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|ARM64.Build.0 = Release|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|x64.ActiveCfg = Release|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|x64.Build.0 = Release|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|x86.ActiveCfg = Release|Any CPU
-		{86E81AA8-CA16-4667-9D20-8552B5849DEB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
