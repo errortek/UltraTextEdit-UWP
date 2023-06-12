@@ -19,7 +19,7 @@
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <PackageCertificateKeyFile>
     </PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>9E298F9E1EAA2012313E78416750D29904DCC9A7</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>A78C852FB829FC05329DF894AF8A7534805F315D</PackageCertificateThumbprint>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
@@ -148,6 +148,9 @@
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
       <Version>2.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Win2D.uwp">
       <Version>1.26.0</Version>
     </PackageReference>
@@ -158,6 +161,8 @@
   <ItemGroup>
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Helpers\BuildInfo.cs" />
+    <Compile Include="Helpers\Json.cs" />
+    <Compile Include="Helpers\Singleton.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Helpers\VisibilityToBooleanConverter.cs" />
@@ -339,12 +344,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UltraTextEdit UWP.Core\UltraTextEdit UWP.Core.csproj">
-      <Project>{86E81AA8-CA16-4667-9D20-8552B5849DEB}</Project>
-      <Name>UltraTextEdit UWP.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

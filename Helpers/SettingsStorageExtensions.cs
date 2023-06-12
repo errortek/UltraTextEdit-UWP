@@ -2,7 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 
-using UltraTextEdit_UWP.Core.Helpers;
+using UltraTextEdit_UWP.Helpers;
 
 using Windows.Storage;
 using Windows.Storage.Streams;

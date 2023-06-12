@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
-namespace App1.Core.Helpers
+namespace UltraTextEdit_UWP.Helpers
 {
     public static class Json
     {

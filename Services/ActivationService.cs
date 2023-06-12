@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using UltraTextEdit_UWP.Activation;
-using UltraTextEdit_UWP.Core.Helpers;
+using UltraTextEdit_UWP.Helpers;
 using UltraTextEdit_UWP.Services;
 
 using Windows.ApplicationModel.Activation;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 
-namespace App1.Core.Helpers
+namespace UltraTextEdit_UWP.Helpers
 {
     public static class Singleton<T>
         where T : new()
