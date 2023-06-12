@@ -34,6 +34,8 @@ namespace UltraTextEdit_UWP.Views
 {
     public sealed partial class MainPage : Page, INotifyPropertyChanged
     {
+
+
         private bool saved = true;
         private string fileNameWithPath = "";
 
@@ -48,6 +50,10 @@ namespace UltraTextEdit_UWP.Views
         public MainPage()
         {
             InitializeComponent();
+            if (BuildInfo.BeforeWin11)
+            {
+               this.Background = new AcrylicBrush();
+            }
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;                           
             appViewTitleBar.ButtonForegroundColor = (Color)Resources["SystemAccentColor"];
             appViewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
