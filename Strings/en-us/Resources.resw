@@ -170,8 +170,8 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Merges the UltraTextEdit_UWP.Core package into the main csproj, which finally completes the process of making UTE open source! It took more than 2 years for this to finally happen...
-• Attempts to introduce Acrylic support for Windows 10 users (not finished yey, should be finished soon)
+    <value>• Merges the UltraTextEdit_UWP.Core package into the main .csproj file, which finally completes the process of making UTE open source! It took more than 2 years for this to finally happen...
+• Attempts to introduce Acrylic support for Windows 10 users (not finished yet, should be finished soon)
 UltraTextEdit UWP 22H2, 23H1 and 23H2 (succesors of this version, 22H1) download link: https://github.com/jpbandroid/UltraTextEdit-UWP-22H2/releases</value>
     <comment>What's new prompt message body</comment>
   </data>
