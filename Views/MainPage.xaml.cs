@@ -29,6 +29,7 @@ using System.Linq;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using System.Text;
+using UltraTextEdit_UWP.Dialogs;
 
 namespace UltraTextEdit_UWP.Views
 {
@@ -1042,49 +1043,12 @@ namespace UltraTextEdit_UWP.Views
 
         // Method to create a table format string which can directly be set to 
         // RichTextBox Control
-        private void InsertTableInRichtextbox()
+
+        private async void AddTableButton_Click(object sender, RoutedEventArgs e)
         {
-            //CreateStringBuilder object
-            StringBuilder strTable = new StringBuilder();
-
-            //Beginning of rich text format,don’t alter this line
-            strTable.Append(@"{\rtf1 ");
-
-            //Create 5 rows with 4 columns
-            for (int i = 0; i < 5; i++)
-            {
-                //Start the row
-                strTable.Append(@"\trowd");
-
-                //First cell with width 1000.
-                strTable.Append(@"\cellx1000");
-
-                //Second cell with width 1000.Ending point is 2000, which is 1000+1000.
-                strTable.Append(@"\cellx2000");
-
-                //Third cell with width 1000.Endingat3000,which is 2000+1000.
-                strTable.Append(@"\cellx3000");
-
-                //Last cell with width 1000.Ending at 4000 (which is 3000+1000)
-                strTable.Append(@"\cellx4000");
-
-                //Append the row in StringBuilder
-                strTable.Append(@"\intbl \cell \row"); //create the row
-            }
-
-            strTable.Append(@"\pard");
-
-            strTable.Append(@"}");
-
-            var strTableString = strTable.ToString();
-
-
-            box.Document.Selection.SetText(TextSetOptions.FormatRtf, strTableString);
-        }
-
-        private void AddTableButton_Click(object sender, RoutedEventArgs e)
-        {
-            InsertTableInRichtextbox();
+            var dialogtable = new TableDialog();
+            await dialogtable.ShowAsync();
+            InsertTableInRichTextBox(dialogtable.rows, dialogtable.columns, 1000);
         }
 
         private void AddSymbolButton_Click(object sender, RoutedEventArgs e)
@@ -1154,6 +1118,45 @@ namespace UltraTextEdit_UWP.Views
 
             // Show the ContentDialog
             await dialog.ShowAsync();
+        }
+
+        private String InsertTableInRichTextBox(int rows, int cols, int width)
+        {
+            //Create StringBuilder Instance
+            StringBuilder strTableRtf = new StringBuilder();
+
+            //beginning of rich text format
+            strTableRtf.Append(@"{\rtf1 ");
+
+            //Variable for cell width
+            int cellWidth;
+
+            //Start row
+            strTableRtf.Append(@"\trowd");
+
+            //Loop to create table string
+            for (int i = 0; i < rows; i++)
+            {
+                strTableRtf.Append(@"\trowd");
+
+                for (int j = 0; j < cols; j++)
+                {
+                    //Calculate cell end point for each cell
+                    cellWidth = (j + 1) * width;
+
+                    //A cell with width 1000 in each iteration.
+                    strTableRtf.Append(@"\cellx" + cellWidth.ToString());
+                }
+
+                //Append the row in StringBuilder
+                strTableRtf.Append(@"\intbl \cell \row");
+            }
+            strTableRtf.Append(@"\pard");
+            strTableRtf.Append(@"}");
+            var strTableString = strTableRtf.ToString();
+            box.Document.Selection.SetText(TextSetOptions.FormatRtf, strTableString);
+            return strTableString;
+
         }
     }
 }
