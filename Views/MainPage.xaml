@@ -385,6 +385,11 @@
                                     </Flyout>
                                 </AppBarButton.Flyout>
                             </AppBarButton>
+                            <AppBarButton
+                    Click="DateInsertionAsync"
+                                Label="Date/Time">
+                                <FontIcon FontSize="17" Glyph="&#xE163;" />
+                            </AppBarButton>
                             <controls:TabbedCommandBarItem.SecondaryCommands>
                                 <AppBarButton Icon="Add" Label="New item" />
                             </controls:TabbedCommandBarItem.SecondaryCommands>
