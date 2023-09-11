@@ -170,7 +170,8 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Dependency updates; WinUI 2.8 is finally here!!
+    <value>• Retarget onto Windows 11 21H2 (22000) and allow proper W10 1809 (17763) support
+• Dependency updates
 UltraTextEdit UWP 22H2, 23H1 and 23H2 (succesors of this version, 22H1) download link: https://github.com/jpbandroid/UltraTextEdit-UWP-22H2/releases</value>
     <comment>What's new prompt message body</comment>
   </data>
