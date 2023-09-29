@@ -271,13 +271,18 @@ namespace UltraTextEdit_UWP.Views
         {
             // Extract the color of the button that was clicked.
             Button clickedColor = (Button)sender;
-            var rectangle = (Windows.UI.Xaml.Shapes.Rectangle)clickedColor.Content;
-            var color = ((Windows.UI.Xaml.Media.SolidColorBrush)rectangle.Fill).Color;
-
+            var borderone = (Windows.UI.Xaml.Controls.Border)clickedColor.Content;
+            var bordertwo = (Windows.UI.Xaml.Controls.Border)borderone.Child;
+            var rectangle = (Windows.UI.Xaml.Shapes.Rectangle)bordertwo.Child;
+            var color = (rectangle.Fill as SolidColorBrush).Color;
             box.Document.Selection.CharacterFormat.ForegroundColor = color;
+            //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
+            box.Focus(FocusState.Keyboard);
+        }
 
-            fontColorButton.Flyout.Hide();
-            box.Focus(Windows.UI.Xaml.FocusState.Keyboard);
+        private void fontcolorsplitbutton_Click(Microsoft.UI.Xaml.Controls.SplitButton sender, Microsoft.UI.Xaml.Controls.SplitButtonClickEventArgs args)
+        {
+            // If you see this, remind me to look into the splitbutton color applying logic
         }
 
         private void ConfirmColor_Click(object sender, RoutedEventArgs e)
@@ -1158,5 +1163,7 @@ namespace UltraTextEdit_UWP.Views
             return strTableString;
 
         }
+
+
     }
 }
