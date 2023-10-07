@@ -127,6 +127,12 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="ColorCode.Core">
+      <Version>2.0.15</Version>
+    </PackageReference>
+    <PackageReference Include="ColorCode.UWP">
+      <Version>2.0.15</Version>
+    </PackageReference>
     <PackageReference Include="CommunityToolkit.Common">
       <Version>8.2.1</Version>
     </PackageReference>
@@ -144,6 +150,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.5</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.2045.28</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
       <Version>2.0.1</Version>
