@@ -80,7 +80,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
-                        Text="22000.2245"/>
+                        Text="22000.2295"/>
                     </Grid>
                 </muxc:Expander>
 
