@@ -86,45 +86,50 @@
                 Place your content here.
             -->
                 <controls:TabbedCommandBar  Background="Transparent" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"
-                                             x:Name="ribbon" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                                             x:Name="ribbon" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"
+                                           >
                     <!-- IsBackButtonVisible="Visible" -->
-                    <controls:TabbedCommandBar.AutoSuggestBox>
-                        <AutoSuggestBox QueryIcon="Find" AutomationProperties.Name="Search" x:Name="Find" TextChanged="{x:Bind FindBoxHighlightMatches}"
-                GotFocus="{x:Bind FindBoxHighlightMatches}"
-                LostFocus="{x:Bind FindBoxRemoveHighlights}"/>
-                    </controls:TabbedCommandBar.AutoSuggestBox>
                     <controls:TabbedCommandBar.PaneFooter>
-                        <CommandBar Background="Transparent" DefaultLabelPosition="Right">
-                            <AppBarElementContainer VerticalAlignment="Center">
-                                <AutoSuggestBox QueryIcon="Go" AutomationProperties.Name="Search" x:Name="Replace" QuerySubmitted="Replace_QuerySubmitted"
-                                                Width="200"/>
-                            </AppBarElementContainer>
-                            <AppBarButton Click="HomeButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Home" Visibility="Collapsed">
-                                <Viewbox MaxHeight="17" MaxWidth="17">
-                                    <SymbolIcon Symbol="Home" />
-                                </Viewbox>
-                            </AppBarButton>
-                            <AppBarSeparator/>
-                            <AppBarButton Click="UndoButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Undo">
-                                <Viewbox MaxHeight="17" MaxWidth="17">
-                                    <SymbolIcon Symbol="Undo" />
-                                </Viewbox>
-                            </AppBarButton>
+                        <ScrollViewer HorizontalScrollMode="Enabled" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Stretch">
+                            <CommandBar Background="Transparent" DefaultLabelPosition="Right">
+                                <AppBarElementContainer VerticalAlignment="Center">
+                                    <AutoSuggestBox QueryIcon="Find" AutomationProperties.Name="Search" x:Name="Find" TextChanged="{x:Bind FindBoxHighlightMatches}"
+                GotFocus="{x:Bind FindBoxHighlightMatches}"
+                LostFocus="{x:Bind FindBoxRemoveHighlights}" Width="150
+                                                    "/>
+                                </AppBarElementContainer>
+                                <AppBarElementContainer VerticalAlignment="Center">
+                                    <AutoSuggestBox QueryIcon="Go" AutomationProperties.Name="Search" x:Name="Replace" QuerySubmitted="Replace_QuerySubmitted"
+                                                Width="150"/>
+                                </AppBarElementContainer>
 
-                            <AppBarButton Click="RedoButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Redo">
-                                <Viewbox MaxHeight="17" MaxWidth="17">
-                                    <SymbolIcon Symbol="Redo" />
-                                </Viewbox>
-                            </AppBarButton>
-                            <AppBarButton Icon="Copy" Click="CopyButton_Click" ToolTipService.ToolTip="Copy"/>
-                            <AppBarButton Icon="Paste" Click="PasteButton_Click" ToolTipService.ToolTip="Paste"/>
-                            <AppBarButton Icon="Cut" Click="CutButton_Click" ToolTipService.ToolTip="Cut"/>
-                            <AppBarSeparator/>
-                            <AppBarButton Label="Share" Icon="Share" Click="ShareButton_Click"/>
-                            <AppBarButton Label="Comments" Icon="Message" Click="CommentButton_Click"/>
-                            <AppBarButton Label="What's New" Icon="Message" Click="AppBarButton_Click_1"/>
-                            <AppBarButton Label="Settings" Icon="Setting" Click="AppBarButton_Click"/>
-                        </CommandBar>
+                                <AppBarButton Click="HomeButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Home" Visibility="Collapsed">
+                                    <Viewbox MaxHeight="17" MaxWidth="17">
+                                        <SymbolIcon Symbol="Home" />
+                                    </Viewbox>
+                                </AppBarButton>
+                                <AppBarSeparator/>
+                                <AppBarButton Click="UndoButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Undo">
+                                    <Viewbox MaxHeight="17" MaxWidth="17">
+                                        <SymbolIcon Symbol="Undo" />
+                                    </Viewbox>
+                                </AppBarButton>
+
+                                <AppBarButton Click="RedoButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Redo">
+                                    <Viewbox MaxHeight="17" MaxWidth="17">
+                                        <SymbolIcon Symbol="Redo" />
+                                    </Viewbox>
+                                </AppBarButton>
+                                <AppBarButton Icon="Copy" Click="CopyButton_Click" ToolTipService.ToolTip="Copy"/>
+                                <AppBarButton Icon="Paste" Click="PasteButton_Click" ToolTipService.ToolTip="Paste"/>
+                                <AppBarButton Icon="Cut" Click="CutButton_Click" ToolTipService.ToolTip="Cut"/>
+                                <AppBarSeparator/>
+                                <AppBarButton Label="Share" Icon="Share" Click="ShareButton_Click"/>
+                                <AppBarButton Label="Comments" Icon="Message" Click="CommentButton_Click"/>
+                                <AppBarButton Label="What's New" Icon="Message" Click="AppBarButton_Click_1"/>
+                                <AppBarButton Label="Settings" Icon="Setting" Click="AppBarButton_Click"/>
+                            </CommandBar>
+                        </ScrollViewer>
                     </controls:TabbedCommandBar.PaneFooter>
                     <controls:TabbedCommandBar.MenuItems>
                         <controls:TabbedCommandBarItem Header="Home"  Background="Transparent">
