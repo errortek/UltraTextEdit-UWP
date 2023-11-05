@@ -61,7 +61,7 @@
             </StackPanel>
         </Border>
         
-        <Grid Margin="{StaticResource MediumLeftRightMargin}" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="AppTitleBar">
+        <Grid RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="AppTitleBar">
         <Grid.RowDefinitions>
             <RowDefinition Height="48" />
             <RowDefinition Height="*" />
@@ -70,11 +70,12 @@
         <TextBlock
             Grid.Row="0"
             x:Uid="Settings_Title"
-            Style="{StaticResource PageTitleStyle}" />
+            Style="{StaticResource PageTitleStyle}"
+            Margin="{StaticResource MediumLeftRightMargin}"/>
 
             <ScrollViewer Grid.Row="1">
                 <StackPanel
-            x:Name="ContentArea">
+            x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
                     <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
                     <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
                         <TextBlock x:Uid="Settings_Theme" />
