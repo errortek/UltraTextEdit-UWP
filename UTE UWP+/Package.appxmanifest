@@ -12,14 +12,14 @@
   IgnorableNamespaces="uap mp genTemplate uap5 uap3 desktop4 iot2">
 
   <Identity
-    Name="f886852f-63db-4809-a421-3ebf06677b8f"
+    Name="JPB.Office.UTEUWP.Plus"
     Publisher="CN=jpb"
-    Version="1.0.0.0" />
+    Version="10.0.25931.0" />
 
   <mp:PhoneIdentity PhoneProductId="f886852f-63db-4809-a421-3ebf06677b8f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>UTE_UWP_</DisplayName>
+    <DisplayName>UTE UWP+</DisplayName>
     <PublisherDisplayName>jpb</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
