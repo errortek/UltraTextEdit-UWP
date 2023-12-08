@@ -2,27 +2,57 @@
     x:Class="UTE_UWP_.Views.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:UTE_UWP_"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Style="{StaticResource PageStyle}"
-    mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="48" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <TextBlock
-            Grid.Row="0"
-            x:Uid="Main_Title"
-            Style="{StaticResource PageTitleStyle}" />
-        <Grid
-            Grid.Row="1" 
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--
-                The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.
-            -->
-        </Grid>
-    </Grid>
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+    mc:Ignorable="d"
+    xmlns:appmodel="using:Windows.ApplicationModel"
+    d:DesignHeight="564"
+    d:DesignWidth="876">
+    <RelativePanel>
+        <RelativePanel
+            x:Name="containerPanel"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True">
+            <StackPanel x:Name="TitleBar" Orientation="Horizontal">
+                <Border
+                x:Name="AppTitleBar"
+                Height="40"
+                Margin="12,2,0,0"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                Canvas.ZIndex="1"
+                IsHitTestVisible="True"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True">
+                    <StackPanel Orientation="Horizontal">
+                        <Image
+                        x:Name="AppFontIcon"
+                        Width="24"
+                        Height="24"
+                        Margin="0,2,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Source="ms-appx:///Assets/Square44x44Logo.png" />
+                        <TextBlock
+                        x:Name="AppTitle"
+                        Margin="12,2,4,0"
+                        VerticalAlignment="Center"
+                        Text="Untitled - UTE UWP"
+                        FontSize="12"
+                        FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
+                    </StackPanel>
+                </Border>
+                <TextBlock
+                        x:Name="UnsavedTextBlock"
+                        Padding="5,0"
+                        VerticalAlignment="Center"
+                        Text="* Not Saved"
+                        ToolTipService.ToolTip="There are unsaved changes." />
+            </StackPanel>
+        </RelativePanel>
+    </RelativePanel>
 </Page>

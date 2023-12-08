@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Microsoft.Graphics.Canvas.Text;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 using UTE_UWP_.Helpers;
 using UTE_UWP_.Services;
+using UTE_UWP_.Views;
 
 using Windows.ApplicationModel;
 using Windows.UI.Xaml;
@@ -84,6 +87,29 @@ namespace UTE_UWP_.Views
             OnPropertyChanged(propertyName);
         }
 
+        public List<string> Fonts;
+
+        #region Appearance
+        public int DocumentViewPadding;
+
+        public string DefaultFont;
+
+        // Modes:
+        // 0. No wrap
+        // 1. Wrap
+        // 2. Wrap whole words
+
+        public int TextWrapping;
+
+        // Modes:
+        // 0. Light
+        // 1. Dark
+        // 2. Default
+
+        public int Theme;
+        #endregion
+
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
+
 }

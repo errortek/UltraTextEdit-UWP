@@ -1,0 +1,148 @@
+﻿<ContentDialog
+    x:Class="UTE_UWP_.Views.utever"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UTE_UWP_.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Title="About UltraTextEdit UWP"
+    PrimaryButtonText="OK"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
+
+    <ScrollViewer>
+        <Grid>
+            <Image HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top"
+               Grid.Row="1"
+               Source="ms-appx:///Assets/utevericon.png"
+               Margin="100,20"
+               MaxWidth="50"
+               Name="BrandImage"/>
+
+            <StackPanel Grid.Row="2" Margin="5,80,5,5">
+                <muxc:Expander
+                IsExpanded="True"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch">
+                    <muxc:Expander.Header>
+                        <Grid>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" x:Uid="WindowsSpecifications" Text="Version Info"/>
+                        </Grid>
+                    </muxc:Expander.Header>
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="1" x:Uid="Version" Text="Version"/>
+                        <TextBlock 
+						Name="Version"
+                        Margin="0,0,0,5"
+                        Grid.Column="1"
+                        Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
+                        Grid.Row="1"
+                        Text="10.0"/>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="2" x:Uid="Version2" Text="Version/Development semester"/>
+                        <TextBlock 
+						Name="Version2"
+                        Margin="0,0,0,5"
+                        Grid.Column="1"
+                        Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
+                        Grid.Row="2"
+                        Text="23H2 (Iron)"/>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="3" x:Uid="InstalledOn" Text="Build Date"/>
+                        <TextBlock 
+						Name="InstalledOn"
+                        Margin="0,0,0,5"
+                        Grid.Column="1"
+                        Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
+                        Grid.Row="3"
+                        Text="05/11/2023"/>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="4" x:Uid="OSBuild" Text="Build"/>
+                        <TextBlock 
+						Name="Build"
+                        Margin="0,0,0,5"
+                        Grid.Column="1"
+                        Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
+                        Grid.Row="4"
+                        Text="25314.953"/>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="5" x:Uid="InsiderChannel" Text="Insider Channel" Visibility="Collapsed"/>
+                        <TextBlock 
+						Name="InsiderChannel"
+                        Margin="0,0,0,5"
+                        Grid.Column="1"
+                        Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
+                        Grid.Row="5"
+                        Text="Beta Channel"
+                        Visibility="Collapsed"/>
+                    </Grid>
+                </muxc:Expander>
+
+                <muxc:Expander
+                IsExpanded="True"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch"
+                Margin="0,5,0,0">
+                    <muxc:Expander.Header>
+                        <Grid>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" x:Uid="LegalLabel" Text="License &amp; Legal"/>
+                        </Grid>
+                    </muxc:Expander.Header>
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <TextBlock 
+						TextWrapping="WrapWholeWords"
+                        Name="LicensingText"
+                        HorizontalAlignment="Stretch"
+                        x:Uid="Trademark" Text="
+MIT License
+&#x0a;
+                            &#x0a;
+Copyright (c) 2021-2023 jpb (GitHub username jpbandroid)
+&#x0a;
+                            &#x0a;
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+&#x0a;
+                            &#x0a;
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+&#x0a;
+                            &#x0a;
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE."/>
+                        <TextBlock Margin="0,20,0,0" TextWrapping="WrapWholeWords" x:Uid="LicenseTo" Visibility="Collapsed"/>
+                        <StackPanel Margin="0,5,0,0">
+                            <HyperlinkButton Content="UltraTextEdit UWP GitHub repo" NavigateUri="https://github.com/jpbandroid/UltraTextEdit-UWP-22H2" Name="OwnerText"/>
+                            <TextBlock 
+							TextWrapping="Wrap"
+                            Name="OrgText"
+                            Text="Developer: jpb"/>
+                        </StackPanel>
+                    </StackPanel>
+                </muxc:Expander>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</ContentDialog>
