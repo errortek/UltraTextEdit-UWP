@@ -69,10 +69,6 @@ namespace UltraTextEdit_UWP.Views
             coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
             Window.Current.Activated += Current_Activated;
 
-
-
-            fontbox.ItemsSource = fonts;
-
             SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
 
             NavigationCacheMode = NavigationCacheMode.Required;
@@ -155,68 +151,7 @@ namespace UltraTextEdit_UWP.Views
 
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        private void FindBoxHighlightMatches()
-        {
-            FindBoxRemoveHighlights();
-
-            Color highlightBackgroundColor = (Color)App.Current.Resources["SystemColorHighlightColor"];
-            Color highlightForegroundColor = (Color)App.Current.Resources["SystemColorHighlightTextColor"];
-
-            string textToFind = Find.Text;
-            if (textToFind != null)
-            {
-                ITextRange searchRange = box.Document.GetRange(0, 0);
-                while (searchRange.FindText(textToFind, TextConstants.MaxUnitCount, FindOptions.None) > 0)
-                {
-                    searchRange.CharacterFormat.BackgroundColor = highlightBackgroundColor;
-                    searchRange.CharacterFormat.ForegroundColor = highlightForegroundColor;
-                }
-            }
-        }
-        private void Combo3_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            Combo3.SelectedIndex = 2;
-
-            if ((ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 7)))
-            {
-                Combo3.TextSubmitted += Combo3_TextSubmitted;
-            }
-        }
-
-        private void Combo3_TextSubmitted(ComboBox sender, ComboBoxTextSubmittedEventArgs args)
-        {
-            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
-            if (selectedText != null)
-            {
-                bool isDouble = double.TryParse(sender.Text, out double newValue);
-
-                // Set the selected item if:
-                // - The value successfully parsed to double AND
-                // - The value is in the list of sizes OR is a custom value between 8 and 100
-                if (isDouble && (FontSizes.Contains(newValue) || (newValue < 100 && newValue > 8)))
-                {
-                    // Update the SelectedItem to the new value. 
-                    sender.SelectedItem = newValue;
-                    box.Document.Selection.CharacterFormat.Size = (float)newValue;
-                }
-                else
-                {
-                    // If the item is invalid, reject it and revert the text. 
-                    sender.Text = sender.SelectedValue.ToString();
-
-                    var dialog = new ContentDialog
-                    {
-                        Content = "The font size must be a number between 8 and 100.",
-                        CloseButtonText = "Close",
-                        DefaultButton = ContentDialogButton.Close
-                    };
-                    var task = dialog.ShowAsync();
-                }
-            }
-
-            // Mark the event as handled so the framework doesn’t update the selected item automatically. 
-            args.Handled = true;
-        }
+        
         private void BoldButton_Click(object sender, RoutedEventArgs e)
         {
             Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
@@ -257,16 +192,7 @@ namespace UltraTextEdit_UWP.Views
             }
         }
 
-        private void FindBoxRemoveHighlights()
-        {
-            ITextRange documentRange = box.Document.GetRange(0, TextConstants.MaxUnitCount);
-            SolidColorBrush defaultBackground = box.Background as SolidColorBrush;
-            SolidColorBrush defaultForeground = box.Foreground as SolidColorBrush;
-
-            documentRange.CharacterFormat.BackgroundColor = defaultBackground.Color;
-            documentRange.CharacterFormat.ForegroundColor = defaultForeground.Color;
-        }
-
+        
         private void ColorButton_Click(object sender, RoutedEventArgs e)
         {
             // Extract the color of the button that was clicked.
@@ -301,161 +227,6 @@ namespace UltraTextEdit_UWP.Views
             colorPickerButton.Flyout.Hide();
         }
 
-        private void ListStyleButton_IsCheckedChanged(Microsoft.UI.Xaml.Controls.ToggleSplitButton sender, Microsoft.UI.Xaml.Controls.ToggleSplitButtonIsCheckedChangedEventArgs args)
-        {
-            // Use the toggle button to turn the selected list style on or off.
-            if (sender.IsChecked == true)
-            {
-                // On. Apply the list style selected in the drop down to the selected text.
-                var listStyle = ((FrameworkElement)ListStylesListView.SelectedItem).Tag.ToString();
-                ApplyListStyle(listStyle);
-            }
-            else
-            {
-                // Off. Make the selected text not a list,
-                // but don't change the list style selected in the drop down.
-                ApplyListStyle("none");
-            }
-        }
-
-        private void ListStylesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var listStyle = ((FrameworkElement)(e.AddedItems[0])).Tag.ToString();
-
-            if (ListButton.IsChecked == true)
-            {
-                // Toggle button is on. Turn it off...
-                if (listStyle == "none")
-                {
-                    ListButton.IsChecked = false;
-                }
-                else
-                {
-                    // or apply the new selection.
-                    ApplyListStyle(listStyle);
-                }
-            }
-            else
-            {
-                // Toggle button is off. Turn it on, which will apply the selection
-                // in the IsCheckedChanged event handler.
-                ListButton.IsChecked = true;
-            }
-        }
-
-        private void ApplyListStyle(string listStyle)
-        {
-            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
-            if (selectedText != null)
-            {
-                // Apply the list style to the selected text.
-                var paragraphFormatting = selectedText.ParagraphFormat;
-                if (listStyle == "none")
-                {
-                    paragraphFormatting.ListType = Windows.UI.Text.MarkerType.None;
-                }
-                else if (listStyle == "bullet")
-                {
-                    paragraphFormatting.ListType = Windows.UI.Text.MarkerType.Bullet;
-                }
-                else if (listStyle == "numeric")
-                {
-                    paragraphFormatting.ListType = Windows.UI.Text.MarkerType.Arabic;
-                }
-                else if (listStyle == "alpha")
-                {
-                    paragraphFormatting.ListType = Windows.UI.Text.MarkerType.UppercaseEnglishLetter;
-                }
-                selectedText.ParagraphFormat = paragraphFormatting;
-            }
-        }
-
-        private void AppBarButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (Window.Current.Content is Frame rootFrame)
-            {
-                rootFrame.Navigate(typeof(SettingsPage));
-            }
-        }
-
-        private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
-            if (selectedText != null)
-            {
-                // Get the instance of ComboBox
-                ComboBox fontbox = sender as ComboBox;
-
-                // Get the ComboBox selected item text
-                string selectedItems = fontbox.SelectedItem.ToString();
-                box.Document.Selection.CharacterFormat.Name = selectedItems;
-            }
-        }
-        private void ListButton2_IsCheckedChanged(Microsoft.UI.Xaml.Controls.ToggleSplitButton sender, Microsoft.UI.Xaml.Controls.ToggleSplitButtonIsCheckedChangedEventArgs args)
-        {
-            // Use the toggle button to turn the selected list style on or off.
-            if ((sender).IsChecked == true)
-            {
-                // On. Apply the list style selected in the drop down to the selected text.
-                var listStyle2 = ((FrameworkElement)ListStylesListView2.SelectedItem).Tag.ToString();
-                ApplyListStyle(listStyle2);
-            }
-            else
-            {
-                // Off. Make the selected text not a list,
-                // but don't change the list style selected in the drop down.
-                ApplyListStyle("none");
-            }
-
-        }
-
-
-        private void ListStylesListView_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            var listStyle2 = ((FrameworkElement)e.AddedItems[0]).Tag.ToString();
-
-            if (ListButton2.IsChecked == true)
-            {
-                // Toggle button is on. Turn it off...
-                if (listStyle2 == "none")
-                {
-                    ListButton2.IsChecked = false;
-                }
-                else
-                {
-                    // or apply the new selection.
-                    ApplyListStyle2(listStyle2);
-                }
-            }
-            else
-            {
-                // Toggle button is off. Turn it on, which will apply the selection
-                // in the IsCheckedChanged event handler.
-                ListButton2.IsChecked = true;
-            }
-        }
-        private void ApplyListStyle2(string listStyle2)
-        {
-            Windows.UI.Text.ITextSelection selectedText = box.Document.Selection;
-            if (selectedText != null)
-            {
-                // Apply the list style to the selected text.
-                var paragraphFormatting = selectedText.ParagraphFormat;
-                if (listStyle2 == "left")
-                {
-                    paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Left;
-                }
-                else if (listStyle2 == "right")
-                {
-                    paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Right;
-                }
-                else if (listStyle2 == "center")
-                {
-                    paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Center;
-                }
-                selectedText.ParagraphFormat = paragraphFormatting;
-            }
-        }
 
         private async void AppBarButton_Click_1(object sender, RoutedEventArgs e)
         {
@@ -843,7 +614,7 @@ namespace UltraTextEdit_UWP.Views
                 hyperlinkText.AllowFocusOnInteraction = true;
             box.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
             box.Document.Selection.CharacterFormat.ForegroundColor = (Color)XamlBindingHelper.ConvertValue(typeof(Color), "#6194c7");
-            linkbutton.Flyout.Hide();
+            AddLinkButton.Flyout.Hide();
         }
 
         private void Dash(object sender, RoutedEventArgs e)
@@ -936,17 +707,7 @@ namespace UltraTextEdit_UWP.Views
             }
         }
 
-        private void hidebottombar(object sender, RoutedEventArgs e)
-        {
-            bottombartabitem.Visibility = Visibility.Visible;
-            bottombar.Visibility = Visibility.Collapsed;
-        }
-
-        private void showbottombar(object sender, RoutedEventArgs e)
-        {
-            bottombartabitem.Visibility = Visibility.Collapsed;
-            bottombar.Visibility = Visibility.Visible;
-        }
+        
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -984,29 +745,6 @@ namespace UltraTextEdit_UWP.Views
         private void PasteButton_Click(object sender, RoutedEventArgs e)
         {
             box.Document.Selection.Paste(0);
-        }
-
-        private void ReplaceSelected_Click(object sender, string replace, RoutedEventArgs e)
-        {
-            box.Document.Selection.SetText(TextSetOptions.None, replace);
-        }
-
-        private void ReplaceAll_Click(object sender, RoutedEventArgs e)
-        {
-            box.Document.GetText(TextGetOptions.FormatRtf, out string value);
-            if (!(string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(Find.Text) && string.IsNullOrWhiteSpace(Replace.Text)))
-            {
-                box.Document.SetText(TextSetOptions.FormatRtf, value.Replace(Find.Text, Replace.Text));
-            }
-        }
-
-        private void Replace_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
-        {
-            box.Document.GetText(TextGetOptions.FormatRtf, out string value);
-            if (!(string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(Find.Text) && string.IsNullOrWhiteSpace(Replace.Text)))
-            {
-                box.Document.SetText(TextSetOptions.FormatRtf, value.Replace(Find.Text, Replace.Text));
-            }
         }
 
         private void CutButton_Click(object sender, RoutedEventArgs e)
@@ -1167,6 +905,95 @@ namespace UltraTextEdit_UWP.Views
         private void showinsiderinfo(object sender, RoutedEventArgs e)
         {
             ToggleThemeTeachingTip1.IsOpen = true;
+        }
+
+        private void AlignLeftButton_Click(object sender, RoutedEventArgs e)
+        {
+            ITextSelection selectedText = box.Document.Selection;
+            selectedText.ParagraphFormat.Alignment = ParagraphAlignment.Left;
+        }
+
+        private void AlignCenterButton_Click(object sender, RoutedEventArgs e)
+        {
+            ITextSelection selectedText = box.Document.Selection;
+            selectedText.ParagraphFormat.Alignment = ParagraphAlignment.Center;
+        }
+
+        private void AlignRightButton_Click(object sender, RoutedEventArgs e)
+        {
+            ITextSelection selectedText = box.Document.Selection;
+            selectedText.ParagraphFormat.Alignment = ParagraphAlignment.Right;
+        }
+
+        private void NoneNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Selection.ParagraphFormat.ListType = MarkerType.None;
+            myListButton.IsChecked = false;
+            myListButton.Flyout.Hide();
+            box.Focus(FocusState.Keyboard);
+        }
+
+        private void DottedNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Selection.ParagraphFormat.ListType = MarkerType.Bullet;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            box.Focus(FocusState.Keyboard);
+        }
+
+        private void NumberNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Selection.ParagraphFormat.ListType = MarkerType.Arabic;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            box.Focus(FocusState.Keyboard);
+        }
+
+        private void LetterSmallNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseEnglishLetter;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            box.Focus(FocusState.Keyboard);
+        }
+
+        private void LetterBigNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseEnglishLetter;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            box.Focus(FocusState.Keyboard);
+        }
+
+        private void SmalliNumeral_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseRoman;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            box.Focus(FocusState.Keyboard);
+        }
+
+        private void BigINumeral_Click(object sender, RoutedEventArgs e)
+        {
+            box.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseRoman;
+            myListButton.IsChecked = true;
+            myListButton.Flyout.Hide();
+            box.Focus(FocusState.Keyboard);
+        }
+
+        private void FindButton2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FontsCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void FontSizeBox_ValueChanged(Microsoft.UI.Xaml.Controls.NumberBox sender, Microsoft.UI.Xaml.Controls.NumberBoxValueChangedEventArgs args)
+        {
+
         }
     }
 }
