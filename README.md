@@ -1,8 +1,9 @@
-*UltraTextEdit UWP 1.0.1000.132 running on Windows 10 21H2*
-![image](https://user-images.githubusercontent.com/100033309/154805920-652c8685-1a98-4d21-b5c0-3bb97d0242fa.png)
+*UltraTextEdit UWP 1.0.22000.2360 running on Windows 11*
+![image](https://github.com/jpbandroid/UltraTextEdit-UWP/assets/100033309/1b933639-5ccb-41c9-9bea-782d6849acf0)
 
-*UltraTextEdit UWP 1.0.10240.160 running on Windows 11*
-![image](https://user-images.githubusercontent.com/100033309/155850965-c69d3bb2-acb4-42fe-a804-293b89e5b51e.png)
+*UltraTextEdit UWP 10.0.22001.290 running on Windows 11*
+![image](https://github.com/jpbandroid/UltraTextEdit-UWP/assets/100033309/89bc3855-45f4-4b8f-9a0d-77651ac5451a)
+
 
 # UltraTextEdit UWP
 
