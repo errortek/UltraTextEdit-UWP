@@ -20,3 +20,4 @@ And many more...
 ## Info
 This app is still in active development!
 If you find an issue in this app (*and* have a GitHub account), please post an Issue in this repo
+To get Beta Channel releases, go here: https://github.com/jpbandroid/UTE22H1BetaRels
