@@ -36,7 +36,7 @@
 
     <RelativePanel x:Name="containerPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" >
 
-        <Grid x:Name="AppTitleBar"
+        <Grid x:Name="AppTitleGrid"
                 IsHitTestVisible="True"
                 VerticalAlignment="Top"
                 Height="40"
@@ -44,35 +44,59 @@
                 Margin="0,0,0,0"
                 Width="Auto"
                 RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
-            <StackPanel Orientation="Horizontal" Width="Auto">
-                <Rectangle Width="12"/>
-                <Image x:Name="AppFontIcon"
-                         HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"
-                         Source="ms-appx:///Assets/Square44x44Logo.png" 
-                         Width="24" 
-                         Height="24"
-                         Margin="0,2,0,0" />
+            <StackPanel x:Name="TitleBar" Orientation="Horizontal">
+                <Border
+            x:Name="AppTitleBar"
+            Height="40"
+            Margin="12,2,0,0"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            Canvas.ZIndex="1"
+            IsHitTestVisible="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True">
+                    <StackPanel Orientation="Horizontal">
+                        <Image
+                    x:Name="AppFontIcon"
+                    Width="24"
+                    Height="24"
+                    Margin="0,2,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Source="ms-appx:///Assets/Square44x44Logo.png" />
+                        <TextBlock
+                    x:Name="AppTitle"
+                    Margin="12,2,4,0"
+                    VerticalAlignment="Center"
+                    Text="Untitled - UTE UWP"
+                    FontSize="12"
+                    FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
+                    </StackPanel>
+                </Border>
+                <Grid x:Name="InsiderGrid">
+                    <Button Background="#50E6FF" Width="50" Height="25" Padding="0" CornerRadius="8" Click="showinsiderinfo">
+                        <Grid>
+                            <TextBlock Text="BETA" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+                        </Grid>
+                    </Button>
+                    <muxc:TeachingTip x:Name="ToggleThemeTeachingTip1"
+Target="{x:Bind InsiderGrid}"
+Title="Beta Channel"
+Subtitle="The Beta Channel is the Insider Channel that receives updates for the next Moment update or finalized major build, and is more stable than Dev, but less stable than Release Preview/RP.">
+                        <muxc:TeachingTip.IconSource>
+                            <muxc:FontIconSource  Glyph="&#xF1AD;"/>
+                        </muxc:TeachingTip.IconSource>
+                    </muxc:TeachingTip>
+                </Grid>
                 <TextBlock
-                        x:Name="AppTitle"
-                        Margin="12,2,4,0"
-                        VerticalAlignment="Center"
-                        Text="Untitled - UTE UWP"
-                        FontSize="12"
-                        FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
-                <TextBlock x:Name="UnsavedTextBlock"
-                               Text="* Not Saved"
-                               ToolTipService.ToolTip="There are unsaved changes to your document!"
-                               VerticalAlignment="Center" Padding="5,0" Opacity="0.75" />
-                <TextBlock x:Name="PreviewBlock"
-                               Text="PREVIEW"
-                               VerticalAlignment="Center"
-                               Margin="12,2,0,0"
-                               Style="{StaticResource CaptionTextBlockStyle}" Opacity="0.5"
-                           Visibility="Collapsed"/>
+                    x:Name="UnsavedTextBlock"
+                    Padding="5,0"
+                    VerticalAlignment="Center"
+                    Text="* Not Saved"
+                    ToolTipService.ToolTip="There are unsaved changes." />
             </StackPanel>
         </Grid>
-        <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"  RelativePanel.AlignBottomWithPanel="True">
+        <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleGrid" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"  RelativePanel.AlignBottomWithPanel="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="48" />
                 <RowDefinition Height="*" />

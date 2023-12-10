@@ -48,6 +48,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <TextBlock Margin="0,0,20,5" Grid.Row="1" x:Uid="Version" Text="Version"/>
                         <TextBlock 
@@ -81,6 +82,14 @@
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
                         Text="22000.2245"/>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="5" x:Uid="InsiderChannel" Text="Insider Channel"/>
+                        <TextBlock 
+Name="InsiderChannel"
+Margin="0,0,0,5"
+Grid.Column="1"
+Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
+Grid.Row="5"
+Text="Beta Channel"/>
                     </Grid>
                 </muxc:Expander>
 
