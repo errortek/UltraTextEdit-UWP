@@ -57,7 +57,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="1"
-                        Text="1.0"/>
+                        Text="10.0"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="2" x:Uid="Version2" Text="Version/Development semester"/>
                         <TextBlock 
 						Name="Version2"
@@ -73,7 +73,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="3"
-                        Text="07/10/2023"/>
+                        Text="10/12/2023"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="4" x:Uid="OSBuild" Text="Build"/>
                         <TextBlock 
 						Name="Build"
@@ -81,7 +81,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
-                        Text="22000.2245"/>
+                        Text="22001.290"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="5" x:Uid="InsiderChannel" Text="Insider Channel"/>
                         <TextBlock 
 Name="InsiderChannel"
