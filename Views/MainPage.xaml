@@ -108,13 +108,92 @@ Subtitle="The Beta Channel is the Insider Channel that receives updates for the 
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
             -->
+                <StackPanel
+    x:Name="MenuPanel"
+    VerticalAlignment="Center"
+    Orientation="Horizontal">
+                    <Button
+VerticalAlignment="Center"
+Background="Transparent"
+BorderBrush="Transparent"
+Click="OpenButton_Click"
+ToolTipService.ToolTip="Open">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="OpenFile" />
+                        </Viewbox>
+                    </Button>
+                    <Button
+VerticalAlignment="Center"
+Background="Transparent"
+BorderBrush="Transparent"
+Click="SaveButton_Click"
+ToolTipService.ToolTip="Save">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Save" />
+                        </Viewbox>
+                    </Button>
+                    <AppBarSeparator/>
+                    <Button
+        VerticalAlignment="Center"
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="UndoButton_Click"
+        ToolTipService.ToolTip="Undo">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Undo" />
+                        </Viewbox>
+                    </Button>
+
+                    <Button
+        VerticalAlignment="Center"
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="RedoButton_Click"
+        ToolTipService.ToolTip="Redo">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Redo" />
+                        </Viewbox>
+                    </Button>
+
+                    <AppBarSeparator />
+
+                    <Button
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="ShareButton_Click"
+        ToolTipService.ToolTip="Share">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Share" />
+                        </Viewbox>
+                    </Button>
+
+                    <Button
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="CommentButton_Click"
+        ToolTipService.ToolTip="Comments">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Message" />
+                        </Viewbox>
+                    </Button>
+
+                    <Button
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="SettingsButton_Click"
+        ToolTipService.ToolTip="Settings">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Setting" />
+                        </Viewbox>
+                    </Button>
+                </StackPanel>
                 <controls:TabbedCommandBar
                 x:Name="ribbon"
                 Margin="0,0,0,0"
                 Padding="0,0,0,0"
                 RelativePanel.AlignLeftWithPanel="True"
                 RelativePanel.AlignRightWithPanel="True"
-                Background="Transparent">
+                Background="Transparent" RelativePanel.Below="MenuPanel">
                     <controls:TabbedCommandBar.MenuItems>
                         <controls:TabbedCommandBarItem Header="Home" Background="Transparent">
                             <AppBarToggleButton

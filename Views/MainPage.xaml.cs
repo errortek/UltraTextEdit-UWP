@@ -995,5 +995,10 @@ namespace UltraTextEdit_UWP.Views
         {
 
         }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SettingsPage));
+        }
     }
 }
