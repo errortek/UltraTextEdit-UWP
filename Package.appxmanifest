@@ -13,7 +13,7 @@
   <Identity
     Name="JPB.Office.UTE.UWP"
     Publisher="CN=jpb"
-    Version="1.0.22000.2295" />
+    Version="1.0.22000.2360" />
 
   <mp:PhoneIdentity PhoneProductId="C905AC9D-3357-436A-8C18-A59C4F700E06" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
