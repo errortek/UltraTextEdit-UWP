@@ -120,9 +120,21 @@ GroupName="AppTheme">
                                 <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.png" ShowAsMonochrome="False"/>
                             </controls:SettingsCard.HeaderIcon>
                         </controls:SettingsCard>
-                        <controls:SettingsCard Header="GitHub repo" Description="Go there to submit issues, view pull requests, and check out the code!!">
-                            <HyperlinkButton x:Uid="Settings_PrivacyTermsLink" Margin="{StaticResource XSmallTopMargin}" />
+                        <controls:SettingsCard
+                               ActionIconToolTip="Open GitHub repo in browser"
+                               Description="Go there to submit issues, view pull requests, and check out the code!!"
+                               Header="GitHub repo"
+                               IsClickEnabled="True"
+                               IsEnabled="True"
+                            Click="GH_Navigate">
+                            <controls:SettingsCard.ActionIcon>
+                                <FontIcon Glyph="&#xE8A7;"/>
+                            </controls:SettingsCard.ActionIcon>
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xE943;"/>
+                            </controls:SettingsCard.HeaderIcon>
                         </controls:SettingsCard>
+
 
                     </StackPanel>
                 </StackPanel>

@@ -286,32 +286,116 @@ namespace UTE_UWP_.Views
 
         private void StrikethoughButton_Click(object sender, RoutedEventArgs e)
         {
-            //editor.FormatSelected(RichEditHelpers.FormattingMode.Strikethrough);
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Strikethrough = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText.CharacterFormat = charFormatting;
+            }
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            if (selectedText2 != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
+                charFormatting2.Strikethrough = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText2.CharacterFormat = charFormatting2;
+            }
         }
 
         private void SubscriptButton_Click(object sender, RoutedEventArgs e)
         {
-            //editor.FormatSelected(RichEditHelpers.FormattingMode.Subscript);
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Subscript = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText.CharacterFormat = charFormatting;
+            }
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            if (selectedText2 != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
+                charFormatting2.Subscript = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText2.CharacterFormat = charFormatting2;
+            }
         }
 
         private void SuperScriptButton_Click(object sender, RoutedEventArgs e)
         {
-            //editor.FormatSelected(RichEditHelpers.FormattingMode.Superscript);
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Superscript = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText.CharacterFormat = charFormatting;
+            }
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            if (selectedText2 != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
+                charFormatting2.Superscript = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText2.CharacterFormat = charFormatting2;
+            }
         }
 
         private void AlignRightButton_Click(object sender, RoutedEventArgs e)
         {
-            //editor.AlignSelectedTo(RichEditHelpers.AlignMode.Right);
+            ITextSelection selectedText = editor.Document.Selection;
+            if (selectedText != null)
+            {
+                // Apply the list style to the selected text.
+                var paragraphFormatting = selectedText.ParagraphFormat;
+                paragraphFormatting.Alignment = ParagraphAlignment.Right;
+
+            }
+            ITextSelection selectedText2 = comments.Document.Selection;
+            if (selectedText2 != null)
+            {
+                // Apply the list style to the selected text.
+                var paragraphFormatting2 = selectedText2.ParagraphFormat;
+                paragraphFormatting2.Alignment = ParagraphAlignment.Right;
+
+            }
         }
 
         private void AlignCenterButton_Click(object sender, RoutedEventArgs e)
         {
-            //editor.AlignSelectedTo(RichEditHelpers.AlignMode.Center);
+            ITextSelection selectedText = editor.Document.Selection;
+            if (selectedText != null)
+            {
+                // Apply the list style to the selected text.
+                var paragraphFormatting = selectedText.ParagraphFormat;
+                paragraphFormatting.Alignment = ParagraphAlignment.Center;
+
+            }
+            ITextSelection selectedText2 = comments.Document.Selection;
+            if (selectedText2 != null)
+            {
+                // Apply the list style to the selected text.
+                var paragraphFormatting2 = selectedText.ParagraphFormat;
+                paragraphFormatting2.Alignment = ParagraphAlignment.Center;
+
+            }
         }
 
         private void AlignLeftButton_Click(object sender, RoutedEventArgs e)
         {
-            //editor.AlignSelectedTo(RichEditHelpers.AlignMode.Left);
+            ITextSelection selectedText = editor.Document.Selection;
+            if (selectedText != null)
+            {
+                // Apply the list style to the selected text.
+                var paragraphFormatting = selectedText.ParagraphFormat;
+                paragraphFormatting.Alignment = ParagraphAlignment.Left;
+
+            }
+            ITextSelection selectedText2 = comments.Document.Selection;
+            if (selectedText2 != null)
+            {
+                // Apply the list style to the selected text.
+                var paragraphFormatting2 = selectedText2.ParagraphFormat;
+                paragraphFormatting2.Alignment = ParagraphAlignment.Left;
+
+            }
         }
 
 
@@ -353,16 +437,16 @@ namespace UTE_UWP_.Views
             }
             if (selectedText2 != null)
             {
-                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
+                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
+                if (charFormatting2.Underline == Windows.UI.Text.UnderlineType.None)
                 {
-                    charFormatting.Underline = Windows.UI.Text.UnderlineType.Single;
+                    charFormatting2.Underline = Windows.UI.Text.UnderlineType.Single;
                 }
                 else
                 {
-                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
+                    charFormatting2.Underline = Windows.UI.Text.UnderlineType.None;
                 }
-                selectedText2.CharacterFormat = charFormatting;
+                selectedText2.CharacterFormat = charFormatting2;
             }
         }
 

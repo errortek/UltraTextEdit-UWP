@@ -172,6 +172,32 @@ namespace UTE_UWP_.Views
         #endregion
 
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        private async void GH_Navigate(object sender, RoutedEventArgs e)
+        {
+            // The URI to launch
+            string uriToLaunch = @"https://github.com/jpbandroid/UTE-UWP-Plus";
+
+            // Create a Uri object from a URI string 
+            var uri = new Uri(uriToLaunch);
+
+            // Launch the URI
+            async void DefaultLaunch()
+            {
+                // Launch the URI
+                var success = await Windows.System.Launcher.LaunchUriAsync(uri);
+
+                if (success)
+                {
+                    // URI launched
+                }
+                else
+                {
+                    // URI launch failed
+                }
+            }
+            DefaultLaunch();
+        }
     }
 
 }
