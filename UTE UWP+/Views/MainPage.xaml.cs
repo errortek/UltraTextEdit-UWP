@@ -3,6 +3,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -12,6 +13,7 @@ using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Graphics.Printing;
+using Windows.Networking.Vpn;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
@@ -48,7 +50,7 @@ namespace UTE_UWP_.Views
 
             appViewTitleBar.ButtonBackgroundColor = Colors.Transparent;
             appViewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-            appViewTitleBar.ButtonForegroundColor = (Color)Resources["SystemAccentColor"];
+            appViewTitleBar.ButtonForegroundColor = (Windows.UI.Color)Resources["SystemAccentColor"];
 
             var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
             coreTitleBar.ExtendViewIntoTitleBar = true;
@@ -66,49 +68,6 @@ namespace UTE_UWP_.Views
 
             ShareSourceLoad();
 
-            //var theme = Application.Current.RequestedTheme;
-            //string noneimg;
-            //string abcimg;
-            //string abcbimg;
-            //string dotimg;
-            //string iiiimg;
-            //string jiiimg;
-            //string numberimg;
-            //if (theme == ApplicationTheme.Light)
-            //{
-            //    noneimg = "none.png";
-            //    abcimg = "abc.png";
-            //    abcbimg = "ABCB.png";
-            //    dotimg = "dot.bmp";
-            //    numberimg = "number.png";
-            //    iiiimg = "iii.png";
-            //    jiiimg = "IIII.png";
-            //    NoneNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{noneimg}"));
-            //    NumberNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{numberimg}"));
-            //    BigINumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{jiiimg}"));
-            //    SmalliNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{iiiimg}"));
-            //    DottedNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{dotimg}"));
-            //    LetterBigNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcbimg}"));
-            //    LetterSmallNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcimg}"));
-            //}
-            //else
-            //{
-            //    noneimg = "noneDark.png";
-            //    abcimg = "abcDark.png";
-            //    abcbimg = "ABCBDark.png";
-            //    dotimg = "dotDark.bmp";
-            //    numberimg = "numberDark.png";
-            //    iiiimg = "iiiDark.png";
-            //    jiiimg = "IIIIDark.png";
-            //    NoneNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{noneimg}"));
-            //    NumberNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{numberimg}"));
-            //    BigINumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{jiiimg}"));
-            //    SmalliNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{iiiimg}"));
-            //    DottedNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{dotimg}"));
-            //    LetterBigNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcbimg}"));
-            //    LetterSmallNumeralImg.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{abcimg}"));
-            //}
-
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -124,7 +83,7 @@ namespace UTE_UWP_.Views
         // Update the TitleBar based on the inactive/active state of the app
         private void Current_Activated(object sender, WindowActivatedEventArgs e)
         {
-            SolidColorBrush defaultForegroundBrush = new SolidColorBrush((Color)Application.Current.Resources["SystemAccentColor"]);
+            SolidColorBrush defaultForegroundBrush = new SolidColorBrush((Windows.UI.Color)Application.Current.Resources["SystemAccentColor"]);
             SolidColorBrush inactiveForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorDisabledBrush"];
 
             if (e.WindowActivationState == CoreWindowActivationState.Deactivated)
@@ -289,8 +248,20 @@ namespace UTE_UWP_.Views
 
         private void BoldButton_Click(object sender, RoutedEventArgs e)
         {
-            //editor.FormatSelected(RichEditHelpers.FormattingMode.Bold);
-            //comments.FormatSelected(RichEditHelpers.FormattingMode.Bold);
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Bold = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText.CharacterFormat = charFormatting;
+            }
+            if (selectedText2 != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText2.CharacterFormat;
+                charFormatting.Bold = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText2.CharacterFormat = charFormatting;
+            }
         }
 
         private async void NewDoc_Click(object sender, RoutedEventArgs e)
@@ -343,46 +314,56 @@ namespace UTE_UWP_.Views
             //editor.AlignSelectedTo(RichEditHelpers.AlignMode.Left);
         }
 
-        private void FindBoxHighlightMatches()
-        {
-            FindBoxRemoveHighlights();
-
-            Color highlightBackgroundColor = (Color)Application.Current.Resources["SystemColorHighlightColor"];
-            Color highlightForegroundColor = (Color)Application.Current.Resources["SystemColorHighlightTextColor"];
-
-            string textToFind = findBox.Text;
-            if (textToFind != null)
-            {
-                ITextRange searchRange = editor.Document.GetRange(0, 0);
-                while (searchRange.FindText(textToFind, TextConstants.MaxUnitCount, FindOptions.None) > 0)
-                {
-                    searchRange.CharacterFormat.BackgroundColor = highlightBackgroundColor;
-                    searchRange.CharacterFormat.ForegroundColor = highlightForegroundColor;
-                }
-            }
-        }
-
-        private void FindBoxRemoveHighlights()
-        {
-            ITextRange documentRange = editor.Document.GetRange(0, TextConstants.MaxUnitCount);
-            SolidColorBrush defaultBackground = editor.Background as SolidColorBrush;
-            SolidColorBrush defaultForeground = editor.Foreground as SolidColorBrush;
-
-            documentRange.CharacterFormat.BackgroundColor = defaultBackground.Color;
-            documentRange.CharacterFormat.ForegroundColor = defaultForeground.Color;
-        }
 
 
         private void ItalicButton_Click(object sender, RoutedEventArgs e)
         {
-            //editor.FormatSelected(RichEditHelpers.FormattingMode.Italic);
-            //comments.FormatSelected(RichEditHelpers.FormattingMode.Italic);
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Italic = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText.CharacterFormat = charFormatting;
+            }
+            if (selectedText2 != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText2.CharacterFormat;
+                charFormatting.Italic = Windows.UI.Text.FormatEffect.Toggle;
+                selectedText2.CharacterFormat = charFormatting;
+            }
         }
 
         private void UnderlineButton_Click(object sender, RoutedEventArgs e)
         {
-            //editor.FormatSelected(RichEditHelpers.FormattingMode.Underline);
-            //comments.FormatSelected(RichEditHelpers.FormattingMode.Underline);
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            if (selectedText != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.Single;
+                }
+                else
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
+                }
+                selectedText.CharacterFormat = charFormatting;
+            }
+            if (selectedText2 != null)
+            {
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.Single;
+                }
+                else
+                {
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
+                }
+                selectedText2.CharacterFormat = charFormatting;
+            }
         }
 
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
@@ -481,7 +462,7 @@ namespace UTE_UWP_.Views
             if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Windows.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
                 hyperlinkText.AllowFocusOnInteraction = true;
             editor.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
-            editor.Document.Selection.CharacterFormat.ForegroundColor = (Color)XamlBindingHelper.ConvertValue(typeof(Color), "#6194c7");
+            editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)XamlBindingHelper.ConvertValue(typeof(Windows.UI.Color), "#6194c7");
             AddLinkButton.Flyout.Hide();
         }
 
@@ -557,7 +538,7 @@ namespace UTE_UWP_.Views
 
         private void FindButton_Click(object sender, RoutedEventArgs e)
         {
-            FindBoxHighlightMatches();
+            
         }
 
         private void editor_TextChanged(object sender, RoutedEventArgs e)
@@ -589,7 +570,7 @@ namespace UTE_UWP_.Views
         private void ConfirmColor_Click(object sender, RoutedEventArgs e)
         {
             // Confirm color picker choice and apply color to text
-            Color color = myColorPicker.Color;
+            Windows.UI.Color color = myColorPicker.Color;
             editor.Document.Selection.CharacterFormat.ForegroundColor = color;
 
             // Hide flyout
@@ -645,7 +626,7 @@ namespace UTE_UWP_.Views
 
         private void RemoveHighlightButton_Click(object sender, RoutedEventArgs e)
         {
-            FindBoxRemoveHighlights();
+            
         }
 
         private void ReplaceSelected_Click(object sender, RoutedEventArgs e)
@@ -662,7 +643,8 @@ namespace UTE_UWP_.Views
         {
             if (editor != null && editor.Document.Selection != null)
             {
-                //editor.ChangeFontSize((float)sender.Value);
+                ITextSelection selectedText = editor.Document.Selection;
+                selectedText.CharacterFormat.Size = (float)sender.Value;
             }
         }
 
@@ -787,7 +769,7 @@ namespace UTE_UWP_.Views
             request.Data.SetText(editor.TextDocument.ToString());
         }
 
-        private void ShareButton_Click(object sender, RoutedEventArgs e)
+        private void Shaeditorutton_Click(object sender, RoutedEventArgs e)
         {
             ShareSourceLoad();
             DataTransferManager.ShowShareUI();
@@ -1072,6 +1054,147 @@ namespace UTE_UWP_.Views
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #region Find and Replace
+
+        private void RepAllBTN_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            if (ReplaceBox.Text == FindTextBox.Text)
+            {
+            }
+            else if (ReplaceBox.Text.ToLower() == FindTextBox.Text.ToLower() && CaseSensBox.IsChecked == true && FullWordsBox.IsChecked == true)
+            {
+                
+            }
+            else if (ReplaceBox.Text.ToLower() == FindTextBox.Text.ToLower() && CaseSensBox.IsChecked != true)
+            {
+                
+            }
+            else
+            {
+                Replace(editor, FindTextBox.Text, ReplaceBox.Text, true);
+            }
+        }
+
+        public void Replace(RichEditBox Sender, string TextToFind, string TextToReplace, bool ReplaceAll)
+        {
+            if (ReplaceAll == true)
+            {
+                var Value = GetText(Sender);
+                if (!(string.IsNullOrWhiteSpace(Value) && string.IsNullOrWhiteSpace(TextToFind) && string.IsNullOrWhiteSpace(TextToReplace)))
+                {
+                    Sender.Document.Selection.SetRange(0, GetText(Sender).Length);
+                    if (CaseSensBox.IsChecked == true)
+                    {
+                        _ = Sender.Document.Selection.FindText(TextToFind, GetText(Sender).Length, FindOptions.Case);
+                        if (Sender.Document.Selection.Length == 1)
+                        {
+                            Sender.Document.Selection.SetText(TextSetOptions.FormatRtf, ReplaceBox.Text);
+                            _ = Sender.Focus(FocusState.Pointer);
+                            Replace(Sender, TextToFind, TextToReplace, true);
+                        }
+                    }
+                    if (FullWordsBox.IsChecked == true)
+                    {
+                        _ = Sender.Document.Selection.FindText(TextToFind, GetText(Sender).Length, FindOptions.Word);
+                        if (Sender.Document.Selection.Length == 1)
+                        {
+                            Sender.Document.Selection.SetText(TextSetOptions.FormatRtf, ReplaceBox.Text);
+                            _ = Sender.Focus(FocusState.Pointer);
+                            Replace(Sender, TextToFind, TextToReplace, true);
+                        }
+                    }
+                    if (!CaseSensBox.IsChecked == true && !FullWordsBox.IsChecked == true)
+                    {
+                        _ = Sender.Document.Selection.FindText(TextToFind, GetText(Sender).Length, FindOptions.None);
+                        if (Sender.Document.Selection.Length == 1)
+                        {
+                            Sender.Document.Selection.SetText(TextSetOptions.FormatRtf, ReplaceBox.Text);
+                            _ = Sender.Focus(FocusState.Pointer);
+                            Replace(Sender, TextToFind, TextToReplace, true);
+                        }
+                    }
+                    _ = Sender.Focus(FocusState.Pointer);
+                }
+            }
+            else
+            {
+                Sender.Document.Selection.SetRange(0, GetText(Sender).Length);
+                if (CaseSensBox.IsChecked == true)
+                {
+                    _ = Sender.Document.Selection.FindText(TextToFind, GetText(Sender).Length, FindOptions.Case);
+                    if (Sender.Document.Selection.Length == 1)
+                    {
+                        Sender.Document.Selection.SetText(TextSetOptions.FormatRtf, ReplaceBox.Text);
+                        _ = Sender.Focus(FocusState.Pointer);
+                    }
+                }
+                if (FullWordsBox.IsChecked == true)
+                {
+                    _ = Sender.Document.Selection.FindText(TextToFind, GetText(Sender).Length, FindOptions.Word);
+                    if (Sender.Document.Selection.Length == 1)
+                    {
+                        Sender.Document.Selection.SetText(TextSetOptions.FormatRtf, ReplaceBox.Text);
+                        _ = Sender.Focus(FocusState.Pointer);
+                    }
+                }
+                if (!CaseSensBox.IsChecked == true && !FullWordsBox.IsChecked == true)
+                {
+                    _ = Sender.Document.Selection.FindText(TextToFind, GetText(Sender).Length, FindOptions.None);
+                    if (Sender.Document.Selection.Length == 1)
+                    {
+                        Sender.Document.Selection.SetText(TextSetOptions.FormatRtf, ReplaceBox.Text);
+                        _ = Sender.Focus(FocusState.Pointer);
+                    }
+                }
+                _ = Sender.Focus(FocusState.Pointer);
+            }
+        }
+
+        private void FindBTN_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            editor.Document.Selection.SetRange(0, GetText(editor).Length);
+            if (CaseSensBox.IsChecked == true)
+            {
+                _ = editor.Document.Selection.FindText(FindTextBox.Text, GetText(editor).Length, FindOptions.Case);
+                _ = editor.Focus(FocusState.Pointer);
+            }
+            if (FullWordsBox.IsChecked == true)
+            {
+                _ = editor.Document.Selection.FindText(FindTextBox.Text, GetText(editor).Length, FindOptions.Word);
+                _ = editor.Focus(FocusState.Pointer);
+            }
+            if (!CaseSensBox.IsChecked == true && !FullWordsBox.IsChecked == true)
+            {
+                _ = editor.Document.Selection.FindText(FindTextBox.Text, GetText(editor).Length, FindOptions.None);
+                _ = editor.Focus(FocusState.Pointer);
+            }
+        }
+
+        private void RepBTN_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            Replace(editor, FindTextBox.Text, ReplaceBox.Text, false);
+        }
+
+        private void CancelFindRepBTN_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            _ = editor.Focus(FocusState.Pointer);
+        }
+
+        public static string GetText(RichEditBox RichEditor)
+        {
+            RichEditor.Document.GetText(TextGetOptions.FormatRtf, out var Text);
+            var Range = RichEditor.Document.GetRange(0, Text.Length);
+            Range.GetText(TextGetOptions.FormatRtf, out var Value);
+            return Value;
+        }
+
+        #endregion Find and Replace
+
+        private void ShareButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
