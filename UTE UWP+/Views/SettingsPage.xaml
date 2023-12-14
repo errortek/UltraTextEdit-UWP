@@ -75,7 +75,9 @@
                     <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
                         <controls:SettingsExpander Header="Theme" Description="Change app theme here">
                             <controls:SettingsExpander.Items>
-                                <StackPanel Margin="20">
+                                <controls:SettingsCard HorizontalContentAlignment="Left"
+                                               ContentAlignment="Left">
+                                    <StackPanel>
                                     <RadioButton 
 x:Uid="Settings_Theme_Light"
 Checked="ThemeChanged_CheckedAsync" 
@@ -107,6 +109,7 @@ GroupName="AppTheme">
                                         </RadioButton.CommandParameter>
                                     </RadioButton>
                                 </StackPanel>
+                                </controls:SettingsCard>
                             </controls:SettingsExpander.Items>
                         </controls:SettingsExpander>
                     </StackPanel>
