@@ -1,9 +1,11 @@
-﻿using Microsoft.UI.Xaml.Controls;
+﻿using Microsoft.Graphics.Canvas.Text;
+using Microsoft.UI.Xaml.Controls;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -1281,6 +1283,14 @@ namespace UTE_UWP_.Views
         private void ShareButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public List<string> fonts
+        {
+            get
+            {
+                return CanvasTextFormat.GetSystemFontFamilies().OrderBy(f => f).ToList();
+            }
         }
     }
 }
