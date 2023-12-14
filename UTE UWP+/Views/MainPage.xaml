@@ -109,7 +109,7 @@
                     x:Name="menu"
                     Margin="5,0,0,0"
                     VerticalAlignment="Center">
-                    <muxc:MenuBarItem Title="FileText}" d:Title="File">
+                    <muxc:MenuBarItem Title="File" d:Title="File">
                         <muxc:MenuBarItem.Background>
                             <SolidColorBrush Color="{ThemeResource SystemAccentColor}"/>
                         </muxc:MenuBarItem.Background>
@@ -123,18 +123,18 @@
                                 <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE78B;" />
                             </MenuFlyoutItem.Icon>
                         </MenuFlyoutItem>
-                        <MenuFlyoutItem Click="OpenButton_Click" Text="OpenText}" Icon="OpenFile"/>
-                        <MenuFlyoutItem Click="SaveButton_Click" Text="SaveText}" Icon="Save"/>
-                        <MenuFlyoutItem Click="SaveAsButton_Click" Text="SaveAsCopyText}">
+                        <MenuFlyoutItem Click="OpenButton_Click" Text="Open" Icon="OpenFile"/>
+                        <MenuFlyoutItem Click="SaveButton_Click" Text="Save" Icon="Save"/>
+                        <MenuFlyoutItem Click="SaveAsButton_Click" Text="SaveAsCopy">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="&#xE792;" />
                             </MenuFlyoutItem.Icon>
                         </MenuFlyoutItem>
-                        <MenuFlyoutItem Click="Print_Click" Text="PrintText}"  Icon="Print"/>
+                        <MenuFlyoutItem Click="Print_Click" Text="Print"  Icon="Print"/>
                         <MenuFlyoutSeparator />
-                        <MenuFlyoutItem Click="Home_Click" Text="HomeTitle}" Icon="Home"/>
+                        <MenuFlyoutItem Click="Home_Click" Text="Home" Icon="Home"/>
                         <MenuFlyoutSeparator />
-                        <MenuFlyoutItem Click="Exit_Click" Text="ExitText}">
+                        <MenuFlyoutItem Click="Exit_Click" Text="Exit">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="&#xE8BB;" />
                             </MenuFlyoutItem.Icon>
@@ -148,7 +148,7 @@
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Click="UndoButton_Click"
-                    ToolTipService.ToolTip="UndoTooltip}">
+                    ToolTipService.ToolTip="Undo">
                     <Viewbox MaxWidth="17" MaxHeight="17">
                         <SymbolIcon Symbol="Undo" />
                     </Viewbox>
@@ -159,7 +159,7 @@
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Click="RedoButton_Click"
-                    ToolTipService.ToolTip="RedoTooltip}">
+                    ToolTipService.ToolTip="Redo">
                     <Viewbox MaxWidth="17" MaxHeight="17">
                         <SymbolIcon Symbol="Redo" />
                     </Viewbox>
@@ -171,7 +171,7 @@
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Click="ShareButton_Click"
-                    ToolTipService.ToolTip="ShareText}">
+                    ToolTipService.ToolTip="Share">
                     <Viewbox MaxWidth="17" MaxHeight="17">
                         <SymbolIcon Symbol="Share" />
                     </Viewbox>
@@ -181,7 +181,7 @@
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Click="CommentsButton_Click"
-                    ToolTipService.ToolTip="CommentText}">
+                    ToolTipService.ToolTip="Comment">
                     <Viewbox MaxWidth="17" MaxHeight="17">
                         <SymbolIcon Symbol="Message" />
                     </Viewbox>
@@ -191,7 +191,7 @@
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Click="SettingsButton_Click"
-                    ToolTipService.ToolTip="SettingsText}">
+                    ToolTipService.ToolTip="Settings">
                     <Viewbox MaxWidth="17" MaxHeight="17">
                         <SymbolIcon Symbol="Setting" />
                     </Viewbox>
@@ -207,11 +207,11 @@
                 RelativePanel.AlignRightWithPanel="True"
                 Background="Transparent">
                 <controls:TabbedCommandBar.MenuItems>
-                    <controls:TabbedCommandBarItem Header="HomeMenuTitle}" Background="Transparent">
+                    <controls:TabbedCommandBarItem Header="Home" Background="Transparent">
                         <AppBarToggleButton
                     Click="BoldButton_Click" x:Name="BoldButton"
                     Style="{StaticResource TransparentToggleButton}"
-                    ToolTipService.ToolTip="Bold}">
+                    ToolTipService.ToolTip="Bold">
                             <Viewbox MaxWidth="17" MaxHeight="17">
                                 <SymbolIcon Symbol="Bold" />
                             </Viewbox>
@@ -220,7 +220,7 @@
                         <AppBarToggleButton
                     Click="ItalicButton_Click" x:Name="ItalicButton"
                     Style="{StaticResource TransparentToggleButton}"
-                    ToolTipService.ToolTip="Italic}">
+                    ToolTipService.ToolTip="Italic">
                             <Viewbox MaxWidth="17" MaxHeight="17">
                                 <SymbolIcon Symbol="Italic" />
                             </Viewbox>
@@ -228,7 +228,7 @@
                         <AppBarToggleButton
                     Click="UnderlineButton_Click" x:Name="UnderlineButton"
                     Style="{StaticResource TransparentToggleButton}"
-                    ToolTipService.ToolTip="Underline}">
+                    ToolTipService.ToolTip="Underline">
                             <Viewbox MaxWidth="17" MaxHeight="17">
                                 <SymbolIcon Symbol="Underline" />
                             </Viewbox>
@@ -236,14 +236,14 @@
                         <AppBarToggleButton
                     Click="StrikethoughButton_Click" x:Name="StrikethroughButton"
                     Style="{StaticResource TransparentToggleButton}"
-                    ToolTipService.ToolTip="Strikethrough}">
+                    ToolTipService.ToolTip="Strikethrough">
                             <FontIcon FontSize="17" Glyph="&#xEDE0;" />
                         </AppBarToggleButton>
                         <AppBarSeparator />
                         <AppBarButton
                     Click="AlignLeftButton_Click"
                     Style="{StaticResource TransparentButton}"
-                    ToolTipService.ToolTip="AlignLeft}">
+                    ToolTipService.ToolTip="Align Left">
                             <Viewbox MaxWidth="17" MaxHeight="17">
                                 <SymbolIcon Symbol="AlignLeft" />
                             </Viewbox>
@@ -251,7 +251,7 @@
                         <AppBarButton
                     Click="AlignCenterButton_Click"
                     Style="{StaticResource TransparentButton}"
-                    ToolTipService.ToolTip="AlignCenter}">
+                    ToolTipService.ToolTip="Align Center">
                             <Viewbox MaxWidth="17" MaxHeight="17">
                                 <SymbolIcon Symbol="AlignCenter" />
                             </Viewbox>
@@ -259,7 +259,7 @@
                         <AppBarButton
                     Click="AlignRightButton_Click"
                     Style="{StaticResource TransparentButton}"
-                    ToolTipService.ToolTip="AlignRight}">
+                    ToolTipService.ToolTip="Align Right">
                             <Viewbox MaxWidth="17" MaxHeight="17">
                                 <SymbolIcon Symbol="AlignRight" />
                             </Viewbox>
@@ -268,10 +268,10 @@
                         <AppBarElementContainer>
                             <!--<muxc:DropDownButton
                     x:Name="fontColorButton"
-                    AutomationProperties.Name="FontColorTooltip}"
+                    AutomationProperties.Name="FontColor"
                     BorderThickness="0"
                     RelativePanel.AlignRightWithPanel="True"
-                    ToolTipService.ToolTip="FontColorTooltip}">
+                    ToolTipService.ToolTip="FontColor">
                                 <SymbolIcon Symbol="FontColor" />
                                 <muxc:DropDownButton.Flyout>
                                     <Flyout Placement="Bottom">
@@ -437,7 +437,7 @@
 
                                                     </Style>
                                                 </VariableSizedWrapGrid.Resources>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Red">
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="White">
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -446,7 +446,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Orange">
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Grey">
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -455,7 +455,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Yellow">
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Dark Grey">
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -464,119 +464,11 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Green">
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Dark Grey">
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
                                                                 <Rectangle Fill="#666666"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Blue">
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#333333"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Light Blue">
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#000000"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Indigo" >
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#ff0000"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Violet" >
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#ffc000"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Gray" >
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#ffff00"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Beige" >
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#00b050"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Black" >
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#004dbb"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="White">
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#9b00d3"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Indigo">
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#c0504d"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Violet">
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#f79646"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Gray">
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#9bbb59"/>
-                                                            </Border>
-                                                        </Border>
-                                                    </Button.Content>
-                                                </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Beige">
-                                                    <Button.Content>
-                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
-                                                            <Border CornerRadius="100" >
-                                                                <Rectangle Fill="#4bacc6"/>
                                                             </Border>
                                                         </Border>
                                                     </Button.Content>
@@ -585,12 +477,120 @@
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#333333"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Black">
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#000000"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Red" >
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#ff0000"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Orange" >
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#ffc000"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Yellow" >
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#ffff00"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Green" >
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#00b050"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Blue" >
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#004dbb"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Purple">
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#9b00d3"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Brick Red">
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#c0504d"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Orange">
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#f79646"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Olive Green">
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#9bbb59"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Turquoise">
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
+                                                                <Rectangle Fill="#4bacc6"/>
+                                                            </Border>
+                                                        </Border>
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Azure">
+                                                    <Button.Content>
+                                                        <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
+                                                            <Border CornerRadius="100" >
                                                                 <Rectangle Fill="#4f81bd"/>
                                                             </Border>
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="White">
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Slate Grey">
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -599,7 +599,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Indigo">
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Copper Red">
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -608,7 +608,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Violet">
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Earth Orange">
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -617,7 +617,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Gray" >
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Dark Yellow" >
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -626,7 +626,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Beige" >
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Light Mint" >
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -635,7 +635,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Black" >
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Blue Grey" >
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -644,7 +644,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="White">
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Brown">
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -653,7 +653,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Indigo" >
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Earth Red" >
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -662,7 +662,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Violet" >
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Orange" >
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -671,7 +671,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Gray" >
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Yellow" >
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -680,7 +680,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Beige" >
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Muted Green" >
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -689,7 +689,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Black" >
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Muted Blue" >
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -698,7 +698,7 @@
                                                         </Border>
                                                     </Button.Content>
                                                 </Button>
-                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="White">
+                                                <Button Click="ColorButton_Click" ToolTipService.ToolTip="Lilac">
                                                     <Button.Content>
                                                         <Border CornerRadius="100" BorderBrush="#FFB7B7B7" BorderThickness="1" >
                                                             <Border CornerRadius="100" >
@@ -876,7 +876,7 @@
                             </muxc:SplitButton>
                         </AppBarElementContainer>
                         <AppBarSeparator />
-                        <AppBarButton Style="{StaticResource TransparentButton}" ToolTipService.ToolTip="FindDocTooltip}" Click="FindButton2_Click">
+                        <AppBarButton Style="{StaticResource TransparentButton}" ToolTipService.ToolTip="FindDoc" Click="FindButton2_Click">
                             <Button.Content>
                                 <Viewbox MaxWidth="17" MaxHeight="17">
                                     <SymbolIcon Symbol="Find" />
@@ -898,13 +898,13 @@
                         <AppBarButton
                     Click="AddImageButton_Click"
                     Style="{StaticResource TransparentButton}"
-                    ToolTipService.ToolTip="AddImageTooltip}">
+                    ToolTipService.ToolTip="AddImage">
                             <FontIcon FontSize="17" Glyph="&#xE8B9;" />
                         </AppBarButton>
                         <AppBarButton
                     x:Name="AddLinkButton"
                     Style="{StaticResource TransparentButton}"
-                    ToolTipService.ToolTip="AddHyperlinkTooltip}">
+                    ToolTipService.ToolTip="AddHyperlink">
                             <Button.Content>
                                 <FontIcon FontSize="17" Glyph="&#xE71B;" />
                             </Button.Content>
@@ -926,14 +926,14 @@
                         <AppBarButton
                     Click="AddTableButton_Click"
                     Style="{StaticResource TransparentButton}"
-                    ToolTipService.ToolTip="AddTableTooltip}">
+                    ToolTipService.ToolTip="AddTable">
                             <FontIcon FontSize="17" Glyph="&#xF261;" />
                         </AppBarButton>
                         <AppBarButton
                     Click="AddSymbolButton_Click"
                             x:Name="symbolbut"
                     Style="{StaticResource TransparentButton}"
-                    ToolTipService.ToolTip="AddSymbolTooltip}">
+                    ToolTipService.ToolTip="AddSymbol">
                             <FontIcon FontSize="17" Glyph="&#xED58;" />
                             <AppBarButton.Flyout>
                                 <Flyout Placement="Bottom" x:Name="symbolsflyout">
@@ -1011,13 +1011,13 @@
                             </AppBarButton.Flyout>
                         </AppBarButton>
                     </controls:TabbedCommandBarItem>
-                    <controls:TabbedCommandBarItem Header="EditText}" Background="Transparent">
-                        <AppBarButton Click="UndoButton_Click" Label="UndoTooltip}" Icon="Undo" />
-                        <AppBarButton Click="RedoButton_Click" Label="RedoTooltip}" Icon="Redo"/>
+                    <controls:TabbedCommandBarItem Header="Edit" Background="Transparent">
+                        <AppBarButton Click="UndoButton_Click" Label="Undo" Icon="Undo" />
+                        <AppBarButton Click="RedoButton_Click" Label="Redo" Icon="Redo"/>
                         <AppBarSeparator />
-                        <AppBarButton Click="CutButton_Click" Label="CutText}" Icon="Cut"/>
-                        <AppBarButton Click="CopyButton_Click" Label="CopyText}" Icon="Copy"/>
-                        <AppBarButton Click="PasteButton_Click" Label="PasteText}" Icon="Paste"/>
+                        <AppBarButton Click="CutButton_Click" Label="Cut" Icon="Cut"/>
+                        <AppBarButton Click="CopyButton_Click" Label="Copy" Icon="Copy"/>
+                        <AppBarButton Click="PasteButton_Click" Label="Paste" Icon="Paste"/>
                     </controls:TabbedCommandBarItem>
                     <controls:TabbedCommandBarItem x:Name="commentstabitem"
                                                Header="Comments"
@@ -1026,7 +1026,7 @@
                                                         Background="Transparent">
                         <AppBarButton Label="Hide Comments UI" Icon="LeaveChat" Click="closecomments"/>
                     </controls:TabbedCommandBarItem>
-                    <controls:TabbedCommandBarItem Header="HelpText}" Background="Transparent">
+                    <controls:TabbedCommandBarItem Header="Help" Background="Transparent">
                         <AppBarButton Label="About" Click="AboutBtn_Click">
                             <AppBarButton.Icon>
                                 <SymbolIcon Symbol="Help"/>
