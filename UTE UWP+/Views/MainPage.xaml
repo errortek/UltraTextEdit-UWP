@@ -1071,7 +1071,7 @@
                             <Button x:Name="RepBTN" Content="Replace" HorizontalAlignment="Stretch" Click="RepBTN_Click"/>
                             <Button x:Name="RepAllBTN" Content="Replace all" Click="RepAllBTN_Click" HorizontalAlignment="Stretch"/>
                         <Button x:Name="CancelFindRepBTN" Content="Cancel" HorizontalAlignment="Stretch" Click="CancelFindRepBTN_Click"/>
-                        <AppBarButton HorizontalAlignment="Center" Icon="ClosePane" Label="Close}" Click="closepane"/>
+                        <AppBarButton HorizontalAlignment="Center" Icon="ClosePane" Label="Close" Click="closepane"/>
                     </StackPanel>
                 </Grid>
             </SplitView.Pane>
