@@ -24,7 +24,9 @@
     </ContentDialog.TitleTemplate>
     <ScrollViewer>
         <StackPanel>
-            <TextBlock x:Uid="WhatsNew_Body" TextWrapping="WrapWholeWords" />
+            <TextBlock TextWrapping="WrapWholeWords">
+                Initial release of UTE UWP+
+            </TextBlock>
         </StackPanel>
     </ScrollViewer>
 </ContentDialog>
