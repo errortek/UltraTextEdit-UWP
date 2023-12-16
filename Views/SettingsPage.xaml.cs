@@ -7,6 +7,7 @@ using UltraTextEdit_UWP.Helpers;
 using UltraTextEdit_UWP.Services;
 
 using Windows.ApplicationModel;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
@@ -119,7 +120,7 @@ namespace UltraTextEdit_UWP.Views
                 rootFrame.GoBack();
             }
         }
-        private void spatialSoundBox_Checked(object sender, RoutedEventArgs e)
+        private void spatialAudioBox_Checked(object sender, RoutedEventArgs e)
         {
             if (soundToggle.IsOn == true)
             {
@@ -143,7 +144,7 @@ namespace UltraTextEdit_UWP.Views
                 ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off;
             }
         }
-        private void spatialSoundBox_Unchecked(object sender, RoutedEventArgs e)
+        private void spatialAudioBox_Unchecked(object sender, RoutedEventArgs e)
         {
             if (soundToggle.IsOn == true)
             {
@@ -167,6 +168,18 @@ namespace UltraTextEdit_UWP.Views
             {
                 rootFrame.Navigate(typeof(UTEUpdate));
             }
+        }
+
+        private void CopyVerInfo(object sender, RoutedEventArgs e)
+        {
+            var data = new DataPackage
+            {
+                RequestedOperation = DataPackageOperation.Copy
+            };
+            data.SetText(aboutblock.Header + " version " + aboutblock.Description);
+
+            Clipboard.SetContentWithOptions(data, new ClipboardContentOptions() { IsAllowedInHistory = true, IsRoamable = true });
+            Clipboard.Flush();
         }
     }
 }
