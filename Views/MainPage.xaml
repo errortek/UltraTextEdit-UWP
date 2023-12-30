@@ -5,7 +5,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    Style="{StaticResource PageStyle}"
     mc:Ignorable="d"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
 
@@ -36,7 +35,7 @@
 
     <RelativePanel x:Name="containerPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" >
 
-        <Grid x:Name="AppTitleBar"
+        <Grid x:Name="AppTitleGrid"
                 IsHitTestVisible="True"
                 VerticalAlignment="Top"
                 Height="40"
@@ -44,40 +43,64 @@
                 Margin="0,0,0,0"
                 Width="Auto"
                 RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
-            <StackPanel Orientation="Horizontal" Width="Auto">
-                <Rectangle Width="12"/>
-                <Image x:Name="AppFontIcon"
-                         HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"
-                         Source="ms-appx:///Assets/Square44x44Logo.png" 
-                         Width="24" 
-                         Height="24"
-                         Margin="0,2,0,0" />
+            <StackPanel x:Name="TitleBar" Orientation="Horizontal">
+                <Border
+            x:Name="AppTitleBar"
+            Height="40"
+            Margin="12,2,0,0"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            Canvas.ZIndex="1"
+            IsHitTestVisible="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True">
+                    <StackPanel Orientation="Horizontal">
+                        <Image
+                    x:Name="AppFontIcon"
+                    Width="24"
+                    Height="24"
+                    Margin="0,2,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Source="ms-appx:///Assets/Square44x44Logo.png" />
+                        <TextBlock
+                    x:Name="AppTitle"
+                    Margin="12,2,4,0"
+                    VerticalAlignment="Center"
+                    Text="Untitled - UTE UWP"
+                    FontSize="12"
+                    FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
+                    </StackPanel>
+                </Border>
+                <Grid x:Name="InsiderGrid" Visibility="Collapsed">
+                    <Button Background="#50E6FF" Width="50" Height="25" Padding="0" CornerRadius="8" Click="showinsiderinfo">
+                        <Grid>
+                            <TextBlock Text="BETA" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+                        </Grid>
+                    </Button>
+                    <muxc:TeachingTip x:Name="ToggleThemeTeachingTip1"
+Target="{x:Bind InsiderGrid}"
+Title="Beta Channel"
+Subtitle="The Beta Channel is the Insider Channel that receives updates for the next Moment update or finalized major build, and is more stable than Dev, but less stable than Release Preview/RP.">
+                        <muxc:TeachingTip.IconSource>
+                            <muxc:FontIconSource  Glyph="&#xF1AD;"/>
+                        </muxc:TeachingTip.IconSource>
+                    </muxc:TeachingTip>
+                </Grid>
                 <TextBlock
-                        x:Name="AppTitle"
-                        Margin="12,2,4,0"
-                        VerticalAlignment="Center"
-                        Text="Untitled - UTE UWP"
-                        FontSize="12"
-                        FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
-                <TextBlock x:Name="UnsavedTextBlock"
-                               Text="* Not Saved"
-                               ToolTipService.ToolTip="There are unsaved changes to your document!"
-                               VerticalAlignment="Center" Padding="5,0" Opacity="0.75" />
-                <TextBlock x:Name="PreviewBlock"
-                               Text="PREVIEW"
-                               VerticalAlignment="Center"
-                               Margin="12,2,0,0"
-                               Style="{StaticResource CaptionTextBlockStyle}" Opacity="0.5"
-                           Visibility="Collapsed"/>
+                    x:Name="UnsavedTextBlock"
+                    Padding="5,0"
+                    VerticalAlignment="Center"
+                    Text="* Not Saved"
+                    ToolTipService.ToolTip="There are unsaved changes." />
             </StackPanel>
         </Grid>
-        <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"  RelativePanel.AlignBottomWithPanel="True">
+        <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" RelativePanel.Below="AppTitleGrid" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"  RelativePanel.AlignBottomWithPanel="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="48" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
- 
+
 
             <RelativePanel 
             Background="Transparent" Grid.RowSpan="2" x:Name="mainpanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
@@ -85,93 +108,303 @@
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
             -->
-                <controls:TabbedCommandBar  Background="Transparent" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"
-                                             x:Name="ribbon" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"
-                                           >
-                    <!-- IsBackButtonVisible="Visible" -->
-                    <controls:TabbedCommandBar.PaneFooter>
-                        <ScrollViewer HorizontalScrollMode="Enabled" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Stretch">
-                            <CommandBar Background="Transparent" DefaultLabelPosition="Right">
-                                <AppBarElementContainer VerticalAlignment="Center">
-                                    <AutoSuggestBox QueryIcon="Find" AutomationProperties.Name="Search" x:Name="Find" TextChanged="{x:Bind FindBoxHighlightMatches}"
-                GotFocus="{x:Bind FindBoxHighlightMatches}"
-                LostFocus="{x:Bind FindBoxRemoveHighlights}" Width="150
-                                                    "/>
-                                </AppBarElementContainer>
-                                <AppBarElementContainer VerticalAlignment="Center">
-                                    <AutoSuggestBox QueryIcon="Go" AutomationProperties.Name="Search" x:Name="Replace" QuerySubmitted="Replace_QuerySubmitted"
-                                                Width="150"/>
-                                </AppBarElementContainer>
+                <StackPanel
+    x:Name="MenuPanel"
+    VerticalAlignment="Center"
+    Orientation="Horizontal">
+                    <Button
+VerticalAlignment="Center"
+Background="Transparent"
+BorderBrush="Transparent"
+Click="NewDoc_Click"
+ToolTipService.ToolTip="New document">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <PathIcon Data="M18.5 20a.5.5 0 0 1-.5.5h-5.732A6.518 6.518 0 0 1 11.19 22H18a2 2 0 0 0 2-2V9.828a2 2 0 0 0-.586-1.414l-5.829-5.828a.491.491 0 0 0-.049-.04.63.63 0 0 1-.036-.03 2.072 2.072 0 0 0-.219-.18.652.652 0 0 0-.08-.044l-.048-.024-.05-.029c-.054-.031-.109-.063-.166-.087a1.977 1.977 0 0 0-.624-.138c-.02-.001-.04-.004-.059-.007A.605.605 0 0 0 12.172 2H6a2 2 0 0 0-2 2v7.498a6.451 6.451 0 0 1 1.5-.422V4a.5.5 0 0 1 .5-.5h6V8a2 2 0 0 0 2 2h4.5v10Zm-5-15.379L17.378 8.5H14a.5.5 0 0 1-.5-.5V4.621Z M12 17.5a5.5 5.5 0 1 0-11 0 5.5 5.5 0 0 0 11 0ZM7 18l.001 2.503a.5.5 0 1 1-1 0V18H3.496a.5.5 0 0 1 0-1H6v-2.5a.5.5 0 1 1 1 0V17h2.497a.5.5 0 0 1 0 1H7Z"/>
+                        </Viewbox>
+                    </Button>
+                    <Button
+VerticalAlignment="Center"
+Background="Transparent"
+BorderBrush="Transparent"
+Click="OpenButton_Click"
+ToolTipService.ToolTip="Open">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="OpenFile" />
+                        </Viewbox>
+                    </Button>
+                    <Button
+VerticalAlignment="Center"
+Background="Transparent"
+BorderBrush="Transparent"
+Click="SaveButton_Click"
+ToolTipService.ToolTip="Save">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Save" />
+                        </Viewbox>
+                    </Button>
+                    <AppBarSeparator/>
+                    <Button
+        VerticalAlignment="Center"
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="UndoButton_Click"
+        ToolTipService.ToolTip="Undo">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Undo" />
+                        </Viewbox>
+                    </Button>
 
-                                <AppBarButton Click="HomeButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Home" Visibility="Collapsed">
-                                    <Viewbox MaxHeight="17" MaxWidth="17">
-                                        <SymbolIcon Symbol="Home" />
-                                    </Viewbox>
-                                </AppBarButton>
-                                <AppBarSeparator/>
-                                <AppBarButton Click="UndoButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Undo">
-                                    <Viewbox MaxHeight="17" MaxWidth="17">
-                                        <SymbolIcon Symbol="Undo" />
-                                    </Viewbox>
-                                </AppBarButton>
+                    <Button
+        VerticalAlignment="Center"
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="RedoButton_Click"
+        ToolTipService.ToolTip="Redo">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Redo" />
+                        </Viewbox>
+                    </Button>
 
-                                <AppBarButton Click="RedoButton_Click" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" ToolTipService.ToolTip="Redo">
-                                    <Viewbox MaxHeight="17" MaxWidth="17">
-                                        <SymbolIcon Symbol="Redo" />
-                                    </Viewbox>
-                                </AppBarButton>
-                                <AppBarButton Icon="Copy" Click="CopyButton_Click" ToolTipService.ToolTip="Copy"/>
-                                <AppBarButton Icon="Paste" Click="PasteButton_Click" ToolTipService.ToolTip="Paste"/>
-                                <AppBarButton Icon="Cut" Click="CutButton_Click" ToolTipService.ToolTip="Cut"/>
-                                <AppBarSeparator/>
-                                <AppBarButton Label="Share" Icon="Share" Click="ShareButton_Click"/>
-                                <AppBarButton Label="Comments" Icon="Message" Click="CommentButton_Click"/>
-                                <AppBarButton Label="What's New" Icon="Message" Click="AppBarButton_Click_1"/>
-                                <AppBarButton Label="Settings" Icon="Setting" Click="AppBarButton_Click"/>
-                            </CommandBar>
-                        </ScrollViewer>
-                    </controls:TabbedCommandBar.PaneFooter>
+                    <AppBarSeparator />
+
+                    <Button
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="ShareButton_Click"
+        ToolTipService.ToolTip="Share">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Share" />
+                        </Viewbox>
+                    </Button>
+
+                    <Button
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="CommentButton_Click"
+        ToolTipService.ToolTip="Comments">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Message" />
+                        </Viewbox>
+                    </Button>
+
+                    <Button
+        Background="Transparent"
+        BorderBrush="Transparent"
+        Click="SettingsButton_Click"
+        ToolTipService.ToolTip="Settings">
+                        <Viewbox MaxWidth="17" MaxHeight="17">
+                            <SymbolIcon Symbol="Setting" />
+                        </Viewbox>
+                    </Button>
+                </StackPanel>
+                <controls:TabbedCommandBar
+                x:Name="ribbon"
+                Margin="0,0,0,0"
+                Padding="0,0,0,0"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                Background="Transparent" RelativePanel.Below="MenuPanel">
                     <controls:TabbedCommandBar.MenuItems>
-                        <controls:TabbedCommandBarItem Header="Home"  Background="Transparent">
-                            <AppBarButton Label="New Document" Click="NewDoc_Click">
-                                <AppBarButton.Icon>
-                                    <PathIcon Data="M18.5 20a.5.5 0 0 1-.5.5h-5.732A6.518 6.518 0 0 1 11.19 22H18a2 2 0 0 0 2-2V9.828a2 2 0 0 0-.586-1.414l-5.829-5.828a.491.491 0 0 0-.049-.04.63.63 0 0 1-.036-.03 2.072 2.072 0 0 0-.219-.18.652.652 0 0 0-.08-.044l-.048-.024-.05-.029c-.054-.031-.109-.063-.166-.087a1.977 1.977 0 0 0-.624-.138c-.02-.001-.04-.004-.059-.007A.605.605 0 0 0 12.172 2H6a2 2 0 0 0-2 2v7.498a6.451 6.451 0 0 1 1.5-.422V4a.5.5 0 0 1 .5-.5h6V8a2 2 0 0 0 2 2h4.5v10Zm-5-15.379L17.378 8.5H14a.5.5 0 0 1-.5-.5V4.621Z M12 17.5a5.5 5.5 0 1 0-11 0 5.5 5.5 0 0 0 11 0ZM7 18l.001 2.503a.5.5 0 1 1-1 0V18H3.496a.5.5 0 0 1 0-1H6v-2.5a.5.5 0 1 1 1 0V17h2.497a.5.5 0 0 1 0 1H7Z"/>
-                                </AppBarButton.Icon>
+                        <controls:TabbedCommandBarItem Header="Home" Background="Transparent">
+                            <AppBarToggleButton
+                    Click="BoldButton_Click" x:Name="BoldButton"
+                    Style="{StaticResource TransparentToggleButton}"
+                    ToolTipService.ToolTip="Bold">
+                                <Viewbox MaxWidth="17" MaxHeight="17">
+                                    <SymbolIcon Symbol="Bold" />
+                                </Viewbox>
+                            </AppBarToggleButton>
+
+                            <AppBarToggleButton
+                    Click="ItalicButton_Click" x:Name="ItalicButton"
+                    Style="{StaticResource TransparentToggleButton}"
+                    ToolTipService.ToolTip="Italic">
+                                <Viewbox MaxWidth="17" MaxHeight="17">
+                                    <SymbolIcon Symbol="Italic" />
+                                </Viewbox>
+                            </AppBarToggleButton>
+                            <AppBarToggleButton
+                    Click="UnderlineButton_Click" x:Name="UnderlineButton"
+                    Style="{StaticResource TransparentToggleButton}"
+                    ToolTipService.ToolTip="Underline">
+                                <Viewbox MaxWidth="17" MaxHeight="17">
+                                    <SymbolIcon Symbol="Underline" />
+                                </Viewbox>
+                            </AppBarToggleButton>
+                            <AppBarToggleButton
+                    Click="StrikeButton_Click" x:Name="StrikethroughButton"
+                    Style="{StaticResource TransparentToggleButton}"
+                    ToolTipService.ToolTip="Strikethrough">
+                                <FontIcon FontSize="17" Glyph="&#xEDE0;" />
+                            </AppBarToggleButton>
+                            <AppBarSeparator />
+                            <AppBarButton
+                    Click="AlignLeftButton_Click"
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="Align left">
+                                <Viewbox MaxWidth="17" MaxHeight="17">
+                                    <SymbolIcon Symbol="AlignLeft" />
+                                </Viewbox>
                             </AppBarButton>
-                            <AppBarButton Icon="OpenFile" Label="Open" Click="OpenButton_Click"/>
-                            <AppBarButton Icon="Save" Label="Save" Click="SaveButton_Click"/>
+                            <AppBarButton
+                    Click="AlignCenterButton_Click"
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="Align center">
+                                <Viewbox MaxWidth="17" MaxHeight="17">
+                                    <SymbolIcon Symbol="AlignCenter" />
+                                </Viewbox>
+                            </AppBarButton>
+                            <AppBarButton
+                    Click="AlignRightButton_Click"
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="Align right">
+                                <Viewbox MaxWidth="17" MaxHeight="17">
+                                    <SymbolIcon Symbol="AlignRight" />
+                                </Viewbox>
+                            </AppBarButton>
                             <AppBarSeparator />
                             <AppBarElementContainer>
-                                <ComboBox x:Name="fontbox" SelectedItem="Segoe UI" IsTextSearchEnabled="True" MinWidth="100" SelectionChanged="ComboBox1_SelectionChanged"/>
-                            </AppBarElementContainer>
-                            <AppBarElementContainer>
-                                <ComboBox x:Name="Combo3" IsEditable="True" ItemsSource="{x:Bind FontSizes}" Width="100" Loaded="Combo3_Loaded"  />
-                            </AppBarElementContainer>
-                            <AppBarToggleButton Icon="Bold" Label="Bold" Checked="BoldButton_Click" Unchecked="BoldButton_Off"/>
-                            <AppBarToggleButton Icon="Italic" Label="Italic" Checked="ItalicButton_Click" Unchecked="ItalicButton_Off"/>
-                            <AppBarToggleButton Icon="Underline" Label="Underline" Checked="UnderlineButton_Click" Unchecked="UnderlineButton_Off"/>
-                            <AppBarToggleButton Label="Strikethrough" Checked="StrikeButton_Click" Unchecked="StrikeButton_Off">
-                                <AppBarToggleButton.Icon>
-                                    <FontIcon Glyph="&#xEDE0;"/>
-                                </AppBarToggleButton.Icon>
-                            </AppBarToggleButton>
-                            <AppBarToggleButton Label="Superscript" Click="SuperscriptCheck">
-                                <AppBarToggleButton.Icon>
-                                    <PathIcon Data="M18.736 3.5c-.543 0-.986.495-.986 1.023a.75.75 0 0 1-1.5 0C16.25 3.278 17.258 2 18.736 2c.855 0 1.684.4 2.15 1.117.49.751.5 1.724-.057 2.672-.285.484-.673.847-1.045 1.141-.187.148-.379.284-.557.41l-.078.056a17.45 17.45 0 0 0-.432.311c-.356.268-.619.511-.78.793h2.514a.75.75 0 0 1 0 1.5H17a.75.75 0 0 1-.75-.75c0-1.396.821-2.182 1.565-2.741.157-.119.32-.234.472-.341l.074-.052c.177-.126.34-.243.493-.363.306-.242.532-.47.682-.724.31-.53.229-.886.093-1.094-.158-.244-.486-.435-.893-.435Z M15.26 4.71c.06.562.385 1.043.847 1.318L10.987 12l5.583 6.512a.75.75 0 1 1-1.14.976L10 13.152l-5.43 6.336a.75.75 0 0 1-1.14-.976L9.013 12 3.431 5.488a.75.75 0 1 1 1.139-.976L10 10.848l5.26-6.137Z"/>
-                                </AppBarToggleButton.Icon>
-                            </AppBarToggleButton>
-                            <AppBarToggleButton Label="Subscript" Click="SubscriptCheck">
-                                <AppBarToggleButton.Icon>
-                                    <PathIcon Data="M16.488 4.43a.75.75 0 0 1 .082 1.058L10.988 12l5.032 5.871c-.302.41-.555.906-.682 1.51L10 13.151l-5.43 6.336a.75.75 0 0 1-1.14-.976L9.013 12 3.431 5.488a.75.75 0 0 1 1.139-.976L10 10.848l5.43-6.336a.75.75 0 0 1 1.058-.081ZM17.75 15.523c0-.528.444-1.023.986-1.023.407 0 .735.19.893.434.136.21.218.566-.093 1.095-.15.255-.376.482-.682.724-.152.12-.316.237-.493.363l-.074.052c-.152.107-.315.222-.472.34-.744.56-1.565 1.346-1.565 2.742 0 .414.336.75.75.75h3.451a.75.75 0 0 0 0-1.5h-2.513c.16-.282.423-.525.779-.793.137-.103.279-.203.432-.312l.078-.054c.178-.127.37-.264.557-.41.372-.295.76-.658 1.045-1.142.557-.948.546-1.921.058-2.672C20.42 13.4 19.59 13 18.736 13c-1.478 0-2.486 1.278-2.486 2.523a.75.75 0 0 0 1.5 0Z"/>
-                                </AppBarToggleButton.Icon>
-                            </AppBarToggleButton>
-                            <AppBarSeparator />
-                            <AppBarElementContainer>
-                                <muxc:SplitButton x:Name="fontcolorsplitbutton" Grid.Column="6" Content="&#xE8FD;" Grid.Row="1" FontFamily="WordPad Fluent Icons" VerticalContentAlignment="Stretch" FontSize="20" Click="fontcolorsplitbutton_Click">
+                                <!--<muxc:DropDownButton
+                    x:Name="fontColorButton"
+                    AutomationProperties.Name="{x:Bind res:Resources.FontColorTooltip}"
+                    BorderThickness="0"
+                    RelativePanel.AlignRightWithPanel="True"
+                    ToolTipService.ToolTip="{x:Bind res:Resources.FontColorTooltip}">
+                                <SymbolIcon Symbol="FontColor" />
+                                <muxc:DropDownButton.Flyout>
+                                    <Flyout Placement="Bottom">
+                                        <RelativePanel>
+                                            <VariableSizedWrapGrid
+                                    x:Name="colorGrid"
+                                    MaximumRowsOrColumns="4"
+                                    Orientation="Horizontal">
+                                                <VariableSizedWrapGrid.Resources>
+                                                    <Style TargetType="Rectangle">
+                                                        <Setter Property="Width" Value="32" />
+                                                        <Setter Property="Height" Value="32" />
+                                                    </Style>
+
+                                                    <Style TargetType="Button">
+                                                        <Setter Property="Padding" Value="0" />
+                                                        <Setter Property="MinWidth" Value="0" />
+                                                        <Setter Property="MinHeight" Value="0" />
+                                                        <Setter Property="Margin" Value="5" />
+                                                        <Setter Property="CornerRadius" Value="8" />
+                                                    </Style>
+                                                </VariableSizedWrapGrid.Resources>
+                                                <Button
+                                        AutomationProperties.Name="Red"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Red">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Red" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Orange"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Orange">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Orange" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Yellow"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Yellow">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Yellow" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Green"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Green">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Green" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Blue"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Blue">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Blue" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="LightBlue"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Light Blue">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="LightBlue" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Indigo"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Indigo">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Indigo" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Violet"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Violet">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Violet" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Gray"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Gray">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Gray" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Beige"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Beige">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Beige" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Black"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="Black">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="Black" />
+                                                    </Button.Content>
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="White"
+                                        Click="ColorButton_Click"
+                                        ToolTipService.ToolTip="White">
+                                                    <Button.Content>
+                                                        <Rectangle Fill="White" />
+                                                    </Button.Content>
+                                                </Button>
+                                            </VariableSizedWrapGrid>
+                                            <Button
+                                    x:Name="colorPickerButton"
+                                    Width="173"
+                                    Margin="0,8,0,0"
+                                    Content="More colors"
+                                    Flyout="{StaticResource myColorPickerFlyout}"
+                                    RelativePanel.Below="colorGrid" />
+                                        </RelativePanel>
+                                    </Flyout>
+                                </muxc:DropDownButton.Flyout>
+                            </muxc:DropDownButton>-->
+                                <muxc:SplitButton x:Name="fontcolorsplitbutton" Grid.Column="6" Content="&#xE186;" Grid.Row="1" FontFamily="{ThemeResource SymbolThemeFontFamily}" VerticalContentAlignment="Stretch" FontSize="16" Click="fontcolorsplitbutton_Click">
                                     <muxc:SplitButton.Flyout>
                                         <Flyout Placement="Bottom">
                                             <RelativePanel>
-                                                <VariableSizedWrapGrid x:Name="colorGrid" MaximumRowsOrColumns="6" RelativePanel.Below="Autobutton" Width="155" Margin="0,3,0,3">
+                                                <VariableSizedWrapGrid x:Name="colorGrid" MaximumRowsOrColumns="6" RelativePanel.Below="Autobutton" Margin="0,3,0,3">
                                                     <VariableSizedWrapGrid.Resources>
                                                         <Style TargetType="Rectangle">
                                                             <Setter Property="Width" Value="25"/>
@@ -495,101 +728,145 @@
                                 </muxc:SplitButton>
                             </AppBarElementContainer>
                             <AppBarElementContainer>
-                                <muxc:ToggleSplitButton x:Name="ListButton"
-                   ToolTipService.ToolTip="List style"
-                   
-                   IsCheckedChanged="ListStyleButton_IsCheckedChanged">
-                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8FD;"/>
-                                    <muxc:ToggleSplitButton.Flyout>
-                                        <Flyout>
-                                            <ListView x:Name="ListStylesListView"
-                      SelectionChanged="ListStylesListView_SelectionChanged"
-                      SingleSelectionFollowsFocus="False">
-                                                <StackPanel Tag="bullet" Orientation="Horizontal">
-                                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7C8;"/>
-                                                    <TextBlock Text="Bullet" Margin="8,0"/>
-                                                </StackPanel>
-                                                <StackPanel Tag="alpha" Orientation="Horizontal">
-                                                    <TextBlock Text="A" FontSize="24" Margin="2,0"/>
-                                                    <TextBlock Text="Alpha" Margin="8"/>
-                                                </StackPanel>
-                                                <StackPanel Tag="numeric" Orientation="Horizontal">
-                                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xF146;"/>
-                                                    <TextBlock Text="Numeric" Margin="8,0"/>
-                                                </StackPanel>
-                                                <TextBlock Tag="none" Text="None" Margin="28,0"/>
-                                            </ListView>
-                                        </Flyout>
-                                    </muxc:ToggleSplitButton.Flyout>
-                                </muxc:ToggleSplitButton>
+                                <muxc:NumberBox
+                    x:Name="FontSizeBox"
+                    MinWidth="120"
+                    Maximum="150"
+                    Minimum="8"
+                    PlaceholderText="Font size"
+                    SpinButtonPlacementMode="Compact"
+                    ValueChanged="FontSizeBox_ValueChanged"
+                    Value="11" />
                             </AppBarElementContainer>
                             <AppBarElementContainer>
-                                <muxc:ToggleSplitButton x:Name="ListButton2"
-                   ToolTipService.ToolTip="Text Alignment"
-                   
-                   IsCheckedChanged="ListButton2_IsCheckedChanged">
-                                    <StackPanel Orientation="Horizontal">
-                                        <SymbolIcon Symbol="AlignLeft" />
-                                        <SymbolIcon Symbol="AlignCenter" />
-                                        <SymbolIcon Symbol="AlignRight" />
-                                    </StackPanel>
+                                <ComboBox
+                    x:Name="FontsCombo"
+                    IsTextSearchEnabled="True"
+                    ItemsSource="{x:Bind fonts}"
+                    PlaceholderText="Font"
+                    SelectedItem="Segoe UI"
+                    SelectionChanged="FontsCombo_SelectionChanged">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate x:DataType="x:String">
+                                            <TextBlock FontFamily="{x:Bind}" Text="{x:Bind}" />
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </AppBarElementContainer>
+                            <AppBarElementContainer>
+                                <muxc:ToggleSplitButton x:Name="myListButton" Grid.Column="2" Grid.ColumnSpan="3" Padding="11,0,11,0">
+                                    <muxc:ToggleSplitButton.Content>
+                                        <FontIcon Glyph="&#xE133;" />
+                                    </muxc:ToggleSplitButton.Content>
                                     <muxc:ToggleSplitButton.Flyout>
-                                        <Flyout>
-                                            <ListView x:Name="ListStylesListView2"
-                      SelectionChanged="ListStylesListView_SelectionChanged_1"
-                      SingleSelectionFollowsFocus="False">
-                                                <StackPanel Tag="left" Orientation="Horizontal">
-                                                    <SymbolIcon Symbol="AlignLeft" />
-                                                    <TextBlock Text="Left" Margin="8,0"/>
-                                                </StackPanel>
-                                                <StackPanel Tag="right" Orientation="Horizontal">
-                                                    <SymbolIcon Symbol="AlignRight" />
-                                                    <TextBlock Text="Right" Margin="8"/>
-                                                </StackPanel>
-                                                <StackPanel Tag="center" Orientation="Horizontal">
-                                                    <SymbolIcon Symbol="AlignCenter" />
-                                                    <TextBlock Text="Center" Margin="8,0"/>
-                                                </StackPanel>
-                                            </ListView>
+                                        <Flyout Placement="Bottom">
+                                            <Grid>
+                                                <Grid.Resources>
+                                                    <Style TargetType="Button">
+                                                        <Setter Property="Padding" Value="4"/>
+                                                        <Setter Property="MinWidth" Value="0"/>
+                                                        <Setter Property="MinHeight" Value="0"/>
+                                                        <Setter Property="Margin" Value="6"/>
+                                                        <Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
+                                                        <Setter Property="Background" Value="White"/>
+                                                    </Style>
+                                                </Grid.Resources>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Button x:Name="NoneNumeral" Grid.Row="0" Grid.Column="0" Click="NoneNumeral_Click" Width="64" Height="64">
+                                                    <Image x:Name="NoneNumeralImg" Source="/Assets/listnumbersimages/none.png" Width="60" Height="60" />
+                                                </Button>
+                                                <Button x:Name="DottedNumeral" Grid.Row="0" Grid.Column="1" Click="DottedNumeral_Click" Width="64" Height="64">
+                                                    <Image x:Name="DottedNumeralImg" Source="/Assets/listnumbersimages/dot.bmp" Width="60" Height="60" />
+                                                </Button>
+                                                <Button x:Name="NumberNumeral" Grid.Row="0" Grid.Column="2" Click="NumberNumeral_Click" Height="64" Width="64">
+                                                    <Image x:Name="NumberNumeralImg" Source="/Assets/listnumbersimages/number.png" Width="60" Height="60" />
+                                                </Button>
+                                                <Button x:Name="LetterSmallNumeral" Grid.Row="1" Grid.Column="0" Click="LetterSmallNumeral_Click" Height="64" Width="64">
+                                                    <Image x:Name="LetterSmallNumeralImg" Source="/Assets/listnumbersimages/abc.png" Width="60" Height="60" />
+                                                </Button>
+                                                <Button x:Name="LetterBigNumeral"  Grid.Row="1" Grid.Column="1" Click="LetterBigNumeral_Click" Height="64" Width="64">
+                                                    <Image x:Name="LetterBigNumeralImg" Source="/Assets/listnumbersimages/ABCB.png" Width="60" Height="60" />
+                                                </Button>
+                                                <Button x:Name="SmalliNumeral" Grid.Row="1" Grid.Column="2" Click="SmalliNumeral_Click" Height="64" Width="64">
+                                                    <Image x:Name="SmalliNumeralImg" Source="/Assets/listnumbersimages/iii.png" Width="64" Height="64" />
+                                                </Button>
+                                                <Button x:Name="BigINumeral" Grid.Row="2" Grid.Column="0" Click="BigINumeral_Click" Height="64" Width="64">
+                                                    <Image x:Name="BigINumeralImg" Source="/Assets/listnumbersimages/IIII.png" Width="64" Height="64" />
+                                                </Button>
+                                            </Grid>
                                         </Flyout>
                                     </muxc:ToggleSplitButton.Flyout>
                                 </muxc:ToggleSplitButton>
                             </AppBarElementContainer>
-
-
-
-                        </controls:TabbedCommandBarItem>
-                        <controls:TabbedCommandBarItem Header="Insert"  Background="Transparent">
-                            <AppBarButton Label="Image" Icon="Pictures">
-                                <AppBarButton.Flyout>
-                                    <MenuFlyout Placement="BottomEdgeAlignedLeft">
-                                        <MenuFlyoutItem Text="This Device" Click="image">
-                                            <MenuFlyoutItem.Icon>
-                                                <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xEC4E;" />
-                                            </MenuFlyoutItem.Icon>
-                                        </MenuFlyoutItem>
-                                    </MenuFlyout>
-                                </AppBarButton.Flyout>
+                            <AppBarSeparator />
+                            <AppBarButton Style="{StaticResource TransparentButton}" ToolTipService.ToolTip="Find" Click="FindButton2_Click">
+                                <Button.Content>
+                                    <Viewbox MaxWidth="17" MaxHeight="17">
+                                        <SymbolIcon Symbol="Find" />
+                                    </Viewbox>
+                                </Button.Content>
                             </AppBarButton>
-                            <AppBarButton Icon="Link" Label="Link" x:Name="linkbutton">
+                            <AppBarSeparator />
+                            <AppBarToggleButton Click="SubscriptCheck" Label="Subscript">
+                                <AppBarToggleButton.Icon>
+                                    <PathIcon Data="M16.488 4.43a.75.75 0 0 1 .082 1.058L10.988 12l5.032 5.871c-.302.41-.555.906-.682 1.51L10 13.151l-5.43 6.336a.75.75 0 0 1-1.14-.976L9.013 12 3.431 5.488a.75.75 0 0 1 1.139-.976L10 10.848l5.43-6.336a.75.75 0 0 1 1.058-.081ZM17.75 15.523c0-.528.444-1.023.986-1.023.407 0 .735.19.893.434.136.21.218.566-.093 1.095-.15.255-.376.482-.682.724-.152.12-.316.237-.493.363l-.074.052c-.152.107-.315.222-.472.34-.744.56-1.565 1.346-1.565 2.742 0 .414.336.75.75.75h3.451a.75.75 0 0 0 0-1.5h-2.513c.16-.282.423-.525.779-.793.137-.103.279-.203.432-.312l.078-.054c.178-.127.37-.264.557-.41.372-.295.76-.658 1.045-1.142.557-.948.546-1.921.058-2.672C20.42 13.4 19.59 13 18.736 13c-1.478 0-2.486 1.278-2.486 2.523a.75.75 0 0 0 1.5 0Z"/>
+                                </AppBarToggleButton.Icon>
+                            </AppBarToggleButton>
+                            <AppBarToggleButton Click="SuperscriptCheck" Label="Superscript">
+                                <AppBarToggleButton.Icon>
+                                    <PathIcon Data="M18.736 3.5c-.543 0-.986.495-.986 1.023a.75.75 0 0 1-1.5 0C16.25 3.278 17.258 2 18.736 2c.855 0 1.684.4 2.15 1.117.49.751.5 1.724-.057 2.672-.285.484-.673.847-1.045 1.141-.187.148-.379.284-.557.41l-.078.056a17.45 17.45 0 0 0-.432.311c-.356.268-.619.511-.78.793h2.514a.75.75 0 0 1 0 1.5H17a.75.75 0 0 1-.75-.75c0-1.396.821-2.182 1.565-2.741.157-.119.32-.234.472-.341l.074-.052c.177-.126.34-.243.493-.363.306-.242.532-.47.682-.724.31-.53.229-.886.093-1.094-.158-.244-.486-.435-.893-.435Z M15.26 4.71c.06.562.385 1.043.847 1.318L10.987 12l5.583 6.512a.75.75 0 1 1-1.14.976L10 13.152l-5.43 6.336a.75.75 0 0 1-1.14-.976L9.013 12 3.431 5.488a.75.75 0 1 1 1.139-.976L10 10.848l5.26-6.137Z"/>
+                                </AppBarToggleButton.Icon>
+                            </AppBarToggleButton>
+                            <AppBarSeparator />
+                            <AppBarButton
+                    Click="image"
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="Image">
+                                <FontIcon FontSize="17" Glyph="&#xE8B9;" />
+                            </AppBarButton>
+                            <AppBarButton
+                    x:Name="AddLinkButton"
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="Hyperlink">
+                                <Button.Content>
+                                    <FontIcon FontSize="17" Glyph="&#xE71B;" />
+                                </Button.Content>
                                 <Button.Flyout>
                                     <Flyout Placement="Bottom">
                                         <StackPanel Orientation="Vertical">
-                                            <TextBox PlaceholderText="Link" x:Name="hyperlinkText" AllowFocusOnInteraction="True"/>
-                                            <Button Click="link" Margin="0,10,0,0">Add link to selected text</Button>
+                                            <TextBox x:Name="hyperlinkText" PlaceholderText="Link" AllowFocusOnInteraction="True"/>
+                                            <Button Margin="0,10,0,0" Click="link">Add hyperlink to selected text</Button>
                                         </StackPanel>
                                     </Flyout>
                                 </Button.Flyout>
                             </AppBarButton>
                             <AppBarButton
+                    Click="DateInsertionAsync"
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="Insert current Date/Time">
+                                <FontIcon FontSize="17" Glyph="&#xE163;" />
+                            </AppBarButton>
+                            <AppBarButton
                     Click="AddTableButton_Click"
-                    Label="Table">
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="Table">
                                 <FontIcon FontSize="17" Glyph="&#xF261;" />
                             </AppBarButton>
                             <AppBarButton
                     Click="AddSymbolButton_Click"
                             x:Name="symbolbut"
-                    Label="Symbol">
+                    Style="{StaticResource TransparentButton}"
+                    ToolTipService.ToolTip="Symbols">
                                 <FontIcon FontSize="17" Glyph="&#xED58;" />
                                 <AppBarButton.Flyout>
                                     <Flyout Placement="Bottom" x:Name="symbolsflyout">
@@ -606,8 +883,8 @@
 
                                                     <Style TargetType="Button">
                                                         <Setter Property="Padding" Value="0" />
-                                                        <Setter Property="MinWidth" Value="0" />
-                                                        <Setter Property="MinHeight" Value="0" />
+                                                        <Setter Property="MinWidth" Value="32" />
+                                                        <Setter Property="MinHeight" Value="32" />
                                                         <Setter Property="Margin" Value="5" />
                                                         <Setter Property="CornerRadius" Value="8" />
                                                     </Style>
@@ -624,27 +901,56 @@
                                         ToolTipService.ToolTip="Division symbol"
                                                 Content="÷">
                                                 </Button>
+                                                <Button
+                                        AutomationProperties.Name="LeftArrow"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Left Arrow symbol"
+                                                Content="←">
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="RightArrow"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Right Arrow symbol"
+                                                Content="→">
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Degree"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Degree symbol"
+                                                Content="°">
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Paragraph"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Paragraph symbol"
+                                                Content="§">
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="Mu"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Lowercase mu (micro) symbol"
+                                                Content="µ">
+                                                </Button>
+                                                <Button
+                                        AutomationProperties.Name="SquareRoot"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Square root symbol"
+                                                Content="√">
+                                                </Button>
 
                                             </VariableSizedWrapGrid>
                                         </RelativePanel>
                                     </Flyout>
                                 </AppBarButton.Flyout>
                             </AppBarButton>
-                            <AppBarButton
-                    Click="DateInsertionAsync"
-                                Label="Date/Time">
-                                <FontIcon FontSize="17" Glyph="&#xE163;" />
-                            </AppBarButton>
-                            <controls:TabbedCommandBarItem.SecondaryCommands>
-                                <AppBarButton Icon="Add" Label="New item" />
-                            </controls:TabbedCommandBarItem.SecondaryCommands>
                         </controls:TabbedCommandBarItem>
-                        <controls:TabbedCommandBarItem x:Name="bottombartabitem"
-                                               Header="Bottom Bar"
-                                               IsContextual="True"
-                                               Visibility="Collapsed"
-                                                        Background="Transparent">
-                            <AppBarButton Label="Show" Icon="ShowBcc" Click="showbottombar"/>
+                        <controls:TabbedCommandBarItem Header="Edit" Background="Transparent">
+                            <AppBarButton Click="UndoButton_Click" Label="Undo" Icon="Undo" />
+                            <AppBarButton Click="RedoButton_Click" Label="Redo" Icon="Redo"/>
+                            <AppBarSeparator />
+                            <AppBarButton Click="CutButton_Click" Label="Cut" Icon="Cut"/>
+                            <AppBarButton Click="CopyButton_Click" Label="Copy" Icon="Copy"/>
+                            <AppBarButton Click="PasteButton_Click" Label="Paste" Icon="Paste"/>
                         </controls:TabbedCommandBarItem>
                         <controls:TabbedCommandBarItem x:Name="commentstabitem"
                                                Header="Comments"
@@ -653,19 +959,21 @@
                                                         Background="Transparent">
                             <AppBarButton Label="Hide Comments UI" Icon="LeaveChat" Click="closecomments"/>
                         </controls:TabbedCommandBarItem>
-                        <controls:TabbedCommandBarItem Header="Help"  Background="Transparent">
-                            <AppBarButton Label="HelpNoti" Click="helpnoti">
+                        <controls:TabbedCommandBarItem Header="Help" Background="Transparent">
+                            <AppBarButton Label="About" Click="aboutclick">
                                 <AppBarButton.Icon>
-                                    <PathIcon Data="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-4.587-1.112l-3.826 1.067a1.25 1.25 0 0 1-1.54-1.54l1.068-3.823A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2Zm0 1.5A8.5 8.5 0 0 0 3.5 12c0 1.47.373 2.883 1.073 4.137l.15.27-1.112 3.984 3.987-1.112.27.15A8.5 8.5 0 1 0 12 3.5Zm0 12a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0-8.75a2.75 2.75 0 0 1 2.75 2.75c0 1.01-.297 1.574-1.051 2.359l-.169.171c-.622.622-.78.886-.78 1.47a.75.75 0 0 1-1.5 0c0-1.01.297-1.574 1.051-2.359l.169-.171c.622-.622.78-.886.78-1.47a1.25 1.25 0 0 0-2.493-.128l-.007.128a.75.75 0 0 1-1.5 0A2.75 2.75 0 0 1 12 6.75Z"/>
+                                    <SymbolIcon Symbol="Help"/>
                                 </AppBarButton.Icon>
-
                             </AppBarButton>
-                            <AppBarButton Icon="Help" Label="About" Click="aboutclick"/>
+                            <AppBarButton Label="utever" Icon="Help" Click="utever">
+                            </AppBarButton>
                             <AppBarSeparator/>
-                            <AppBarButton Icon="Help" Label="utever (new About)" Click="utever"/>
+                            <!--<AppBarButton Label="First Run Dialog" Icon="Help" Click=""/>
+                            <AppBarButton Label="What's New Dialog" Icon="Help" Click="WN_invoke"/>-->
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
                 </controls:TabbedCommandBar>
+
                 <SplitView RelativePanel.AlignBottomWithPanel="True"
             RelativePanel.AlignLeftWithPanel="True"
             RelativePanel.AlignRightWithPanel="True"
@@ -684,17 +992,5 @@
                 </SplitView>
             </RelativePanel>
         </Grid>
-        <CommandBar RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" x:Name="bottombar">
-            <CommandBar.Content>
-                <Grid/>
-            </CommandBar.Content>
-            <AppBarButton Icon="Home" Click="HomeButton_Click" Visibility="Collapsed"/>
-            <AppBarButton Label="Dash Underline" Click="Dash"/>
-            <AppBarButton Label="DashDot Underline" Click="DashDot"/>
-            <AppBarButton Label="Words Underline" Click="wordunderline"/>
-            <AppBarButton Label="DoubleWave Underline" Click="doublewaveunderline"/>
-            <AppBarButton Label="HeavyWave Underline" Click="heavywaveunderline"/>
-            <AppBarButton Icon="HideBcc" Label="Hide" Click="hidebottombar"/>
-        </CommandBar>
     </RelativePanel>
 </Page>
