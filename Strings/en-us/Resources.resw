@@ -170,9 +170,9 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• Dependency updates
-• Retarget the app onto Windows 11, version 22H2
-UltraTextEdit UWP 22H2, 23H1 and 23H2 (succesors of this version, 22H1) download link: https://github.com/jpbandroid/UltraTextEdit-UWP-22H2/releases</value>
+    <value>• New Ribbon UI redesign, ported from UTE UWP 24H1
+• Settings redesign, making UTE UWP's settings align more closely to the Windows 11 Settings
+UltraTextEdit UWP 22H2, 23H1, 23H2, and 24H1 (succesors of this version, 22H1) download link: https://github.com/jpbandroid/UltraTextEdit-UWP-22H2/releases</value>
     <comment>What's new prompt message body</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
