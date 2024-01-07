@@ -73,7 +73,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="3"
-                        Text="30/12/2023"/>
+                        Text="07/01/2024"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="4" x:Uid="OSBuild" Text="Build"/>
                         <TextBlock 
 						Name="Build"
@@ -81,7 +81,7 @@
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
-                        Text="22000.2416"/>
+                        Text="22000.2482"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="5" x:Uid="InsiderChannel" Text="Insider Channel" Visibility="Collapsed"/>
                         <TextBlock 
 Name="InsiderChannel"
@@ -115,7 +115,7 @@ Visibility="Collapsed"/>
 MIT License
 &#x0a;
                             &#x0a;
-Copyright (c) 2021-2023 jpb (GitHub username jpbandroid)
+Copyright (c) 2021-2024 jpb (GitHub username jpbandroid)
 &#x0a;
                             &#x0a;
 Permission is hereby granted, free of charge, to any person obtaining a copy
