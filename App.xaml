@@ -29,6 +29,27 @@
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="BorderThickness" Value="0" />
             </Style>
+            <ResourceDictionary.ThemeDictionaries>
+
+                <ResourceDictionary x:Key="Light">
+                    <x:String x:Key="abc">ms-appx:///Assets/listnumbersimages/abc.png</x:String>
+                    <x:String x:Key="ABCB">ms-appx:///Assets/listnumbersimages/ABCB.png</x:String>
+                    <x:String x:Key="dot">ms-appx:///Assets/listnumbersimages/dot.png</x:String>
+                    <x:String x:Key="iii">ms-appx:///Assets/listnumbersimages/iii.png</x:String>
+                    <x:String x:Key="IIII">ms-appx:///Assets/listnumbersimages/IIII.png</x:String>
+                    <x:String x:Key="none">ms-appx:///Assets/listnumberismages/none.png</x:String>
+                    <x:String x:Key="number">ms-appx:///Assets/listnumbersimages/number.png</x:String>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <x:String x:Key="abc">ms-appx:///Assets/listnumbersimages/Dark/abc.png</x:String>
+                    <x:String x:Key="ABCB">ms-appx:///Assets/listnumbersimages/Dark/ABCB.png</x:String>
+                    <x:String x:Key="dot">ms-appx:///Assets/listnumbersimages/Dark/dot.png</x:String>
+                    <x:String x:Key="iii">ms-appx:///Assets/listnumbersimages/Dark/iii.png</x:String>
+                    <x:String x:Key="IIII">ms-appx:///Assets/listnumbersimages/Dark/IIII.png</x:String>
+                    <x:String x:Key="none">ms-appx:///Assets/listnumbersimages/Dark/none.png</x:String>
+                    <x:String x:Key="number">ms-appx:///Assets/listnumbersimages/Dark/number.png</x:String>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

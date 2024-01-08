@@ -768,7 +768,6 @@ ToolTipService.ToolTip="Save">
                                                         <Setter Property="MinHeight" Value="0"/>
                                                         <Setter Property="Margin" Value="6"/>
                                                         <Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
-                                                        <Setter Property="Background" Value="White"/>
                                                     </Style>
                                                 </Grid.Resources>
                                                 <Grid.RowDefinitions>
@@ -783,25 +782,25 @@ ToolTipService.ToolTip="Save">
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
                                                 <Button x:Name="NoneNumeral" Grid.Row="0" Grid.Column="0" Click="NoneNumeral_Click" Width="64" Height="64">
-                                                    <Image x:Name="NoneNumeralImg" Source="/Assets/listnumbersimages/none.png" Width="60" Height="60" />
+                                                    <Image x:Name="NoneNumeralImg" Source="{ThemeResource ResourceKey=none}" Width="60" Height="60" />
                                                 </Button>
                                                 <Button x:Name="DottedNumeral" Grid.Row="0" Grid.Column="1" Click="DottedNumeral_Click" Width="64" Height="64">
-                                                    <Image x:Name="DottedNumeralImg" Source="/Assets/listnumbersimages/dot.bmp" Width="60" Height="60" />
+                                                    <Image x:Name="DottedNumeralImg" Source="{ThemeResource ResourceKey=dot}" Width="60" Height="60" />
                                                 </Button>
                                                 <Button x:Name="NumberNumeral" Grid.Row="0" Grid.Column="2" Click="NumberNumeral_Click" Height="64" Width="64">
-                                                    <Image x:Name="NumberNumeralImg" Source="/Assets/listnumbersimages/number.png" Width="60" Height="60" />
+                                                    <Image x:Name="NumberNumeralImg" Source="{ThemeResource ResourceKey=number}" Width="60" Height="60" />
                                                 </Button>
                                                 <Button x:Name="LetterSmallNumeral" Grid.Row="1" Grid.Column="0" Click="LetterSmallNumeral_Click" Height="64" Width="64">
-                                                    <Image x:Name="LetterSmallNumeralImg" Source="/Assets/listnumbersimages/abc.png" Width="60" Height="60" />
+                                                    <Image x:Name="LetterSmallNumeralImg" Source="{ThemeResource ResourceKey=abc}" Width="60" Height="60" />
                                                 </Button>
                                                 <Button x:Name="LetterBigNumeral"  Grid.Row="1" Grid.Column="1" Click="LetterBigNumeral_Click" Height="64" Width="64">
-                                                    <Image x:Name="LetterBigNumeralImg" Source="/Assets/listnumbersimages/ABCB.png" Width="60" Height="60" />
+                                                    <Image x:Name="LetterBigNumeralImg" Source="{ThemeResource ResourceKey=ABCB}" Width="60" Height="60" />
                                                 </Button>
                                                 <Button x:Name="SmalliNumeral" Grid.Row="1" Grid.Column="2" Click="SmalliNumeral_Click" Height="64" Width="64">
-                                                    <Image x:Name="SmalliNumeralImg" Source="/Assets/listnumbersimages/iii.png" Width="64" Height="64" />
+                                                    <Image x:Name="SmalliNumeralImg" Source="{ThemeResource ResourceKey=iii}" Width="64" Height="64" />
                                                 </Button>
                                                 <Button x:Name="BigINumeral" Grid.Row="2" Grid.Column="0" Click="BigINumeral_Click" Height="64" Width="64">
-                                                    <Image x:Name="BigINumeralImg" Source="/Assets/listnumbersimages/IIII.png" Width="64" Height="64" />
+                                                    <Image x:Name="BigINumeralImg" Source="{ThemeResource ResourceKey=IIII}" Width="64" Height="64" />
                                                 </Button>
                                             </Grid>
                                         </Flyout>
