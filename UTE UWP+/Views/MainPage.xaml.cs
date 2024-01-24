@@ -1292,5 +1292,14 @@ namespace UTE_UWP_.Views
                 return CanvasTextFormat.GetSystemFontFamilies().OrderBy(f => f).ToList();
             }
         }
+
+        private void Autobutton_Click(object sender, RoutedEventArgs e)
+        {
+            // Extract the color of the button that was clicked.
+            var color = Application.Current.Resources["TextFillColorPrimary"];
+            editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)color;
+            //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
+            editor.Focus(FocusState.Keyboard);
+        }
     }
 }

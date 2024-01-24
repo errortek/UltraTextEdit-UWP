@@ -716,7 +716,7 @@
                                                     </Grid>
                                                 </Button.Content>
                                             </Button>
-                                            <ToggleButton Width="155" x:Name="Autobutton" FontFamily="Segoe UI" Height="35">
+                                            <ToggleButton Width="155" x:Name="Autobutton" FontFamily="Segoe UI" Height="35" Click="Autobutton_Click">
                                                 <ToggleButton.Content>
                                                     <Grid>
                                                         <TextBlock Text="Automatic" Margin="25,0,0,0" FontSize="11"></TextBlock>
