@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-                Initial release of UTE UWP+
+                • Update dates to 2024!<LineBreak/>• Fix Automatic button in font color options<LineBreak/>• Revamp dialogs
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
