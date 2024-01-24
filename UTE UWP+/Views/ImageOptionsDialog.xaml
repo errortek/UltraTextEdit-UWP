@@ -13,7 +13,8 @@
     SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
     SecondaryButtonText="Cancel"
     Style="{ThemeResource DefaultContentDialogStyle}"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    >
 
     <StackPanel>
         <Grid ColumnSpacing="12">

@@ -8,7 +8,9 @@
     mc:Ignorable="d"
     Title="About UltraTextEdit UWP"
     PrimaryButtonText="OK"
-    PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+        CornerRadius="8"
+Style="{StaticResource PivotTitleContentControlStyle}">
 
     <ScrollViewer>
         <Grid>
