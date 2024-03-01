@@ -736,10 +736,7 @@ namespace UTE_UWP_.Views
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            if (Window.Current.Content is Frame rootFrame)
-            {
-                rootFrame.Navigate(typeof(SettingsPage));
-            }
+            HomePage.Visibility = Visibility.Visible;
         }
 
         
@@ -1300,6 +1297,71 @@ namespace UTE_UWP_.Views
             editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)color;
             //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
             editor.Focus(FocusState.Keyboard);
+        }
+
+        private void OB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuFlyoutItem_Click_35(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SAsB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PntB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_26(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_21(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_22(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_23(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_25(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HideHome_Click(object sender, RoutedEventArgs e)
+        {
+            HomePage.Visibility = Visibility.Visible;
+        }
+
+        private void NewFile_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
