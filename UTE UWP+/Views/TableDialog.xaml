@@ -10,7 +10,9 @@
     PrimaryButtonText="OK"
     SecondaryButtonText="Cancel"
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
-    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+        CornerRadius="8"
+    Style="{ThemeResource DefaultContentDialogStyle}">
 
     <StackPanel>
         <TextBlock

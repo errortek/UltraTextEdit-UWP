@@ -118,7 +118,7 @@ GroupName="AppTheme">
 
                     <StackPanel Margin="{StaticResource XSmallTopMargin}">
                         <!--<TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind VersionDescription, Mode=OneWay}" />-->
-                        <controls:SettingsCard Header="{x:Bind VersionDescription, Mode=OneWay}" Description="© 2023 jpbandroid, Ivirius">
+                        <controls:SettingsCard Header="{x:Bind VersionDescription, Mode=OneWay}" Description="© 2024 jpbandroid, Ivirius">
                             <controls:SettingsCard.HeaderIcon>
                                 <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.png" ShowAsMonochrome="False"/>
                             </controls:SettingsCard.HeaderIcon>
