@@ -1356,7 +1356,7 @@ namespace UTE_UWP_.Views
 
         private void HideHome_Click(object sender, RoutedEventArgs e)
         {
-            HomePage.Visibility = Visibility.Visible;
+            HomePage.Open();
         }
 
         private void NewFile_Click(object sender, RoutedEventArgs e)
