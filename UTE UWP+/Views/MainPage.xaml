@@ -70,16 +70,16 @@
                         <Border Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="4,4,4,4" Margin="15,64,0,0" Background="#268E8E8E"/>
                         <Border Background="{Binding Foreground, ElementName=LeftInd}" Height="24" CornerRadius="1.5,1.5,1.5,1.5" Width="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,77,0,0"/>
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,120,0,0" Spacing="5">
-                            <Button Background="Transparent" BorderThickness="0,0,0,0" Width="50" Height="50" Click="OB_Click" ToolTipService.ToolTip="Open">
+                            <Button Background="Transparent" BorderThickness="0,0,0,0" Width="50" Height="50" Click="OpenButton_Click" ToolTipService.ToolTip="Open">
                                 <TextBlock Text="&#xE1A5;" FontFamily="{ThemeResource SymbolThemeFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Button>
-                            <Button Background="Transparent" BorderThickness="0,0,0,0" Width="50" Height="50" Click="MenuFlyoutItem_Click_35" ToolTipService.ToolTip="Open multiple files">
+                            <Button Background="Transparent" BorderThickness="0,0,0,0" Width="50" Height="50" Click="MenuFlyoutItem_Click_35" ToolTipService.ToolTip="Open multiple files (coming soon)" IsEnabled="False">
                                 <TextBlock Text="&#xE1A5;" FontFamily="{ThemeResource SymbolThemeFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding Foreground, ElementName=LeftInd}"/>
                             </Button>
-                            <Button Background="Transparent" BorderThickness="0,0,0,0" Width="50" Height="50" Click="SB_Click" ToolTipService.ToolTip="Save">
+                            <Button Background="Transparent" BorderThickness="0,0,0,0" Width="50" Height="50" Click="SaveButton_Click" ToolTipService.ToolTip="Save">
                                 <TextBlock Text="&#xE105;" FontFamily="{ThemeResource SymbolThemeFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Button>
-                            <Button Background="Transparent" BorderThickness="0,0,0,0" Width="50" Height="50" Click="SAsB_Click" ToolTipService.ToolTip="Save as">
+                            <Button Background="Transparent" BorderThickness="0,0,0,0" Width="50" Height="50" Click="SaveAsButton_Click" ToolTipService.ToolTip="Save as">
                                 <TextBlock Text="&#xEA35;" FontFamily="{ThemeResource SymbolThemeFontFamily}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Button>
                             <Button Background="Transparent" BorderThickness="0,0,0,0" Width="50" Height="50" Click="DelB_Click" ToolTipService.ToolTip="Delete">
