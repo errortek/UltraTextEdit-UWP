@@ -579,7 +579,7 @@ namespace UTE_UWP_.Views
 
         private Task DisplayAboutDialog()
         {
-            AboutBox.Open();
+            //AboutBox.Open();
             return Task.CompletedTask;
         }
 

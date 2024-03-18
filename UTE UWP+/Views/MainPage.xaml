@@ -1144,7 +1144,7 @@
                         </StackPanel>
                     </Grid>
                 </diags:MessageBox>
-                    <diags:MessageBox x:Name="HomePage" Title="Home" Background="#59000000" d:IsHidden="True" MessageBoxWidth="825" MessageBoxHeight="775">
+                    <diags:MessageBox x:Name="HomePage" Title="Home" Background="#59000000" d:IsHidden="True">
                         <Border BorderBrush="#FF777777" BorderThickness="1" CornerRadius="8,8,8,8" MaxWidth="825" MaxHeight="775" Margin="15,15,15,15">
                             <Grid x:FieldModifier="public" Background="{Binding Background, ElementName=PageTitleBar}">
                                 <Border x:Name="HomeAccentBackground" BorderThickness="0,0,0,0" Visibility="{Binding Visibility, ElementName=AccentBackground}">
