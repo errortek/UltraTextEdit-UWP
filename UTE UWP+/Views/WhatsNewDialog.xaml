@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-                • Update dates to 2024!<LineBreak/>• Fix Automatic button in font color options<LineBreak/>• Revamp dialogs
+                • Add a new Symbols Dialog and add more new symbols<LineBreak/>• Fix font bugs in the Home menu
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
