@@ -1101,7 +1101,8 @@
                                 <AppBarButton.Flyout>
                                     <Flyout Placement="Bottom" x:Name="symbolsflyout">
                                         <RelativePanel>
-                                            <VariableSizedWrapGrid
+                                            <StackPanel>
+                                                <VariableSizedWrapGrid
                                     x:Name="symbolGrid"
                                     MaximumRowsOrColumns="4"
                                     Orientation="Horizontal">
@@ -1169,6 +1170,8 @@
                                                 </Button>
 
                                             </VariableSizedWrapGrid>
+                                            <Button Content="More symbols" Click="more_symbols"/>
+                                            </StackPanel>
                                         </RelativePanel>
                                     </Flyout>
                                 </AppBarButton.Flyout>

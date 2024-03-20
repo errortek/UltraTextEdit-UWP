@@ -1363,5 +1363,54 @@ namespace UTE_UWP_.Views
         {
 
         }
+
+        private async void more_symbols(object sender, RoutedEventArgs e)
+        {
+            // Create a ContentDialog
+            ContentDialog dialog = new ContentDialog();
+            dialog.Title = "Insert symbol";
+
+            // Create a ListView for the user to select the date format
+            ListView listView = new ListView();
+            listView.SelectionMode = ListViewSelectionMode.Single;
+
+            // Create a list of date formats to display in the ListView
+            List<string> symbols = new List<string>();
+            symbols.Add("×");
+            symbols.Add("÷");
+            symbols.Add("←");
+            symbols.Add("→");
+            symbols.Add("°");
+            symbols.Add("§");
+            symbols.Add("µ");
+            symbols.Add("π");
+            symbols.Add("α");
+            symbols.Add("β");
+            symbols.Add("γ");
+
+            // Set the ItemsSource of the ListView to the list of date formats
+            listView.ItemsSource = symbols;
+
+            // Set the content of the ContentDialog to the ListView
+            dialog.Content = listView;
+
+            // Make the insert button colored
+            dialog.DefaultButton = ContentDialogButton.Primary;
+
+            // Add an "Insert" button to the ContentDialog
+            dialog.PrimaryButtonText = "OK";
+            dialog.PrimaryButtonClick += (s, args) =>
+            {
+                string selectedFormat = listView.SelectedItem as string;
+                string formattedDate = symbols[listView.SelectedIndex];
+                editor.Document.Selection.Text = formattedDate;
+            };
+
+            // Add a "Cancel" button to the ContentDialog
+            dialog.SecondaryButtonText = "Cancel";
+
+            // Show the ContentDialog
+            await dialog.ShowAsync();
+        }
     }
 }
