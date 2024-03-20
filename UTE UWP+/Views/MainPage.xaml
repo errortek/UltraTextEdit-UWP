@@ -107,7 +107,7 @@
                                                 <GradientStop Color="#FF65A7FF" Offset="1"/>
                                             </LinearGradientBrush>
                                         </Border.Background>
-                                        <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="{ThemeResource SymbolThemeFontFamily}" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Blank" Foreground="White"/>
+                                        <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Blank" Foreground="White"/>
                                     </Border>
                                 </Grid>
                             </Button>
@@ -124,7 +124,7 @@
                                                     <GradientStop Color="#FF65A7FF" Offset="1"/>
                                                 </LinearGradientBrush>
                                             </Border.Background>
-                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="{ThemeResource SymbolThemeFontFamily}" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Essay" Foreground="White"/>
+                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Essay" Foreground="White"/>
                                         </Border>
                                     </Grid>
                                 </Button>
@@ -139,7 +139,7 @@
                                                     <GradientStop Color="#FF65A7FF" Offset="1"/>
                                                 </LinearGradientBrush>
                                             </Border.Background>
-                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="{ThemeResource SymbolThemeFontFamily}" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Resume" Foreground="White"/>
+                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Resume" Foreground="White"/>
                                         </Border>
                                     </Grid>
                                 </Button>
@@ -154,7 +154,7 @@
                                                     <GradientStop Color="#FF65A7FF" Offset="1"/>
                                                 </LinearGradientBrush>
                                             </Border.Background>
-                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="{ThemeResource SymbolThemeFontFamily}" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Credits" Foreground="White"/>
+                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Credits" Foreground="White"/>
                                         </Border>
                                     </Grid>
                                 </Button>
@@ -169,7 +169,7 @@
                                                     <GradientStop Color="#FF65A7FF" Offset="1"/>
                                                 </LinearGradientBrush>
                                             </Border.Background>
-                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="{ThemeResource SymbolThemeFontFamily}" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Image Essay" Foreground="White"/>
+                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Image Essay" Foreground="White"/>
                                         </Border>
                                     </Grid>
                                 </Button>
@@ -184,7 +184,7 @@
                                                     <GradientStop Color="#FF65A7FF" Offset="1"/>
                                                 </LinearGradientBrush>
                                             </Border.Background>
-                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="{ThemeResource SymbolThemeFontFamily}" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Image Gallery" Foreground="White"/>
+                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Image Gallery" Foreground="White"/>
                                         </Border>
                                     </Grid>
                                 </Button>
@@ -199,7 +199,7 @@
                                                     <GradientStop Color="#FF65A7FF" Offset="1"/>
                                                 </LinearGradientBrush>
                                             </Border.Background>
-                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="{ThemeResource SymbolThemeFontFamily}" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Newspaper" Foreground="White"/>
+                                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="0,0,0,0" FontSize="14" Margin="10,0,0,2" Text="Newspaper" Foreground="White"/>
                                         </Border>
                                     </Grid>
                                 </Button>
