@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "UTE_UWP_ (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "UTE_UWP_ (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
