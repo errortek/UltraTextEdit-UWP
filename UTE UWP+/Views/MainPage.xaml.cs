@@ -1412,5 +1412,10 @@ namespace UTE_UWP_.Views
             // Show the ContentDialog
             await dialog.ShowAsync();
         }
+
+        private void ComputeHash_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
