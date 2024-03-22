@@ -5,8 +5,8 @@ using UTE_UWP_.Helpers;
 
 using Windows.ApplicationModel.Core;
 using Windows.Storage;
-using Windows.UI.Core;
 using Microsoft.UI.Xaml;
+using Windows.UI.Core;
 
 namespace UTE_UWP_.Services
 {

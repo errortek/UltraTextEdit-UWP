@@ -420,7 +420,7 @@ namespace UltraTextEdit_UWP.UserControls
         private Point lastPosition;
         private bool isDragging;
 
-        private void MessageBox_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void MessageBox_PointerPressed(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             lastPosition = e.GetCurrentPoint(this).Position;
             (sender as Border).CapturePointer(e.Pointer);
@@ -435,7 +435,7 @@ namespace UltraTextEdit_UWP.UserControls
             }
         }
 
-        private void MessageBox_PointerReleased(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void MessageBox_PointerReleased(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             (sender as Border).ReleasePointerCapture(e.Pointer);
             isDragging = false;
@@ -457,7 +457,7 @@ namespace UltraTextEdit_UWP.UserControls
             }
         }
 
-        private void MessageBox_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void MessageBox_PointerMoved(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             if (e.Pointer.IsInContact && isDragging == true)
             {
@@ -474,12 +474,12 @@ namespace UltraTextEdit_UWP.UserControls
             }
         }
 
-        private void Border_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void Border_PointerPressed(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             isDragging = false;
         }
 
-        private void Border_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        private void Border_PointerMoved(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             isDragging = false;
         }

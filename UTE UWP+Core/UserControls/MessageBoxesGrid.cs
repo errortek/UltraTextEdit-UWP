@@ -7,8 +7,9 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Windows.UI;
+using Microsoft.UI;
 using UltraTextEdit_UWP.UserControls;
+using Windows.UI;
 
 namespace UltraTextEdit_UWP.UserControls
 {

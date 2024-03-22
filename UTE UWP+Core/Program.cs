@@ -2,6 +2,7 @@
 
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI.Xaml;
 
 namespace UTE_UWP_
 {
@@ -22,27 +23,7 @@ namespace UTE_UWP_
             {
                 AppInstance.RecommendedInstance.RedirectActivationTo();
             }
-            else
-            {
-                // Update the logic below as appropriate for your app.
-                // Multiple instances of an app are registered using keys.
-                // Creating a unique key (as below) allows a new instance to always be created.
-                // Always using the same key will mean there's only one ever one instance.
-                // Or you can use your own logic to launch a new instance or switch to an existing one.
-                var key = Guid.NewGuid().ToString();
-                var instance = AppInstance.FindOrRegisterInstanceForKey(key);
-
-                if (instance.IsCurrentInstance)
-                {
-                    // If successfully registered this instance, do normal XAML initialization.
-                    global::Windows.UI.Xaml.Application.Start((p) => new App());
-                }
-                else
-                {
-                    // Some other instance has registered for this key, redirect activation to that instance.
-                    instance.RedirectActivationTo();
-                }
-            }
+            global::Microsoft.UI.Xaml.Application.Start((p) => new App());
         }
     }
 }

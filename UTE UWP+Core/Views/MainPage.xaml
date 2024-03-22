@@ -2,14 +2,14 @@
     x:Class="UTE_UWP_.Views.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:UTE_UWP_"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+    
     mc:Ignorable="d"
-    xmlns:appmodel="using:Windows.ApplicationModel" xmlns:diags="using:UltraTextEdit_UWP.UserControls"
+    xmlns:appmodel="using:Windows.ApplicationModel" xmlns:diags="using:UltraTextEdit_UWP.UserControls" xmlns:controls1="using:CommunityToolkit.WinUI.UI.Controls"
     d:DesignHeight="564"
     d:DesignWidth="876">
 
@@ -51,7 +51,7 @@
                         <Border x:Name="HomeAccentBackground" BorderThickness="0,0,0,0" Visibility="{Binding Visibility, ElementName=AccentBackground}">
                             <Border.Background>
 
-                                <AcrylicBrush BackgroundSource="HostBackdrop" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.35" FallbackColor="{ThemeResource SystemAccentColor}"/>
+                                <AcrylicBrush TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.35" FallbackColor="{ThemeResource SystemAccentColor}"/>
                             </Border.Background>
                         </Border>
                         <Border BorderThickness="0,1,0,0" Height="135" Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}" BorderBrush="#338A8A8A" VerticalAlignment="Bottom"/>
@@ -1219,7 +1219,7 @@ ToolTipService.ToolTip="Compute Hash">
             RelativePanel.AlignLeftWithPanel="True"
             RelativePanel.AlignRightWithPanel="True"
             RelativePanel.Below="containerPanel"
-            muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+            
             Background="Transparent"
             PaneBackground="Transparent"
             IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Right" x:Name="textsplitview">
@@ -1252,7 +1252,7 @@ ToolTipService.ToolTip="Compute Hash">
             RelativePanel.AlignLeftWithPanel="True"
             RelativePanel.AlignRightWithPanel="True"
             RelativePanel.Below="containerPanel"
-            muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+            
             Background="Transparent"
             PaneBackground="Transparent"
             IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Left" x:Name="commentsplitview">
