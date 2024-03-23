@@ -207,6 +207,9 @@
     <Compile Include="Views\CmdLineActivationSamplePage.xaml.cs">
       <DependentUpon>CmdLineActivationSamplePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ComputeHash.xaml.cs">
+      <DependentUpon>ComputeHash.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FirstRunDialog.xaml.cs">
       <DependentUpon>FirstRunDialog.xaml</DependentUpon>
     </Compile>
@@ -261,6 +264,10 @@
     <Page Include="Views\CmdLineActivationSamplePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ComputeHash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FirstRunDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
