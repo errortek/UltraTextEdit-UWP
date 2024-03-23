@@ -1420,6 +1420,8 @@ namespace UTE_UWP_.Views
             ContentDialog dialog = new ContentDialog();
             dialog.Title = "Compute hashes";
             dialog.Content = new ComputeHash();
+            dialog.CloseButtonText = "Close";
+            dialog.DefaultButton = ContentDialogButton.Close;
             dialog.ShowAsync();
         }
     }

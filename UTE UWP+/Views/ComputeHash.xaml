@@ -6,17 +6,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="Transparent">
 
     <Grid>
         <StackPanel>
-            <TextBlock>Base64 Encode/Decode</TextBlock>
+            <TextBlock FontSize="16" FontWeight="SemiBold">Base64 Encode/Decode</TextBlock>
             <Button Click="Button_Click">Encode</Button>
             <Button Click="Button_Click_1">Decode</Button>
-            <TextBlock x:Name="base64_result"/>
-            <TextBlock>SHA1 Hash</TextBlock>
+            <TextBlock x:Name="base64_result" IsTextSelectionEnabled="True"/>
+            <TextBlock FontSize="16" FontWeight="SemiBold">SHA1 Hash</TextBlock>
             <Button Click="Button_Click_2">Generate Hash</Button>
-            <TextBlock x:Name="sha1_result"/>
+            <TextBlock x:Name="sha1_result" IsTextSelectionEnabled="True"/>
         </StackPanel>
     </Grid>
 </Page>
