@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-                • Add a new Symbols Dialog and add more new symbols<LineBreak/>• Fix font bugs in the Home menu
+                • Add a hash computation UI
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
