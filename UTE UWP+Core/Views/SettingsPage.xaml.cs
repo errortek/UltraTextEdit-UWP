@@ -11,7 +11,9 @@ using UTE_UWP_.Views;
 
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Core;
-using Microsoft.UI;
+using Windows.UI;
+using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
@@ -44,9 +46,57 @@ namespace UTE_UWP_.Views
         public SettingsPage()
         {
             InitializeComponent();
+            // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+            var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
+
+            appViewTitleBar.ButtonBackgroundColor = Colors.Transparent;
+            appViewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+
+            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+            UpdateTitleBarLayout(coreTitleBar);
+
+            App.Window.SetTitleBar(AppTitleBar);
+
+            coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
+            coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
         }
 
-        
+        private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+        {
+            UpdateTitleBarLayout(sender);
+        }
+
+        private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, object args)
+        {
+            AppTitleBar.Visibility = sender.IsVisible ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        // Update the TitleBar based on the inactive/active state of the app
+        private void Current_Activated(object sender, WindowActivatedEventArgs e)
+        {
+            SolidColorBrush defaultForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorPrimaryBrush"];
+            SolidColorBrush inactiveForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorDisabledBrush"];
+
+            if (e.WindowActivationState == CoreWindowActivationState.Deactivated)
+            {
+                AppTitle.Foreground = inactiveForegroundBrush;
+            }
+            else
+            {
+                AppTitle.Foreground = defaultForegroundBrush;
+            }
+        }
+
+        private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
+        {
+            // Update title bar control size as needed to account for system size changes.
+            AppTitleBar.Height = coreTitleBar.Height;
+
+            // Ensure the custom title bar does not overlap window caption controls
+            Thickness currMargin = AppTitleBar.Margin;
+            AppTitleBar.Margin = new Thickness(currMargin.Left, currMargin.Top, coreTitleBar.SystemOverlayRightInset, currMargin.Bottom);
+        }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {

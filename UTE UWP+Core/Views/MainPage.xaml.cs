@@ -20,15 +20,16 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
 using Windows.Storage.Streams;
-using Microsoft.UI;
+using Windows.UI;
+using Windows.UI.Core;
+using Windows.UI.Core.Preview;
 using Microsoft.UI.Text;
+using Windows.UI.ViewManagement;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Markup;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using SplitButton = Microsoft.UI.Xaml.Controls.SplitButton;
-using Microsoft.UI;
-using Windows.UI.Core.Preview;
 namespace UTE_UWP_.Views
 {
     public sealed partial class MainPage : Page, INotifyPropertyChanged
@@ -46,12 +47,66 @@ namespace UTE_UWP_.Views
             InitializeComponent();
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
 
+            // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+            var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
+
+            appViewTitleBar.ButtonBackgroundColor = Colors.Transparent;
+            appViewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+            appViewTitleBar.ButtonForegroundColor = (Windows.UI.Color)Resources["SystemAccentColor"];
+
+            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+            UpdateTitleBarLayout(coreTitleBar);
+
+            App.Window.SetTitleBar(AppTitleBar);
+
+            coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
+            coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
+            App.Window.Activated += Current_Activated;
+
             SystemNavigationManagerPreview.GetForCurrentView().CloseRequested += OnCloseRequest;
 
             NavigationCacheMode = NavigationCacheMode.Required;
 
             ShareSourceLoad();
 
+        }
+
+        private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+        {
+            UpdateTitleBarLayout(sender);
+        }
+
+        private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, object args)
+        {
+            AppTitleBar.Visibility = sender.IsVisible ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        // Update the TitleBar based on the inactive/active state of the app
+        private void Current_Activated(object sender, WindowActivatedEventArgs e)
+        {
+            SolidColorBrush defaultForegroundBrush = new SolidColorBrush((Windows.UI.Color)Application.Current.Resources["SystemAccentColor"]);
+            SolidColorBrush inactiveForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorDisabledBrush"];
+
+            if (e.WindowActivationState == CoreWindowActivationState.Deactivated)
+            {
+                AppTitle.Foreground = inactiveForegroundBrush;
+            }
+            else
+            {
+                AppTitle.Foreground = defaultForegroundBrush;
+            }
+        }
+
+        private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
+        {
+            // Update title bar control size as needed to account for system size changes.
+            AppTitleBar.Height = coreTitleBar.Height;
+
+            // Ensure the custom title bar does not overlap window caption controls
+            Thickness currMargin = AppTitleBar.Margin;
+            AppTitleBar.Margin = new Thickness(currMargin.Left, currMargin.Top, currMargin.Right, currMargin.Bottom);
+            TitleBar.Margin = new Thickness(0, currMargin.Top, coreTitleBar.SystemOverlayRightInset, currMargin.Bottom);
         }
 
         private void OnCloseRequest(object sender, SystemNavigationCloseRequestedPreviewEventArgs e)
@@ -99,11 +154,11 @@ namespace UTE_UWP_.Views
 
                         if (file.Name.EndsWith(".txt"))
                         {
-                            editor.Document.SaveToStream(Microsoft.UI.Text.TextGetOptions.None, randAccStream);
+                            editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.None, randAccStream);
                         }
                         else
                         {
-                            editor.Document.SaveToStream(Microsoft.UI.Text.TextGetOptions.FormatRtf, randAccStream);
+                            editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
                         }
 
                     // Let Windows know that we're finished changing the file so the
@@ -111,8 +166,8 @@ namespace UTE_UWP_.Views
                     FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
                     if (status != FileUpdateStatus.Complete)
                     {
-                        //Microsoft.UI.Popups.MessageDialog errorBox = new Microsoft.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
-                        //await errorBox.ShowAsync();
+                        Windows.UI.Popups.MessageDialog errorBox = new Windows.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
+                        await errorBox.ShowAsync();
                     }
                     saved = true;
                     fileNameWithPath = file.Path;
@@ -148,8 +203,8 @@ namespace UTE_UWP_.Views
                         FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
                         if (status != FileUpdateStatus.Complete)
                         {
-                            //Microsoft.UI.Popups.MessageDialog errorBox = new Microsoft.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
-                            //await errorBox.ShowAsync();
+                            Windows.UI.Popups.MessageDialog errorBox = new Windows.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
+                            await errorBox.ShowAsync();
                         }
                         saved = true;
                         AppTitle.Text = file.Name + " - " + "UTE UWP+";
@@ -186,9 +241,10 @@ namespace UTE_UWP_.Views
                     {
                         Title = "Printing error",
                         Content = "Sorry, printing can't proceed at this time.",
-                        PrimaryButtonText = "OK",
-                        XamlRoot = this.XamlRoot,
+                        PrimaryButtonText = "OK"
                     };
+                    /* TODO You should replace 'this' with the instance of UserControl that this ContentDialog is meant to be a part of. */
+                    await SetContentDialogRoot(noPrintingDialog.ShowAsync,this);
                 }
             }
             else
@@ -198,9 +254,10 @@ namespace UTE_UWP_.Views
                 {
                     Title = "Printing not supported",
                     Content = "Sorry, printing is not supported on this device.",
-                    PrimaryButtonText = "OK",
-                    XamlRoot = this.XamlRoot,
+                    PrimaryButtonText = "OK"
                 };
+                /* TODO You should replace 'this' with the instance of UserControl that this ContentDialog is meant to be a part of. */
+                await SetContentDialogRoot(noPrintingDialog.ShowAsync,this);
             }
         }
 
@@ -213,98 +270,105 @@ namespace UTE_UWP_.Views
             return contentDialog;
         }
 
-         
+         private static ContentDialog SetContentDialogRoot(ContentDialog contentDialog, UserControl control)
+         {
+            if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+            {
+                contentDialog.XamlRoot = control.Content.XamlRoot;
+            }
+            return contentDialog;
+        }
 
         private void BoldButton_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
-            Microsoft.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
             if (selectedText != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-                charFormatting.Bold = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Bold = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText.CharacterFormat = charFormatting;
             }
             if (selectedText2 != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText2.CharacterFormat;
-                charFormatting.Bold = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText2.CharacterFormat;
+                charFormatting.Bold = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText2.CharacterFormat = charFormatting;
             }
         }
 
         private async void NewDoc_Click(object sender, RoutedEventArgs e)
         {
-            // TODO Microsoft.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
-            //ApplicationView currentAV = ApplicationView.GetForCurrentView();
-            //CoreApplicationView newAV = CoreApplication.CreateNewView();
-            //await newAV.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
-            //{
-            //    var newWindow = App.Window;
-            //    // TODO Microsoft.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
-            //    var newAppView = ApplicationView.GetForCurrentView();
-            //    newAppView.Title = $"Untitled - UTE UWP+";
+            // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+            ApplicationView currentAV = ApplicationView.GetForCurrentView();
+            CoreApplicationView newAV = CoreApplication.CreateNewView();
+            await newAV.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                var newWindow = App.Window;
+                // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+                var newAppView = ApplicationView.GetForCurrentView();
+                newAppView.Title = $"Untitled - UTE UWP+";
 
-            //    var frame = new Frame();
-            //    frame.Navigate(typeof(MainPage));
-            //    newWindow.Content = frame;
-            //    newWindow.Activate();
+                var frame = new Frame();
+                frame.Navigate(typeof(MainPage));
+                newWindow.Content = frame;
+                newWindow.Activate();
 
-            //    await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
-            //        ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
-            //});
+                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
+                    ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
+            });
         }
 
         private void StrikethoughButton_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
             if (selectedText != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-                charFormatting.Strikethrough = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Strikethrough = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText.CharacterFormat = charFormatting;
             }
-            Microsoft.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
             if (selectedText2 != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
-                charFormatting2.Strikethrough = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
+                charFormatting2.Strikethrough = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText2.CharacterFormat = charFormatting2;
             }
         }
 
         private void SubscriptButton_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
             if (selectedText != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-                charFormatting.Subscript = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Subscript = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText.CharacterFormat = charFormatting;
             }
-            Microsoft.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
             if (selectedText2 != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
-                charFormatting2.Subscript = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
+                charFormatting2.Subscript = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText2.CharacterFormat = charFormatting2;
             }
         }
 
         private void SuperScriptButton_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
             if (selectedText != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-                charFormatting.Superscript = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Superscript = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText.CharacterFormat = charFormatting;
             }
-            Microsoft.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
             if (selectedText2 != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
-                charFormatting2.Superscript = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
+                charFormatting2.Superscript = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText2.CharacterFormat = charFormatting2;
             }
         }
@@ -373,49 +437,49 @@ namespace UTE_UWP_.Views
 
         private void ItalicButton_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
-            Microsoft.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
             if (selectedText != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-                charFormatting.Italic = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                charFormatting.Italic = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText.CharacterFormat = charFormatting;
             }
             if (selectedText2 != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText2.CharacterFormat;
-                charFormatting.Italic = Microsoft.UI.Text.FormatEffect.Toggle;
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText2.CharacterFormat;
+                charFormatting.Italic = Windows.UI.Text.FormatEffect.Toggle;
                 selectedText2.CharacterFormat = charFormatting;
             }
         }
 
         private void UnderlineButton_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
-            Microsoft.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
             if (selectedText != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-                if (charFormatting.Underline == Microsoft.UI.Text.UnderlineType.None)
+                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
                 {
-                    charFormatting.Underline = Microsoft.UI.Text.UnderlineType.Single;
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.Single;
                 }
                 else
                 {
-                    charFormatting.Underline = Microsoft.UI.Text.UnderlineType.None;
+                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
                 }
                 selectedText.CharacterFormat = charFormatting;
             }
             if (selectedText2 != null)
             {
-                Microsoft.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
-                if (charFormatting2.Underline == Microsoft.UI.Text.UnderlineType.None)
+                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
+                if (charFormatting2.Underline == Windows.UI.Text.UnderlineType.None)
                 {
-                    charFormatting2.Underline = Microsoft.UI.Text.UnderlineType.Single;
+                    charFormatting2.Underline = Windows.UI.Text.UnderlineType.Single;
                 }
                 else
                 {
-                    charFormatting2.Underline = Microsoft.UI.Text.UnderlineType.None;
+                    charFormatting2.Underline = Windows.UI.Text.UnderlineType.None;
                 }
                 selectedText2.CharacterFormat = charFormatting2;
             }
@@ -449,7 +513,7 @@ namespace UTE_UWP_.Views
                     // Load the file into the Document property of the RichEditBox.
                     editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
                     editor.Document.GetText(TextGetOptions.UseObjectText, out originalDocText);
-                    //editor.Document.SetText(Microsoft.UI.Text.TextSetOptions.FormatRtf, text);
+                    //editor.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, text);
                     //(MainPage.Current.Tabs.TabItems[MainPage.Current.Tabs.SelectedIndex] as TabViewItem).Header = file.Name;
                     AppTitle.Text = file.Name + " - " + "UTE UWP+";
                     fileNameWithPath = file.Path;
@@ -508,13 +572,19 @@ namespace UTE_UWP_.Views
             }
         }
 
+        private static FileOpenPicker InitializeWithWindow(FileOpenPicker obj, IntPtr windowHandle)
+        {
+            WinRT.Interop.InitializeWithWindow.Initialize(obj, windowHandle);
+            return obj;
+        }
+
         private void ColorButton_Click(object sender, RoutedEventArgs e)
         {
             // Extract the color of the button that was clicked.
             Button clickedColor = (Button)sender;
-            var borderone = (Microsoft.UI.Xaml.Controls.Border)clickedColor.Content;
-            var bordertwo = (Microsoft.UI.Xaml.Controls.Border)borderone.Child;
-            var rectangle = (Microsoft.UI.Xaml.Shapes.Rectangle)bordertwo.Child;
+            var borderone = (Windows.UI.Xaml.Controls.Border)clickedColor.Content;
+            var bordertwo = (Windows.UI.Xaml.Controls.Border)borderone.Child;
+            var rectangle = (Windows.UI.Xaml.Shapes.Rectangle)bordertwo.Child;
             var color = (rectangle.Fill as SolidColorBrush).Color;
             editor.Document.Selection.CharacterFormat.ForegroundColor = color;
             //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
@@ -528,7 +598,7 @@ namespace UTE_UWP_.Views
 
         private void AddLinkButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Microsoft.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
+            if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Windows.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
                 hyperlinkText.AllowFocusOnInteraction = true;
             editor.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
             editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)XamlBindingHelper.ConvertValue(typeof(Windows.UI.Color), "#6194c7");
@@ -576,22 +646,32 @@ namespace UTE_UWP_.Views
                 CloseButtonText = "Cancel",
                 PrimaryButtonText = "Save changes",
                 SecondaryButtonText = "No",
-                DefaultButton = ContentDialogButton.Primary,
-                XamlRoot = this.XamlRoot,
+                DefaultButton = ContentDialogButton.Primary
             };
 
             aboutDialog.CloseButtonClick += (s, e) => this._openDialog = false;
 
             /* TODO You should replace 'this' with the instance of UserControl that this ContentDialog is meant to be a part of. */
 
-            //if (result == ContentDialogResult.Primary)
-            //{
-            //    SaveFile(true);
-            //}
-            //else if (result == ContentDialogResult.Secondary)
-            //{
-            //    // TODO Microsoft.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
-            //}
+            ContentDialogResult result = await SetContentDialogRoot(aboutDialog.ShowAsync,this);
+            if (result == ContentDialogResult.Primary)
+            {
+                SaveFile(true);
+            }
+            else if (result == ContentDialogResult.Secondary)
+            {
+                // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+                await ApplicationView.GetForCurrentView().TryConsolidateAsync();
+            }
+        }
+
+         private static ContentDialog SetContentDialogRoot(ContentDialog contentDialog, UserControl control)
+         {
+            if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+            {
+                contentDialog.XamlRoot = control.Content.XamlRoot;
+            }
+            return contentDialog;
         }
 
         private async void AboutBtn_Click(object sender, RoutedEventArgs e)
@@ -633,8 +713,8 @@ namespace UTE_UWP_.Views
         {
             if (saved)
             {
-                // TODO Microsoft.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
-                //await ApplicationView.GetForCurrentView().TryConsolidateAsync();
+                // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+                await ApplicationView.GetForCurrentView().TryConsolidateAsync();
             }
             else await ShowUnsavedDialog();
         }
@@ -672,7 +752,7 @@ namespace UTE_UWP_.Views
                         string text = reader.ReadString(buffer.Length);
                         // Load the file into the Document property of the RichEditBox.
                         editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
-                        //editor.Document.SetText(Microsoft.UI.Text.TextSetOptions.FormatRtf, text);
+                        //editor.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, text);
                         AppTitle.Text = file.Name + " - " + "UTE UWP+";
                         fileNameWithPath = file.Path;
                     }
@@ -770,7 +850,7 @@ namespace UTE_UWP_.Views
             ToggleThemeTeachingTip1.IsOpen = true;
         }
 
-        private void OnKeyboardAcceleratorInvoked(Microsoft.UI.Xaml.Input.KeyboardAccelerator sender, Microsoft.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
+        private void OnKeyboardAcceleratorInvoked(Windows.UI.Xaml.Input.KeyboardAccelerator sender, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
         {
             switch (sender.Key)
             {
@@ -931,24 +1011,24 @@ namespace UTE_UWP_.Views
 
         private async void NewInstance_Click(object sender, RoutedEventArgs e)
         {
-            // TODO Microsoft.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
-            //ApplicationView currentAV = ApplicationView.GetForCurrentView();
-            //CoreApplicationView newAV = CoreApplication.CreateNewView();
-            //await newAV.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
-            //{
-            //    var newWindow = App.Window;
-            //    // TODO Microsoft.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
-            //    var newAppView = ApplicationView.GetForCurrentView();
-            //    newAppView.Title = $"Untitled - UTE UWP+";
+            // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+            ApplicationView currentAV = ApplicationView.GetForCurrentView();
+            CoreApplicationView newAV = CoreApplication.CreateNewView();
+            await newAV.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                var newWindow = App.Window;
+                // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+                var newAppView = ApplicationView.GetForCurrentView();
+                newAppView.Title = $"Untitled - UTE UWP+";
 
-            //    var frame = new Frame();
-            //    frame.Navigate(typeof(MainPage));
-            //    newWindow.Content = frame;
-            //    newWindow.Activate();
+                var frame = new Frame();
+                frame.Navigate(typeof(MainPage));
+                newWindow.Content = frame;
+                newWindow.Activate();
 
-            //    await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
-            //        ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
-            //});
+                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
+                    ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
+            });
         }
 
         private async void DateInsertionAsync(object sender, RoutedEventArgs e)
@@ -998,7 +1078,16 @@ namespace UTE_UWP_.Views
             /* TODO You should replace 'this' with the instance of UserControl that this ContentDialog is meant to be a part of. */
 
             // Show the ContentDialog
-            dialog.ShowAsync();
+            await SetContentDialogRoot(dialog.ShowAsync,this);
+        }
+
+         private static ContentDialog SetContentDialogRoot(ContentDialog contentDialog, UserControl control)
+         {
+            if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+            {
+                contentDialog.XamlRoot = control.Content.XamlRoot;
+            }
+            return contentDialog;
         }
 
         private async void fr_invoke(object sender, RoutedEventArgs e)
@@ -1069,7 +1158,7 @@ namespace UTE_UWP_.Views
             editor.Focus(FocusState.Keyboard);
         }
 
-        private void BackPicker_ColorChanged(object Sender, Microsoft.UI.Xaml.Controls.ColorChangedEventArgs EvArgs)
+        private void BackPicker_ColorChanged(object Sender, Windows.UI.Xaml.Controls.ColorChangedEventArgs EvArgs)
         {
             //Configure font highlight
             if (!(editor == null))
@@ -1399,12 +1488,21 @@ namespace UTE_UWP_.Views
 
             // Add a "Cancel" button to the ContentDialog
             dialog.SecondaryButtonText = "Cancel";
-            dialog.XamlRoot = this.XamlRoot;
 
             // Show the ContentDialog
             /* TODO You should replace 'this' with the instance of UserControl that this ContentDialog is meant to be a part of. */
 
             // Show the ContentDialog
+            await SetContentDialogRoot(dialog.ShowAsync,this);
+        }
+
+         private static ContentDialog SetContentDialogRoot(ContentDialog contentDialog, UserControl control)
+         {
+            if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+            {
+                contentDialog.XamlRoot = control.Content.XamlRoot;
+            }
+            return contentDialog;
         }
 
         private void ComputeHash_Click(object sender, RoutedEventArgs e)

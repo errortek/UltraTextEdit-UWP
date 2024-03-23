@@ -1,8 +1,10 @@
 ﻿using System;
 
 using UTE_UWP_.Helpers;
-using Microsoft.UI.Windowing;
+
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
+using Microsoft.UI.Windowing;
 
 namespace UTE_UWP_.Services
 {
@@ -24,7 +26,7 @@ namespace UTE_UWP_.Services
         private event ViewReleasedHandler InternalReleased;
 
         // Necessary to communicate with the window
-        public // TODO Microsoft.UI.Core.CoreDispatcher is not longer supported. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/threading
+        public // TODO Windows.UI.Core.CoreDispatcher is not longer supported. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/threading
 CoreDispatcher Dispatcher { get; private set; }
 
         // This id is used in all of the ApplicationViewSwitcher and ProjectionManager APIs
@@ -61,13 +63,13 @@ CoreDispatcher Dispatcher { get; private set; }
             }
         }
 
-        private ViewLifetimeControl(AppWindow newWindow)
+        private ViewLifetimeControl(CoreWindow newWindow)
         {
-            //Dispatcher = newWindow.Dispatcher;
-            //_window = newWindow;
-            //// TODO Microsoft.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
-            //Id = ApplicationView.GetApplicationViewIdForWindow(_window);
-            //RegisterForEvents();
+            Dispatcher = newWindow.Dispatcher;
+            _window = newWindow;
+            // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+            Id = ApplicationView.GetApplicationViewIdForWindow(_window);
+            RegisterForEvents();
         }
 
         public static ViewLifetimeControl CreateForCurrentView()
@@ -129,19 +131,20 @@ CoreDispatcher Dispatcher { get; private set; }
 
         private void RegisterForEvents()
         {
-            // TODO Microsoft.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
-            //ApplicationView.GetForCurrentView().Consolidated += ViewConsolidated;
+            // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+            ApplicationView.GetForCurrentView().Consolidated += ViewConsolidated;
         }
 
         private void UnregisterForEvents()
         {
-            // TODO Microsoft.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
-            //ApplicationView.GetForCurrentView().Consolidated -= ViewConsolidated;
+            // TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+            ApplicationView.GetForCurrentView().Consolidated -= ViewConsolidated;
         }
 
-        private void ViewConsolidated()
+        private void ViewConsolidated(// TODO Windows.UI.ViewManagement.ApplicationView is no longer supported. Use Microsoft.UI.Windowing.AppWindow instead. For more details see https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing
+ApplicationView sender, ApplicationViewConsolidatedEventArgs e)
         {
-
+            StopViewInUse();
         }
 
         private void FinalizeRelease()

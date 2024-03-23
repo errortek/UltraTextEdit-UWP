@@ -13,7 +13,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
-using UTE_UWP_.Views;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using WinRT.Interop;
