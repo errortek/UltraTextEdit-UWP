@@ -40,6 +40,7 @@ namespace UTE_UWP_.Views
         private string fileNameWithPath;
         private bool _openDialog;
         private string originalDocText;
+        public string docText;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -1415,7 +1416,11 @@ namespace UTE_UWP_.Views
 
         private void ComputeHash_Click(object sender, RoutedEventArgs e)
         {
-
+            editor.TextDocument.GetText(TextGetOptions.NoHidden, out docText);
+            ContentDialog dialog = new ContentDialog();
+            dialog.Title = "Compute hashes";
+            dialog.Content = new ComputeHash();
+            dialog.ShowAsync();
         }
     }
 }

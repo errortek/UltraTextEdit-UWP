@@ -9,6 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        
+        <StackPanel>
+            <TextBlock>Base64 Encode/Decode</TextBlock>
+            <Button Click="Button_Click">Encode</Button>
+            <Button Click="Button_Click_1">Decode</Button>
+            <TextBlock x:Name="base64_result"/>
+            <TextBlock>SHA1 Hash</TextBlock>
+            <Button Click="Button_Click_2">Generate Hash</Button>
+            <TextBlock x:Name="sha1_result"/>
+        </StackPanel>
     </Grid>
 </Page>
