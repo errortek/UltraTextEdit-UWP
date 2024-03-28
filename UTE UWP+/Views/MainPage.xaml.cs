@@ -71,6 +71,29 @@ namespace UTE_UWP_.Views
 
             ShareSourceLoad();
 
+            InitializeVIDs();
+        }
+
+        private void InitializeVIDs()
+        {
+            ApplicationDataContainer LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["TabbedHideVID"] != null)
+            {
+                if (LocalSettings.Values["TabbedHideVID"].ToString() == "On")
+                {
+                    tabbedwindow.Visibility = Visibility.Collapsed;
+                    untabbedwindow.Text = "New Window";
+                }
+                else
+                {
+                    tabbedwindow.Visibility = Visibility.Visible;
+                    untabbedwindow.Text = "New Untabbed Window";
+                }
+            }
+            else
+            {
+                LocalSettings.Values["TabbedHideVID"] = "On";
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)

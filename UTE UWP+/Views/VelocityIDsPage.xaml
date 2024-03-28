@@ -65,8 +65,8 @@
         <ScrollViewer Grid.Row="1" x:Name="view">
             <StackPanel Orientation="Vertical" Padding="20" Spacing="5">
                 <TextBlock Text="Velocity IDs" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
-                <controls:SettingsCard Header="Hide UTE Update from Settings">
-                    <ToggleSwitch x:Name="uteupdatevidToggle" OffContent="Off" OnContent="On" Toggled="utepdatevidToggle_Toggled"/>
+                <controls:SettingsCard Header='Hide the "New Tabbed Window" menu item'>
+                    <ToggleSwitch x:Name="tabbedhidevidToggle" OffContent="Off" OnContent="On" Toggled="tabbedhidevidToggle_Toggled"/>
                 </controls:SettingsCard>
             </StackPanel>
         </ScrollViewer>

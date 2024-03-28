@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,24 @@ namespace UTE_UWP_.Views
         public VelocityIDsPage()
         {
             this.InitializeComponent();
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["TabbedHideVID"] != null)
+            {
+                if ((string)LocalSettings.Values["TabbedHideVID"] == "On")
+                {
+                    tabbedhidevidToggle.IsOn = true;
+
+                }
+                if ((string)LocalSettings.Values["TabbedHideVID"] == "Off")
+                {
+                    tabbedhidevidToggle.IsOn = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["TabbedHideVID"] = "Off";
+                tabbedhidevidToggle.IsOn = false;
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -35,9 +54,24 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private void utepdatevidToggle_Toggled(object sender, RoutedEventArgs e)
+        private void tabbedhidevidToggle_Toggled(object sender, RoutedEventArgs e)
         {
-
+            if (tabbedhidevidToggle.IsOn == true)
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["TabbedHideVID"] != null)
+                {
+                    LocalSettings.Values["TabbedHideVID"] = "On";
+                }
+            }
+            else
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["TabbedHideVID"] != null)
+                {
+                    LocalSettings.Values["TabbedHideVID"] = "Off";
+                }
+            }
         }
     }
 }
