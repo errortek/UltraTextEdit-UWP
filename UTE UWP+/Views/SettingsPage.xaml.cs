@@ -198,6 +198,14 @@ namespace UTE_UWP_.Views
             }
             DefaultLaunch();
         }
+
+        private void VIDsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.Current.Content is Frame rootFrame)
+            {
+                rootFrame.Navigate(typeof(VelocityIDsPage));
+            }
+        }
     }
 
 }
