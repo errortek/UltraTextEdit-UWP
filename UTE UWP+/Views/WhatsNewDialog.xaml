@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-                • Add a hash computation UI
+               • Add VelocityIDs<LineBreak/>• Add better build date computation algorithm
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
