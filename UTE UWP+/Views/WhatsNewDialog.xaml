@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-               • Add VelocityIDs<LineBreak/>• Add better build date computation algorithm
+               • Add VelocityIDs<LineBreak/>• Allow disabling the Tabbed Window menu item (disabled by default)
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
