@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "UTE UWP+ WASDK (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "UTE UWP+ WASDK (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
