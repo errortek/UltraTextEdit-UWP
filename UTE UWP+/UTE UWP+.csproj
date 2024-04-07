@@ -360,6 +360,12 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Templates\CreditsTemp.png" />
+    <Content Include="Assets\Templates\EssayTemp.png" />
+    <Content Include="Assets\Templates\ImageEssayTemp.png" />
+    <Content Include="Assets\Templates\ImageGalleryTemp.png" />
+    <Content Include="Assets\Templates\NewspaperTemp.png" />
+    <Content Include="Assets\Templates\ResumeTemp.png" />
     <Content Include="Assets\utevericon.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
@@ -375,6 +381,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="Assets\Templates\CreditsTemp.rtf" />
+    <None Include="Assets\Templates\EssayTemp.rtf" />
+    <None Include="Assets\Templates\ImageEssayTemp.rtf" />
+    <None Include="Assets\Templates\ImageGalleryTemp.rtf" />
+    <None Include="Assets\Templates\NewspaperTemp.rtf" />
+    <None Include="Assets\Templates\ResumeTemp.rtf" />
     <None Include="README.md" />
     <None Include="UTE UWP+_TemporaryKey.pfx" />
   </ItemGroup>
