@@ -115,7 +115,7 @@
                             <Grid>
                                 <Button Height="135" Click="Button_Click_21" Width="150" Padding="0,0,0,0" VerticalAlignment="Top">
                                     <Grid Width="148" Height="133">
-                                        <Image Source="/IviriusTextEditor/Templates/EssayTemp.png" Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125"/>
+                                        <Image Source="/Assets/Templates/EssayTemp.png" Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125"/>
                                         <Border CornerRadius="3,3,0,0" Margin="0,0,0,35" Height="NaN" Width="188" HorizontalAlignment="Center"/>
                                         <Border VerticalAlignment="Bottom" CornerRadius="0,0,3,3" Height="35">
                                             <Border.Background>
@@ -130,7 +130,7 @@
                                 </Button>
                                 <Button Height="135" Click="Button_Click_22" Width="150" Padding="0,0,0,0" VerticalAlignment="Top" Margin="175,0,0,0">
                                     <Grid Width="148" Height="133">
-                                        <Image Source="/IviriusTextEditor/Templates/ResumeTemp.png" Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125"/>
+                                        <Image Source="/Assets/Templates/ResumeTemp.png" Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125"/>
                                         <Border CornerRadius="3,3,0,0" Margin="0,0,0,35" Height="NaN" Width="188" HorizontalAlignment="Center"/>
                                         <Border VerticalAlignment="Bottom" CornerRadius="0,0,3,3" Height="35">
                                             <Border.Background>
@@ -145,7 +145,7 @@
                                 </Button>
                                 <Button Height="135" Click="Button_Click_23" Width="150" Padding="0,0,0,0" VerticalAlignment="Top" Margin="350,0,0,0">
                                     <Grid Width="148" Height="133">
-                                        <Image Source="/IviriusTextEditor/Templates/CreditsTemp.png" Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125"/>
+                                        <Image Source="/Assets/Templates/CreditsTemp.png" Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125"/>
                                         <Border CornerRadius="3,3,0,0" Margin="0,0,0,35" Height="NaN" Width="188" HorizontalAlignment="Center"/>
                                         <Border VerticalAlignment="Bottom" CornerRadius="0,0,3,3" Height="35">
                                             <Border.Background>
@@ -158,9 +158,9 @@
                                         </Border>
                                     </Grid>
                                 </Button>
-                                <Button Height="135" Click="Button_Click_23" Width="150" Padding="0,0,0,0" VerticalAlignment="Top" Margin="525,0,0,0">
+                                <Button Height="135" Click="Button_Click_24" Width="150" Padding="0,0,0,0" VerticalAlignment="Top" Margin="525,0,0,0">
                                     <Grid Width="148" Height="133">
-                                        <Image Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125" Source="/IviriusTextEditor/Templates/ImageEssayTemp.png"/>
+                                        <Image Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125" Source="/Assets/Templates/ImageEssayTemp.png"/>
                                         <Border CornerRadius="3,3,0,0" Margin="0,0,0,35" Height="NaN" Width="188" HorizontalAlignment="Center"/>
                                         <Border VerticalAlignment="Bottom" CornerRadius="0,0,3,3" Height="35">
                                             <Border.Background>
@@ -175,7 +175,7 @@
                                 </Button>
                                 <Button Height="135" Click="Button_Click_25" Width="150" Padding="0,0,0,0" VerticalAlignment="Top" Margin="0,160,0,0">
                                     <Grid Width="148" Height="133">
-                                        <Image Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125" Source="/IviriusTextEditor/Templates/ImageGalleryTemp.png"/>
+                                        <Image Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125" Source="/Assets/Templates/ImageGalleryTemp.png"/>
                                         <Border CornerRadius="3,3,0,0" Margin="0,0,0,35" Height="NaN" Width="188" HorizontalAlignment="Center"/>
                                         <Border VerticalAlignment="Bottom" CornerRadius="0,0,3,3" Height="35">
                                             <Border.Background>
@@ -190,7 +190,7 @@
                                 </Button>
                                 <Button Height="135" Click="Button_Click_26" Width="150" Padding="0,0,0,0" VerticalAlignment="Top" Margin="175,160,0,0">
                                     <Grid Width="148" Height="133">
-                                        <Image Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125" Source="/IviriusTextEditor/Templates/NewspaperTemp.png"/>
+                                        <Image Stretch="UniformToFill" VerticalAlignment="Top" Width="148" HorizontalAlignment="Left" Height="125" Source="/Assets/Templates/NewspaperTemp.png"/>
                                         <Border CornerRadius="3,3,0,0" Margin="0,0,0,35" Height="NaN" Width="188" HorizontalAlignment="Center"/>
                                         <Border VerticalAlignment="Bottom" CornerRadius="0,0,3,3" Height="35">
                                             <Border.Background>

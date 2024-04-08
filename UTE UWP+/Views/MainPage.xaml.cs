@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -1353,29 +1354,79 @@ namespace UTE_UWP_.Views
 
         }
 
-        private void Button_Click_26(object sender, RoutedEventArgs e)
+        private async void Button_Click_26(object sender, RoutedEventArgs e)
         {
-
+            var uri = new System.Uri("ms-appx:///Assets/Templates/NewspaperTemp.rtf");
+            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
+            {
+                IBuffer buffer = await FileIO.ReadBufferAsync(file);
+                var reader = DataReader.FromBuffer(buffer);
+                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+                string text = reader.ReadString(buffer.Length);
+                // Load the file into the Document property of the RichEditBox.
+                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
+            }
         }
 
-        private void Button_Click_21(object sender, RoutedEventArgs e)
+        private async void Button_Click_21(object sender, RoutedEventArgs e)
         {
-
+            var uri = new System.Uri("ms-appx:///Assets/Templates/EssayTemp.rtf");
+            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
+            {
+                IBuffer buffer = await FileIO.ReadBufferAsync(file);
+                var reader = DataReader.FromBuffer(buffer);
+                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+                string text = reader.ReadString(buffer.Length);
+                // Load the file into the Document property of the RichEditBox.
+                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
+            }
         }
 
-        private void Button_Click_22(object sender, RoutedEventArgs e)
+        private async void Button_Click_22(object sender, RoutedEventArgs e)
         {
-
+            var uri = new System.Uri("ms-appx:///Assets/Templates/ResumeTemp.rtf");
+            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
+            {
+                IBuffer buffer = await FileIO.ReadBufferAsync(file);
+                var reader = DataReader.FromBuffer(buffer);
+                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+                string text = reader.ReadString(buffer.Length);
+                // Load the file into the Document property of the RichEditBox.
+                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
+            }
         }
 
-        private void Button_Click_23(object sender, RoutedEventArgs e)
+        private async void Button_Click_23(object sender, RoutedEventArgs e)
         {
-
+            var uri = new System.Uri("ms-appx:///Assets/Templates/CreditsTemp.rtf");
+            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
+            {
+                IBuffer buffer = await FileIO.ReadBufferAsync(file);
+                var reader = DataReader.FromBuffer(buffer);
+                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+                string text = reader.ReadString(buffer.Length);
+                // Load the file into the Document property of the RichEditBox.
+                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
+            }
         }
 
-        private void Button_Click_25(object sender, RoutedEventArgs e)
+        private async void Button_Click_25(object sender, RoutedEventArgs e)
         {
-
+            var uri = new System.Uri("ms-appx:///Assets/Templates/ImageGalleryTemp.rtf");
+            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
+            {
+                IBuffer buffer = await FileIO.ReadBufferAsync(file);
+                var reader = DataReader.FromBuffer(buffer);
+                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+                string text = reader.ReadString(buffer.Length);
+                // Load the file into the Document property of the RichEditBox.
+                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
+            }
         }
 
         private void HideHome_Click(object sender, RoutedEventArgs e)
@@ -1446,6 +1497,21 @@ namespace UTE_UWP_.Views
             dialog.CloseButtonText = "Close";
             dialog.DefaultButton = ContentDialogButton.Close;
             dialog.ShowAsync();
+        }
+
+        private async void Button_Click_24(object sender, RoutedEventArgs e)
+        {
+            var uri = new System.Uri("ms-appx:///Assets/Templates/ImageEssayTemp.rtf");
+            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
+            {
+                IBuffer buffer = await FileIO.ReadBufferAsync(file);
+                var reader = DataReader.FromBuffer(buffer);
+                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+                string text = reader.ReadString(buffer.Length);
+                // Load the file into the Document property of the RichEditBox.
+                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
+            }
         }
     }
 }

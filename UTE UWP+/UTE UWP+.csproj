@@ -381,12 +381,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
-    <None Include="Assets\Templates\CreditsTemp.rtf" />
-    <None Include="Assets\Templates\EssayTemp.rtf" />
-    <None Include="Assets\Templates\ImageEssayTemp.rtf" />
-    <None Include="Assets\Templates\ImageGalleryTemp.rtf" />
-    <None Include="Assets\Templates\NewspaperTemp.rtf" />
-    <None Include="Assets\Templates\ResumeTemp.rtf" />
+    <None Include="Assets\Templates\CreditsTemp.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Templates\EssayTemp.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Templates\ImageEssayTemp.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Templates\ImageGalleryTemp.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Templates\NewspaperTemp.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Templates\ResumeTemp.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="README.md" />
     <None Include="UTE UWP+_TemporaryKey.pfx" />
   </ItemGroup>
