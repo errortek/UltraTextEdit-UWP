@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-               • Add VelocityIDs<LineBreak/>• Allow disabling the Tabbed Window menu item (disabled by default)
+               • Add Templates<LineBreak/>• Allow Templates to be opened via the Home menu
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
