@@ -30,6 +30,7 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using System.Text;
 using UltraTextEdit_UWP.Dialogs;
+using MicaForUWP.Media;
 
 namespace UltraTextEdit_UWP.Views
 {
@@ -53,7 +54,16 @@ namespace UltraTextEdit_UWP.Views
             InitializeComponent();
             if (BuildInfo.BeforeWin11)
             {
-               this.Background = new AcrylicBrush();
+                Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                {
+                    LuminosityOpacity = 0.8F,
+                    TintOpacity = 0F,
+                    BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                    Opacity = 1,
+                    TintColor = Color.FromArgb(255, 230, 230, 230),
+                    FallbackColor = Color.FromArgb(255, 230, 230, 230)
+                };
+                this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
             }
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;                           
             appViewTitleBar.ButtonForegroundColor = (Color)Resources["SystemAccentColor"];

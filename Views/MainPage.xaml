@@ -6,7 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
-    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
+    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+    xmlns:mica="using:MicaForUWP.Media">
 
     <Page.Resources>
         <Flyout x:Key="myColorPickerFlyout">
@@ -33,7 +34,7 @@
         </Flyout>
     </Page.Resources>
 
-    <RelativePanel x:Name="containerPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" >
+    <RelativePanel x:Name="containerPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
 
         <Grid x:Name="AppTitleGrid"
                 IsHitTestVisible="True"

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaForUWP.Media;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -9,9 +10,11 @@ using UltraTextEdit_UWP.Services;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage;
+using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace UltraTextEdit_UWP.Views
@@ -41,6 +44,19 @@ namespace UltraTextEdit_UWP.Views
         public SettingsPage()
         {
             InitializeComponent();
+            if (BuildInfo.BeforeWin11)
+            {
+                Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                {
+                    LuminosityOpacity = 0.8F,
+                    TintOpacity = 0F,
+                    BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                    Opacity = 1,
+                    TintColor = Color.FromArgb(255, 230, 230, 230),
+                    FallbackColor = Color.FromArgb(255, 230, 230, 230)
+                };
+                this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+            }
             ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             if (ElementSoundPlayer.State == ElementSoundPlayerState.On)
             {
