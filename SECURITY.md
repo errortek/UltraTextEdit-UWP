@@ -9,11 +9,11 @@ currently being supported with security updates.
 | ------- | ------------------ | ------------- | ------- | ------- |
 | 24H2    | ✔️ DEV CHANNEL | 25967.1000<br>March 30, 2024 | TBC | TBC
 | 24H2*    | ✔️ DEV CHANNEL | 25936.1000<br>January 22, 2024 | TBC | N/A
-| 24H1*    | :white_check_mark: LTSC | 25393.113<br>March 12, 2024 | October 9, 2029 | N/A
-| 23H2*    | :white_check_mark: | 25314.1230<br>March 12, 2024 | October 13, 2026 | October 9, 2029
-| 23H1*    | :white_check_mark: LTSC | 25201.556<br>March 12, 2024 | October 9, 2029 | N/A
-| 22H2*    | ✅                | 22621.2792<br>March 12, 2024 | October 8, 2024 | October 12, 2027
-| 22H1*    | :white_check_mark: LTSC | 22000.2600<br>March 12, 2024 | October 12, 2027<br>October 9, 2029 (TBC) | N/A
+| 24H1*    | :white_check_mark: LTSC | 25393.145<br>April 9, 2024 | October 9, 2029 | N/A
+| 23H2*    | :white_check_mark: | 25314.1230<br>April 9, 2024 | October 13, 2026 | October 9, 2029
+| 23H1*    | :white_check_mark: LTSC | 25201.590<br>April 9, 2024 | October 9, 2029 | N/A
+| 22H2*    | ✅                | 22621.2861<br>April 9, 2024 | October 8, 2024 | October 12, 2027
+| 22H1*    | :white_check_mark: LTSC | 22000.2652<br>April 9, 2024 | October 12, 2027<br>October 9, 2029 (TBC) | N/A
 | 21H2*    | :x:                | 19044.493<br>May 31, 2022 | June 24, 2022 | N/A 
 
 ### Legend for Table
