@@ -7,7 +7,7 @@ currently being supported with security updates.
 
 | Version | Supported          | Current Build | EOS for Monthly Updates | EOS for Bi-Monthly Updates |
 | ------- | ------------------ | ------------- | ------- | ------- |
-| 24H2    | ✔️ DEV CHANNEL | 25951.1000<br>March 23, 2024 | TBC | TBC
+| 24H2    | ✔️ DEV CHANNEL | 25967.1000<br>March 30, 2024 | TBC | TBC
 | 24H2*    | ✔️ DEV CHANNEL | 25936.1000<br>January 22, 2024 | TBC | N/A
 | 24H1*    | :white_check_mark: LTSC | 25393.113<br>March 12, 2024 | October 9, 2029 | N/A
 | 23H2*    | :white_check_mark: | 25314.1230<br>March 12, 2024 | October 13, 2026 | October 9, 2029
