@@ -61,3 +61,10 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+################################################################################
+# linguist file type excludes
+#
+# Excludes certain file types (like RTF) from the Linguist statistics to avoid 
+# the project being mislabelled.
+################################################################################
+*.rtf -linguist-vendored
