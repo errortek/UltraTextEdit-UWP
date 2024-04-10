@@ -144,6 +144,9 @@
     <PackageReference Include="CommunityToolkit.Uwp.Controls.SettingsControls">
       <Version>8.1.240328-rc</Version>
     </PackageReference>
+    <PackageReference Include="CommunityToolkit.Uwp.Controls.TabbedCommandBar">
+      <Version>8.1.240328-rc</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
       <Version>9.0.0-preview.2.24128.5</Version>
     </PackageReference>
