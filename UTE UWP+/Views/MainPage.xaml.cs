@@ -1,4 +1,5 @@
-﻿using Microsoft.Graphics.Canvas.Text;
+﻿using MicaForUWP.Media;
+using Microsoft.Graphics.Canvas.Text;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.VisualBasic;
 using System;
@@ -11,6 +12,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using UTE_UWP_.Helpers;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
@@ -48,6 +50,21 @@ namespace UTE_UWP_.Views
         public MainPage()
         {
             InitializeComponent();
+
+            if (BuildInfo.BeforeWin11)
+            {
+                //Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                //{
+                //    LuminosityOpacity = 0.8F,
+                //    TintOpacity = 0F,
+                //    BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                //    Opacity = 1,
+                //    TintColor = Windows.UI.Color.FromArgb(255, 230, 230, 230),
+                //    FallbackColor = Windows.UI.Color.FromArgb(255, 230, 230, 230)
+                //};
+                this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+            }
+
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
 
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
