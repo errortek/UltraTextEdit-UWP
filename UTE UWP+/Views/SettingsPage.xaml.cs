@@ -46,6 +46,21 @@ namespace UTE_UWP_.Views
         public SettingsPage()
         {
             InitializeComponent();
+
+            if (BuildInfo.BeforeWin11)
+            {
+                //Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                //{
+                //    LuminosityOpacity = 0.8F,
+                //    TintOpacity = 0F,
+                //    BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                //    Opacity = 1,
+                //    TintColor = Windows.UI.Color.FromArgb(255, 230, 230, 230),
+                //    FallbackColor = Windows.UI.Color.FromArgb(255, 230, 230, 230)
+                //};
+                this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+            }
+
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
 
             appViewTitleBar.ButtonBackgroundColor = Colors.Transparent;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UTE_UWP_.Helpers;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -26,6 +27,21 @@ namespace UTE_UWP_.Views
         public VelocityIDsPage()
         {
             this.InitializeComponent();
+
+            if (BuildInfo.BeforeWin11)
+            {
+                //Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                //{
+                //    LuminosityOpacity = 0.8F,
+                //    TintOpacity = 0F,
+                //    BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                //    Opacity = 1,
+                //    TintColor = Windows.UI.Color.FromArgb(255, 230, 230, 230),
+                //    FallbackColor = Windows.UI.Color.FromArgb(255, 230, 230, 230)
+                //};
+                this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+            }
+
             var LocalSettings = ApplicationData.Current.LocalSettings;
             if (LocalSettings.Values["TabbedHideVID"] != null)
             {
