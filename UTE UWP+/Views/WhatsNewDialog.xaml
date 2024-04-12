@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-               • Add Templates<LineBreak/>• Allow Templates to be opened via the Home menu
+               • Add custom Mica window background for Windows 10 users<LineBreak/>• Use CommandBar from WCT 8.1 (it comes with an updated design more similar to Office)
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
