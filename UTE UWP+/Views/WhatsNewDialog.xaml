@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-               • Add custom Mica window background for Windows 10 users<LineBreak/>• Use CommandBar from WCT 8.1 (it comes with an updated design more similar to Office)
+               • Introduce the functionality to share text from UTE UWP+ to compatible apps!<LineBreak/>• Dependency updates
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
