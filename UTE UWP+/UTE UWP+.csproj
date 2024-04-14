@@ -28,7 +28,7 @@
     <AppxBundlePlatforms>x86|x64|arm|arm64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-   <LangVersion>8.0</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -152,7 +152,7 @@
       <Version>0.1.10</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
-      <Version>9.0.0-preview.2.24128.5</Version>
+      <Version>9.0.0-preview.3.24172.9</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.Platforms">
       <Version>8.0.0-preview.7.23375.6</Version>
