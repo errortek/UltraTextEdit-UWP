@@ -65,6 +65,8 @@ namespace UTE_UWP_.Views
                 this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
             }
 
+            ShareSourceLoad();
+
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
 
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
@@ -1321,7 +1323,8 @@ namespace UTE_UWP_.Views
 
         private void ShareButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ShareSourceLoad();
+            DataTransferManager.ShowShareUI();
         }
 
         public List<string> fonts
