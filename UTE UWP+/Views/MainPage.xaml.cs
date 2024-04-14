@@ -1536,5 +1536,39 @@ namespace UTE_UWP_.Views
                 editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
             }
         }
+
+        public async Task ShowUnsavedDialog2()
+        {
+            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP+", "");
+            ContentDialog aboutDialog = new ContentDialog
+            {
+                Title = "Do you want to save changes to " + fileName + "?",
+                Content = "There are unsaved changes, want to save them?",
+                CloseButtonText = "Cancel",
+                PrimaryButtonText = "Save changes",
+                SecondaryButtonText = "No",
+                DefaultButton = ContentDialogButton.Primary
+            };
+
+            aboutDialog.CloseButtonClick += (s, e) => this._openDialog = false;
+
+            ContentDialogResult result = await aboutDialog.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                SaveFile(true);
+            }
+            else if (result == ContentDialogResult.Secondary)
+            {
+                editor.TextDocument.SetText(TextSetOptions.FormatRtf, "");
+                AppTitle.Text = "Untitled" + " - " + "UTE UWP+";
+                fileNameWithPath = "";
+            }
+        }
+
+        private async void BlankFIle(object sender, RoutedEventArgs e)
+        {
+            await ShowUnsavedDialog2();
+            
+        }
     }
 }

@@ -97,7 +97,7 @@
                         <TextBlock Text="&#xE130;" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,75,0,0"/>
                         <StackPanel Margin="100,60,25,160" Spacing="10">
                             <TextBlock TextWrapping="Wrap" Text="New File" FontSize="24"/>
-                            <Button Height="135" Click="NewFile_Click" Width="150" Padding="0,0,0,0">
+                            <Button Height="135" Click="BlankFIle" Width="150" Padding="0,0,0,0">
                                 <Grid Width="148" Height="133">
                                     <Border CornerRadius="3,3,0,0" Margin="0,0,0,35" Height="NaN" Width="188" HorizontalAlignment="Center" Background="White"/>
                                     <Border VerticalAlignment="Bottom" CornerRadius="0,0,3,3" Height="35">
