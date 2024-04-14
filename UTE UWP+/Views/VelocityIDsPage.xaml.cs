@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaForUWP.Media;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,16 +31,20 @@ namespace UTE_UWP_.Views
 
             if (BuildInfo.BeforeWin11)
             {
-                //Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
-                //{
-                //    LuminosityOpacity = 0.8F,
-                //    TintOpacity = 0F,
-                //    BackgroundSource = BackgroundSource.WallpaperBackdrop,
-                //    Opacity = 1,
-                //    TintColor = Windows.UI.Color.FromArgb(255, 230, 230, 230),
-                //    FallbackColor = Windows.UI.Color.FromArgb(255, 230, 230, 230)
-                //};
+                Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                {
+                    LuminosityOpacity = 0.8F,
+                    TintOpacity = 0F,
+                    BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                    Opacity = 1,
+                    TintColor = Windows.UI.Color.FromArgb(255, 230, 230, 230),
+                    FallbackColor = Windows.UI.Color.FromArgb(255, 230, 230, 230)
+                };
                 this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+            }
+            else
+            {
+
             }
 
             var LocalSettings = ApplicationData.Current.LocalSettings;
