@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-               • Fix some issues with the Mica Glass theme<LineBreak/>• Allow user to create new blank documents via the Home Menu
+               • Add a dark variant of the Mica Glass theme<LineBreak/>• Add 'Justify' text alignment
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
