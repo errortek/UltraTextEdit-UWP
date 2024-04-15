@@ -1219,6 +1219,9 @@ ToolTipService.ToolTip="Compute Hash">
                             <AppBarButton Label="What's New Dialog" Icon="Help" Click="WN_invoke"/>
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
+                    <controls:TabbedCommandBar.PaneFooter>
+                        <ToggleSwitch x:Name="ribbonToggle" OnContent="Ribbon" OffContent="TabbedCommandBar" IsOn="False"/>
+                    </controls:TabbedCommandBar.PaneFooter>
                 </controls:TabbedCommandBar>
             </RelativePanel>
 
