@@ -385,7 +385,7 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private void SuperScriptButton_Click(object sender, RoutedEventArgs e)
+        private void SuperscriptButton_Click(object sender, RoutedEventArgs e)
         {
             Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
             if (selectedText != null)
@@ -1152,7 +1152,7 @@ namespace UTE_UWP_.Views
                     _ = ST.CharacterFormat;
                     var Br = new SolidColorBrush(BackPicker.Color);
                     var CF = BackPicker.Color;
-                    if (BackAccent != null) BackAccent.Foreground = Br;
+                    //if (BackAccent != null) BackAccent.Foreground = Br;
                     ST.CharacterFormat.BackgroundColor = CF;
                 }
             }
@@ -1597,6 +1597,41 @@ namespace UTE_UWP_.Views
                 else CF = ParagraphAlignment.Left;
                 ST.ParagraphFormat.Alignment = CF;
             }
+        }
+
+        private void NumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
+        {
+
+        }
+
+        private void FontBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void StrikethroughButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_32(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NullForegroundButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_37(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextCmdBar_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -360,6 +360,8 @@
                             <SymbolIcon Symbol="Setting" />
                         </Viewbox>
                     </Button>
+                    <AppBarSeparator/>
+                    <ToggleSwitch x:Name="ribbonToggle" OnContent="Ribbon" OffContent="TabbedCommandBar" IsOn="False"/>
                 </StackPanel>
 
                 <controls:TabbedCommandBar
@@ -982,7 +984,7 @@ ToolTipService.ToolTip="Justify">
                                 </muxc:ToggleSplitButton>
                             </AppBarElementContainer>
                             <AppBarElementContainer>
-                                <muxc:SplitButton x:Name="Back" FontFamily="{ThemeResource SymbolThemeFontFamily}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" Padding="0,0,5,0" ToolTipService.ToolTip="Text highlight" BorderThickness="0,1,0,1">
+                                <muxc:SplitButton x:Name="Back2" FontFamily="{ThemeResource SymbolThemeFontFamily}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" Padding="0,0,5,0" ToolTipService.ToolTip="Text highlight" BorderThickness="0,1,0,1">
                                     <muxc:SplitButton.Flyout>
                                         <Flyout>
                                             <StackPanel>
@@ -1060,7 +1062,7 @@ ToolTipService.ToolTip="Justify">
                                     <PathIcon Data="M16.488 4.43a.75.75 0 0 1 .082 1.058L10.988 12l5.032 5.871c-.302.41-.555.906-.682 1.51L10 13.151l-5.43 6.336a.75.75 0 0 1-1.14-.976L9.013 12 3.431 5.488a.75.75 0 0 1 1.139-.976L10 10.848l5.43-6.336a.75.75 0 0 1 1.058-.081ZM17.75 15.523c0-.528.444-1.023.986-1.023.407 0 .735.19.893.434.136.21.218.566-.093 1.095-.15.255-.376.482-.682.724-.152.12-.316.237-.493.363l-.074.052c-.152.107-.315.222-.472.34-.744.56-1.565 1.346-1.565 2.742 0 .414.336.75.75.75h3.451a.75.75 0 0 0 0-1.5h-2.513c.16-.282.423-.525.779-.793.137-.103.279-.203.432-.312l.078-.054c.178-.127.37-.264.557-.41.372-.295.76-.658 1.045-1.142.557-.948.546-1.921.058-2.672C20.42 13.4 19.59 13 18.736 13c-1.478 0-2.486 1.278-2.486 2.523a.75.75 0 0 0 1.5 0Z"/>
                                 </AppBarToggleButton.Icon>
                             </AppBarToggleButton>
-                            <AppBarToggleButton Click="SuperScriptButton_Click" Label="Superscript">
+                            <AppBarToggleButton Click="SuperscriptButton_Click" Label="Superscript">
                                 <AppBarToggleButton.Icon>
                                     <PathIcon Data="M18.736 3.5c-.543 0-.986.495-.986 1.023a.75.75 0 0 1-1.5 0C16.25 3.278 17.258 2 18.736 2c.855 0 1.684.4 2.15 1.117.49.751.5 1.724-.057 2.672-.285.484-.673.847-1.045 1.141-.187.148-.379.284-.557.41l-.078.056a17.45 17.45 0 0 0-.432.311c-.356.268-.619.511-.78.793h2.514a.75.75 0 0 1 0 1.5H17a.75.75 0 0 1-.75-.75c0-1.396.821-2.182 1.565-2.741.157-.119.32-.234.472-.341l.074-.052c.177-.126.34-.243.493-.363.306-.242.532-.47.682-.724.31-.53.229-.886.093-1.094-.158-.244-.486-.435-.893-.435Z M15.26 4.71c.06.562.385 1.043.847 1.318L10.987 12l5.583 6.512a.75.75 0 1 1-1.14.976L10 13.152l-5.43 6.336a.75.75 0 0 1-1.14-.976L9.013 12 3.431 5.488a.75.75 0 1 1 1.139-.976L10 10.848l5.26-6.137Z"/>
                                 </AppBarToggleButton.Icon>
@@ -1114,71 +1116,71 @@ ToolTipService.ToolTip="Justify">
                                     x:Name="symbolGrid"
                                     MaximumRowsOrColumns="4"
                                     Orientation="Horizontal">
-                                                <VariableSizedWrapGrid.Resources>
-                                                    <Style TargetType="Rectangle">
-                                                        <Setter Property="Width" Value="32" />
-                                                        <Setter Property="Height" Value="32" />
-                                                    </Style>
+                                                    <VariableSizedWrapGrid.Resources>
+                                                        <Style TargetType="Rectangle">
+                                                            <Setter Property="Width" Value="32" />
+                                                            <Setter Property="Height" Value="32" />
+                                                        </Style>
 
-                                                    <Style TargetType="Button">
-                                                        <Setter Property="Padding" Value="0" />
-                                                        <Setter Property="MinWidth" Value="32" />
-                                                        <Setter Property="MinHeight" Value="32" />
-                                                        <Setter Property="Margin" Value="5" />
-                                                        <Setter Property="CornerRadius" Value="8" />
-                                                    </Style>
-                                                </VariableSizedWrapGrid.Resources>
-                                                <Button
+                                                        <Style TargetType="Button">
+                                                            <Setter Property="Padding" Value="0" />
+                                                            <Setter Property="MinWidth" Value="32" />
+                                                            <Setter Property="MinHeight" Value="32" />
+                                                            <Setter Property="Margin" Value="5" />
+                                                            <Setter Property="CornerRadius" Value="8" />
+                                                        </Style>
+                                                    </VariableSizedWrapGrid.Resources>
+                                                    <Button
                                         AutomationProperties.Name="Mutiply"
                                         Click="SymbolButton_Click"
                                         ToolTipService.ToolTip="Multiplication symbol"
                                          Content="×">
-                                                </Button>
-                                                <Button
+                                                    </Button>
+                                                    <Button
                                         AutomationProperties.Name="Divide"
                                         Click="SymbolButton_Click"
                                         ToolTipService.ToolTip="Division symbol"
                                                 Content="÷">
-                                                </Button>
-                                                <Button
+                                                    </Button>
+                                                    <Button
                                         AutomationProperties.Name="LeftArrow"
                                         Click="SymbolButton_Click"
                                         ToolTipService.ToolTip="Left Arrow symbol"
                                                 Content="←">
-                                                </Button>
-                                                <Button
+                                                    </Button>
+                                                    <Button
                                         AutomationProperties.Name="RightArrow"
                                         Click="SymbolButton_Click"
                                         ToolTipService.ToolTip="Right Arrow symbol"
                                                 Content="→">
-                                                </Button>
-                                                <Button
+                                                    </Button>
+                                                    <Button
                                         AutomationProperties.Name="Degree"
                                         Click="SymbolButton_Click"
                                         ToolTipService.ToolTip="Degree symbol"
                                                 Content="°">
-                                                </Button>
-                                                <Button
+                                                    </Button>
+                                                    <Button
                                         AutomationProperties.Name="Paragraph"
                                         Click="SymbolButton_Click"
                                         ToolTipService.ToolTip="Paragraph symbol"
                                                 Content="§">
-                                                </Button>
-                                                <Button
+                                                    </Button>
+                                                    <Button
                                         AutomationProperties.Name="Mu"
                                         Click="SymbolButton_Click"
                                         ToolTipService.ToolTip="Lowercase mu (micro) symbol"
                                                 Content="µ">
-                                                </Button>
-                                                <Button
+                                                    </Button>
+                                                    <Button
                                         AutomationProperties.Name="SquareRoot"
                                         Click="SymbolButton_Click"
                                         ToolTipService.ToolTip="Square root symbol"
                                                 Content="√">
-                                                </Button>
+                                                    </Button>
 
-                                            </VariableSizedWrapGrid>
-                                            <Button Content="More symbols" Click="more_symbols"/>
+                                                </VariableSizedWrapGrid>
+                                                <Button Content="More symbols" Click="more_symbols"/>
                                             </StackPanel>
                                         </RelativePanel>
                                     </Flyout>
@@ -1219,10 +1221,159 @@ ToolTipService.ToolTip="Compute Hash">
                             <AppBarButton Label="What's New Dialog" Icon="Help" Click="WN_invoke"/>
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
-                    <controls:TabbedCommandBar.PaneFooter>
-                        <ToggleSwitch x:Name="ribbonToggle" OnContent="Ribbon" OffContent="TabbedCommandBar" IsOn="False"/>
-                    </controls:TabbedCommandBar.PaneFooter>
                 </controls:TabbedCommandBar>
+                <AppBarElementContainer Height="128" RelativePanel.Below="ButtonPanel">
+                    <Grid x:Name="Font" VerticalAlignment="Top" Height="128" RelativePanel.RightOf="Clipboard" RelativePanel.LeftOf="Paragraph" Margin="10,2,0,0">
+                        <Border x:Name="FontBor" BorderThickness="1" VerticalAlignment="Top" Margin="0,42,0,0" Height="27" HorizontalAlignment="Left" Width="389" CornerRadius="4,4,4,4" Background="{Binding Background, ElementName=HTemplate1}" Visibility="Collapsed"/>
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,7,0,0">
+                            <ComboBox x:Name="FontBox" Width="255" Height="33" SelectionChanged="FontBox_SelectionChanged" Padding="10,2,2,2" FontSize="14" HorizontalContentAlignment="Left" ToolTipService.ToolTip="Font type" PlaceholderText="Segoe UI (Default)"/>
+                            <muxc:NumberBox MinWidth="0" x:Name="FSize" Width="147" ValueChanged="NumberBox_ValueChanged" VerticalContentAlignment="Center" FontSize="14" ToolTipService.ToolTip="Font size" VerticalAlignment="Top" Margin="6,0,0,0" Height="33" PlaceholderText="Multiple"/>
+                            <muxc:DropDownButton Width="32" Height="20" HorizontalContentAlignment="Left" FontSize="10" ToolTipService.ToolTip="Font size options" FontFamily="{StaticResource SymbolThemeFontFamily}" VerticalAlignment="Center" Padding="0,0,9,0" CornerRadius="4,4,4,4" Margin="-38,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
+                                <muxc:DropDownButton.Flyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem Text="8" />
+                                        <MenuFlyoutItem Text="9" />
+                                        <MenuFlyoutItem Text="10" />
+                                        <MenuFlyoutItem Text="10.5" />
+                                        <MenuFlyoutItem Text="11" />
+                                        <MenuFlyoutItem Text="12" />
+                                        <MenuFlyoutItem Text="14" />
+                                        <MenuFlyoutItem Text="16" />
+                                        <MenuFlyoutItem Text="18" />
+                                        <MenuFlyoutItem Text="20" />
+                                        <MenuFlyoutItem Text="22" />
+                                        <MenuFlyoutItem Text="24" />
+                                        <MenuFlyoutItem Text="26" />
+                                        <MenuFlyoutItem Text="28" />
+                                        <MenuFlyoutItem Text="36" />
+                                        <MenuFlyoutItem Text="48" />
+                                        <MenuFlyoutItem Text="72" />
+                                        <MenuFlyoutSeparator/>
+                                        <MenuFlyoutItem Text="Default" />
+                                    </MenuFlyout>
+                                </muxc:DropDownButton.Flyout>
+                            </muxc:DropDownButton>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0" Spacing="3">
+                            <ToggleButton Style="{StaticResource TransparentToggleButton}" x:Name="BB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="&#xE19B;" Width="30" Height="30" Click="BoldButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16" Padding="2,3,2,2" ToolTipService.ToolTip="Bold (Ctrl + B)" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            <ToggleButton x:Name="IB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="&#xE199;" Width="30" Height="30" Click="ItalicButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16" ToolTipService.ToolTip="Italic (Ctrl + I)" CornerRadius="4,4,4,4" Padding="5,5,5,5" Style="{StaticResource TransparentToggleButton}" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            <muxc:DropDownButton x:Name="UB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="50" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="14" ToolTipService.ToolTip="Underline (Ctrl + U)" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
+                                <Grid>
+                                    <TextBlock TextWrapping="Wrap" Text="&#xE19A;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                                </Grid>
+                            </muxc:DropDownButton>
+                            <ToggleButton x:Name="STB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" Click="StrikethroughButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="2,2,2,2" ToolTipService.ToolTip="Strikethrough (Ctrl + T)" CornerRadius="4,4,4,4" Style="{StaticResource TransparentToggleButton}" Background="{x:Null}" BorderBrush="{x:Null}">
+                                <ToggleButton.KeyboardAccelerators>
+                                    <KeyboardAccelerator IsEnabled="True" Key="T" Modifiers="Control"/>
+                                </ToggleButton.KeyboardAccelerators>
+                                <Grid Width="15" Height="15" Margin="-2,-2,-1,-1">
+                                    <TextBlock TextWrapping="Wrap" Text="&#xEDE0;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                                    <TextBlock TextWrapping="Wrap" Text="&#xE7AB;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Center" FocusVisualPrimaryBrush="{x:Null}" FontSize="16" Foreground="{Binding Foreground, ElementName=LeftInd}"/>
+                                </Grid>
+                            </ToggleButton>
+                            <ToggleButton x:Name="SubscriptButton" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="0,0,2,2" ToolTipService.ToolTip="Subscript" Click="SubscriptButton_Click" CornerRadius="4,4,4,4" Style="{StaticResource TransparentToggleButton}" Background="{x:Null}" BorderBrush="{x:Null}">
+                                <Grid Width="20" Height="20" Margin="0,2,0,0">
+                                    <TextBlock Text="&#xE8BB;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,0,0,0"/>
+                                    <TextBlock FontSize="6" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,2" Text="(1)" Foreground="{Binding Foreground, ElementName=LeftInd}" FontWeight="Bold"/>
+                                </Grid>
+                            </ToggleButton>
+                            <ToggleButton x:Name="SuperscriptButton" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="0,0,2,2" ToolTipService.ToolTip="Superscript" Click="SuperscriptButton_Click" CornerRadius="4,4,4,4" Style="{StaticResource TransparentToggleButton}" Background="{x:Null}" BorderBrush="{x:Null}">
+                                <Grid Width="20" Height="20" Margin="0,2,0,0">
+                                    <TextBlock FontSize="6" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-1,0,0" Text="(1)" Foreground="{Binding Foreground, ElementName=LeftInd}" FontWeight="Bold"/>
+                                    <TextBlock Text="&#xE8BB;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,0,0,0"/>
+                                </Grid>
+                            </ToggleButton>
+                            <muxc:DropDownButton x:Name="CPDDB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" FontSize="12" Width="50" FontFamily="{StaticResource SymbolThemeFontFamily}" ToolTipService.ToolTip="Font color" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
+                                <muxc:DropDownButton.Flyout>
+                                    <Flyout>
+                                        <StackPanel>
+                                            <Grid>
+                                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Foreground="Red" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="OrangeRed" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="DarkOrange" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="Yellow" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Foreground="HotPink" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="LimeGreen" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="Lime" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="DodgerBlue" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Foreground="Blue" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="Black" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="DarkGray" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="Transparent" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0" Click="NullForegroundButton_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                                                            <Border BorderBrush="Red" BorderThickness="1" Width="39" RenderTransformOrigin="0.5,0.5">
+                                                                <Border.RenderTransform>
+                                                                    <CompositeTransform Rotation="46.118"/>
+                                                                </Border.RenderTransform>
+                                                            </Border>
+                                                        </Button>
+                                                    </StackPanel>
+                                                    <Button Content="Advanced" HorizontalAlignment="Stretch" Margin="0,5,0,0" Click="Button_Click_32"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Flyout>
+                                </muxc:DropDownButton.Flyout>
+                                <Grid>
+                                    <TextBlock TextWrapping="Wrap" Text="&#xE186;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16"/>
+                                    <TextBlock x:Name="FontAccent" Text="&#xE79F;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16"/>
+                                </Grid>
+                            </muxc:DropDownButton>
+                            <muxc:DropDownButton x:Name="Back" Height="30" FontSize="12" Width="50" FontFamily="{StaticResource SymbolThemeFontFamily}" ToolTipService.ToolTip="Text highlight" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
+                                <muxc:DropDownButton.Flyout>
+                                    <Flyout>
+                                        <StackPanel>
+                                            <Grid>
+                                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Foreground="Red" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="OrangeRed" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="DarkOrange" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="Yellow" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Foreground="HotPink" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="LimeGreen" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="Lime" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="DodgerBlue" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Foreground="Blue" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="Black" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="DarkGray" Content="&#xE002;" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                        <Button Foreground="Transparent" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0" Click="NullHighlightButton_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                                                            <Border BorderBrush="Red" BorderThickness="1" Width="39" RenderTransformOrigin="0.5,0.5">
+                                                                <Border.RenderTransform>
+                                                                    <CompositeTransform Rotation="46.118"/>
+                                                                </Border.RenderTransform>
+                                                            </Border>
+                                                        </Button>
+                                                    </StackPanel>
+                                                    <Button Content="Advanced" HorizontalAlignment="Stretch" Margin="0,5,0,0" Click="Button_Click_37"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Flyout>
+                                </muxc:DropDownButton.Flyout>
+                                <Grid
+                                   >
+                                    <TextBlock x:Name="BackAccent2" Text="&#xE891;" Foreground="White" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16"/>
+                                    <TextBlock Text="&#xE193;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16"/>
+                                </Grid>
+                            </muxc:DropDownButton>
+                        </StackPanel>
+                        <Border BorderThickness="1" Width="3" HorizontalAlignment="Right" Background="#7F989898" Height="{Binding Height, ElementName=Separator}" VerticalAlignment="Top" CornerRadius="1,1,1,1" Opacity="{Binding Opacity, ElementName=Separator}"/>
+                        <TextBlock x:Name="HI5" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,77,0,0" Text="&#xE11B;" Tag="HelpItem" ToolTipService.ToolTip="Change anything about how your text looks by modifying the font and paragraph options" Visibility="Collapsed"/>
+                        <TextBlock Text="Font" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="12" VerticalAlignment="Bottom" Opacity="0.8" Margin="0,0,0,12"/>
+                        <Border BorderThickness="1" Width="3" HorizontalAlignment="Right" Background="{StaticResource DividerStrokeColorDefaultBrush}" CornerRadius="1,1,1,1" Margin="0,-2,0,0"/>
+                    </Grid>
+
+                </AppBarElementContainer >
             </RelativePanel>
 
             <SplitView
