@@ -1570,5 +1570,17 @@ namespace UTE_UWP_.Views
             await ShowUnsavedDialog2();
             
         }
+
+        private void AlignJustifyButton_Click(object sender, RoutedEventArgs e)
+        {
+            var ST = editor.Document.Selection;
+            if (ST != null)
+            {
+                var CF = ST.ParagraphFormat.Alignment;
+                if (CF != ParagraphAlignment.Justify) CF = ParagraphAlignment.Justify;
+                else CF = ParagraphAlignment.Left;
+                ST.ParagraphFormat.Alignment = CF;
+            }
+        }
     }
 }
