@@ -1633,5 +1633,36 @@ namespace UTE_UWP_.Views
         {
 
         }
+
+        private void Button_Click_33(object sender, RoutedEventArgs e)
+        {
+            Home.Visibility = Visibility.Visible;
+            Insert.Visibility = Visibility.Collapsed;
+            EditButton.IsChecked = true;
+            InsertButton.IsChecked = false;
+        }
+
+        private void Button_Click_34(object sender, RoutedEventArgs e)
+        {
+            Home.Visibility = Visibility.Collapsed;
+            Insert.Visibility = Visibility.Visible;
+            EditButton.IsChecked = false;
+            InsertButton.IsChecked = true;
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
