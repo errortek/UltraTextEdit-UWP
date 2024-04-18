@@ -108,6 +108,9 @@ namespace UTE_UWP_.Views
 
             NavigationCacheMode = NavigationCacheMode.Required;
 
+            EditButton.IsChecked = true;
+            Insert.Visibility = Visibility.Collapsed;
+
             ShareSourceLoad();
 
             InitializeVIDs();
@@ -141,16 +144,19 @@ namespace UTE_UWP_.Views
                 {
                     ButtonPanel.Visibility = Visibility.Collapsed;
                     Ribbon.Visibility = Visibility.Visible;
+                    ribbonToggle.IsOn = true;
                 }
                 else
                 {
                     Ribbon.Visibility = Visibility.Collapsed;
                     ButtonPanel.Visibility = Visibility.Visible;
+                    ribbonToggle.IsOn = false;
                 }
             }
             else
             {
                 LocalSettings.Values["NewRibbon"] = "Off";
+                ribbonToggle.IsOn = false;
             }
         }
 
@@ -1692,7 +1698,7 @@ namespace UTE_UWP_.Views
                 if (LocalSettings.Values["NewRibbon"] != null)
                 {
                     LocalSettings.Values["NewRibbon"] = "On";
-                    Frame.Navigate(this.GetType());
+                    //Frame.Navigate(this.GetType());
                 }
             }
             else
@@ -1701,7 +1707,7 @@ namespace UTE_UWP_.Views
                 if (LocalSettings.Values["NewRibbon"] != null)
                 {
                     LocalSettings.Values["NewRibbon"] = "Off";
-                    Frame.Navigate(this.GetType());
+                    //Frame.Navigate(this.GetType());
                 }
             }
         }
