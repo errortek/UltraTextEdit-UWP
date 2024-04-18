@@ -44,6 +44,8 @@ namespace UTE_UWP_.Views
         private bool _openDialog;
         private string originalDocText;
         public string docText;
+        private const double V = 10.5;
+        private const int V1 = 28;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -1711,5 +1713,277 @@ namespace UTE_UWP_.Views
                 }
             }
         }
+
+        #region Templates
+
+        private void Template1_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Normal
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = (float)V;
+                FSize.Text = V.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template2_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Title
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                var PF = ST.ParagraphFormat;
+                PF.Alignment = ParagraphAlignment.Center;
+                CF.Bold = FormatEffect.Off;
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 28;
+                FSize.Text = V1.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template3_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Title 2
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                var PF = ST.ParagraphFormat;
+                PF.Alignment = ParagraphAlignment.Center;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 22;
+                FSize.Text = 22.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template4_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Important
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.On;
+
+                CF.Italic = FormatEffect.On;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 16;
+                FSize.Text = 16.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template5_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Header
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 14;
+                FSize.Text = 14.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template6_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Medium
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 18;
+                FSize.Text = 18.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template7_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Subtitle
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 20;
+                FSize.Text = 20.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template8_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Strong
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.On;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 18;
+                FSize.Text = 18.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template9_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Content
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 16;
+                FSize.Text = 16.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template10_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Finished
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.On;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 14;
+                FSize.Text = 14.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template11_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Unfinished
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.On;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 14;
+                FSize.Text = 14.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template12_Click(object Sender, RoutedEventArgs EvArgs, Windows.UI.Text.FontStretch undefined)
+        {
+            //Strong header
+            var ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+                CF.Italic = FormatEffect.On;
+                CF.Name = "Segoe UI";
+                FontBox.SelectedItem = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 18;
+                CF.ForegroundColor = Colors.DimGray;
+                FSize.Text = 18.ToString();
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+
+        #endregion Templates
     }
 }
