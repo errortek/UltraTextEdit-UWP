@@ -111,6 +111,8 @@ namespace UTE_UWP_.Views
             ShareSourceLoad();
 
             InitializeVIDs();
+
+
         }
 
         private void InitializeVIDs()
@@ -132,6 +134,23 @@ namespace UTE_UWP_.Views
             else
             {
                 LocalSettings.Values["TabbedHideVID"] = "On";
+            }
+            if (LocalSettings.Values["NewRibbon"] != null)
+            {
+                if (LocalSettings.Values["NewRibbon"].ToString() == "On")
+                {
+                    ButtonPanel.Visibility = Visibility.Collapsed;
+                    Ribbon.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    Ribbon.Visibility = Visibility.Collapsed;
+                    ButtonPanel.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["NewRibbon"] = "Off";
             }
         }
 
@@ -1663,6 +1682,28 @@ namespace UTE_UWP_.Views
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ribbonToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (ribbonToggle.IsOn == true)
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["NewRibbon"] != null)
+                {
+                    LocalSettings.Values["NewRibbon"] = "On";
+                    Frame.Navigate(this.GetType());
+                }
+            }
+            else
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["NewRibbon"] != null)
+                {
+                    LocalSettings.Values["NewRibbon"] = "Off";
+                    Frame.Navigate(this.GetType());
+                }
+            }
         }
     }
 }

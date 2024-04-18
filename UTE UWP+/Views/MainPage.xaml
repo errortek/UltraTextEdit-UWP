@@ -569,7 +569,7 @@
                         </Viewbox>
                     </Button>
                     <AppBarSeparator/>
-                    <ToggleSwitch x:Name="ribbonToggle" OnContent="Ribbon" OffContent="TabbedCommandBar" IsOn="False"/>
+                    <ToggleSwitch x:Name="ribbonToggle" OnContent="Ribbon" OffContent="TabbedCommandBar" Toggled="ribbonToggle_Toggled"/>
                 </StackPanel>
 
                 <controls:TabbedCommandBar
@@ -1430,7 +1430,7 @@ ToolTipService.ToolTip="Compute Hash">
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
                 </controls:TabbedCommandBar>
-                <AppBarElementContainer Height="160" RelativePanel.Below="ButtonPanel" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                <AppBarElementContainer Height="160" RelativePanel.Below="ButtonPanel" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" x:Name="Ribbon">
                     <Grid x:Name="TopMid">
                         <RelativePanel>
                             <StackPanel x:Name="RibbonTabs" Orientation="Horizontal" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
