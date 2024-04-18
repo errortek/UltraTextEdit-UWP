@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-               • Add a dark variant of the Mica Glass theme<LineBreak/>• Add 'Justify' text alignment
+               • Add a new Ribbon UI! (disabled by default)<LineBreak/>• You can now toggle between ribbons using the new toggle in the app's top menu (Note: ribbon changes require launching a new instance/window of the app or an app restart, closing the current instance and opening a new one)
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
