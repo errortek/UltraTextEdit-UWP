@@ -1985,5 +1985,14 @@ namespace UTE_UWP_.Views
 
 
         #endregion Templates
+
+        private void AddLinkButton2_Click(object sender, RoutedEventArgs e)
+        {
+            if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Windows.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
+                hyperlinkText2.AllowFocusOnInteraction = true;
+            editor.Document.Selection.Link = $"\"{hyperlinkText2.Text}\"";
+            editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)XamlBindingHelper.ConvertValue(typeof(Windows.UI.Color), "#6194c7");
+            LinkInsert.Flyout.Hide();
+        }
     }
 }

@@ -1739,18 +1739,13 @@ ToolTipService.ToolTip="Compute Hash">
                                                     <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,1"><Run Text="Insert"/><LineBreak/><Run Text="Image"/></TextBlock>
                                                 </Grid>
                                             </Button>
-                                            <Button x:Name="LinkInsert" FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" Click="AddLinkButton_Click" ToolTipService.ToolTip="Insert hyperlink" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4">
+                                            <Button x:Name="LinkInsert" FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" ToolTipService.ToolTip="Insert hyperlink" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4">
                                                 <Button.Flyout>
-                                                    <Flyout>
-                                                        <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Height="95">
-                                                            <TextBox x:Name="HLBox" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" PlaceholderText="Link" Width="245"/>
-                                                            <Border BorderThickness="0,1,0,0" Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}" BorderBrush="#338A8A8A" Margin="-20,0,-20,-22" VerticalAlignment="Bottom" Height="70"/>
-                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Spacing="10">
-                                                                <Button Content="Insert" Width="75" Click="Button_Click_5"/>
-                                                                <Button Content="Delete" Width="75" Click="Button_Click_6"/>
-                                                                <Button Content="Cancel" Width="75" Click="Button_Click_7"/>
-                                                            </StackPanel>
-                                                        </Grid>
+                                                    <Flyout Placement="Bottom">
+                                                        <StackPanel Orientation="Vertical">
+                                                            <TextBox x:Name="hyperlinkText2" PlaceholderText="Link" AllowFocusOnInteraction="True"/>
+                                                            <Button Margin="0,10,0,0" Click="AddLinkButton2_Click">Add hyperlink to selected text</Button>
+                                                        </StackPanel>
                                                     </Flyout>
                                                 </Button.Flyout>
                                                 <Grid Width="30" Height="45" Margin="4,1,4,-1">
