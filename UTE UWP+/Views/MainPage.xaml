@@ -496,7 +496,7 @@
                                 </MenuFlyoutItem.Icon>
                             </MenuFlyoutItem>
                             <MenuFlyoutItem Click="OpenButton_Click" Text="Open" Icon="OpenFile"/>
-                            <MenuFlyoutItem Click="SaveButton_Click" Text="Save" Icon="Save"/>
+                            <MenuFlyoutItem Click="SaveButton_Click" Text="Save" Icon="Save" x:Name="saveitem"/>
                             <MenuFlyoutItem Click="SaveAsButton_Click" Text="SaveAsCopy">
                                 <MenuFlyoutItem.Icon>
                                     <FontIcon Glyph="&#xE792;" />

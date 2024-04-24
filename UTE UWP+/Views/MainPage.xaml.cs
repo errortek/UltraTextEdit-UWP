@@ -161,6 +161,21 @@ namespace UTE_UWP_.Views
                 LocalSettings.Values["NewRibbon"] = "Off";
                 ribbonToggle.IsOn = false;
             }
+            if (LocalSettings.Values["SaveHideVID"] != null)
+            {
+                if (LocalSettings.Values["SaveHideVID"].ToString() == "On")
+                {
+                    saveitem.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    saveitem.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["SaveHideVID"] = "On";
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)

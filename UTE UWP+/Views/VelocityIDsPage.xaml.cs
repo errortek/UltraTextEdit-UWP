@@ -79,8 +79,25 @@ namespace UTE_UWP_.Views
             }
             else
             {
-                LocalSettings.Values["TabbedHideVID"] = "Off";
+                LocalSettings.Values["SaveHideVID"] = "Off";
                 tabbedhidevidToggle.IsOn = false;
+            }
+            if (LocalSettings.Values["SaveHideVID"] != null)
+            {
+                if ((string)LocalSettings.Values["SaveHideVID"] == "On")
+                {
+                    savehidevidToggle.IsOn = true;
+
+                }
+                if ((string)LocalSettings.Values["SaveHideVID"] == "Off")
+                {
+                    savehidevidToggle.IsOn = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["SaveHideVID"] = "Off";
+                savehidevidToggle.IsOn = false;
             }
         }
 
@@ -109,6 +126,15 @@ namespace UTE_UWP_.Views
                 {
                     LocalSettings.Values["TabbedHideVID"] = "Off";
                 }
+            }
+        }
+
+        private void savehidevidToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SaveHideVID"] != null)
+            {
+                LocalSettings.Values["SaveHideVID"] = "Off";
             }
         }
     }
