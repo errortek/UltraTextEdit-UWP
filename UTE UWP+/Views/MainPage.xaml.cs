@@ -112,6 +112,7 @@ namespace UTE_UWP_.Views
 
             EditButton.IsChecked = true;
             Insert.Visibility = Visibility.Collapsed;
+            Help.Visibility = Visibility.Collapsed;
 
             ShareSourceLoad();
 
