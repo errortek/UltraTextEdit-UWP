@@ -27,7 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-               • Add Text Templates<LineBreak/>• Fix some bugs with the new Ribbon
+               • Add Help section in the new Ribbon<LineBreak/>• Add a VelocityID to hide the broken "Save" menu item (option disabled by default)
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
