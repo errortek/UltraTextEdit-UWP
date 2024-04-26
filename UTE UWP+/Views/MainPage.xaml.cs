@@ -1644,7 +1644,24 @@ namespace UTE_UWP_.Views
 
         private void NumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
         {
-
+            if (!(editor == null))
+            {
+                var ST = editor.Document.Selection;
+                if (!(ST == null))
+                {
+                    _ = ST.CharacterFormat.Size;
+                    if (FSize != null && FSize.Value != double.NaN && FSize.Value != 0)
+                    {
+                        try
+                        {
+                            var CF = (float)FSize.Value;
+                            ST.CharacterFormat.Size = CF;
+                        }
+                        catch { }
+                    }
+                    else return;
+                }
+            }
         }
 
         private void FontBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -1654,7 +1671,23 @@ namespace UTE_UWP_.Views
 
         private void StrikethroughButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ITextSelection ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                FormatEffect CF = ST.CharacterFormat.Strikethrough;
+                switch (CF)
+                {
+                    case FormatEffect.Off:
+                        CF = FormatEffect.On;
+                        STB.IsChecked = true;
+                        break;
+                    default:
+                        CF = FormatEffect.Off;
+                        STB.IsChecked = false;
+                        break;
+                }
+                ST.CharacterFormat.Strikethrough = CF;
+            }
         }
 
         private void Button_Click_32(object sender, RoutedEventArgs e)
