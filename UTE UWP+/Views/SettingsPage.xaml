@@ -112,6 +112,9 @@ GroupName="AppTheme">
                                 </controls:SettingsCard>
                             </controls:SettingsExpander.Items>
                         </controls:SettingsExpander>
+                        <controls:SettingsCard x:Name="AccentColorCard" Header="Accent color" Description="Change the app's accent color">
+                            <ComboBox x:Name="AccentBox" ItemsSource="{x:Bind accentcolors}" SelectionChanged="AccentBox_SelectionChanged"/>
+                        </controls:SettingsCard>
                     </StackPanel>
 
                     <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />

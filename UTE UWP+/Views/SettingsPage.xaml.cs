@@ -44,9 +44,19 @@ namespace UTE_UWP_.Views
             set { Set(ref _versionDescription, value); }
         }
 
+        public List<string> accentcolors = new List<string>
+        {
+            "Default",
+            "Windows 10 Blue",
+            "Green",
+            "Purple"
+        };
+
         public SettingsPage()
         {
             InitializeComponent();
+            ((SystemAccentColorSetting)Application.Current.Resources["SystemAccentColorSetting"]).SystemAccentColor = new SolidColorBrush(Colors.Red);
+
 
             if (BuildInfo.BeforeWin11)
             {
@@ -242,6 +252,12 @@ namespace UTE_UWP_.Views
             {
                 rootFrame.Navigate(typeof(VelocityIDsPage));
             }
+        }
+
+        private void AccentBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+                ((SystemAccentColorSetting)Application.Current.Resources["SystemAccentColorSetting"]).SystemAccentColor = new SolidColorBrush(Colors.Red);
         }
     }
 

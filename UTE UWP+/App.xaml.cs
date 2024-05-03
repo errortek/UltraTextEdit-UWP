@@ -3,7 +3,9 @@
 using UTE_UWP_.Services;
 
 using Windows.ApplicationModel.Activation;
+using Windows.UI;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
 
 namespace UTE_UWP_
 {
@@ -30,6 +32,8 @@ namespace UTE_UWP_
             if (!args.PrelaunchActivated)
             {
                 await ActivationService.ActivateAsync(args);
+                //var myColorPalette = (ColorPaletteResources)Application.Current.Resources["MyColorPalette"];
+                //myColorPalette.SystemAccentColor = new SolidColorBrush(Colors.Red);
             }
         }
 
