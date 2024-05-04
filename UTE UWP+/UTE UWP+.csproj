@@ -408,6 +408,7 @@
     <None Include="Assets\Templates\ResumeTemp.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="jpbAppCertificate-2024.pfx" />
     <None Include="README.md" />
     <None Include="UTE UWP+_TemporaryKey.pfx" />
   </ItemGroup>
