@@ -22,6 +22,7 @@
                     <Color x:Key="SystemAccentColorLight1">#FF7752BA</Color>
                     <Color x:Key="SystemAccentColorLight2">#FF6543A9</Color>
                     <Color x:Key="SystemAccentColorLight3">#FF543397</Color>
+                    <Color x:Key="SystemAccentColor">#FF8961CC</Color>
                     <Color x:Key="RegionColor">#FF262738</Color>
                     <SolidColorBrush x:Key="RegionBrush" Color="{StaticResource RegionColor}" />
                 </ResourceDictionary>
