@@ -3,6 +3,7 @@
 using UTE_UWP_.Services;
 
 using Windows.ApplicationModel.Activation;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
@@ -23,17 +24,41 @@ namespace UTE_UWP_
             InitializeComponent();
             UnhandledException += OnAppUnhandledException;
 
+
             // Deferred execution until used. Check https://docs.microsoft.com/dotnet/api/system.lazy-1 for further info on Lazy<T> class.
             _activationService = new Lazy<ActivationService>(CreateActivationService);
         }
 
         protected override async void OnLaunched(LaunchActivatedEventArgs args)
         {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            //LocalSettings.Values["AccentTheme"] = "Default";
+            if ((string)LocalSettings.Values["AccentTheme"] == "Slate Green")
+            {
+                var brush = new SolidColorBrush(Color.FromArgb(255, 92, 255, 138));
+                Application.Current.Resources["SystemAccentColor"] = Color.FromArgb(255, 92, 255, 138);
+                Application.Current.Resources["SystemAccentColorDark1"] = Color.FromArgb(255, 92, 255, 138);
+                Application.Current.Resources["SystemAccentColorDark2"] = Color.FromArgb(255, 92, 255, 138);
+                Application.Current.Resources["SystemAccentColorDark3"] = Color.FromArgb(255, 92, 255, 138);
+                Application.Current.Resources["SystemAccentColorLight1"] = Color.FromArgb(255, 92, 255, 138);
+                Application.Current.Resources["SystemAccentColorLight2"] = Color.FromArgb(255, 92, 255, 138);
+                Application.Current.Resources["SystemAccentColorLight3"] = Color.FromArgb(255, 92, 255, 138);
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Lilac")
+            {
+                var brush = new SolidColorBrush(Color.FromArgb(255, 0x89, 0x61, 0xCC));
+                Application.Current.Resources["SystemAccentColor"] = Color.FromArgb(255, 0x89, 0x81, 0xCC);
+                Application.Current.Resources["SystemAccentColorDark1"] = Color.FromArgb(255, 0x98, 0x75, 0xD4);
+                Application.Current.Resources["SystemAccentColorDark2"] = Color.FromArgb(255, 0xA7, 0x88, 0xDD);
+                Application.Current.Resources["SystemAccentColorDark3"] = Color.FromArgb(255, 0xB7, 0x9C, 0xE5);
+                Application.Current.Resources["SystemAccentColorLight1"] = Color.FromArgb(255, 0x77, 0x52, 0xBA);
+                Application.Current.Resources["SystemAccentColorLight2"] = Color.FromArgb(255, 0x65, 0x43, 0xA9);
+                Application.Current.Resources["SystemAccentColorLight3"] = Color.FromArgb(255, 0xA7, 0x88, 0xDD);
+            }
             if (!args.PrelaunchActivated)
             {
                 await ActivationService.ActivateAsync(args);
-                //var myColorPalette = (ColorPaletteResources)Application.Current.Resources["MyColorPalette"];
-                //myColorPalette.SystemAccentColor = new SolidColorBrush(Colors.Red);
+                
             }
         }
 
