@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 
 using UTE_UWP_.Helpers;
@@ -12,6 +13,7 @@ using UTE_UWP_.Views;
 
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Core;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
@@ -47,9 +49,9 @@ namespace UTE_UWP_.Views
         public List<string> accentcolors = new List<string>
         {
             "Default",
-            "Windows 10 Blue",
-            "Green",
-            "Purple"
+            //"Windows 10 Blue",
+            "Slate Green",
+            "Lilac"
         };
 
         public SettingsPage()
@@ -106,6 +108,21 @@ namespace UTE_UWP_.Views
 
             coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
             coreTitleBar.IsVisibleChanged += CoreTitleBar_IsVisibleChanged;
+
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+
+            if ((string)LocalSettings.Values["AccentTheme"] == "Slate Green")
+            {
+                AccentBox.SelectedItem = "Slate Green";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Lilac")
+            {
+                AccentBox.SelectedItem = "Lilac";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Default")
+            {
+                AccentBox.SelectedItem = "Default";
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -256,8 +273,20 @@ namespace UTE_UWP_.Views
 
         private void AccentBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-                ((SystemAccentColorSetting)Application.Current.Resources["SystemAccentColorSetting"]).SystemAccentColor = new SolidColorBrush(Colors.Red);
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (AccentBox.SelectedItem != null)
+            {
+                if ((string)AccentBox.SelectedItem == "Default")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Default";
+                } else if ((string)AccentBox.SelectedItem == "Slate Green")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Slate Green";
+                } else if ((string)AccentBox.SelectedItem == "Lilac")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Lilac";
+                }
+            }   
         }
     }
 

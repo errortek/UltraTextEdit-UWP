@@ -32,7 +32,9 @@ namespace UTE_UWP_
         protected override async void OnLaunched(LaunchActivatedEventArgs args)
         {
             var LocalSettings = ApplicationData.Current.LocalSettings;
-            //LocalSettings.Values["AccentTheme"] = "Default";
+            if (LocalSettings.Values["AccentTheme"] == null) {
+                LocalSettings.Values["AccentTheme"] = "Default";
+            }
             if ((string)LocalSettings.Values["AccentTheme"] == "Slate Green")
             {
                 var brush = new SolidColorBrush(Color.FromArgb(255, 92, 255, 138));
