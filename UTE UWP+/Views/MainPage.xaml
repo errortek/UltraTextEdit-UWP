@@ -1672,7 +1672,6 @@ ToolTipService.ToolTip="Compute Hash">
                                                     </muxc:DropDownButton.Flyout>
                                                     <Grid>
                                                         <TextBlock TextWrapping="Wrap" Text="&#xE186;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16"/>
-                                                        <TextBlock x:Name="FontAccent" Text="&#xE79F;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16"/>
                                                     </Grid>
                                                 </muxc:DropDownButton>
                                                 <muxc:DropDownButton x:Name="Back" Height="30" FontSize="12" Width="50" FontFamily="{StaticResource SymbolThemeFontFamily}" ToolTipService.ToolTip="Text highlight" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
