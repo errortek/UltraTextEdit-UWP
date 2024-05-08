@@ -2057,5 +2057,24 @@ namespace UTE_UWP_.Views
             editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)XamlBindingHelper.ConvertValue(typeof(Windows.UI.Color), "#6194c7");
             LinkInsert.Flyout.Hide();
         }
+
+        private void MenuFlyoutItem_Click_1(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Configure underline
+            var MFItem = (MenuFlyoutItem)Sender;
+            ITextSelection ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                MarkerType CF = ST.ParagraphFormat.ListType;
+                if (MFItem.Text == "None") CF = MarkerType.None;
+                if (MFItem.Text == "Bullet") CF = MarkerType.Bullet;
+                if (MFItem.Text == "Numbers") CF = MarkerType.CircledNumber;
+                if (MFItem.Text == "Lowercase letters") CF = MarkerType.LowercaseEnglishLetter;
+                if (MFItem.Text == "Uppercase letters") CF = MarkerType.UppercaseEnglishLetter;
+                if (MFItem.Text == "Roman") CF = MarkerType.UppercaseRoman;
+                ST.ParagraphFormat.ListType = CF;
+                editor.ContextFlyout.Hide();
+            }
+        }
     }
 }
