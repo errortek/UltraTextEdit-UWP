@@ -1718,7 +1718,162 @@ ToolTipService.ToolTip="Compute Hash">
                                                     </Grid>
                                                 </muxc:DropDownButton>
                                             </StackPanel>
-                                            <Border BorderThickness="1" Width="3" HorizontalAlignment="Right" Background="#7F989898" Height="{Binding Height, ElementName=Separator}" VerticalAlignment="Top" CornerRadius="1,1,1,1" Opacity="{Binding Opacity, ElementName=Separator}"/>
+                                            <Grid x:Name="TempViewer" Margin="415,7,12,0">
+                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource ControlFillColorDefaultBrush}" BorderBrush="{Binding BorderBrush, ElementName=FontBox}" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4" Height="72">
+
+                                                <Button
+                                                            x:Name="HTemplate1"
+                                                            Content="Normal"
+                                                            VerticalAlignment="Top"
+                                                            Width="80"
+                                                            Height="60" 
+                                                            Click="Template1_Click" FontSize="11" Margin="5,5,0,0" RequestedTheme="Light" Background="White"/>
+                                                <Button 
+                                                            x:Name="HTemplate2"
+                                                            Content="Title" 
+                                                            VerticalAlignment="Top" 
+                                                            Width="80"
+                                                            Height="60"
+                                                            FontSize="28" 
+                                                            FontWeight="Normal" 
+                                                            FontStyle="Normal" 
+                                                            Click="Template2_Click" Margin="4,5,0,0" Background="White" RequestedTheme="Light"/>
+                                                <Button
+                                                            x:Name="HTemplate9"
+                                                            Content="Content" 
+                                                            VerticalAlignment="Top"
+                                                            Width="80"
+                                                            Height="60" 
+                                                            Click="Template9_Click" FontSize="16" Margin="5,5,0,0" Background="White" RequestedTheme="Light"/>
+                                            </StackPanel>
+                                            <DropDownButton x:Name="DDTempViewer" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="24" FontSize="12" ToolTipService.ToolTip="Show all" VerticalAlignment="Top" Margin="263,24,9,0" Height="24" FontWeight="Bold" Padding="-1,0,4,0" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}">
+                                                <DropDownButton.Flyout>
+                                                    <Flyout>
+                                                        <Grid VerticalAlignment="Top" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4" HorizontalAlignment="Left" Margin="0,0,3,0">
+
+                                                            <Button
+                x:Name="HTemplate3"
+                Content="Normal" 
+                VerticalAlignment="Top"
+                Width="80"
+                Height="60" 
+                Click="Template1_Click" FontSize="11" Margin="5,5,0,0" RequestedTheme="Light" Background="White"/>
+                                                            <Button 
+                x:Name="HTemplate4"
+                Content="Title" 
+                VerticalAlignment="Top" 
+                Width="80"
+                Height="60"
+                FontSize="28" 
+                FontWeight="Normal" 
+                FontStyle="Normal" 
+                Click="Template2_Click" Margin="89,5,0,0" Background="White" RequestedTheme="Light"/>
+                                                            <Button
+                x:Name="HTemplate5"
+                Content="Content" 
+                VerticalAlignment="Top"
+                Width="80"
+                Height="60" 
+                Click="Template9_Click" FontSize="16" Margin="174,5,0,0" Background="White" RequestedTheme="Light"/>
+                                                            <Grid>
+                                                                <Button
+                    x:Name="PTemplate3" 
+                    Content="Title 2" 
+                    VerticalAlignment="Top"
+                    Width="80"
+                    Height="60"
+                    Margin="89,70,0,0"
+                    FontSize="22" 
+                    Click="Template3_Click" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
+                                                                <Button 
+                    x:Name="PTemplate4" 
+                    Content="Book title"
+                    VerticalAlignment="Top"
+                    Width="80"
+                    Height="60"
+                    Margin="5,201,0,0"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    FontStyle="Italic"
+                    Click="Template4_Click" RequestedTheme="Light" Background="White"/>
+                                                                <Button
+                    x:Name="PTemplate5"
+                    Content="Header" 
+                    VerticalAlignment="Top"
+                    Width="80"
+                    Height="60" 
+                    Margin="5,70,0,0" 
+                    Click="Template5_Click" FontSize="14" FontFamily="Segoe UI" RequestedTheme="Light" Background="White"/>
+                                                                <Button 
+                    x:Name="PTemplate6"
+                    Content="Medium" 
+                    VerticalAlignment="Top" 
+                    Width="80"
+                    Height="60"
+                    Margin="174,70,0,0"
+                    FontSize="18" 
+                    FontWeight="Normal" 
+                    FontStyle="Normal" 
+                    Click="Template6_Click" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
+                                                                <Button
+                    x:Name="PTemplate7" 
+                    Content="SUbtitle" 
+                    VerticalAlignment="Top"
+                    Width="80"
+                    Height="60"
+                    Margin="89,135,0,0"
+                    FontSize="20" 
+                    Click="Template7_Click" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
+                                                                <Button 
+                    x:Name="PTemplate8" 
+                    Content="Strong"
+                    VerticalAlignment="Top"
+                    Width="80"
+                    Height="60"
+                    Margin="89,201,0,0"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    FontStyle="Normal"
+                    Click="Template8_Click" RequestedTheme="Light" Background="White"/>
+                                                                <Button 
+                    x:Name="PTemplate10"
+                    Content="Finished" 
+                    VerticalAlignment="Top" 
+                    Width="80"
+                    Height="60"
+                    Margin="5,135,0,0"
+                    FontSize="14" 
+                    FontWeight="Normal" 
+                    FontStyle="Italic" 
+                    Click="Template10_Click" RequestedTheme="Light" Background="White"/>
+                                                                <Button
+                    x:Name="PTemplate11" 
+                    Content="Unfinished" 
+                    VerticalAlignment="Top"
+                    Width="80"
+                    Height="60"
+                    Margin="174,135,0,0"
+                    FontSize="14" 
+                    Click="Template11_Click" FontWeight="Bold" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
+                                                                <Button 
+                    x:Name="PTemplate12" 
+                    Content="Quote"
+                    VerticalAlignment="Top"
+                    Width="80"
+                    Height="60"
+                    Margin="174,201,0,0"
+                    FontSize="18"
+                    FontWeight="Normal"
+                    FontStyle="Italic"
+                    Click="Template12_Click" Foreground="DimGray" RequestedTheme="Light" Background="White"/>
+                                                            </Grid>
+                                                        </Grid>
+
+                                                    </Flyout>
+                                                </DropDownButton.Flyout>
+                                            </DropDownButton>
+                                        </Grid>
+                                        <Border BorderThickness="1" Width="3" HorizontalAlignment="Right" Background="#7F989898" Height="{Binding Height, ElementName=Separator}" VerticalAlignment="Top" CornerRadius="1,1,1,1" Opacity="{Binding Opacity, ElementName=Separator}"/>
                                             <TextBlock x:Name="HI5" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,77,0,0" Text="&#xE11B;" Tag="HelpItem" ToolTipService.ToolTip="Change anything about how your text looks by modifying the font and paragraph options" Visibility="Collapsed"/>
                                             <TextBlock Text="Font" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="12" VerticalAlignment="Bottom" Opacity="0.8" Margin="0,0,0,18"/>
                                             <Border BorderThickness="1" Width="3" HorizontalAlignment="Right" Background="{StaticResource DividerStrokeColorDefaultBrush}" CornerRadius="1,1,1,1" Margin="0,-2,0,0"/>

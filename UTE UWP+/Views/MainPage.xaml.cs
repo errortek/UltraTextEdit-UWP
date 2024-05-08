@@ -2024,7 +2024,7 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private void Template12_Click(object Sender, RoutedEventArgs EvArgs, Windows.UI.Text.FontStretch undefined)
+        private void Template12_Click(object Sender, RoutedEventArgs EvArgs)
         {
             //Strong header
             var ST = editor.Document.Selection;
