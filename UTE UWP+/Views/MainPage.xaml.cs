@@ -736,7 +736,7 @@ namespace UTE_UWP_.Views
         private void editor_TextChanged(object sender, RoutedEventArgs e)
         {
 
-            var ST = REB.Document.Selection;
+            var ST = editor.Document.Selection;
             var CF = ST.CharacterFormat;
 
             editor.Document.GetText(TextGetOptions.UseObjectText, out string textStart);
