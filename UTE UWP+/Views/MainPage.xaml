@@ -1787,7 +1787,7 @@ ToolTipService.ToolTip="Compute Hash">
                     Click="Template3_Click" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
                                                                         <Button 
                     x:Name="PTemplate4" 
-                    Content="Book title"
+                    Content="Book&#xA;title"                                                        
                     VerticalAlignment="Top"
                     Width="80"
                     Height="60"
@@ -1817,7 +1817,7 @@ ToolTipService.ToolTip="Compute Hash">
                     Click="Template6_Click" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
                                                                         <Button
                     x:Name="PTemplate7" 
-                    Content="SUbtitle" 
+                    Content="Subtitle" 
                     VerticalAlignment="Top"
                     Width="80"
                     Height="60"
