@@ -1686,7 +1686,10 @@ namespace UTE_UWP_.Views
 
         private void FontBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (editor.Document.Selection != null)
+            {
+                editor.Document.Selection.CharacterFormat.Name = FontBox.SelectedValue.ToString();
+            }
         }
 
         private void StrikethroughButton_Click(object sender, RoutedEventArgs e)
