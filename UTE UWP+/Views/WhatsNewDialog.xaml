@@ -27,8 +27,8 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-               • Add more functionality to the new Ribbon<LineBreak/>
-               • First build of UTE UWP+ distributed to the Beta Channel!
+               • Many bugfixes<LineBreak/>
+               • Add font size and font family functionality to new Ribbon
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
