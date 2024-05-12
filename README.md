@@ -1,9 +1,9 @@
 # UltraTextEdit UWP
 
+A fully-featured open source word processor app with a look and feel similar to MS Office.
+
 Join the official Discord server to get exclusive sneek peeks and development updates!
 https://discord.gg/cjxyyr6r2G
-
-A fully-featured open source word processor app with a look and feel similar to MS Office.
 
 ## Features
 • Bold</br>
