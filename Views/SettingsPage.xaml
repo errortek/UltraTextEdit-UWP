@@ -155,7 +155,7 @@ GroupName="AppTheme">
                                 <controls1:SettingsCard Header="Microsoft.Toolkit.Uwp.Notifications" Description="version 7.1.3, released November 1, 2022"/>
                                 <controls1:SettingsCard Header="Microsoft.Toolkit.Uwp.UI.Controls" Description="version 7.1.3, released November 1, 2022"/>
                                 <controls1:SettingsCard Header="Microsoft.UI.Xaml" Description="version 2.8.6, released November 3, 2023"/>
-                                <controls1:SettingsCard Header="Microsoft.Web.WebView2" Description="version 1.0.2470-prerelease, released March 25, 2024"/>
+                                <controls1:SettingsCard Header="Microsoft.Web.WebView2" Description="version 1.0.2526-prerelease, released April 22, 2024"/>
                                 <controls1:SettingsCard Header="Microsoft.Xaml.Behaviors.Uwp.Managed" Description="version 2.0.1, released April 29, 2019"/>
                                 <controls1:SettingsCard Header="Newtonsoft.Json" Description="version 13.0.3, released March 8, 2023"/>
                                 <controls1:SettingsCard Header="Win2D.uwp" Description="version 1.27.1, released November 21, 2023"/>
