@@ -170,7 +170,7 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="WhatsNew_Body.Text" xml:space="preserve">
-    <value>• The app now uses Mica as the backdrop on Windows 10 as well! (although it's a different style of Mica than the one observed when using the app on Windows 11)
+    <value>• Updates to UTE Mica Glass (adds a dark mode variant)
 • Dependency updates
 UltraTextEdit UWP 22H2, 23H1, 23H2, and 24H1 (succesors of this version, 22H1) download link: https://github.com/jpbandroid/UltraTextEdit-UWP-22H2/releases</value>
     <comment>What's new prompt message body</comment>
