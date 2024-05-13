@@ -508,7 +508,7 @@ namespace UltraTextEdit_UWP.Views
             ContentDialog aboutDialog = new ContentDialog()
             {
                 Title = "UltraTextEdit UWP",
-                Content = $"Version 10.0 (Build 22000.2652)\n\n© 2021-2024 jpb",
+                Content = $"Version 10.0 (Build 22000.2713)\n\n© 2021-2024 jpb",
                 CloseButtonText = "OK",
                 DefaultButton = ContentDialogButton.Close
             };
