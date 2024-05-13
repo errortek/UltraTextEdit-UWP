@@ -34,16 +34,37 @@ namespace UltraTextEdit_UWP.Views
 
             if (BuildInfo.BeforeWin11)
             {
-                Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                if (App.Current.RequestedTheme == ApplicationTheme.Light)
                 {
-                    LuminosityOpacity = 0.8F,
-                    TintOpacity = 0F,
-                    BackgroundSource = BackgroundSource.WallpaperBackdrop,
-                    Opacity = 1,
-                    TintColor = Color.FromArgb(255, 230, 230, 230),
-                    FallbackColor = Color.FromArgb(255, 230, 230, 230)
-                };
-                this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+                    Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                    {
+                        LuminosityOpacity = 0.8F,
+                        TintOpacity = 0F,
+                        BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                        Opacity = 1,
+                        TintColor = Windows.UI.Color.FromArgb(255, 230, 230, 230),
+                        FallbackColor = Windows.UI.Color.FromArgb(255, 230, 230, 230)
+                    };
+                    this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+                }
+                else
+                {
+                    Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
+                    {
+                        LuminosityOpacity = 0.8F,
+                        TintOpacity = 0F,
+                        BackgroundSource = BackgroundSource.WallpaperBackdrop,
+                        Opacity = 1,
+                        TintColor = Windows.UI.Color.FromArgb(255, 25, 25, 25),
+                        FallbackColor = Windows.UI.Color.FromArgb(25, 25, 25, 25)
+                    };
+                    this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+                }
+
+            }
+            else
+            {
+
             }
 
             var appViewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
