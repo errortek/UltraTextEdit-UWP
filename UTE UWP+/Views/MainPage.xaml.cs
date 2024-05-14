@@ -735,6 +735,10 @@ namespace UTE_UWP_.Views
 
         private void editor_TextChanged(object sender, RoutedEventArgs e)
         {
+
+            var ST = editor.Document.Selection;
+            var CF = ST.CharacterFormat;
+
             editor.Document.GetText(TextGetOptions.UseObjectText, out string textStart);
 
             if (textStart == "" || string.IsNullOrWhiteSpace(textStart) || _wasOpen)
@@ -748,6 +752,22 @@ namespace UTE_UWP_.Views
 
             if (!saved) UnsavedTextBlock.Visibility = Visibility.Visible;
             else UnsavedTextBlock.Visibility = Visibility.Collapsed;
+            if (!(FSize == null))
+            {
+                if (ST.Length is > 0 or < 0) FSize.Value = double.NaN;
+                else FSize.Value = CF.Size;
+            }
+
+            if (ST.Length is 0)
+            {
+                FontBox.SelectedIndex = FontBox.Items.IndexOf(CF.Name.ToString());
+                FontBox.PlaceholderText = "Segoe UI (Default)";
+            }
+            else
+            {
+                FontBox.SelectedItem = null;
+                FontBox.PlaceholderText = "Multiple";
+            }
         }
 
         private async void Exit_Click(object sender, RoutedEventArgs e)
@@ -1666,7 +1686,10 @@ namespace UTE_UWP_.Views
 
         private void FontBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (editor.Document.Selection != null)
+            {
+                editor.Document.Selection.CharacterFormat.Name = FontBox.SelectedValue.ToString();
+            }
         }
 
         private void StrikethroughButton_Click(object sender, RoutedEventArgs e)

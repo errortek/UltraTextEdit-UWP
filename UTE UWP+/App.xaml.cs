@@ -32,6 +32,10 @@ namespace UTE_UWP_
         protected override async void OnLaunched(LaunchActivatedEventArgs args)
         {
             var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["NewRibbon"] == null)
+            {
+                LocalSettings.Values["NewRibbon"] = "Off";
+            }
             if (LocalSettings.Values["AccentTheme"] == null) {
                 LocalSettings.Values["AccentTheme"] = "Default";
             }
