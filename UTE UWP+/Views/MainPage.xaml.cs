@@ -2099,5 +2099,10 @@ namespace UTE_UWP_.Views
                 editor.ContextFlyout.Hide();
             }
         }
+
+        private void NullBackgroundButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
