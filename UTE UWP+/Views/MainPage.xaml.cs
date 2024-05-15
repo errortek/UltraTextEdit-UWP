@@ -644,6 +644,16 @@ namespace UTE_UWP_.Views
             editor.Focus(FocusState.Keyboard);
         }
 
+        private void ColorButton2_Click(object sender, RoutedEventArgs e)
+        {
+            // Extract the color of the button that was clicked.
+            Button clickedColor = (Button)sender;
+            var color = (clickedColor.Background as SolidColorBrush).Color;
+            editor.Document.Selection.CharacterFormat.ForegroundColor = color;
+            //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
+            editor.Focus(FocusState.Keyboard);
+        }
+
         private void fontcolorsplitbutton_Click(Microsoft.UI.Xaml.Controls.SplitButton sender, Microsoft.UI.Xaml.Controls.SplitButtonClickEventArgs args)
         {
             // If you see this, remind me to look into the splitbutton color applying logic
