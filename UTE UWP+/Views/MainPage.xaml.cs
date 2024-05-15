@@ -2101,10 +2101,10 @@ namespace UTE_UWP_.Views
                 MarkerType CF = ST.ParagraphFormat.ListType;
                 if (MFItem.Text == "None") CF = MarkerType.None;
                 if (MFItem.Text == "Bullet") CF = MarkerType.Bullet;
-                if (MFItem.Text == "Numbers") CF = MarkerType.CircledNumber;
-                if (MFItem.Text == "Lowercase letters") CF = MarkerType.LowercaseEnglishLetter;
-                if (MFItem.Text == "Uppercase letters") CF = MarkerType.UppercaseEnglishLetter;
-                if (MFItem.Text == "Roman") CF = MarkerType.UppercaseRoman;
+                if (MFItem.Text == "Numbered") CF = MarkerType.CircledNumber;
+                if (MFItem.Text == "Lowercase") CF = MarkerType.LowercaseEnglishLetter;
+                if (MFItem.Text == "Uppercase") CF = MarkerType.UppercaseEnglishLetter;
+                if (MFItem.Text == "Roman numerals") CF = MarkerType.UppercaseRoman;
                 ST.ParagraphFormat.ListType = CF;
                 editor.ContextFlyout.Hide();
             }
