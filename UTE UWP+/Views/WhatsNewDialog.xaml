@@ -27,8 +27,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-               • Font color functionality in the new Ribbon now works<LineBreak/>
-               • List styles other than Bulleted now work properly (in the new Ribbon)
+              • Strikethrough now works properly (in the new Ribbon)<LineBreak/>
+              • Text highlighting UI bugs have been fixed (in the new Ribbon)<LineBreak/>
+              • Update copyright dates in About dialogs
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
