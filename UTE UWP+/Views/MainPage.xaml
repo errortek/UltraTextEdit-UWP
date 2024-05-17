@@ -1680,24 +1680,24 @@ ToolTipService.ToolTip="Compute Hash">
                                                             <Flyout>
                                                                 <StackPanel>
                                                                     <Grid>
-                                                                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                                                                            <StackPanel Orientation="Horizontal">
-                                                                                <Button Foreground="Red"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                                                <Button Foreground="OrangeRed"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                                                <Button Foreground="DarkOrange"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                                                <Button Foreground="Yellow"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Spacing="8">
+                                                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                                                <Button Background="Red"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"   BorderBrush="{x:Null}"/>
+                                                                                <Button Background="OrangeRed"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
+                                                                                <Button Background="DarkOrange"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
+                                                                                <Button Background="Yellow"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
                                                                             </StackPanel>
-                                                                            <StackPanel Orientation="Horizontal">
-                                                                                <Button Foreground="HotPink"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                                                <Button Foreground="LimeGreen"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                                                <Button Foreground="Lime"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                                                <Button Foreground="DodgerBlue"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                                                <Button Background="HotPink"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
+                                                                                <Button Background="LimeGreen"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
+                                                                                <Button Background="Lime"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
+                                                                                <Button Background="DodgerBlue"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
                                                                             </StackPanel>
-                                                                            <StackPanel Orientation="Horizontal">
-                                                                                <Button Foreground="Blue"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                                                <Button Foreground="Black"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                                                <Button Foreground="DarkGray"  Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"  Click="HighlightButton_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                                                <Button Foreground="Transparent" Width="50" Height="50" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0" Click="NullHighlightButton_Click" BorderBrush="{x:Null}" Background="{x:Null}">
+                                                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                                                <Button Background="Blue"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
+                                                                                <Button Background="Black"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
+                                                                                <Button Background="DarkGray"  Click="HighlightButton_Click" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0"    BorderBrush="{x:Null}"/>
+                                                                                <Button Background="Transparent" Width="39" Height="39" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="36" Padding="0,0,0,0" Click="NullBackgroundButton_Click" BorderBrush="{x:Null}" >
                                                                                     <Border BorderBrush="Red" BorderThickness="1" Width="39" RenderTransformOrigin="0.5,0.5">
                                                                                         <Border.RenderTransform>
                                                                                             <CompositeTransform Rotation="46.118"/>
@@ -1705,7 +1705,7 @@ ToolTipService.ToolTip="Compute Hash">
                                                                                     </Border>
                                                                                 </Button>
                                                                             </StackPanel>
-                                                                            <Button Content="Advanced" HorizontalAlignment="Stretch" Margin="0,5,0,0" Click="Button_Click_37"/>
+                                                                            <Button Content="Advanced" HorizontalAlignment="Stretch" Margin="0,5,0,0" Click="Button_Click_32"/>
                                                                         </StackPanel>
                                                                     </Grid>
                                                                 </StackPanel>
