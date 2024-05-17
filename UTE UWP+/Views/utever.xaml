@@ -78,7 +78,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
-                        Text="26071.1"/>
+                        Text="26080.1"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="5" x:Uid="InsiderChannel" Text="Insider Channel"/>
                         <TextBlock 
 						Name="InsiderChannel"
