@@ -2101,7 +2101,7 @@ ToolTipService.ToolTip="Compute Hash">
                     <Grid Margin="10,0,10,0">
                         <Image HorizontalAlignment="Left" Height="90" Margin="5,5,0,0" VerticalAlignment="Top" Width="90" Source="/Assets/utevericon.png"/>
                         <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,20,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP Plus" VerticalAlignment="Top" FontSize="16"/>
-                        <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11">Version 10.0.26071.1 - Dev Channel<LineBreak/>Copyright ©️ jpb/ErrorTek 2021-2024, © Ivirius 2024
+                        <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11">Version 10.0.26071.1 - Dev Channel<LineBreak/>Copyright ©️ jpb/ErrorTek 2021-2024, © Ivirius 2023-2024
 <LineBreak/>Licensed under the MIT License</TextBlock>
                         <StackPanel Margin="0,120,0,0">
                             <HyperlinkButton Content="WinUI 2.8.6" Click="HyperlinkButton_Click"/>
