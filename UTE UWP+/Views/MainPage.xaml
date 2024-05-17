@@ -608,7 +608,7 @@
                                 </Viewbox>
                             </AppBarToggleButton>
                             <AppBarToggleButton
-                    Click="StrikethoughButton_Click" x:Name="StrikethroughButton"
+                    Click="StrikethroughButton_Click" x:Name="StrikethroughButton"
                     Style="{StaticResource TransparentToggleButton}"
                     ToolTipService.ToolTip="Strikethrough">
                                 <FontIcon FontSize="17" Glyph="&#xEDE0;" />
