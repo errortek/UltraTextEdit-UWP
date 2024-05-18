@@ -1662,7 +1662,6 @@ ToolTipService.ToolTip="Compute Hash">
                                                         </ToggleButton.KeyboardAccelerators>
                                                         <Grid Width="15" Height="15" Margin="-2,-2,-1,-1">
                                                             <TextBlock TextWrapping="Wrap" Text="&#xEDE0;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                                                            <TextBlock TextWrapping="Wrap" Text="&#xE7AB;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Center" FocusVisualPrimaryBrush="{x:Null}" FontSize="16" Foreground="{Binding Foreground, ElementName=LeftInd}"/>
                                                         </Grid>
                                                     </ToggleButton>
                                                     <ToggleButton x:Name="SubscriptButton" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="0,0,2,2" ToolTipService.ToolTip="Subscript" Click="SubscriptButton_Click" CornerRadius="4,4,4,4" Style="{StaticResource TransparentToggleButton}" Background="{x:Null}" BorderBrush="{x:Null}">
@@ -2005,7 +2004,6 @@ ToolTipService.ToolTip="Compute Hash">
                                                 </Button.Flyout>
                                                 <Grid Width="30" Height="45" Margin="4,1,4,-1">
                                                     <TextBlock TextWrapping="Wrap" Text="&#xE167;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
-                                                    <TextBlock TextWrapping="Wrap" Text="&#xE7A4;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" Foreground="#FFFF5F5F"/>
                                                     <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="30"><Run Text="Insert"/><LineBreak/><Run Text="Link"/></TextBlock>
                                                 </Grid>
                                             </Button>
