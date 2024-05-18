@@ -27,9 +27,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Strikethrough now works properly (in the new Ribbon)<LineBreak/>
-              • Text highlighting UI bugs have been fixed (in the new Ribbon)<LineBreak/>
-              • Update copyright dates in About dialogs
+              • Icon fixes (in the new Ribbon)<LineBreak/>
+              • Add new underline styles (in the new Ribbon)<LineBreak/>
+              • Add date and time insertion capabilities to the new Ribbon
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
