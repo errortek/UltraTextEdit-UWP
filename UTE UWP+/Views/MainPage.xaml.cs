@@ -2122,7 +2122,7 @@ namespace UTE_UWP_.Views
             //Configure underline
             var MFItem = (MenuFlyoutItem)sender;
             ITextSelection ST = editor.Document.Selection;
-            if (!(ST == null))
+            if (ST != null)
             {
                 UnderlineType CF = ST.CharacterFormat.Underline;
                 if (MFItem.Text == "None") CF = UnderlineType.None;
