@@ -67,7 +67,8 @@ namespace UTE_UWP_.Views
                         FallbackColor = Windows.UI.Color.FromArgb(255, 230, 230, 230)
                     };
                     this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
-                } else
+                }
+                else
                 {
                     Application.Current.Resources["AppTitleBarBrush"] = new BackdropMicaBrush()
                     {
@@ -80,10 +81,11 @@ namespace UTE_UWP_.Views
                     };
                     this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
                 }
-                
-            } else
+
+            }
+            else
             {
-                
+
             }
 
             ShareSourceLoad();
@@ -740,7 +742,7 @@ namespace UTE_UWP_.Views
 
         private void FindButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void editor_TextChanged(object sender, RoutedEventArgs e)
@@ -848,7 +850,7 @@ namespace UTE_UWP_.Views
 
         private void RemoveHighlightButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void ReplaceSelected_Click(object sender, RoutedEventArgs e)
@@ -875,7 +877,7 @@ namespace UTE_UWP_.Views
             HomePage.Visibility = Visibility.Visible;
         }
 
-        
+
 
         private async void uteverclick(object sender, RoutedEventArgs e)
         {
@@ -1286,11 +1288,11 @@ namespace UTE_UWP_.Views
             }
             else if (ReplaceBox.Text.ToLower() == FindTextBox.Text.ToLower() && CaseSensBox.IsChecked == true && FullWordsBox.IsChecked == true)
             {
-                
+
             }
             else if (ReplaceBox.Text.ToLower() == FindTextBox.Text.ToLower() && CaseSensBox.IsChecked != true)
             {
-                
+
             }
             else
             {
@@ -1657,7 +1659,7 @@ namespace UTE_UWP_.Views
         private async void BlankFIle(object sender, RoutedEventArgs e)
         {
             await ShowUnsavedDialog2();
-            
+
         }
 
         private void AlignJustifyButton_Click(object sender, RoutedEventArgs e)
@@ -2113,6 +2115,26 @@ namespace UTE_UWP_.Views
         private void NullBackgroundButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        {
+            //Configure underline
+            var MFItem = (MenuFlyoutItem)sender;
+            ITextSelection ST = editor.Document.Selection;
+            if (!(ST == null))
+            {
+                UnderlineType CF = ST.CharacterFormat.Underline;
+                if (MFItem.Text == "None") CF = UnderlineType.None;
+                if (MFItem.Text == "Single") CF = UnderlineType.Single;
+                if (MFItem.Text == "Dash") CF = UnderlineType.Dash;
+                if (MFItem.Text == "Dotted") CF = UnderlineType.Dotted;
+                if (MFItem.Text == "Double") CF = UnderlineType.Double;
+                if (MFItem.Text == "Thick") CF = UnderlineType.Thick;
+                if (MFItem.Text == "Wave") CF = UnderlineType.Wave;
+                ST.CharacterFormat.Underline = CF;
+                editor.ContextFlyout.Hide();
+            }
         }
     }
 }

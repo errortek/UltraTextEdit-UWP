@@ -1613,6 +1613,48 @@ ToolTipService.ToolTip="Compute Hash">
                                                         <Grid>
                                                             <TextBlock TextWrapping="Wrap" Text="&#xE19A;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
                                                         </Grid>
+                                                        <muxc:DropDownButton.Flyout>
+                                                            <MenuFlyout x:Name="UnderlineFlyout">
+                                                                <MenuFlyoutItem Text="None" Click="MenuFlyoutItem_Click">
+                                                                    <MenuFlyoutItem.Icon>
+                                                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE106;"/>
+                                                                    </MenuFlyoutItem.Icon>
+                                                                </MenuFlyoutItem>
+                                                                <MenuFlyoutItem Text="Single" Click="MenuFlyoutItem_Click">
+                                                                    <MenuFlyoutItem.Icon>
+                                                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE004;"/>
+                                                                    </MenuFlyoutItem.Icon>
+                                                                    <MenuFlyoutItem.KeyboardAccelerators>
+                                                                        <KeyboardAccelerator IsEnabled="False" Modifiers="Control" Key="U"/>
+                                                                    </MenuFlyoutItem.KeyboardAccelerators>
+                                                                </MenuFlyoutItem>
+                                                                <MenuFlyoutItem Text="Dash" Click="MenuFlyoutItem_Click">
+                                                                    <MenuFlyoutItem.Icon>
+                                                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE004;&#xE004;"/>
+                                                                    </MenuFlyoutItem.Icon>
+                                                                </MenuFlyoutItem>
+                                                                <MenuFlyoutItem Text="Dotted" Click="MenuFlyoutItem_Click">
+                                                                    <MenuFlyoutItem.Icon>
+                                                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE10C;"/>
+                                                                    </MenuFlyoutItem.Icon>
+                                                                </MenuFlyoutItem>
+                                                                <MenuFlyoutItem Text="Double" Click="MenuFlyoutItem_Click">
+                                                                    <MenuFlyoutItem.Icon>
+                                                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE94E;"/>
+                                                                    </MenuFlyoutItem.Icon>
+                                                                </MenuFlyoutItem>
+                                                                <MenuFlyoutItem Text="Thick" Click="MenuFlyoutItem_Click">
+                                                                    <MenuFlyoutItem.Icon>
+                                                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE654;"/>
+                                                                    </MenuFlyoutItem.Icon>
+                                                                </MenuFlyoutItem>
+                                                                <MenuFlyoutItem Text="Wave" Click="MenuFlyoutItem_Click">
+                                                                    <MenuFlyoutItem.Icon>
+                                                                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xF463;"/>
+                                                                    </MenuFlyoutItem.Icon>
+                                                                </MenuFlyoutItem>
+                                                            </MenuFlyout>
+                                                        </muxc:DropDownButton.Flyout>
                                                     </muxc:DropDownButton>
                                                     <ToggleButton x:Name="STB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" Click="StrikethroughButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="2,2,2,2" ToolTipService.ToolTip="Strikethrough (Ctrl + T)" CornerRadius="4,4,4,4" Style="{StaticResource TransparentToggleButton}" Background="{x:Null}" BorderBrush="{x:Null}">
                                                         <ToggleButton.KeyboardAccelerators>
