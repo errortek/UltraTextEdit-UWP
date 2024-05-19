@@ -267,7 +267,7 @@
                         <Button x:Name="HideHome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="45" Height="45" Click="HideHome_Click" FontFamily="{ThemeResource SymbolThemeFontFamily}" FontSize="10" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Go to workspace" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="0,0,0,0" BorderThickness="0,0,0,0" CornerRadius="0,7,0,0">
                             <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{ThemeResource SymbolThemeFontFamily}" Text="&#xE106;" FontSize="14"/>
                         </Button>
-                        <Image Source="/Assets/Glyphs/Home.png" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0" Width="25" Height="25"/>
+                        <Image Source="/Assets/Home.png" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0" Width="25" Height="25"/>
                         <StackPanel Spacing="0" Margin="0,400,0,0"/>
                         <Grid Margin="25,0,0,20" VerticalAlignment="Bottom">
                             <Image Height="100" Width="100" Source="/Assets/utevericon.png" HorizontalAlignment="Left"/>
@@ -302,7 +302,7 @@
                                 </Grid>
                             </Button>
                         </StackPanel>
-                        <TextBlock Text="&#xE130;" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,75,0,0"/>
+                        <TextBlock Text="&#xE130;" FontFamily="{ThemeResource SymbolThemeFontFamily}" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,75,0,0"/>
                         <StackPanel Margin="100,60,25,160" Spacing="10">
                             <TextBlock TextWrapping="Wrap" Text="New File" FontSize="24"/>
                             <Button Height="135" Click="BlankFIle" Width="150" Padding="0,0,0,0">

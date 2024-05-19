@@ -327,12 +327,26 @@
     <Compile Include="Helpers\ResourceExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Changelog.png" />
+    <Content Include="Assets\Check.png" />
+    <Content Include="Assets\Console.png" />
+    <Content Include="Assets\Copy.png" />
+    <Content Include="Assets\Cut.png" />
+    <Content Include="Assets\Delete.png" />
+    <Content Include="Assets\Error.png" />
+    <Content Include="Assets\Home.png" />
+    <Content Include="Assets\Info.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\OpenFile.png" />
+    <Content Include="Assets\Paste.png" />
+    <Content Include="Assets\Print.png" />
+    <Content Include="Assets\Question.png" />
+    <Content Include="Assets\Save.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
     <Content Include="Assets\SmallTile.scale-150.png" />
@@ -376,6 +390,7 @@
     <Content Include="Assets\Templates\NewspaperTemp.png" />
     <Content Include="Assets\Templates\ResumeTemp.png" />
     <Content Include="Assets\utevericon.png" />
+    <Content Include="Assets\Warning.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
