@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTE UWP+", "UTE UWP+\UTE UW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UTE UWP+.Core", "UTE UWP+.Core\UTE UWP+.Core.csproj", "{19C9189B-7CEE-43BD-8E96-DA3CADB91BC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltraTextEdit", "..\UTE-Pro+\UltraTextEdit\UltraTextEdit.csproj", "{FF1EEBE0-AB84-4B40-A612-44AFB84D2C34}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltraTextEdit.Core", "..\UTE-Pro+\UltraTextEdit.Core\UltraTextEdit.Core.csproj", "{C5269C6C-3A36-4946-83E9-EE8C994E333C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
