@@ -150,12 +150,14 @@ namespace UTE_UWP_.Views
                     ButtonPanel.Visibility = Visibility.Collapsed;
                     Ribbon.Visibility = Visibility.Visible;
                     ribbonToggle.IsOn = true;
+                    finditem.Visibility = Visibility.Visible;
                 }
                 else
                 {
                     Ribbon.Visibility = Visibility.Collapsed;
                     ButtonPanel.Visibility = Visibility.Visible;
                     ribbonToggle.IsOn = false;
+                    finditem.Visibility = Visibility.Collapsed;
                 }
             }
             else

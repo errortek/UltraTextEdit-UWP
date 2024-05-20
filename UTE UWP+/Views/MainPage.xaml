@@ -505,6 +505,11 @@
                             <MenuFlyoutItem Click="Print_Click" Text="Print"  Icon="Print"/>
                             <MenuFlyoutSeparator />
                             <MenuFlyoutItem Click="Home_Click" Text="Home" Icon="Home"/>
+                            <MenuFlyoutItem Click="FindButton2_Click" Text="Find/Replace" x:Name="finditem" Visibility="Collapsed">
+                                <MenuFlyoutItem.Icon>
+                                    <FontIcon Glyph="&#xE721;" />
+                                </MenuFlyoutItem.Icon>
+                            </MenuFlyoutItem>
                             <MenuFlyoutSeparator />
                             <MenuFlyoutItem Click="Exit_Click" Text="Exit">
                                 <MenuFlyoutItem.Icon>
