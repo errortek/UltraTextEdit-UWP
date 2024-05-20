@@ -27,9 +27,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Icon fixes (in the new Ribbon)<LineBreak/>
-              • Add new underline styles (in the new Ribbon)<LineBreak/>
-              • Add date and time insertion capabilities to the new Ribbon
+              • Replace functionality now works!<LineBreak/>
+              • Add the ability to access the Find/Replace pane (in the new Ribbon)<LineBreak/>
+              • Fix icons in the Home Menu
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
