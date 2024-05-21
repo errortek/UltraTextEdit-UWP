@@ -2024,17 +2024,9 @@ ToolTipService.ToolTip="Compute Hash">
                                     <Grid x:Name="Help" Height="132">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,27,0,0" Spacing="10">
                                             <Button x:Name="AboutButton" FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" Click="AboutBtn_Click" ToolTipService.ToolTip="About" CornerRadius="4,4,4,4" VerticalAlignment="Center" Padding="0,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
-                                                <Grid Height="48" Margin="0,-3,0,0">
-                                                    <Grid Height="55" HorizontalAlignment="Center" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.5,0.5" Margin="0,-14,2,0">
-                                                        <Grid.RenderTransform>
-                                                            <CompositeTransform ScaleX="0.5" ScaleY="0.5"/>
-                                                        </Grid.RenderTransform>
-                                                        <TextBlock TextWrapping="Wrap" Text="&#xE897;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
-                                                        <Border Background="{Binding Foreground, ElementName=LeftInd}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="2" Height="18" Margin="0,0,11,19" CornerRadius="0,2,0,0"/>
-                                                        <Border Background="{Binding Foreground, ElementName=LeftInd}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="18" Height="2" Margin="0,0,17,13" CornerRadius="0,0,0,2"/>
-                                                        <Border VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="6" Height="6" Margin="0,0,11,13" CornerRadius="0,0,15,0" BorderBrush="{Binding Foreground, ElementName=LeftInd}" BorderThickness="0,0,2,2"/>
-                                                    </Grid>
-                                                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,1"><Run Text="About"/></TextBlock>
+                                                <Grid Width="30" Height="45" Margin="4,1,4,-1">
+                                                    <TextBlock TextWrapping="Wrap" Text="&#xE897;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
+                                                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="30"><Run Text="About"/></TextBlock>
                                                 </Grid>
                                             </Button>
                                             <Button x:Name="uteverButton" FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" ToolTipService.ToolTip="utever" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4" Click="uteverclick">
