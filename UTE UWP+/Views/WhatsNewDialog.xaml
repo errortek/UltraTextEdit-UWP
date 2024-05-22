@@ -27,9 +27,10 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Replace functionality now works!<LineBreak/>
-              • Add the ability to access the Find/Replace pane (in the new Ribbon)<LineBreak/>
-              • Fix icons in the Home Menu
+              • Add Symbols Menu and hash/Base64 generation fuctionalities to the new Ribbon<LineBreak/>
+              • Fix bugs and crashes with the "Save" menu item<LineBreak/>
+              • Remove a VelocityID allowing users to hide the "Save" menu item, as the menu item is now properly functional<LineBreak/>
+              • Small UI fixes to the new Ribbon
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
