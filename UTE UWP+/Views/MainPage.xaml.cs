@@ -231,12 +231,18 @@ namespace UTE_UWP_.Views
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            SaveFile(false);
+            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP", "");
+            if (fileName == "Untitled")
+            {
+                SaveFile(true);
+            } else {
+                SaveFile(false);
+            }
         }
 
         public async void SaveFile(bool isCopy)
         {
-            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP+", "");
+            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP", "");
             if (isCopy || fileName == "Untitled")
             {
                 FileSavePicker savePicker = new FileSavePicker();
