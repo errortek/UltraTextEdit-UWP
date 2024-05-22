@@ -68,9 +68,6 @@
                 <controls:SettingsCard Header='Hide the "New Tabbed Window" menu item'>
                     <ToggleSwitch x:Name="tabbedhidevidToggle" OffContent="Off" OnContent="On" Toggled="tabbedhidevidToggle_Toggled"/>
                 </controls:SettingsCard>
-                <controls:SettingsCard Header='Hide the "Save" menu item'>
-                    <ToggleSwitch x:Name="savehidevidToggle" OffContent="Off" OnContent="On" Toggled="savehidevidToggle_Toggled"/>
-                </controls:SettingsCard>
             </StackPanel>
         </ScrollViewer>
     </Grid>
