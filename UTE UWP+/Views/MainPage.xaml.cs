@@ -114,6 +114,7 @@ namespace UTE_UWP_.Views
 
             EditButton.IsChecked = true;
             Insert.Visibility = Visibility.Collapsed;
+            Developer.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Collapsed;
 
             ShareSourceLoad();
@@ -1071,6 +1072,7 @@ namespace UTE_UWP_.Views
             myDocument.SetText(TextSetOptions.None, oldText + text);
 
             symbolbut.Flyout.Hide();
+            Symbols_Insert.Flyout.Hide();
             editor.Focus(FocusState.Keyboard);
         }
 
@@ -1789,9 +1791,11 @@ namespace UTE_UWP_.Views
         {
             Home.Visibility = Visibility.Visible;
             Insert.Visibility = Visibility.Collapsed;
+            Developer.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Collapsed;
             EditButton.IsChecked = true;
             InsertButton.IsChecked = false;
+            DeveloperButton.IsChecked = false;
             HelpButton.IsChecked = false;
         }
 
@@ -1799,9 +1803,11 @@ namespace UTE_UWP_.Views
         {
             Home.Visibility = Visibility.Collapsed;
             Insert.Visibility = Visibility.Visible;
+            Developer.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Collapsed;
             EditButton.IsChecked = false;
             InsertButton.IsChecked = true;
+            DeveloperButton.IsChecked = false;
             HelpButton.IsChecked = false;
         }
 
@@ -1809,9 +1815,11 @@ namespace UTE_UWP_.Views
         {
             Home.Visibility = Visibility.Collapsed;
             Insert.Visibility = Visibility.Collapsed;
+            Developer.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Visible;
             EditButton.IsChecked = false;
             InsertButton.IsChecked = false;
+            DeveloperButton.IsChecked = false;
             HelpButton.IsChecked = true;
         }
 
@@ -2175,6 +2183,18 @@ namespace UTE_UWP_.Views
                 ST.CharacterFormat.Underline = CF;
                 editor.ContextFlyout.Hide();
             }
+        }
+
+        private void Button_Click_36(object sender, RoutedEventArgs e)
+        {
+            Home.Visibility = Visibility.Collapsed;
+            Insert.Visibility = Visibility.Collapsed;
+            Developer.Visibility = Visibility.Visible;
+            Help.Visibility = Visibility.Collapsed;
+            EditButton.IsChecked = false;
+            InsertButton.IsChecked = false;
+            DeveloperButton.IsChecked = true;
+            HelpButton.IsChecked = false;
         }
     }
 }
