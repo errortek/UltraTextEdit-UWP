@@ -2199,11 +2199,10 @@ Orientation="Horizontal">
             Padding="11"
             FontFamily="Segoe UI"
             IsSpellCheckEnabled="False"
-            SelectionFlyout="{x:Null}"
             TextWrapping="WrapWholeWords"
             TextChanged="RichEditBox_TextChanged" SelectionChanged="editor_SelectionChanged">
                             <RichEditBox.KeyboardAccelerators>
-                                <KeyboardAccelerator Modifiers="Control" Key="B" Invoked="OnKeyboardAcceleratorInvoked" />
+                                <KeyboardAccelerator Modifiers="Control" Key="B" Invoked="OnKeyboardAcceleratorInvoked"/>
                                 <KeyboardAccelerator Modifiers="Control" Key="I" Invoked="OnKeyboardAcceleratorInvoked" />
                                 <KeyboardAccelerator Modifiers="Control" Key="U" Invoked="OnKeyboardAcceleratorInvoked" />
                                 <KeyboardAccelerator Modifiers="Control" Key="S" Invoked="OnKeyboardAcceleratorInvoked" />
