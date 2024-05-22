@@ -135,7 +135,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."/>
                         <TextBlock Margin="0,20,0,0" TextWrapping="WrapWholeWords" x:Uid="LicenseTo" Visibility="Collapsed"/>
                         <StackPanel Margin="0,5,0,0">
-                            <HyperlinkButton Content="UltraTextEdit UWP GitHub repo" NavigateUri="https://github.com/jpbandroid/UltraTextEdit-UWP-22H2" Name="OwnerText"/>
+                            <HyperlinkButton Content="UltraTextEdit UWP Plus GitHub repo" NavigateUri="https://github.com/jpbandroid/UTE-UWP-Plus" Name="OwnerText"/>
                             <TextBlock 
 							TextWrapping="Wrap"
                             Name="OrgText"
