@@ -62,7 +62,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="2"
-                        Text="Dev"/>
+                        Text="24H2 (Germanium)"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="3" x:Uid="InstalledOn" Text="Build Date"/>
                         <TextBlock 
 						Name="InstalledOn"
@@ -70,7 +70,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="3"
-                        Text="21/05/2024"/>
+                        Text="22/05/2024"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="4" x:Uid="OSBuild" Text="Build"/>
                         <TextBlock 
 						Name="Build"
@@ -78,7 +78,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
-                        Text="26090.1"/>
+                        Text="26096.1"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="5" x:Uid="InsiderChannel" Text="Insider Channel"/>
                         <TextBlock 
 						Name="InsiderChannel"
