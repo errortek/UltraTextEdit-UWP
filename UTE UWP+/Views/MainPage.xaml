@@ -1577,7 +1577,7 @@ ToolTipService.ToolTip="Compute Hash">
                                     <ToggleButton x:Name="HelpButton" Content="Help" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_35" Style="{StaticResource CrimsonToolbarToggleButton}" Padding="11,6,11,4"/>
                                 </StackPanel>
                                 <Border x:Name="RibbonBorder" RelativePanel.Below="RibbonTabs" VerticalAlignment="Top" BorderBrush="{StaticResource CardStrokeColorDefaultBrush}" BorderThickness="0,1,0,1" Height="160" HorizontalAlignment="Stretch" Background="{StaticResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-                                    <RelativePanel>
+                                    <Grid>
                                         <Grid x:Name="Home" VerticalAlignment="Top" Height="140" HorizontalAlignment="Stretch" CornerRadius="8" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                                             <RelativePanel>
                                                 <Grid x:Name="Font" VerticalAlignment="Top" Height="128" Margin="10,2,0,0" CornerRadius="8">
@@ -2037,7 +2037,7 @@ ToolTipService.ToolTip="Compute Hash">
                                                 </Button>
                                             </StackPanel>
                                         </Grid>
-                                    </RelativePanel>
+                                    </Grid>
                                 </Border>
                             </RelativePanel>
                         </Grid>
