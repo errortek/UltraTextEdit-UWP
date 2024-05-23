@@ -1783,7 +1783,16 @@ namespace UTE_UWP_.Views
 
         private void Button_Click_37(object sender, RoutedEventArgs e)
         {
-
+            Home.Visibility = Visibility.Collapsed;
+            Insert.Visibility = Visibility.Collapsed;
+            Developer.Visibility = Visibility.Collapsed;
+            Comments.Visibility = Visibility.Visible;
+            Help.Visibility = Visibility.Collapsed;
+            EditButton.IsChecked = false;
+            InsertButton.IsChecked = false;
+            DeveloperButton.IsChecked = false;
+            CommentsButton.IsChecked = true;
+            HelpButton.IsChecked = false;
         }
 
         private void TextCmdBar_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -1796,9 +1805,11 @@ namespace UTE_UWP_.Views
             Home.Visibility = Visibility.Visible;
             Insert.Visibility = Visibility.Collapsed;
             Developer.Visibility = Visibility.Collapsed;
+            Comments.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Collapsed;
             EditButton.IsChecked = true;
             InsertButton.IsChecked = false;
+            CommentsButton.IsChecked = false;
             DeveloperButton.IsChecked = false;
             HelpButton.IsChecked = false;
         }
@@ -1808,10 +1819,12 @@ namespace UTE_UWP_.Views
             Home.Visibility = Visibility.Collapsed;
             Insert.Visibility = Visibility.Visible;
             Developer.Visibility = Visibility.Collapsed;
+            Comments.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Collapsed;
             EditButton.IsChecked = false;
             InsertButton.IsChecked = true;
             DeveloperButton.IsChecked = false;
+            CommentsButton.IsChecked = false;
             HelpButton.IsChecked = false;
         }
 
@@ -1820,10 +1833,12 @@ namespace UTE_UWP_.Views
             Home.Visibility = Visibility.Collapsed;
             Insert.Visibility = Visibility.Collapsed;
             Developer.Visibility = Visibility.Collapsed;
+            Comments.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Visible;
             EditButton.IsChecked = false;
             InsertButton.IsChecked = false;
             DeveloperButton.IsChecked = false;
+            CommentsButton.IsChecked = false;
             HelpButton.IsChecked = true;
         }
 
@@ -2194,10 +2209,12 @@ namespace UTE_UWP_.Views
             Home.Visibility = Visibility.Collapsed;
             Insert.Visibility = Visibility.Collapsed;
             Developer.Visibility = Visibility.Visible;
+            Comments.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Collapsed;
             EditButton.IsChecked = false;
             InsertButton.IsChecked = false;
             DeveloperButton.IsChecked = true;
+            CommentsButton.IsChecked = false;
             HelpButton.IsChecked = false;
         }
     }
