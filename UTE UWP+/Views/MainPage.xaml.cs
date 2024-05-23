@@ -113,7 +113,9 @@ namespace UTE_UWP_.Views
             NavigationCacheMode = NavigationCacheMode.Required;
 
             EditButton.IsChecked = true;
+            CommentsButton.Visibility = Visibility.Collapsed;
             Insert.Visibility = Visibility.Collapsed;
+            Comments.Visibility = Visibility.Collapsed;
             Developer.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Collapsed;
 
@@ -994,7 +996,6 @@ namespace UTE_UWP_.Views
         {
             commentsplitview.IsPaneOpen = true;
             commentstabitem.Visibility = Visibility.Visible;
-            Comments.Visibility = Visibility.Visible;
             CommentsButton.Visibility = Visibility.Visible;
         }
 
