@@ -27,10 +27,11 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Add Symbols Menu and hash/Base64 generation fuctionalities to the new Ribbon<LineBreak/>
-              • Fix bugs and crashes with the "Save" menu item<LineBreak/>
-              • Remove a VelocityID allowing users to hide the "Save" menu item, as the menu item is now properly functional<LineBreak/>
-              • Small UI fixes to the new Ribbon
+              • Introduce Contextual Tabs to the new Ribbon!<LineBreak/>
+              • Add the ability to close the Comments UI to the new Ribbon via a new Comments Contextual Tab<LineBreak/>
+              • Enable context menu/flyout on the RichEditBox<LineBreak/>
+              • Update GitHub repository link<LineBreak/>
+              • First build of UTE UWP+ to be released to the Release Preview Channel!
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
