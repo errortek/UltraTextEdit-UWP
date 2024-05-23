@@ -244,7 +244,6 @@
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Normal">
-
                                         <Storyboard>
                                             <DoubleAnimation Storyboard.TargetName="Pipe" Storyboard.TargetProperty="Width" EnableDependentAnimation="True" Duration="0:0:0.12" To="0"/>
                                         </Storyboard>
@@ -408,6 +407,7 @@
                             <ContentPresenter x:Name="ContentPresenter"
               Background="{TemplateBinding Background}"
               BackgroundSizing="{TemplateBinding BackgroundSizing}"
+              Foreground="{ThemeResource SystemAccentColor}"
               BorderBrush="{TemplateBinding BorderBrush}"
               BorderThickness="{TemplateBinding BorderThickness}"
               Content="{TemplateBinding Content}"
