@@ -485,7 +485,7 @@
                                 <HyperlinkButton x:Name="hyperlinkButton" Content="https://errortek.vercel.app/" NavigateUri="https://errortek.vercel.app/" Padding="0,0,0,0" FontSize="11"/>
                                 <HyperlinkButton x:Name="hyperlinkButton2" Content="https://ivirius.vercel.app/" NavigateUri="https://ivirius.vercel.app/" Padding="0,0,0,0" FontSize="11"/>
                             </StackPanel>
-                            </Grid>
+                        </Grid>
                         <Border Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="4,4,4,4" Margin="15,64,0,0" Background="#268E8E8E"/>
                         <Border Background="{Binding Foreground, ElementName=LeftInd}" Height="24" CornerRadius="1.5,1.5,1.5,1.5" Width="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,77,0,0"/>
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,120,0,0" Spacing="5">
@@ -1776,18 +1776,18 @@ ToolTipService.ToolTip="Compute Hash">
                         </controls:TabbedCommandBarItem>
                     </controls:TabbedCommandBar.MenuItems>
                 </controls:TabbedCommandBar>
-                    <RelativePanel x:Name="Ribbon" RelativePanel.Below="ButtonPanel" Padding="8" Height="170" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-                        <Grid x:Name="TopMid" CornerRadius="8" HorizontalAlignment="Left" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-                            <RelativePanel>
-                                <StackPanel x:Name="RibbonTabs" Orientation="Horizontal" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
-                                    <ToggleButton x:Name="EditButton" Content="Home" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_33" Style="{StaticResource CrimsonToolbarToggleButton}" Padding="11,6,11,4"/>
-                                    <ToggleButton x:Name="InsertButton" Content="Insert" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_34" Style="{StaticResource CrimsonToolbarToggleButton}" Padding="11,6,11,4"/>
+                <RelativePanel x:Name="Ribbon" RelativePanel.Below="ButtonPanel" Padding="8" Height="170" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                    <Grid x:Name="TopMid" CornerRadius="8" HorizontalAlignment="Left" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                        <RelativePanel>
+                            <StackPanel x:Name="RibbonTabs" Orientation="Horizontal" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+                                <ToggleButton x:Name="EditButton" Content="Home" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_33" Style="{StaticResource CrimsonToolbarToggleButton}" Padding="11,6,11,4"/>
+                                <ToggleButton x:Name="InsertButton" Content="Insert" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_34" Style="{StaticResource CrimsonToolbarToggleButton}" Padding="11,6,11,4"/>
                                 <ToggleButton x:Name="CommentsButton" Content="Comments" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_37" Style="{StaticResource CrimsonToolbarContextualToggleButton}" Padding="11,6,11,4"/>
 
                                 <ToggleButton x:Name="DeveloperButton" Content="Developer" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_36" Style="{StaticResource CrimsonToolbarToggleButton}" Padding="11,6,11,4"/>
                                 <ToggleButton x:Name="HelpButton" Content="Help" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_35" Style="{StaticResource CrimsonToolbarToggleButton}" Padding="11,6,11,4"/>
-                                </StackPanel>
-                                <Border x:Name="RibbonBorder" RelativePanel.Below="RibbonTabs" VerticalAlignment="Top" BorderBrush="{StaticResource CardStrokeColorDefaultBrush}" BorderThickness="0,1,0,1" Height="160" HorizontalAlignment="Stretch" Background="{StaticResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                            </StackPanel>
+                            <Border x:Name="RibbonBorder" RelativePanel.Below="RibbonTabs" VerticalAlignment="Top" BorderBrush="{StaticResource CardStrokeColorDefaultBrush}" BorderThickness="0,1,0,1" Height="160" HorizontalAlignment="Stretch" Background="{StaticResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                                 <Grid>
                                     <Grid x:Name="Home" VerticalAlignment="Top" Height="140" HorizontalAlignment="Stretch" CornerRadius="8" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                                         <RelativePanel>
@@ -2349,11 +2349,21 @@ Orientation="Horizontal">
                                             </Button>
                                         </StackPanel>
                                     </Grid>
+                                    <Grid x:Name="Comments" Height="132" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,27,0,0" Spacing="10">
+                                            <Button x:Name="CloseComments" FontFamily="{StaticResource SymbolThemeFontFamily}" Click="closecomments" Width="80" Height="53" FontSize="22" ToolTipService.ToolTip="Close Comments" Padding="0,0,0,0" Margin="0,1,0,0" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}">
+                                                <Grid Width="60" Height="45" Margin="4,1,4,-1">
+                                                    <TextBlock TextWrapping="Wrap" Text="&#xF716;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
+                                                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="64"><Run Text="Close"/><LineBreak/><Run Text="Comments"/></TextBlock>
+                                                </Grid>
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
                                 </Grid>
                             </Border>
-                            </RelativePanel>
-                        </Grid>
-                    </RelativePanel>
+                        </RelativePanel>
+                    </Grid>
+                </RelativePanel>
             </RelativePanel>
 
             <SplitView
@@ -2445,22 +2455,21 @@ Orientation="Horizontal">
             </SplitView>
             <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
                 <diags:MessageBoxesGrid>
-                <diags:MessageBox x:Name="AboutBox" IsSingleButton="True" FirstButtonText="OK" Title="About" BlockUserInput="False" RememberPosition="False" MessageBoxHeight="370" MessageBoxWidth="400" d:IsHidden="True">
-                    <Grid Margin="10,0,10,0">
-                        <Image HorizontalAlignment="Left" Height="90" Margin="5,5,0,0" VerticalAlignment="Top" Width="90" Source="/Assets/utevericon.png"/>
-                        <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,20,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP Plus" VerticalAlignment="Top" FontSize="16"/>
-                        <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11">Version 10.0.26096.1 - Dev Channel<LineBreak/>Copyright ©️ jpb/ErrorTek 2021-2024, © Ivirius 2023-2024
+                    <diags:MessageBox x:Name="AboutBox" IsSingleButton="True" FirstButtonText="OK" Title="About" BlockUserInput="False" RememberPosition="False" MessageBoxHeight="370" MessageBoxWidth="400" d:IsHidden="True">
+                        <Grid Margin="10,0,10,0">
+                            <Image HorizontalAlignment="Left" Height="90" Margin="5,5,0,0" VerticalAlignment="Top" Width="90" Source="/Assets/utevericon.png"/>
+                            <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,20,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP Plus" VerticalAlignment="Top" FontSize="16"/>
+                            <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11">Version 10.0.26096.1 - Dev Channel<LineBreak/>Copyright ©️ jpb/ErrorTek 2021-2024, © Ivirius 2023-2024
 <LineBreak/>Licensed under the MIT License</TextBlock>
-                        <StackPanel Margin="0,120,0,0">
-                            <HyperlinkButton Content="WinUI 2.8.6" Click="HyperlinkButton_Click"/>
-                            <HyperlinkButton Content="Windows Community Toolkit 7.1.3" Click="HyperlinkButton_Click_1"/>
-                            <HyperlinkButton Content="UWP (Universal Windows Platform)" Click="HyperlinkButton_Click_2"/>
-                        </StackPanel>
-                    </Grid>
-                </diags:MessageBox>
-            </diags:MessageBoxesGrid>
+                            <StackPanel Margin="0,120,0,0">
+                                <HyperlinkButton Content="WinUI 2.8.6" Click="HyperlinkButton_Click"/>
+                                <HyperlinkButton Content="Windows Community Toolkit 7.1.3" Click="HyperlinkButton_Click_1"/>
+                                <HyperlinkButton Content="UWP (Universal Windows Platform)" Click="HyperlinkButton_Click_2"/>
+                            </StackPanel>
+                        </Grid>
+                    </diags:MessageBox>
+                </diags:MessageBoxesGrid>
             </Grid>
         </RelativePanel>
     </Grid>
-    
 </Page>

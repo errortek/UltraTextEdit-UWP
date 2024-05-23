@@ -994,12 +994,16 @@ namespace UTE_UWP_.Views
         {
             commentsplitview.IsPaneOpen = true;
             commentstabitem.Visibility = Visibility.Visible;
+            Comments.Visibility = Visibility.Visible;
+            CommentsButton.Visibility = Visibility.Visible;
         }
 
         private void closecomments(object sender, RoutedEventArgs e)
         {
             commentsplitview.IsPaneOpen = false;
             commentstabitem.Visibility = Visibility.Collapsed;
+            Comments.Visibility = Visibility.Collapsed;
+            CommentsButton.Visibility = Visibility.Collapsed;
         }
 
         /* Method to create a table format string which can directly be set to 
