@@ -31,7 +31,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
               • Add the ability to close the Comments UI to the new Ribbon via a new Comments Contextual Tab<LineBreak/>
               • Enable context menu/flyout on the RichEditBox<LineBreak/>
               • Update GitHub repository link<LineBreak/>
-              • First build of UTE UWP+ to be released to the Release Preview Channel!
+              • Fix Superscript/Subscript icons
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
