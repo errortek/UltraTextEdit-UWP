@@ -27,11 +27,10 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Introduce Contextual Tabs to the new Ribbon!<LineBreak/>
-              • Add the ability to close the Comments UI to the new Ribbon via a new Comments Contextual Tab<LineBreak/>
-              • Enable context menu/flyout on the RichEditBox<LineBreak/>
-              • Update GitHub repository link<LineBreak/>
-              • Fix Superscript/Subscript icons
+              • Introducing SmartEditor!<LineBreak/>
+                SmartEditor is a text proofing feature that automatically corrects certain common action in your documents!<LineBreak/>
+                As of its introduction in build 26212, it supports creating a bulleted list when you type a hyphen and space.<LineBreak/>
+                • Add automatic list creation to SmartEditor
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
