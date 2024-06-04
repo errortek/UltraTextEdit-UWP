@@ -28,7 +28,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
               • Introducing SmartEditor!<LineBreak/>
-                SmartEditor is a text proofing feature that automatically corrects certain common action in your documents!<LineBreak/>
+                SmartEditor is a text proofing feature that automatically corrects certain common actions in your documents!<LineBreak/>
                 As of its introduction in build 26212, it supports creating a bulleted list when you type a hyphen and space.<LineBreak/>
                 • Add automatic list creation to SmartEditor
             </TextBlock>

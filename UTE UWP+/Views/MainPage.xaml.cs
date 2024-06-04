@@ -988,7 +988,7 @@ namespace UTE_UWP_.Views
             request.Data.SetText(editor.TextDocument.ToString());
         }
 
-        private void Shaeditorutton_Click(object sender, RoutedEventArgs e)
+        private void ShareButton_Click(object sender, RoutedEventArgs e)
         {
             ShareSourceLoad();
             DataTransferManager.ShowShareUI();
@@ -1411,9 +1411,9 @@ namespace UTE_UWP_.Views
             }
         }
 
-        public static int FindAsInt(string textToFind, FindOptions options, RichEditBox Findeditor)
+        public static int FindAsInt(string textToFind, FindOptions options, RichEditBox FindREB)
         {
-            ITextRange searchRange = Findeditor.Document.GetRange(0, 0);
+            ITextRange searchRange = FindREB.Document.GetRange(0, 0);
             int x = 0;
             while (searchRange.FindText(textToFind, TextConstants.MaxUnitCount, options) > 0)
             {

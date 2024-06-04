@@ -755,7 +755,7 @@
                     <Button
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Click="Shaeditorutton_Click"
+                    Click="ShareButton_Click"
                     ToolTipService.ToolTip="Share">
                         <Viewbox MaxWidth="17" MaxHeight="17">
                             <SymbolIcon Symbol="Share" />
