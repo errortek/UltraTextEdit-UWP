@@ -123,6 +123,24 @@ namespace UTE_UWP_.Views
             {
                 AccentBox.SelectedItem = "Default";
             }
+
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                if ((string)LocalSettings.Values["SpellCheck"] == "On")
+                {
+                    spellcheckBox.IsChecked = true;
+
+                }
+                if ((string)LocalSettings.Values["SpellCheck"] == "Off")
+                {
+                    spellcheckBox.IsChecked = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
+                spellcheckBox.IsChecked = false;
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -287,6 +305,24 @@ namespace UTE_UWP_.Views
                     LocalSettings.Values["AccentTheme"] = "Lilac";
                 }
             }   
+        }
+
+        private void spellcheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                LocalSettings.Values["SpellCheck"] = "On";
+            }
+        }
+
+        private void spellcheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
+            }
         }
     }
 

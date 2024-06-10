@@ -70,7 +70,15 @@
             <ScrollViewer Grid.Row="1" x:Name="view">
                 <StackPanel Orientation="Vertical" Padding="20" Spacing="5">
                     <TextBlock Text="Settings" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
-
+                    <TextBlock Text="Editor" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
+                    <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                        <controls:SettingsCard Header="Spell check">
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xF87B;" />
+                            </controls:SettingsCard.HeaderIcon>
+                            <CheckBox x:Name="spellcheckBox" Checked="spellcheckBox_Checked" Unchecked="spellcheckBox_Unchecked" Margin="0,0,-100,0"/>
+                        </controls:SettingsCard>
+                    </StackPanel>
                     <TextBlock Text="Personalization" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
                     <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
                         <controls:SettingsExpander Header="Theme" Description="Change app theme here">

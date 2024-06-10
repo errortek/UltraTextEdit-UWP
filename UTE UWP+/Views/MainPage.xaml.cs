@@ -170,6 +170,21 @@ namespace UTE_UWP_.Views
                 LocalSettings.Values["NewRibbon"] = "Off";
                 ribbonToggle.IsOn = false;
             }
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                if (LocalSettings.Values["SpellCheck"].ToString() == "On")
+                {
+                    editor.IsSpellCheckEnabled = true;
+                }
+                else
+                {
+                    editor.IsSpellCheckEnabled = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
