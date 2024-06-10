@@ -987,8 +987,43 @@ ToolTipService.ToolTip="Save">
 
                         </RichEditBox>
                     </SplitView.Pane>
-                    <RichEditBox x:Name="box" RelativePanel.Below="ribbon"
+                    <SplitView
+RelativePanel.AlignBottomWithPanel="True"
+RelativePanel.AlignLeftWithPanel="True"
+RelativePanel.AlignRightWithPanel="True"
+RelativePanel.Below="containerPanel"
+muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+Background="Transparent"
+PaneBackground="Transparent"
+IsPaneOpen="False" OpenPaneLength="256" CompactPaneLength="24" DisplayMode="Inline" PanePlacement="Right" x:Name="textsplitview">
+                        <SplitView.Pane>
+                            <Grid Background="Transparent">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Orientation="Vertical" Background="Transparent">
+                                    <muxc:InfoBar IsOpen="True" Severity="Informational" Title="Usage info">
+                                        <muxc:InfoBar.Content>
+                                            <TextBlock Text="Do not abuse the Find and Replace feature by trying to replace too many characters. Hangs or crashes may occur upon intentional overload." TextWrapping="WrapWholeWords"/>
+                                        </muxc:InfoBar.Content>
+                                    </muxc:InfoBar>
+                                    <TextBox x:Name="FindTextBox" TextWrapping="Wrap" AcceptsReturn="True" PlaceholderText="Find" Margin="10,10,10,0" Visibility="Visible"/>
+                                    <TextBox x:Name="ReplaceBox" TextWrapping="Wrap" AcceptsReturn="True" PlaceholderText="Replace" Margin="10,10,10,0"/>
+                                    <CheckBox x:Name="CaseSensBox" Content="Case sensitive" Margin="10,10,0,0"/>
+                                    <CheckBox x:Name="FullWordsBox" Content="Match whole words" Margin="10,0,0,0"/>
+                                    <Button x:Name="FindBTN" Content="Find" HorizontalAlignment="Stretch" Click="FindBTN_Click"/>
+                                    <Button x:Name="RepBTN" Content="Replace" HorizontalAlignment="Stretch" Click="RepBTN_Click"/>
+                                    <Button x:Name="RepAllBTN" Content="Replace all" Click="RepAllBTN_Click" HorizontalAlignment="Stretch"/>
+                                    <Button x:Name="CancelFindRepBTN" Content="Cancel" HorizontalAlignment="Stretch" Click="CancelFindRepBTN_Click"/>
+                                    <AppBarButton HorizontalAlignment="Center" Icon="ClosePane" Label="Close" Click="closepane"/>
+                                </StackPanel>
+                            </Grid>
+                        </SplitView.Pane>
+                        <RichEditBox x:Name="box" RelativePanel.Below="ribbon"
                                  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
+                    </SplitView>
                 </SplitView>
             </RelativePanel>
         </Grid>
