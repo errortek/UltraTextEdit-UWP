@@ -124,6 +124,21 @@ namespace UTE_UWP_.Views
                 AccentBox.SelectedItem = "Default";
             }
 
+
+            if ((string)LocalSettings.Values["TextWrapping"] == "No wrap")
+            {
+                TextWrapComboBox.SelectedItem = "No wrap";
+            }
+            if ((string)LocalSettings.Values["TextWrapping"] == "Wrap")
+            {
+                TextWrapComboBox.SelectedItem = "Wrap";
+            }
+            if ((string)LocalSettings.Values["TextWrapping"] == "Wrap whole words")
+            {
+                TextWrapComboBox.SelectedItem = "Wrap whole words";
+            }
+
+
             if (LocalSettings.Values["SpellCheck"] != null)
             {
                 if ((string)LocalSettings.Values["SpellCheck"] == "On")
@@ -322,6 +337,20 @@ namespace UTE_UWP_.Views
             if (LocalSettings.Values["SpellCheck"] != null)
             {
                 LocalSettings.Values["SpellCheck"] = "Off";
+            }
+        }
+
+        private void TextWrapComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (TextWrapComboBox.SelectedItem != null) {
+                if (LocalSettings.Values["TextWrapping"] != null)
+                {
+                    LocalSettings.Values["TextWrapping"] = TextWrapComboBox.SelectedItem.ToString();
+                } else
+                {
+                    LocalSettings.Values["TextWrapping"] = "No wrap";
+                }
             }
         }
     }

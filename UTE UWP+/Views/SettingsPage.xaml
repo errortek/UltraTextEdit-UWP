@@ -72,6 +72,13 @@
                     <TextBlock Text="Settings" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
                     <TextBlock Text="Editor" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
                     <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                        <controls:SettingsCard Header="Text wrapping">
+                            <ComboBox x:Name="TextWrapComboBox" SelectionChanged="TextWrapComboBox_SelectionChanged">
+                                <x:String>No wrap</x:String>
+                                <x:String>Wrap</x:String>
+                                <x:String>Wrap whole words</x:String>
+                            </ComboBox>
+                        </controls:SettingsCard>
                         <controls:SettingsCard Header="Spell check">
                             <controls:SettingsCard.HeaderIcon>
                                 <FontIcon Glyph="&#xF87B;" />
