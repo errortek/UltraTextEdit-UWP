@@ -480,7 +480,7 @@
                         <Grid Margin="25,0,0,20" VerticalAlignment="Bottom">
                             <Image Height="100" Width="100" Source="/Assets/utevericon.png" HorizontalAlignment="Left"/>
                             <TextBlock TextWrapping="Wrap" Text="UltraTextEdit UWP+" Margin="120,0,0,40" VerticalAlignment="Center" FontSize="18"/>
-                            <TextBlock TextWrapping="Wrap" Text="build 26217.1000 - © jpbandroid, Ivirius 2021 - 2024" Margin="120,10,0,0" VerticalAlignment="Center" FontSize="12"/>
+                            <TextBlock TextWrapping="Wrap" Text="build 26227.1000 - © jpbandroid, Ivirius 2021 - 2024" Margin="120,10,0,0" VerticalAlignment="Center" FontSize="12"/>
                             <StackPanel Orientation="Horizontal" Margin="120,50,0,0">
                                 <HyperlinkButton x:Name="hyperlinkButton" Content="https://errortek.vercel.app/" NavigateUri="https://errortek.vercel.app/" Padding="0,0,0,0" FontSize="11"/>
                                 <HyperlinkButton x:Name="hyperlinkButton2" Content="https://ivirius.vercel.app/" NavigateUri="https://ivirius.vercel.app/" Padding="0,0,0,0" FontSize="11"/>
@@ -2469,7 +2469,7 @@ Orientation="Horizontal">
                         <Grid Margin="10,0,10,0">
                             <Image HorizontalAlignment="Left" Height="90" Margin="5,5,0,0" VerticalAlignment="Top" Width="90" Source="/Assets/utevericon.png"/>
                             <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,20,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP Plus" VerticalAlignment="Top" FontSize="16"/>
-                            <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11">Version 10.0.26217.1000 - Dev Channel<LineBreak/>Copyright ©️ jpb/ErrorTek 2021-2024, © Ivirius 2023-2024
+                            <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11">Version 10.0.26227.1000 - Dev Channel<LineBreak/>Copyright ©️ jpb/ErrorTek 2021-2024, © Ivirius 2023-2024
 <LineBreak/>Licensed under the MIT License</TextBlock>
                             <StackPanel Margin="0,120,0,0">
                                 <HyperlinkButton Content="WinUI 2.8.6" Click="HyperlinkButton_Click"/>
