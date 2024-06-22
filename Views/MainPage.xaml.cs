@@ -1262,5 +1262,302 @@ namespace UltraTextEdit_UWP.Views
                 ST.CharacterFormat.BackgroundColor = Colors.Transparent;
             }
         }
+
+        #region Templates
+
+        private void Template1_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Normal
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = (float)14;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template2_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Title
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                var PF = ST.ParagraphFormat;
+                PF.Alignment = ParagraphAlignment.Center;
+                CF.Bold = FormatEffect.Off;
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 28;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template3_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Title 2
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                var PF = ST.ParagraphFormat;
+                PF.Alignment = ParagraphAlignment.Center;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 22;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template4_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Important
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.On;
+
+                CF.Italic = FormatEffect.On;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 16;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template5_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Header
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 14;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template6_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Medium
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 18;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template7_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Subtitle
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 20;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template8_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Strong
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.On;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 18;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template9_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Content
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 16;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template10_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Finished
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+
+                CF.Italic = FormatEffect.On;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 14;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template11_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Unfinished
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.On;
+
+                CF.Italic = FormatEffect.Off;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 14;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+        private void Template12_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            //Strong header
+            var ST = box.Document.Selection;
+            if (!(ST == null))
+            {
+                var CF = ST.CharacterFormat;
+                CF.Bold = FormatEffect.Off;
+                CF.Italic = FormatEffect.On;
+                CF.Name = "Segoe UI";
+
+                CF.Outline = FormatEffect.Off;
+                CF.Size = 18;
+                CF.ForegroundColor = Colors.DimGray;
+                CF.Underline = UnderlineType.None;
+                ST.CharacterFormat = CF;
+                TempFlyout.Hide();
+            }
+        }
+
+
+        #endregion Templates
+
+        private async void more_symbols(object sender, RoutedEventArgs e)
+        {
+            // Create a ContentDialog
+            ContentDialog dialog = new ContentDialog();
+            dialog.Title = "Insert symbol";
+
+            // Create a ListView for the user to select the date format
+            ListView listView = new ListView();
+            listView.SelectionMode = ListViewSelectionMode.Single;
+
+            // Create a list of date formats to display in the ListView
+            List<string> symbols = new List<string>();
+            symbols.Add("×");
+            symbols.Add("÷");
+            symbols.Add("←");
+            symbols.Add("→");
+            symbols.Add("°");
+            symbols.Add("§");
+            symbols.Add("µ");
+            symbols.Add("π");
+            symbols.Add("α");
+            symbols.Add("β");
+            symbols.Add("γ");
+
+            // Set the ItemsSource of the ListView to the list of date formats
+            listView.ItemsSource = symbols;
+
+            // Set the content of the ContentDialog to the ListView
+            dialog.Content = listView;
+
+            // Make the insert button colored
+            dialog.DefaultButton = ContentDialogButton.Primary;
+
+            // Add an "Insert" button to the ContentDialog
+            dialog.PrimaryButtonText = "OK";
+            dialog.PrimaryButtonClick += (s, args) =>
+            {
+                string selectedFormat = listView.SelectedItem as string;
+                string formattedDate = symbols[listView.SelectedIndex];
+                box.Document.Selection.Text = formattedDate;
+            };
+
+            // Add a "Cancel" button to the ContentDialog
+            dialog.SecondaryButtonText = "Cancel";
+
+            // Show the ContentDialog
+            await dialog.ShowAsync();
+        }
     }
 }

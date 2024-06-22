@@ -873,6 +873,138 @@ ToolTipService.ToolTip="Save">
                                     </muxc:ToggleSplitButton.Flyout>
                                 </muxc:ToggleSplitButton>
                             </AppBarElementContainer>
+                            <AppBarElementContainer>
+                                <muxc:SplitButton
+x:Name="TempDDB"
+HorizontalContentAlignment="Center"
+VerticalContentAlignment="Center"
+VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5,5,5,5" ToolTipService.ToolTip="Templates">
+                                    <muxc:SplitButton.Flyout>
+                                        <Flyout x:Name="TempFlyout">
+                                            <Grid>
+                                                <Button
+                x:Name="Template1"
+                Content="Normal&#xA;content" 
+                VerticalAlignment="Top"
+                Width="100"
+                Height="63" 
+                Margin="0,0,0,0" 
+                Click="Template1_Click" FontSize="11"/>
+                                                <Button 
+                x:Name="Template2"
+                Content="Title" 
+                VerticalAlignment="Top" 
+                Width="100"
+                Height="63"
+                Margin="0,63,0,0"
+                FontSize="28" 
+                FontWeight="Normal" 
+                FontStyle="Normal" 
+                Click="Template2_Click"/>
+                                                <Button
+                x:Name="Template3" 
+                Content="Title 2" 
+                VerticalAlignment="Top"
+                Width="100"
+                Height="63"
+                Margin="0,126,0,0"
+                FontSize="22" 
+                Click="Template3_Click"/>
+                                                <Button 
+                x:Name="Template4" 
+                Content="Important"
+                VerticalAlignment="Top"
+                Width="100"
+                Height="63"
+                Margin="0,189,0,0"
+                FontSize="16"
+                FontWeight="Bold"
+                FontStyle="Italic"
+                Click="Template4_Click"/>
+                                                <Button
+                x:Name="Template5"
+                Content="Header" 
+                VerticalAlignment="Top"
+                Width="100"
+                Height="63" 
+                Margin="100,0,0,0" 
+                Click="Template5_Click" FontSize="14" FontFamily="Segoe UI"/>
+                                                <Button 
+                x:Name="Template6"
+                Content="Medium" 
+                VerticalAlignment="Top" 
+                Width="100"
+                Height="63"
+                Margin="100,63,0,0"
+                FontSize="18" 
+                FontWeight="Normal" 
+                FontStyle="Normal" 
+                Click="Template6_Click"/>
+                                                <Button
+                x:Name="Template7" 
+                Content="Subtitle" 
+                VerticalAlignment="Top"
+                Width="100"
+                Height="63"
+                Margin="100,126,0,0"
+                FontSize="20" 
+                Click="Template7_Click"/>
+                                                <Button 
+                x:Name="Template8" 
+                Content="Strong"
+                VerticalAlignment="Top"
+                Width="100"
+                Height="63"
+                Margin="100,189,0,0"
+                FontSize="18"
+                FontWeight="Bold"
+                FontStyle="Normal"
+                Click="Template8_Click"/>
+                                                <Button
+                x:Name="Template9"
+                Content="Content" 
+                VerticalAlignment="Top"
+                Width="100"
+                Height="63" 
+                Margin="200,0,0,0" 
+                Click="Template9_Click" FontSize="16"/>
+                                                <Button 
+                x:Name="Template10"
+                Content="Finished" 
+                VerticalAlignment="Top" 
+                Width="100"
+                Height="63"
+                Margin="200,63,0,0"
+                FontSize="14" 
+                FontWeight="Normal" 
+                FontStyle="Italic" 
+                Click="Template10_Click"/>
+                                                <Button
+                x:Name="Template11" 
+                Content="Unfinished" 
+                VerticalAlignment="Top"
+                Width="100"
+                Height="63"
+                Margin="200,126,0,0"
+                FontSize="14" 
+                Click="Template11_Click" FontWeight="Bold"/>
+                                                <Button 
+                x:Name="Template12" 
+                Content="Strong&#xA;header"
+                VerticalAlignment="Top"
+                Width="100"
+                Height="63"
+                Margin="200,189,0,0"
+                FontSize="18"
+                FontWeight="Normal"
+                FontStyle="Italic"
+                Click="Template10_Click" Foreground="DimGray"/>
+                                            </Grid>
+                                        </Flyout>
+                                    </muxc:SplitButton.Flyout>
+                                    <FontIcon Glyph="&#xE185;"/>
+                                </muxc:SplitButton>
+                            </AppBarElementContainer>
                             <AppBarSeparator />
                             <AppBarButton Style="{StaticResource TransparentButton}" ToolTipService.ToolTip="Find" Click="FindButton2_Click">
                                 <Button.Content>
@@ -935,11 +1067,11 @@ ToolTipService.ToolTip="Save">
                                 <FontIcon FontSize="17" Glyph="&#xED58;" />
                                 <AppBarButton.Flyout>
                                     <Flyout Placement="Bottom" x:Name="symbolsflyout">
-                                        <RelativePanel>
+                                        <StackPanel>
                                             <VariableSizedWrapGrid
-                                    x:Name="symbolGrid"
-                                    MaximumRowsOrColumns="4"
-                                    Orientation="Horizontal">
+            x:Name="symbolGrid"
+            MaximumRowsOrColumns="4"
+            Orientation="Horizontal">
                                                 <VariableSizedWrapGrid.Resources>
                                                     <Style TargetType="Rectangle">
                                                         <Setter Property="Width" Value="32" />
@@ -955,60 +1087,60 @@ ToolTipService.ToolTip="Save">
                                                     </Style>
                                                 </VariableSizedWrapGrid.Resources>
                                                 <Button
-                                        AutomationProperties.Name="Mutiply"
-                                        Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Multiplication symbol"
-                                         Content="×">
+                AutomationProperties.Name="Mutiply"
+                Click="SymbolButton_Click"
+                ToolTipService.ToolTip="Multiplication symbol"
+                 Content="×">
                                                 </Button>
                                                 <Button
-                                        AutomationProperties.Name="Divide"
-                                        Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Division symbol"
-                                                Content="÷">
+                AutomationProperties.Name="Divide"
+                Click="SymbolButton_Click"
+                ToolTipService.ToolTip="Division symbol"
+                        Content="÷">
                                                 </Button>
                                                 <Button
-                                        AutomationProperties.Name="LeftArrow"
-                                        Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Left Arrow symbol"
-                                                Content="←">
+                AutomationProperties.Name="LeftArrow"
+                Click="SymbolButton_Click"
+                ToolTipService.ToolTip="Left Arrow symbol"
+                        Content="←">
                                                 </Button>
                                                 <Button
-                                        AutomationProperties.Name="RightArrow"
-                                        Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Right Arrow symbol"
-                                                Content="→">
+                AutomationProperties.Name="RightArrow"
+                Click="SymbolButton_Click"
+                ToolTipService.ToolTip="Right Arrow symbol"
+                        Content="→">
                                                 </Button>
                                                 <Button
-                                        AutomationProperties.Name="Degree"
-                                        Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Degree symbol"
-                                                Content="°">
+                AutomationProperties.Name="Degree"
+                Click="SymbolButton_Click"
+                ToolTipService.ToolTip="Degree symbol"
+                        Content="°">
                                                 </Button>
                                                 <Button
-                                        AutomationProperties.Name="Paragraph"
-                                        Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Paragraph symbol"
-                                                Content="§">
+                AutomationProperties.Name="Paragraph"
+                Click="SymbolButton_Click"
+                ToolTipService.ToolTip="Paragraph symbol"
+                        Content="§">
                                                 </Button>
                                                 <Button
-                                        AutomationProperties.Name="Mu"
-                                        Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Lowercase mu (micro) symbol"
-                                                Content="µ">
+                AutomationProperties.Name="Mu"
+                Click="SymbolButton_Click"
+                ToolTipService.ToolTip="Lowercase mu (micro) symbol"
+                        Content="µ">
                                                 </Button>
                                                 <Button
-                                        AutomationProperties.Name="SquareRoot"
-                                        Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Square root symbol"
-                                                Content="√">
+                AutomationProperties.Name="SquareRoot"
+                Click="SymbolButton_Click"
+                ToolTipService.ToolTip="Square root symbol"
+                        Content="√">
                                                 </Button>
-
                                             </VariableSizedWrapGrid>
-                                        </RelativePanel>
+                                            <Button Content="More symbols" Click="more_symbols"/>
+                                        </StackPanel>
                                     </Flyout>
                                 </AppBarButton.Flyout>
-                            </AppBarButton>
-                        </controls:TabbedCommandBarItem>
+            </AppBarButton>
+            </controls:TabbedCommandBarItem>
                         <controls:TabbedCommandBarItem Header="Edit" Background="Transparent">
                             <AppBarButton Click="UndoButton_Click" Label="Undo" Icon="Undo" />
                             <AppBarButton Click="RedoButton_Click" Label="Redo" Icon="Redo"/>
