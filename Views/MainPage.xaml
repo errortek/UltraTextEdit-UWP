@@ -729,6 +729,71 @@ ToolTipService.ToolTip="Save">
                                 </muxc:SplitButton>
                             </AppBarElementContainer>
                             <AppBarElementContainer>
+                                <muxc:SplitButton x:Name="Back" FontFamily="{ThemeResource SymbolThemeFontFamily}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12" Padding="0,0,5,0" ToolTipService.ToolTip="Text highlight" BorderThickness="0,1,0,1">
+                                    <muxc:SplitButton.Flyout>
+                                        <Flyout>
+                                            <StackPanel>
+                                                <Grid >
+                                                    <Button Background="DarkRed"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Red"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="50,0,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="OrangeRed"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="100,0,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="IndianRed"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="150,0,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="PaleVioletRed"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="200,0,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="HotPink"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="250,0,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Pink"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="300,0,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="LightPink"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="350,0,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="DarkGreen"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" VerticalAlignment="Top" Margin="0,50,0,0"  Click="HighlightButton_Click"/>
+                                                    <Button Background="DarkOliveGreen"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="50,50,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Green"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="100,50,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="ForestGreen"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="150,50,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="LimeGreen"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="200,50,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Lime"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="250,50,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="SpringGreen"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="300,50,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="GreenYellow"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="350,50,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="DarkBlue"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" VerticalAlignment="Top" Margin="0,100,0,0"  Click="HighlightButton_Click"/>
+                                                    <Button Background="DarkSlateBlue"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="50,100,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Blue"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="100,100,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="CornflowerBlue"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="150,100,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="DodgerBlue"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="200,100,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="DeepSkyBlue"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="250,100,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="LightSkyBlue"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="300,100,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="LightBlue"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="350,100,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="DarkOrange"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" VerticalAlignment="Top" Margin="0,150,0,0"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Orange"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="50,150,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Yellow"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="100,150,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="AntiqueWhite"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="150,150,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="LightGoldenrodYellow"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="200,150,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="LightYellow"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="250,150,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="WhiteSmoke"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="300,150,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="FloralWhite"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="350,150,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Black"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" VerticalAlignment="Top" Margin="0,200,0,0"  Click="HighlightButton_Click"/>
+                                                    <Button Background="DimGray"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="50,200,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="DarkGray"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="100,200,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Gray"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="150,200,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="LightSlateGray"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="200,200,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="LightGray"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="250,200,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="White"  FontFamily="{ThemeResource SymbolThemeFontFamily}" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="300,200,0,0" VerticalAlignment="Top"  Click="HighlightButton_Click"/>
+                                                    <Button Background="Transparent" Width="40" Height="40"  FontSize="36" Padding="0,0,0,0" Margin="350,200,0,0" VerticalAlignment="Top" Click="NullHighlightButton_Click">
+                                                        <Border BorderBrush="Red" BorderThickness="1" Width="39" RenderTransformOrigin="0.5,0.5">
+                                                            <Border.RenderTransform>
+                                                                <CompositeTransform Rotation="46.118"/>
+                                                            </Border.RenderTransform>
+                                                        </Border>
+                                                    </Button>
+                                                </Grid>
+                                                <ColorPicker x:Name="BackPicker" ColorChanged="BackPicker_ColorChanged" Color="#00000000" Margin="0,15,0,0"/>
+                                            </StackPanel>
+                                        </Flyout>
+                                    </muxc:SplitButton.Flyout>
+                                    <Grid>
+                                        <TextBlock x:Name="BackAccent" Text="&#xE891;" Foreground="White"  FontSize="14"/>
+                                        <Border Background="#FFFFBB00" Margin="1,1,1,11"/>
+                                        <Border Background="#FFFF9800" Margin="2,5,2,8" CornerRadius="0,0,1,1"/>
+                                        <TextBlock Text="&#xE193;"  FontSize="14" Foreground="{Binding Foreground, ElementName=BorTextAccent}"/>
+                                    </Grid>
+                                </muxc:SplitButton>
+                            </AppBarElementContainer>
+                            <AppBarElementContainer>
                                 <muxc:NumberBox
                     x:Name="FontSizeBox"
                     MinWidth="120"
