@@ -134,7 +134,7 @@ GroupName="AppTheme">
 
                         <controls1:SettingsExpander x:Name="aboutblock"
             Header="UltraTextEdit UWP"
-            Description="10.0.22000.2777">
+            Description="10.0.22000.2836">
                             <controls1:SettingsExpander.HeaderIcon>
                                 <BitmapIcon UriSource="ms-appx:///Assets/utevericon.png" ShowAsMonochrome="False" Height="24" Width="24"/>
                             </controls1:SettingsExpander.HeaderIcon>
