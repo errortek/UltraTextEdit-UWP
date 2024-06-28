@@ -185,6 +185,23 @@ namespace UTE_UWP_.Views
             {
                 LocalSettings.Values["SpellCheck"] = "Off";
             }
+            if (LocalSettings.Values["TextWrapping"] != null) {
+                if ((string)LocalSettings.Values["TextWrapping"] == "No wrap")
+                {
+                    editor.TextWrapping = TextWrapping.NoWrap;
+                }
+                if ((string)LocalSettings.Values["TextWrapping"] == "Wrap")
+                {
+                    editor.TextWrapping = TextWrapping.Wrap;
+                }
+                if ((string)LocalSettings.Values["TextWrapping"] == "Wrap whole words")
+                {
+                    editor.TextWrapping = TextWrapping.WrapWholeWords;
+                }
+            } else
+            {
+                LocalSettings.Values["TextWrapping"] = "No wrap";
+            }
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
