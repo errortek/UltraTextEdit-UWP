@@ -353,6 +353,78 @@ namespace UTE_UWP_.Views
                 }
             }
         }
-    }
 
+        private void SSButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private async void SettingsSaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ThemeBox != null)
+            {
+                if (ThemeBox.SelectedIndex == 0)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "Mica Light");
+                    SettingsHelper.SetSetting("Core.UI", "WinUI");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "High Visibility");
+                }
+                if (ThemeBox.SelectedIndex == 1)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "Mica Dark");
+                    SettingsHelper.SetSetting("Core.UI", "WinUI");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "High Visibility");
+                }
+                if (ThemeBox.SelectedIndex == 2)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "Mica Light");
+                    SettingsHelper.SetSetting("Core.UI", "CrimsonUI");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "Reveal Focus");
+                }
+                if (ThemeBox.SelectedIndex == 3)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "Mica Dark");
+                    SettingsHelper.SetSetting("Core.UI", "CrimsonUI");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "Reveal Focus");
+                }
+                if (ThemeBox.SelectedIndex == 4)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "Win32 Light");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "DottedLine");
+                }
+                if (ThemeBox.SelectedIndex == 5)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "Win32 Dark");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "DottedLine");
+                }
+                if (ThemeBox.SelectedIndex == 6)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "Acrylic Glass");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "DottedLine");
+                }
+                if (ThemeBox.SelectedIndex == 7)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "Luna");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "DottedLine");
+                }
+                if (ThemeBox.SelectedIndex == 8)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "Win32 Legacy");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "DottedLine");
+                }
+                if (ThemeBox.SelectedIndex == 9)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "10 Light");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "High Visibility");
+                }
+                if (ThemeBox.SelectedIndex == 10)
+                {
+                    SettingsHelper.SetSetting("Core.Theme", "10 Dark");
+                    SettingsHelper.SetSetting("Core.FocusVisualKind", "High Visibility");
+                }
+            }
+
+            await CoreApplication.RequestRestartAsync("Settings");
+        }
+    }
 }
