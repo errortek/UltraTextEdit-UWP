@@ -27,8 +27,8 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Add spellcheck features<LineBreak/>
-            • Add the ability to adjust text wrapping of the RichEditBox
+              • Add new visual styles - CrimsonUI, Acrylic Glass, and Win32 style<LineBreak/>
+            • Redesign the Settings UI
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
