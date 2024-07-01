@@ -27,8 +27,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Add new visual styles - CrimsonUI, Acrylic Glass, and Win32 style<LineBreak/>
-            • Redesign the Settings UI
+              • Remove Insider badge in the titlebar and use a new Dev icon instead<LineBreak/>
+              • UI adjustments for a better CrimsonUI experience<LineBreak/>
+              • Fix a bug where the Settings page was unable to be scrolled
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
