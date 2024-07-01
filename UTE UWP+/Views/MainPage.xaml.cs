@@ -947,11 +947,6 @@ namespace UTE_UWP_.Views
 
         }
 
-        private void showinsiderinfo(object sender, RoutedEventArgs e)
-        {
-            ToggleThemeTeachingTip1.IsOpen = true;
-        }
-
         private void OnKeyboardAcceleratorInvoked(Windows.UI.Xaml.Input.KeyboardAccelerator sender, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
         {
             switch (sender.Key)

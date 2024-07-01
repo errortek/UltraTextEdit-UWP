@@ -657,21 +657,6 @@
                         FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
                         </StackPanel>
                     </Border>
-                    <Grid x:Name="InsiderGrid">
-                        <Button Background="#FFFFC225" Width="50" Height="25" Padding="0" CornerRadius="8" Click="showinsiderinfo">
-                            <Grid>
-                                <TextBlock Text="DEV" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
-                            </Grid>
-                        </Button>
-                        <muxc:TeachingTip x:Name="ToggleThemeTeachingTip1"
-    Target="{x:Bind InsiderGrid}"
-    Title="Dev Channel"
-    Subtitle="The Dev Channel is the Insider Channel that receives builds with the latest features and may contain features that may not get released to the public. Beware, as these builds may be buggy or crash!">
-                            <muxc:TeachingTip.IconSource>
-                                <muxc:FontIconSource  Glyph="&#xF1AD;"/>
-                            </muxc:TeachingTip.IconSource>
-                        </muxc:TeachingTip>
-                    </Grid>
                     <TextBlock
                         x:Name="UnsavedTextBlock"
                         Padding="5,0"
