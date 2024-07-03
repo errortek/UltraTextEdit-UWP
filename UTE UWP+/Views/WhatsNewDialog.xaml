@@ -27,9 +27,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Remove Insider badge in the titlebar and use a new Dev icon instead<LineBreak/>
-              • UI adjustments for a better CrimsonUI experience<LineBreak/>
-              • Fix a bug where the Settings page was unable to be scrolled
+              • UI adjustments for both WinUI and CrimsonUI themes
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
