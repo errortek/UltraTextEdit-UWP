@@ -291,7 +291,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="OldCrimsonToolbarToggleButton" TargetType="ToggleButton">
+    <Style x:Key="CrimsonToolbarToggleButton" TargetType="ToggleButton">
         <Setter Property="BackgroundSizing" Value="OuterBorderEdge" />
         <Setter Property="Foreground" Value="{ThemeResource ToggleButtonForeground}" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -613,7 +613,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="CrimsonToolbarToggleButton" TargetType="ToggleButton">
+    <Style x:Key="OldCrimsonToolbarToggleButton" TargetType="ToggleButton">
         <Setter Property="Background" Value="{ThemeResource ToggleButtonBackground}"/>
         <Setter Property="BackgroundSizing" Value="OuterBorderEdge"/>
         <Setter Property="Foreground" Value="{ThemeResource ToggleButtonForeground}"/>
