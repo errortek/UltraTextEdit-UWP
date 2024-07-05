@@ -149,7 +149,7 @@ GroupName="AppTheme">
                                 <controls1:SettingsCard Header="CommunityToolkit.Common" Description="version 8.2.2, released October 25, 2023"/>
                                 <controls1:SettingsCard Header="CommunityToolkit.Uwp.Controls.Segmented" Description="version 8.1.240606-rc, released June 6, 2024"/>
                                 <controls1:SettingsCard Header="CommunityToolkit.Uwp.Controls.SettingsControls" Description="version 8.1.240606-rc, released June 6, 2024"/>
-                                <controls1:SettingsCard Header="MicaForUWP" Description="version 0.1.10, released July 18, 2023"/>
+                                <controls1:SettingsCard Header="MicaForUWP" Description="version 0.1.11, released June 29, 2024"/>
                                 <controls1:SettingsCard Header="Microsoft.NETCore.UniversalWindowsPlatform" Description="version 6.2.14, released June 13, 2022"/>
                                 <controls1:SettingsCard Header="Microsoft.Toolkit.Uwp" Description="version 7.1.3, released November 1, 2022"/>
                                 <controls1:SettingsCard Header="Microsoft.Toolkit.Uwp.Notifications" Description="version 7.1.3, released November 1, 2022"/>
