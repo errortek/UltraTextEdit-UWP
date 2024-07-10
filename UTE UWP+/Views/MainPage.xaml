@@ -1444,24 +1444,16 @@ VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5,5,5,5" ToolTi
                                     <Flyout Placement="Bottom" x:Name="symbolsflyout">
                                         <RelativePanel>
                                             <StackPanel>
-                                                <VariableSizedWrapGrid
+                                                <WrapGrid
                                     x:Name="symbolGrid"
                                     MaximumRowsOrColumns="4"
                                     Orientation="Horizontal">
-                                                    <VariableSizedWrapGrid.Resources>
-                                                        <Style TargetType="Rectangle">
-                                                            <Setter Property="Width" Value="32" />
-                                                            <Setter Property="Height" Value="32" />
-                                                        </Style>
-
+                                                    <WrapGrid.Resources>
                                                         <Style TargetType="Button">
-                                                            <Setter Property="Padding" Value="0" />
-                                                            <Setter Property="MinWidth" Value="32" />
-                                                            <Setter Property="MinHeight" Value="32" />
-                                                            <Setter Property="Margin" Value="5" />
-                                                            <Setter Property="CornerRadius" Value="8" />
+                                                            <Setter Property="Background" Value="Transparent"/>
+                                                            <Setter Property="BorderThickness" Value="0"/>
                                                         </Style>
-                                                    </VariableSizedWrapGrid.Resources>
+                                                    </WrapGrid.Resources>
                                                     <Button
                                         AutomationProperties.Name="Mutiply"
                                         Click="SymbolButton_Click"
@@ -1511,7 +1503,7 @@ VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5,5,5,5" ToolTi
                                                 Content="√">
                                                     </Button>
 
-                                                </VariableSizedWrapGrid>
+                                                </WrapGrid>
                                                 <Button Content="More symbols" Click="more_symbols" Width="160"/>
                                             </StackPanel>
                                         </RelativePanel>
