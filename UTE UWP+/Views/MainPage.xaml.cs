@@ -1103,7 +1103,7 @@ namespace UTE_UWP_.Views
             var myDocument = editor.Document;
             string oldText;
             myDocument.GetText(TextGetOptions.None, out oldText);
-            myDocument.SetText(TextSetOptions.None, oldText + text);
+            editor.Document.Selection.Text = text;
 
             symbolbut.Flyout.Hide();
             Symbols_Insert.Flyout.Hide();
