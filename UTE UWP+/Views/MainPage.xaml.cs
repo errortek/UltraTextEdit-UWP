@@ -1630,8 +1630,8 @@ namespace UTE_UWP_.Views
             dialog.Title = "Insert symbol";
 
             // Create a ListView for the user to select the date format
-            ListView listView = new ListView();
-            listView.SelectionMode = ListViewSelectionMode.Single;
+            GridView listView = new GridView();
+            listView.SelectionMode = GridViewSelectionMode.Single;
 
             // Create a list of date formats to display in the ListView
             List<string> symbols = new List<string>();
