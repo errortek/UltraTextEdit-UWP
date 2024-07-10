@@ -1631,7 +1631,7 @@ namespace UTE_UWP_.Views
 
             // Create a ListView for the user to select the date format
             GridView listView = new GridView();
-            listView.SelectionMode = GridViewSelectionMode.Single;
+            listView.SelectionMode = ListViewSelectionMode.Single;
 
             // Create a list of date formats to display in the ListView
             List<string> symbols = new List<string>();
