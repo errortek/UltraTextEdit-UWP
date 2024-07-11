@@ -1444,16 +1444,18 @@ VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5,5,5,5" ToolTi
                                     <Flyout Placement="Bottom" x:Name="symbolsflyout">
                                         <RelativePanel>
                                             <StackPanel>
-                                                <WrapGrid
+                                                <VariableSizedWrapGrid
                                     x:Name="symbolGrid"
                                     MaximumRowsOrColumns="4"
                                     Orientation="Horizontal">
-                                                    <WrapGrid.Resources>
+                                                    <VariableSizedWrapGrid.Resources>
                                                         <Style TargetType="Button">
                                                             <Setter Property="Background" Value="Transparent"/>
                                                             <Setter Property="BorderThickness" Value="0"/>
+                                                            <Setter Property="CornerRadius" Value="4"/>
+                                                            <Setter Property="Margin" Value="4"/>
                                                         </Style>
-                                                    </WrapGrid.Resources>
+                                                    </VariableSizedWrapGrid.Resources>
                                                     <Button
                                         AutomationProperties.Name="Mutiply"
                                         Click="SymbolButton_Click"
@@ -1503,7 +1505,7 @@ VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5,5,5,5" ToolTi
                                                 Content="√">
                                                     </Button>
 
-                                                </WrapGrid>
+                                                </VariableSizedWrapGrid>
                                                 <Button Content="More symbols" Click="more_symbols" Width="160"/>
                                             </StackPanel>
                                         </RelativePanel>
