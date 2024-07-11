@@ -120,6 +120,7 @@ namespace UTE_UWP_.Views
             Comments.Visibility = Visibility.Collapsed;
             Developer.Visibility = Visibility.Collapsed;
             Help.Visibility = Visibility.Collapsed;
+            HomeNav.SelectedItem = HomeNavItem;
 
             ShareSourceLoad();
 
@@ -2305,6 +2306,80 @@ namespace UTE_UWP_.Views
             ITextRange Range = RichEditor.Document.GetRange(0, Text.Length);
             Range.GetText(TextGetOptions.UseCrlf, out string Value);
             return Value;
+        }
+
+        private void NavigationView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
+        {
+            if (HomePage.Visibility == Visibility.Visible)
+            {
+                if (HomeNav.SelectedItem != null)
+                {
+                    if (HomeNav.SelectedItem == HomeNavItem)
+                    {
+                        HomePanel.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        if (HomePanel != null)
+                        {
+                            HomePanel.Visibility = Visibility.Collapsed;
+                        }
+
+                    }
+                    if (HomeNav.SelectedItem == NewNavItem)
+                    {
+                        NewPanel.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        if (NewPanel != null)
+                        {
+                            NewPanel.Visibility = Visibility.Collapsed;
+                        }
+
+                    }
+                    if (HomeNav.SelectedItem == AccountNavItem)
+                    {
+                        UserText.Text = Environment.UserName;
+                        AccountsStackPanel.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        if (AccountsStackPanel != null)
+                        {
+                            AccountsStackPanel.Visibility = Visibility.Collapsed;
+                        }
+
+                    }
+                    if (args.IsSettingsSelected)
+                    {
+                        SettingsFrame.Navigate(typeof(SettingsPage));
+                        SettingsFrame.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        if (SettingsFrame != null)
+                        {
+                            SettingsFrame.Visibility = Visibility.Collapsed;
+                        }
+                    }
+
+                }
+                else
+                {
+                    HomeNav.SelectedItem = HomeNavItem;
+                }
+            }
+        }
+
+        private void ChangelogButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AboutItem_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

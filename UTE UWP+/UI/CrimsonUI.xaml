@@ -4369,7 +4369,7 @@ RenderTransformOrigin="0.5, 0.5" Data="F1 M 2.9492 14.7949 C 2.9492 14.4759 3.04
 
                             <Button x:Name="CloseButton" Style="{StaticResource DefaultButtonStyle}" Grid.Column="2" BorderThickness="0" Padding="10, 5, 10, 5" Margin="0, 0, -2, 0" Background="{ThemeResource TabViewItemHeaderCloseButtonBackground}" FontSize="{ThemeResource TabViewItemHeaderCloseFontSize}" Foreground="{ThemeResource TabViewItemHeaderCloseButtonForeground}" HighContrastAdjustment="None" IsTabStop="False" IsTextScaleFactorEnabled="False">
                                 <Button.Content>
-                                    <FontIcon FontFamily="{StaticResource CustomFont}" Glyph="&#xE106;" FontSize="12"/>
+                                    <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE106;" FontSize="12"/>
                                 </Button.Content>
                             </Button>
                         </Grid>
@@ -4667,7 +4667,7 @@ RenderTransformOrigin="0.5, 0.5" Data="F1 M 2.9492 14.7949 C 2.9492 14.4759 3.04
                             <ContentPresenter x:Name="LeftContentPresenter" ContentTemplate="{TemplateBinding TabStripHeaderTemplate}" Grid.Column="0" Content="{TemplateBinding TabStripHeader}"/>
                             <primitiveContract7Present:TabViewListView x:Name="TabListView" AllowDrop="{TemplateBinding AllowDropTabs}" CanReorderItems="{TemplateBinding CanReorderTabs}" Grid.Column="1" CanDragItems="{TemplateBinding CanDragTabs}" ItemTemplate="{TemplateBinding TabItemTemplate}" ItemsSource="{TemplateBinding TabItemsSource}" ItemTemplateSelector="{TemplateBinding TabItemTemplateSelector}" Padding="{TemplateBinding Padding}"/>
                             <Border Grid.Column="2" Padding="{ThemeResource TabViewItemAddButtonContainerPadding}" VerticalAlignment="Bottom" Visibility="{Binding IsAddTabButtonVisible, RelativeSource={RelativeSource Mode=TemplatedParent}}">
-                                <Button x:Name="AddButton" Margin="0, -32, 0, 0" Command="{TemplateBinding AddTabButtonCommand}" CommandParameter="{TemplateBinding AddTabButtonCommandParameter}" Content="&#xE109;" HorizontalAlignment="Center" HighContrastAdjustment="None" IsTextScaleFactorEnabled="False" VerticalAlignment="Center" FontFamily="{StaticResource CustomFont}" Width="32" Height="26" FontSize="14" Padding="0,0,0,0"/>
+                                <Button x:Name="AddButton" Margin="0, -32, 0, 0" Command="{TemplateBinding AddTabButtonCommand}" CommandParameter="{TemplateBinding AddTabButtonCommandParameter}" Content="&#xE109;" HorizontalAlignment="Center" HighContrastAdjustment="None" IsTextScaleFactorEnabled="False" VerticalAlignment="Center" FontFamily="{StaticResource SymbolThemeFontFamily}" Width="32" Height="26" FontSize="14" Padding="0,0,0,0"/>
                             </Border>
                             <ContentPresenter x:Name="RightContentPresenter" ContentTemplate="{TemplateBinding TabStripFooterTemplate}" Grid.Column="3" Content="{TemplateBinding TabStripFooter}" HorizontalAlignment="Stretch"/>
                         </Grid>
