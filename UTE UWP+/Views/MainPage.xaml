@@ -2020,70 +2020,64 @@ ToolTipService.ToolTip="Compute Hash">
                                                         <RelativePanel>
                                                             <StackPanel>
                                                                 <VariableSizedWrapGrid
-x:Name="symbolGrid2"
-MaximumRowsOrColumns="4"
-Orientation="Horizontal">
+                                    x:Name="symbolGrid2"
+                                    MaximumRowsOrColumns="4"
+                                    Orientation="Horizontal">
                                                                     <VariableSizedWrapGrid.Resources>
-                                                                        <Style TargetType="Rectangle">
-                                                                            <Setter Property="Width" Value="32" />
-                                                                            <Setter Property="Height" Value="32" />
-                                                                        </Style>
-
                                                                         <Style TargetType="Button">
-                                                                            <Setter Property="Padding" Value="0" />
-                                                                            <Setter Property="MinWidth" Value="32" />
-                                                                            <Setter Property="MinHeight" Value="32" />
-                                                                            <Setter Property="Margin" Value="5" />
-                                                                            <Setter Property="CornerRadius" Value="8" />
+                                                                            <Setter Property="Background" Value="Transparent"/>
+                                                                            <Setter Property="BorderThickness" Value="0"/>
+                                                                            <Setter Property="CornerRadius" Value="4"/>
+                                                                            <Setter Property="Margin" Value="4"/>
                                                                         </Style>
                                                                     </VariableSizedWrapGrid.Resources>
                                                                     <Button
-    AutomationProperties.Name="Mutiply"
-    Click="SymbolButton_Click"
-    ToolTipService.ToolTip="Multiplication symbol"
-     Content="×">
+                                        AutomationProperties.Name="Mutiply"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Multiplication symbol"
+                                         Content="×">
                                                                     </Button>
                                                                     <Button
-    AutomationProperties.Name="Divide"
-    Click="SymbolButton_Click"
-    ToolTipService.ToolTip="Division symbol"
-            Content="÷">
+                                        AutomationProperties.Name="Divide"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Division symbol"
+                                                Content="÷">
                                                                     </Button>
                                                                     <Button
-    AutomationProperties.Name="LeftArrow"
-    Click="SymbolButton_Click"
-    ToolTipService.ToolTip="Left Arrow symbol"
-            Content="←">
+                                        AutomationProperties.Name="LeftArrow"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Left Arrow symbol"
+                                                Content="←">
                                                                     </Button>
                                                                     <Button
-    AutomationProperties.Name="RightArrow"
-    Click="SymbolButton_Click"
-    ToolTipService.ToolTip="Right Arrow symbol"
-            Content="→">
+                                        AutomationProperties.Name="RightArrow"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Right Arrow symbol"
+                                                Content="→">
                                                                     </Button>
                                                                     <Button
-    AutomationProperties.Name="Degree"
-    Click="SymbolButton_Click"
-    ToolTipService.ToolTip="Degree symbol"
-            Content="°">
+                                        AutomationProperties.Name="Degree"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Degree symbol"
+                                                Content="°">
                                                                     </Button>
                                                                     <Button
-    AutomationProperties.Name="Paragraph"
-    Click="SymbolButton_Click"
-    ToolTipService.ToolTip="Paragraph symbol"
-            Content="§">
+                                        AutomationProperties.Name="Paragraph"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Paragraph symbol"
+                                                Content="§">
                                                                     </Button>
                                                                     <Button
-    AutomationProperties.Name="Mu"
-    Click="SymbolButton_Click"
-    ToolTipService.ToolTip="Lowercase mu (micro) symbol"
-            Content="µ">
+                                        AutomationProperties.Name="Mu"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Lowercase mu (micro) symbol"
+                                                Content="µ">
                                                                     </Button>
                                                                     <Button
-    AutomationProperties.Name="SquareRoot"
-    Click="SymbolButton_Click"
-    ToolTipService.ToolTip="Square root symbol"
-            Content="√">
+                                        AutomationProperties.Name="SquareRoot"
+                                        Click="SymbolButton_Click"
+                                        ToolTipService.ToolTip="Square root symbol"
+                                                Content="√">
                                                                     </Button>
 
                                                                 </VariableSizedWrapGrid>
@@ -2091,6 +2085,7 @@ Orientation="Horizontal">
                                                             </StackPanel>
                                                         </RelativePanel>
                                                     </Flyout>
+
                                                 </Button.Flyout>
                                             </Button>
                                         </StackPanel>
