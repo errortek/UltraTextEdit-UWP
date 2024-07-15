@@ -3,6 +3,7 @@ using Microsoft.Graphics.Canvas.Text;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;
@@ -29,6 +30,8 @@ namespace UTE_UWP_.Views
     public sealed partial class SettingsPage : Page, INotifyPropertyChanged
     {
         private ElementTheme _elementTheme = ThemeSelectorService.Theme;
+        string RestartArgs;
+
 
         public ElementTheme ElementTheme
         {
@@ -261,9 +264,15 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private void SSButton_Click_1(object sender, RoutedEventArgs e)
+        private async void SSButton_Click_1(object Sender, RoutedEventArgs EvArgs)
         {
-
+            RestartArgs = "e";
+            ApplicationDataContainer LS = ApplicationData.Current.LocalSettings;
+            foreach (KeyValuePair<string, object> item in LS.Values.ToList())
+            {
+                LS.Values.Remove(item.Key);
+            }
+            await CoreApplication.RequestRestartAsync(RestartArgs);
         }
 
         private async void SettingsSaveButton_Click(object sender, RoutedEventArgs e)
@@ -330,8 +339,8 @@ namespace UTE_UWP_.Views
                     SettingsHelper.SetSetting("Core.FocusVisualKind", "High Visibility");
                 }
             }
-
-            await CoreApplication.RequestRestartAsync("Settings");
+            RestartArgs = "e";
+            await CoreApplication.RequestRestartAsync(RestartArgs);
         }
     }
 }
