@@ -57,8 +57,6 @@ namespace UTE_UWP_.Views
         public SettingsPage()
         {
             InitializeComponent();
-            ((SystemAccentColorSetting)Application.Current.Resources["SystemAccentColorSetting"]).SystemAccentColor = new SolidColorBrush(Colors.Red);
-
 
             if (BuildInfo.BeforeWin11)
             {
