@@ -1727,7 +1727,7 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private async void BlankFIle(object sender, RoutedEventArgs e)
+        private async void InsertBlank(object sender, RoutedEventArgs e)
         {
             await ShowUnsavedDialog2();
 
