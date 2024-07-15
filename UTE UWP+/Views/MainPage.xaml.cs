@@ -875,7 +875,7 @@ namespace UTE_UWP_.Views
 
             if (Window.Current.Content is Frame rootFrame)
             {
-                rootFrame.Navigate(typeof(SettingsPage));
+                rootFrame.Navigate(typeof(SettingsPageContainer));
             }
         }
 
