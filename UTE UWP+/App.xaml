@@ -14,24 +14,7 @@
                 <ResourceDictionary Source="/Styles/_Thickness.xaml" />
                 <ResourceDictionary Source="/Styles/TextBlock.xaml" />
                 <ResourceDictionary Source="/Styles/Page.xaml"/>
-                <!--<ColorPaletteResources Accent="#FF8961CC" AltHigh="#FF000000" AltLow="#FF000000" AltMedium="#FF000000" AltMediumHigh="#FF000000" AltMediumLow="#FF000000" BaseHigh="#FFFFFFFF" BaseLow="#FF64576B" BaseMedium="#FFB6AABC" BaseMediumHigh="#FFCBBFD0" BaseMediumLow="#FF8D8193" ChromeAltLow="#FFCBBFD0" ChromeBlackHigh="#FF000000" ChromeBlackLow="#FFCBBFD0" ChromeBlackMedium="#FF000000" ChromeBlackMediumLow="#FF000000" ChromeDisabledHigh="#FF64576B" ChromeDisabledLow="#FFB6AABC" ChromeGray="#FFA295A8" ChromeHigh="#FFA295A8" ChromeLow="#FF332041" ChromeMedium="#FF3F2E4B" ChromeMediumLow="#FF584960" ChromeWhite="#FFFFFFFF" ListLow="#FF3F2E4B" ListMedium="#FF64576B" />-->
-                
-                <ResourceDictionary x:Name="DefaultAccent">
-                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
-            <local:SystemAccentColorSetting x:Key="SystemAccentColorSetting"/>
-            <!--Accent color themes-->
-            <ResourceDictionary x:Name="LilacAccent">
-                <Color x:Key="SystemAccentColorDark1">#FF9875D4</Color>
-                <Color x:Key="SystemAccentColorDark2">#FFA788DD</Color>
-                <Color x:Key="SystemAccentColorDark3">#FFB79CE5</Color>
-                <Color x:Key="SystemAccentColorLight1">#FF7752BA</Color>
-                <Color x:Key="SystemAccentColorLight2">#FF6543A9</Color>
-                <Color x:Key="SystemAccentColorLight3">#FF543397</Color>
-                <Color x:Key="SystemAccentColor">#FF8961CC</Color>
-                <Color x:Key="RegionColor">#FF262738</Color>
-                <SolidColorBrush x:Key="RegionBrush" Color="{StaticResource RegionColor}" />
-            </ResourceDictionary>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
