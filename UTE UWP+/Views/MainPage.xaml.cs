@@ -1867,21 +1867,6 @@ namespace UTE_UWP_.Views
             HelpButton.IsChecked = true;
         }
 
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_7(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ribbonToggle_Toggled(object sender, RoutedEventArgs e)
         {
             if (ribbonToggle.IsOn == true)

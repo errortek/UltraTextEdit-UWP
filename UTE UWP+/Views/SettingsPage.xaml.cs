@@ -264,7 +264,7 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private async void SSButton_Click_1(object Sender, RoutedEventArgs EvArgs)
+        private async void SettingsResetButton_Click(object Sender, RoutedEventArgs EvArgs)
         {
             RestartArgs = "e";
             ApplicationDataContainer LS = ApplicationData.Current.LocalSettings;

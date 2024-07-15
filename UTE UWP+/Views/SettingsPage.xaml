@@ -254,7 +254,7 @@ Click="VIDsButton_Click"
         <controlsold:DropShadowPanel Grid.Row="1" BlurRadius="25" Color="#66000000" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="10, 0, 10, 25" VerticalAlignment="Bottom">
             <controls:SettingsCard BorderThickness="1" CornerRadius="4,4,4,4" VerticalAlignment="Bottom" Background="{StaticResource AcrylicBackgroundFillColorBaseBrush}">
                 <StackPanel Orientation="Horizontal" Spacing="10">
-                    <Button Click="SSButton_Click_1" Content="Reset app settings" HorizontalAlignment="Right" Style="{StaticResource DeleteRedButtonStyle}"/>
+                    <Button Click="SettingsResetButton_Click" Content="Reset app settings" HorizontalAlignment="Right" Style="{StaticResource DeleteRedButtonStyle}"/>
                     <Button Content="Save and Restart" Click="SettingsSaveButton_Click" VerticalAlignment="Center" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Right"/>
                 </StackPanel>
             </controls:SettingsCard>
