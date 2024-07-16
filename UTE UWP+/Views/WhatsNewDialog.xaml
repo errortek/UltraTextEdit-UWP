@@ -27,7 +27,10 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • UI adjustments for both WinUI and CrimsonUI themes
+              • Introduction of 3 new accent colors - Seafoam, Blue, and Crimson<LineBreak/>
+              • Add blank template to the Home Menu<LineBreak/>
+              • Internal rearchitecture of Settings<LineBreak/>
+              • Fixes to app restart and settings reset functionality
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
