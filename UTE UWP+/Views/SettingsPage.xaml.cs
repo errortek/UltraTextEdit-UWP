@@ -52,8 +52,10 @@ namespace UTE_UWP_.Views
         public List<string> accentcolors = new List<string>
         {
             "Default",
-            //"Windows 10 Blue",
+            "Blue",
+            "Seafoam",
             "Slate Green",
+            "Crimson",
             "Lilac"
         };
 
@@ -72,6 +74,18 @@ namespace UTE_UWP_.Views
             if ((string)LocalSettings.Values["AccentTheme"] == "Lilac")
             {
                 AccentBox.SelectedItem = "Lilac";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Crimson")
+            {
+                AccentBox.SelectedItem = "Crimson";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Seafoam")
+            {
+                AccentBox.SelectedItem = "Seafoam";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Blue")
+            {
+                AccentBox.SelectedItem = "Blue";
             }
             if ((string)LocalSettings.Values["AccentTheme"] == "Default")
             {
@@ -228,6 +242,18 @@ namespace UTE_UWP_.Views
                 } else if ((string)AccentBox.SelectedItem == "Lilac")
                 {
                     LocalSettings.Values["AccentTheme"] = "Lilac";
+                }
+                else if ((string)AccentBox.SelectedItem == "Seafoam")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Seafoam";
+                }
+                else if ((string)AccentBox.SelectedItem == "Blue")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Blue";
+                }
+                else if ((string)AccentBox.SelectedItem == "Crimson")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Crimson";
                 }
             }   
         }
