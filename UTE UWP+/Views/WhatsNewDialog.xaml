@@ -27,10 +27,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Introduction of 3 new accent colors - Seafoam, Blue, and Crimson<LineBreak/>
-              • Add blank template to the Home Menu<LineBreak/>
-              • Internal rearchitecture of Settings<LineBreak/>
-              • Fixes to app restart and settings reset functionality
+              • Add all templates that were present in the old Home Menu to the new Home Menu<LineBreak/>
+              • Update app's package name<LineBreak/>
+              • Make the new Ribbon the default and enable text wrapping by default
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
