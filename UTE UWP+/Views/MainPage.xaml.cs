@@ -168,8 +168,8 @@ namespace UTE_UWP_.Views
             }
             else
             {
-                LocalSettings.Values["NewRibbon"] = "Off";
-                ribbonToggle.IsOn = false;
+                LocalSettings.Values["NewRibbon"] = "On";
+                ribbonToggle.IsOn = true;
             }
             if (LocalSettings.Values["SpellCheck"] != null)
             {
