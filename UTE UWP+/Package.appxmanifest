@@ -12,7 +12,7 @@
   IgnorableNamespaces="uap mp genTemplate uap5 uap3 desktop4 iot2">
 
   <Identity
-    Name="JPB.Office.UTEUWP.Plus"
+    Name="UTEUWP.Plus"
     Publisher="CN=jpb"
     Version="10.0.26252.1000" />
 

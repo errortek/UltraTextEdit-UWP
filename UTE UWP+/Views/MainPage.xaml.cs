@@ -169,7 +169,10 @@ namespace UTE_UWP_.Views
             else
             {
                 LocalSettings.Values["NewRibbon"] = "On";
+                ButtonPanel.Visibility = Visibility.Collapsed;
+                Ribbon.Visibility = Visibility.Visible;
                 ribbonToggle.IsOn = true;
+                finditem.Visibility = Visibility.Visible;
             }
             if (LocalSettings.Values["SpellCheck"] != null)
             {
