@@ -201,7 +201,7 @@ namespace UTE_UWP_.Views
                 }
             } else
             {
-                LocalSettings.Values["TextWrapping"] = "No wrap";
+                LocalSettings.Values["TextWrapping"] = "Wrap whole words";
             }
         }
 
