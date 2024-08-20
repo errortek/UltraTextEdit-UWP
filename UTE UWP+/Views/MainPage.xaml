@@ -2070,18 +2070,32 @@ ToolTipService.ToolTip="Compute Hash">
             </SplitView>
             <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
                 <diags:MessageBoxesGrid>
-                    <diags:MessageBox x:Name="AboutBox" IsSingleButton="True" FirstButtonText="OK" Title="About" BlockUserInput="False" RememberPosition="False" MessageBoxHeight="370" MessageBoxWidth="400" d:IsHidden="True">
-                        <Grid Margin="10,0,10,0">
-                            <Image HorizontalAlignment="Left" Height="90" Margin="5,5,0,0" VerticalAlignment="Top" Width="90" Source="/Assets/utevericon.png"/>
-                            <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,20,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP Plus" VerticalAlignment="Top" FontSize="16"/>
-                            <TextBlock Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11">Version 10.0.26257.1000 - Dev Channel<LineBreak/>Copyright ©️ jpb/ErrorTek 2021-2024, © Ivirius 2023-2024
-<LineBreak/>Licensed under the MIT License</TextBlock>
-                            <StackPanel Margin="0,120,0,0">
-                                <HyperlinkButton Content="WinUI 2.8.6" Click="HyperlinkButton_Click"/>
-                                <HyperlinkButton Content="Windows Community Toolkit 7.1.3" Click="HyperlinkButton_Click_1"/>
-                                <HyperlinkButton Content="UWP (Universal Windows Platform)" Click="HyperlinkButton_Click_2"/>
+                    <diags:MessageBox x:Name="AboutBox" Title="About" IsSingleButton="True" FirstButtonText="OK" RememberPosition="False" MessageBoxHeight="520" MessageBoxWidth="400" CloseButtonStyle="Win32" d:IsHidden="True">
+                        <Grid Margin="10,-115,10,0">
+                            <Image HorizontalAlignment="Left" Height="100" Margin="5,125,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/utevericon.png"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="120,140,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP Plus" VerticalAlignment="Top" FontSize="16"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="120,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11"><Run Text="10.0.26257.1000 - Full release"/><LineBreak/><Run Text="Copyright © 2021-2024 ErrorTek"/><LineBreak/><Run Text="Compiled August 20, 2024"/><LineBreak/><Run Text="GitHub release - UWP"/><LineBreak/><Run/></TextBlock>
+                            <StackPanel Margin="0,235,0,0">
+                                <HyperlinkButton Content="WinUI 2" Padding="11,6,11,7"/>
+                                <HyperlinkButton Content="Windows Community Toolkit" Padding="11,6,11,7"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Margin="0,235,0,0">
+                                <HyperlinkButton Content="Win2D" Padding="11,6,11,7"/>
+                                <HyperlinkButton Content="MicaUWP" Padding="11,6,11,7"/>
+                            </StackPanel>
+                            <StackPanel VerticalAlignment="Top" Margin="15,350,15,0" Spacing="15">
+                                <TextBlock TextWrapping="Wrap" Text="Developers:" Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                                <Grid>
+                                    <PersonPicture Width="50" Height="50" HorizontalAlignment="Left" ProfilePicture="/Assets/ProfilePictures/ErrorTek.png"/>
+                                    <TextBlock TextWrapping="Wrap" Text="ErrorTek" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="65,0,0,0" FontSize="16"/>
+                                </Grid>
+                                <Grid>
+                                    <PersonPicture Width="50" Height="50" HorizontalAlignment="Left" ProfilePicture="/Assets/ProfilePictures/Ivirius.png"/>
+                                    <TextBlock TextWrapping="Wrap" Text="Ivirius" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="65,0,0,0" FontSize="16"/>
+                                </Grid>
                             </StackPanel>
                         </Grid>
+
                     </diags:MessageBox>
                 </diags:MessageBoxesGrid>
             </Grid>

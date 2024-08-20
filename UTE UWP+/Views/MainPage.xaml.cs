@@ -2369,5 +2369,10 @@ namespace UTE_UWP_.Views
         {
 
         }
+
+        private void Button_Click_30(object sender, RoutedEventArgs e)
+        {
+            AboutBox.Close();
+        }
     }
 }

@@ -390,6 +390,8 @@
     <Content Include="Assets\OpenFile.png" />
     <Content Include="Assets\Paste.png" />
     <Content Include="Assets\Print.png" />
+    <Content Include="Assets\ProfilePictures\Ivirius.png" />
+    <Content Include="Assets\ProfilePictures\ErrorTek.png" />
     <Content Include="Assets\Question.png" />
     <Content Include="Assets\Save.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
