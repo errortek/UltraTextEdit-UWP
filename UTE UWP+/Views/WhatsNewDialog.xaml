@@ -27,9 +27,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Add all templates that were present in the old Home Menu to the new Home Menu<LineBreak/>
-              • Update app's package name<LineBreak/>
-              • Make the new Ribbon the default and enable text wrapping by default
+              • Revamp About dialog<LineBreak/>
+              • Small UI changes to child windows<LineBreak/>
+              • Update dependencies
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
