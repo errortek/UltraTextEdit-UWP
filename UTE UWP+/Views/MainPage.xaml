@@ -2109,23 +2109,13 @@ ToolTipService.ToolTip="Compute Hash">
                             <AcrylicBrush BackgroundSource="HostBackdrop" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.35" FallbackColor="{ThemeResource SystemAccentColor}"/>
                         </Border.Background>
                     </Border>
-                    <Border BorderThickness="0,1,0,0" Height="135" Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}" BorderBrush="#338A8A8A" VerticalAlignment="Bottom"/>
                     <TextBlock TextWrapping="Wrap" Text="Home" Margin="55,18,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <Button x:Name="HideHome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="45" Height="45" Click="HideHome_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Go to workspace" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="0,0,0,0" BorderThickness="0,0,0,0" CornerRadius="0,7,0,0">
                         <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource SymbolThemeFontFamily}" Text="&#xE106;" FontSize="14"/>
                     </Button>
                     <Image Source="/Assets/Home.png" Stretch="UniformToFill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0" Width="25" Height="25"/>
-                    <StackPanel Spacing="0" Margin="0,400,0,0"/>
-                    <Grid Margin="25,0,0,20" VerticalAlignment="Bottom">
-                        <Image Height="100" Width="100" Source="/Assets/utevericon.png" HorizontalAlignment="Left"/>
-                        <TextBlock TextWrapping="Wrap" Text="UltraTextEdit UWP+" Margin="120,0,0,40" VerticalAlignment="Center" FontSize="18"/>
-                        <TextBlock TextWrapping="Wrap" Text="build 27686.1000 - © jpbandroid, Ivirius 2021 - 2024" Margin="120,10,0,0" VerticalAlignment="Center" FontSize="12"/>
-                        <StackPanel Orientation="Horizontal" Margin="120,50,0,0">
-                            <HyperlinkButton x:Name="hyperlinkButton" Content="https://errortek.vercel.app/" NavigateUri="https://errortek.vercel.app/" Padding="0,0,0,0" FontSize="11"/>
-                            <HyperlinkButton x:Name="hyperlinkButton2" Content="https://ivirius.vercel.app/" NavigateUri="https://ivirius.vercel.app/" Padding="0,0,0,0" FontSize="11"/>
-                        </StackPanel>
-                    </Grid>
-                    <muxc:NavigationView HorizontalAlignment="Left" Width="320" Height="Auto" SelectedItem="HomeNavItem" PaneDisplayMode="Left" x:Name="HomeNav" VerticalAlignment="Stretch" Margin="15,50,0,135" SelectionChanged="NavigationView_SelectionChanged" IsPaneToggleButtonVisible="False" IsBackButtonVisible="Collapsed">
+                    <StackPanel Spacing="0" Margin="0,0,0,0"/>
+                    <muxc:NavigationView HorizontalAlignment="Left" Width="320" Height="Auto" SelectedItem="HomeNavItem" PaneDisplayMode="Left" x:Name="HomeNav" VerticalAlignment="Stretch" Margin="15,50,0,0" SelectionChanged="NavigationView_SelectionChanged" IsPaneToggleButtonVisible="False" IsBackButtonVisible="Collapsed">
                         <muxc:NavigationView.MenuItems>
                             <muxc:NavigationViewItem Icon="Home" Content="Home" Tag="HomeNavItem" x:Name="HomeNavItem"/>
                             <muxc:NavigationViewItem Content="New" Icon="Document" x:Name="NewNavItem"/>
@@ -2139,7 +2129,7 @@ ToolTipService.ToolTip="Compute Hash">
                             <muxc:NavigationViewItem Content="Account" Icon="Contact" x:Name="AccountNavItem"/>
                         </muxc:NavigationView.FooterMenuItems>
                     </muxc:NavigationView>
-                    <StackPanel Margin="350,60,25,160" Spacing="10" x:Name="HomePanel">
+                    <StackPanel Margin="350,60,25,0" Spacing="10" x:Name="HomePanel">
                         <TextBlock Text="Hey there!" FontSize="36" FontWeight="SemiBold"/>
                         <muxc:Expander Header="New File" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left">
                             <ToolkitControls:WrapPanel HorizontalSpacing="10" VerticalSpacing="10">
@@ -2173,7 +2163,7 @@ ToolTipService.ToolTip="Compute Hash">
                             </ToolkitControls:WrapPanel>
                         </muxc:Expander>
                     </StackPanel>
-                    <StackPanel Margin="350,60,25,160" Spacing="10" x:Name="NewPanel" Visibility="Collapsed">
+                    <StackPanel Margin="350,60,25,0" Spacing="10" x:Name="NewPanel" Visibility="Collapsed">
                         <TextBlock Text="New File" FontSize="36" FontWeight="SemiBold"/>
                         <ScrollViewer Margin="0, 75, 0, 0" VerticalScrollMode="Enabled">
                             <StackPanel>
@@ -2230,7 +2220,7 @@ ToolTipService.ToolTip="Compute Hash">
                             </StackPanel>
                         </ScrollViewer>
                     </StackPanel>
-                    <Grid x:Name="AccountsStackPanel" Margin="350,60,25,160" Visibility="Collapsed">
+                    <Grid x:Name="AccountsStackPanel" Margin="350,60,25,0" Visibility="Collapsed">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="0.5*"/>
                             <ColumnDefinition Width="0.5*"/>
@@ -2284,7 +2274,7 @@ ToolTipService.ToolTip="Compute Hash">
                             </StackPanel>
                         </StackPanel>
                     </Grid>
-                    <Frame x:Name="SettingsFrame" Margin="350,60,25,160" Visibility="Collapsed"/>
+                    <Frame x:Name="SettingsFrame" Margin="350,60,25,0" Visibility="Collapsed"/>
                 </Grid>
             </Border>
         </Border>
