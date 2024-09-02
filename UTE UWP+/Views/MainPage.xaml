@@ -2074,7 +2074,7 @@ ToolTipService.ToolTip="Compute Hash">
                         <Grid Margin="10,-115,10,0">
                             <Image HorizontalAlignment="Left" Height="100" Margin="5,125,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/utevericon.png"/>
                             <TextBlock HorizontalAlignment="Left" Margin="120,140,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP Plus" VerticalAlignment="Top" FontSize="16"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="120,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11"><Run Text="10.0.26269.1 - Full release"/><LineBreak/><Run Text="Copyright © 2021-2024 ErrorTek"/><LineBreak/><Run Text="Compiled September 2, 2024"/><LineBreak/><Run Text="GitHub release - UWP"/><LineBreak/><Run/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" Margin="120,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11"><Run Text="10.0.27686.1000 - Full release"/><LineBreak/><Run Text="Copyright © 2021-2024 ErrorTek"/><LineBreak/><Run Text="Compiled September 2, 2024"/><LineBreak/><Run Text="GitHub release - UWP"/><LineBreak/><Run/></TextBlock>
                             <StackPanel Margin="0,235,0,0">
                                 <HyperlinkButton Content="WinUI 2" Padding="11,6,11,7"/>
                                 <HyperlinkButton Content="Windows Community Toolkit" Padding="11,6,11,7"/>
@@ -2119,7 +2119,7 @@ ToolTipService.ToolTip="Compute Hash">
                     <Grid Margin="25,0,0,20" VerticalAlignment="Bottom">
                         <Image Height="100" Width="100" Source="/Assets/utevericon.png" HorizontalAlignment="Left"/>
                         <TextBlock TextWrapping="Wrap" Text="UltraTextEdit UWP+" Margin="120,0,0,40" VerticalAlignment="Center" FontSize="18"/>
-                        <TextBlock TextWrapping="Wrap" Text="build 26269.1 - © jpbandroid, Ivirius 2021 - 2024" Margin="120,10,0,0" VerticalAlignment="Center" FontSize="12"/>
+                        <TextBlock TextWrapping="Wrap" Text="build 27686.1000 - © jpbandroid, Ivirius 2021 - 2024" Margin="120,10,0,0" VerticalAlignment="Center" FontSize="12"/>
                         <StackPanel Orientation="Horizontal" Margin="120,50,0,0">
                             <HyperlinkButton x:Name="hyperlinkButton" Content="https://errortek.vercel.app/" NavigateUri="https://errortek.vercel.app/" Padding="0,0,0,0" FontSize="11"/>
                             <HyperlinkButton x:Name="hyperlinkButton2" Content="https://ivirius.vercel.app/" NavigateUri="https://ivirius.vercel.app/" Padding="0,0,0,0" FontSize="11"/>
@@ -2265,7 +2265,7 @@ ToolTipService.ToolTip="Compute Hash">
                                     </StackPanel>
                                 </Button>
                                 <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="Build 26269.1"/>
+                                    <TextBlock Text="Build 27686.1000"/>
                                     <TextBlock Text="Dev Channel"/>
                                 </StackPanel>
                             </StackPanel>
