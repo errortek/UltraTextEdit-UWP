@@ -27,8 +27,8 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Revamp About dialog<LineBreak/>
-              • Small UI changes to child windows<LineBreak/>
+              • UI fixes in Home Menu<LineBreak/>
+              • Add more symbols to the Symbols Menu<LineBreak/>
               • Update dependencies
             </TextBlock>
         </StackPanel>
