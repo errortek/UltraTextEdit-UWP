@@ -1650,6 +1650,16 @@ namespace UTE_UWP_.Views
             symbols.Add("α");
             symbols.Add("β");
             symbols.Add("γ");
+            symbols.Add("©️");
+            symbols.Add("®️");
+            symbols.Add("™️");
+            symbols.Add("±");
+            symbols.Add("℮");
+            symbols.Add("≠");
+            symbols.Add("≡");
+            symbols.Add("≈");
+            symbols.Add("≤");
+            symbols.Add("≥");
 
             // Set the ItemsSource of the ListView to the list of date formats
             listView.ItemsSource = symbols;
