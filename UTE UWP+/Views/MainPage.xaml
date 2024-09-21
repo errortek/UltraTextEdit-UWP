@@ -2236,7 +2236,7 @@ ToolTipService.ToolTip="Compute Hash">
                             <TextBlock Text="About UltraTextEdit UWP Plus" Style="{ThemeResource BodyStrongTextBlockStyle}"/>
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Image Height="150" Width="150" Source="/Assets/utevericon.png"/>
-                                <TextBlock Text="UTE UWP+" Style="{ThemeResource TitleLargeTextBlockStyle}" VerticalAlignment="Center" TextAlignment="Center">
+                                <TextBlock Text="UTE UWP" Style="{ThemeResource TitleLargeTextBlockStyle}" VerticalAlignment="Center" TextAlignment="Center">
                                     <TextBlock.Foreground>
                                         <LinearGradientBrush>
                                             <GradientStop Color="#FF4B5BB3"/>

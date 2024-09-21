@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>UTE UWP+</value>
+    <value>UltraTextEdit UWP</value>
     <comment>Application display name</comment>
   </data>
   <data name="AppDescription" xml:space="preserve">
-    <value>UTE UWP+</value>
+    <value>UltraTextEdit UWP</value>
     <comment>Application description</comment>
   </data>
   <data name="Main_Title.Text" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Description text for SchemeActivationSamplePage</comment>
   </data>
   <data name="FirstRun_Body.Text" xml:space="preserve">
-    <value>Welcome to UTE UWP+!
+    <value>Welcome to UTE UWP!
 This is a newer and more sophisticated version of UltraTextEedit UWP, not based on the TowPad codebase!
 It contains all of UTE UWP's basic features, as well as:
 - A new, redesigned Settings menu

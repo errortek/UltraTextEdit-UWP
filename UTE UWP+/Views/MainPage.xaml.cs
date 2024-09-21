@@ -309,7 +309,7 @@ namespace UTE_UWP_.Views
                     }
                     saved = true;
                     fileNameWithPath = file.Path;
-                    AppTitle.Text = file.Name + " - " + "UTE UWP+";
+                    AppTitle.Text = file.Name + " - " + "UTE UWP";
                     Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList.Add(file);
                 }
             }
@@ -345,7 +345,7 @@ namespace UTE_UWP_.Views
                             await errorBox.ShowAsync();
                         }
                         saved = true;
-                        AppTitle.Text = file.Name + " - " + "UTE UWP+";
+                        AppTitle.Text = file.Name + " - " + "UTE UWP";
                         Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Remove("CurrentlyOpenFile");
                     }
                 }
@@ -416,7 +416,7 @@ namespace UTE_UWP_.Views
             {
                 var newWindow = Window.Current;
                 var newAppView = ApplicationView.GetForCurrentView();
-                newAppView.Title = $"Untitled - UTE UWP+";
+                newAppView.Title = $"Untitled - UTE UWP";
 
                 var frame = new Frame();
                 frame.Navigate(typeof(MainPage));
@@ -620,7 +620,7 @@ namespace UTE_UWP_.Views
                     editor.Document.GetText(TextGetOptions.UseObjectText, out originalDocText);
                     //editor.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, text);
                     //(MainPage.Current.Tabs.TabItems[MainPage.Current.Tabs.SelectedIndex] as TabViewItem).Header = file.Name;
-                    AppTitle.Text = file.Name + " - " + "UTE UWP+";
+                    AppTitle.Text = file.Name + " - " + "UTE UWP";
                     fileNameWithPath = file.Path;
                 }
                 saved = true;
@@ -737,7 +737,7 @@ namespace UTE_UWP_.Views
 
         public async Task ShowUnsavedDialog()
         {
-            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP+", "");
+            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP", "");
             ContentDialog aboutDialog = new ContentDialog
             {
                 Title = "Do you want to save changes to " + fileName + "?",
@@ -859,7 +859,7 @@ namespace UTE_UWP_.Views
                         // Load the file into the Document property of the RichEditBox.
                         editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
                         //editor.Document.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, text);
-                        AppTitle.Text = file.Name + " - " + "UTE UWP+";
+                        AppTitle.Text = file.Name + " - " + "UTE UWP";
                         fileNameWithPath = file.Path;
                     }
                     saved = true;
@@ -1122,7 +1122,7 @@ namespace UTE_UWP_.Views
             {
                 var newWindow = Window.Current;
                 var newAppView = ApplicationView.GetForCurrentView();
-                newAppView.Title = $"Untitled - UTE UWP+";
+                newAppView.Title = $"Untitled - UTE UWP";
 
                 var frame = new Frame();
                 frame.Navigate(typeof(MainPage));
@@ -1714,7 +1714,7 @@ namespace UTE_UWP_.Views
 
         public async Task ShowUnsavedDialog2()
         {
-            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP+", "");
+            string fileName = AppTitle.Text.Replace(" - " + "UTE UWP", "");
             ContentDialog aboutDialog = new ContentDialog
             {
                 Title = "Do you want to save changes to " + fileName + "?",
@@ -1735,7 +1735,7 @@ namespace UTE_UWP_.Views
             else if (result == ContentDialogResult.Secondary)
             {
                 editor.TextDocument.SetText(TextSetOptions.FormatRtf, "");
-                AppTitle.Text = "Untitled" + " - " + "UTE UWP+";
+                AppTitle.Text = "Untitled" + " - " + "UTE UWP";
                 fileNameWithPath = "";
             }
         }
