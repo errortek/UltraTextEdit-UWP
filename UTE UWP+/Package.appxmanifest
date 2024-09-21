@@ -14,7 +14,7 @@
   <Identity
     Name="UTEUWP.Plus"
     Publisher="CN=jpb"
-    Version="2.0" />
+    Version="2.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="f886852f-63db-4809-a421-3ebf06677b8f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
