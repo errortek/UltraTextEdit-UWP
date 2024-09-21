@@ -2073,7 +2073,7 @@ ToolTipService.ToolTip="Compute Hash">
                     <diags:MessageBox x:Name="AboutBox" Title="About" IsSingleButton="True" FirstButtonText="OK" RememberPosition="False" MessageBoxHeight="520" MessageBoxWidth="400" CloseButtonStyle="Win32" d:IsHidden="True">
                         <Grid Margin="10,-115,10,0">
                             <Image HorizontalAlignment="Left" Height="100" Margin="5,125,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/utevericon.png"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="120,140,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP Plus" VerticalAlignment="Top" FontSize="16"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="120,140,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP" VerticalAlignment="Top" FontSize="16"/>
                             <TextBlock HorizontalAlignment="Left" Margin="120,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11"><Run Text="2.0 - Full release"/><LineBreak/><Run Text="Copyright © 2021-2024 ErrorTek"/><LineBreak/><Run Text="Compiled September 2, 2024"/><LineBreak/><Run Text="GitHub release - UWP"/><LineBreak/><Run/></TextBlock>
                             <StackPanel Margin="0,235,0,0">
                                 <HyperlinkButton Content="WinUI 2" Padding="11,6,11,7"/>
@@ -2233,7 +2233,7 @@ ToolTipService.ToolTip="Compute Hash">
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Orientation="Vertical" Width="Auto">
-                            <TextBlock Text="About UltraTextEdit UWP Plus" Style="{ThemeResource BodyStrongTextBlockStyle}"/>
+                            <TextBlock Text="About UltraTextEdit UWP" Style="{ThemeResource BodyStrongTextBlockStyle}"/>
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Image Height="150" Width="150" Source="/Assets/utevericon.png"/>
                                 <TextBlock Text="UTE UWP" Style="{ThemeResource TitleLargeTextBlockStyle}" VerticalAlignment="Center" TextAlignment="Center">
@@ -2255,8 +2255,8 @@ ToolTipService.ToolTip="Compute Hash">
                                     </StackPanel>
                                 </Button>
                                 <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="Build 27686.1000"/>
-                                    <TextBlock Text="Dev Channel"/>
+                                    <TextBlock Text="Version 2.0"/>
+                                    <TextBlock Text="Stable Channel"/>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Spacing="10">

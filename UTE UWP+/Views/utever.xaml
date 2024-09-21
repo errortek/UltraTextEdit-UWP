@@ -54,7 +54,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="1"
-                        Text="10.0"/>
+                        Text="2.0"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="2" x:Uid="Version2" Text="Version/Development semester"/>
                         <TextBlock 
 						Name="Version2"
@@ -62,7 +62,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="2"
-                        Text="Dev"/>
+                        Text="2.x (24H2)"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="3" x:Uid="InstalledOn" Text="Build Date"/>
                         <TextBlock 
 						Name="InstalledOn"
@@ -70,7 +70,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="3"
-                        Text="02/09/2024"/>
+                        Text="21/09/2024"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="4" x:Uid="OSBuild" Text="Build"/>
                         <TextBlock 
 						Name="Build"
@@ -78,15 +78,16 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
-                        Text="27686.1000"/>
-                        <TextBlock Margin="0,0,20,5" Grid.Row="5" x:Uid="InsiderChannel" Text="Insider Channel"/>
+                        Text="2.0.0.0"/>
+                        <TextBlock Margin="0,0,20,5" Grid.Row="5" x:Uid="InsiderChannel" Text="Insider Channel" Visibility="Collapsed"/>
                         <TextBlock 
 						Name="InsiderChannel"
                         Margin="0,0,0,5"
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="5"
-                        Text="Dev Channel"/>
+                        Text="Dev Channel"
+                            Visibility="Collapsed"/>
                     </Grid>
                 </muxc:Expander>
 
@@ -135,7 +136,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."/>
                         <TextBlock Margin="0,20,0,0" TextWrapping="WrapWholeWords" x:Uid="LicenseTo" Visibility="Collapsed"/>
                         <StackPanel Margin="0,5,0,0">
-                            <HyperlinkButton Content="UltraTextEdit UWP Plus GitHub repo" NavigateUri="https://github.com/jpbandroid/UTE-UWP-Plus" Name="OwnerText"/>
+                            <HyperlinkButton Content="UltraTextEdit UWP GitHub repo" NavigateUri="https://github.com/jpbandroid/UltraTextEdit-UWP" Name="OwnerText"/>
                             <TextBlock 
 							TextWrapping="Wrap"
                             Name="OrgText"
