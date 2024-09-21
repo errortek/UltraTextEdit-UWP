@@ -54,7 +54,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="1"
-                        Text="2.0"/>
+                        Text="4.0"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="2" x:Uid="Version2" Text="Version/Development semester"/>
                         <TextBlock 
 						Name="Version2"
@@ -62,7 +62,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="2"
-                        Text="2.x (24H2)"/>
+                        Text="4.x (24H2)"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="3" x:Uid="InstalledOn" Text="Build Date"/>
                         <TextBlock 
 						Name="InstalledOn"
@@ -78,7 +78,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
                         Grid.Column="1"
                         Foreground="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"
                         Grid.Row="4"
-                        Text="2.0.0.0"/>
+                        Text="4.0.0.0"/>
                         <TextBlock Margin="0,0,20,5" Grid.Row="5" x:Uid="InsiderChannel" Text="Insider Channel" Visibility="Collapsed"/>
                         <TextBlock 
 						Name="InsiderChannel"

@@ -2074,7 +2074,7 @@ ToolTipService.ToolTip="Compute Hash">
                         <Grid Margin="10,-115,10,0">
                             <Image HorizontalAlignment="Left" Height="100" Margin="5,125,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/utevericon.png"/>
                             <TextBlock HorizontalAlignment="Left" Margin="120,140,0,0" TextWrapping="Wrap" Text="UltraTextEdit UWP" VerticalAlignment="Top" FontSize="16"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="120,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11"><Run Text="2.0 - Full release"/><LineBreak/><Run Text="Copyright © 2021-2024 ErrorTek"/><LineBreak/><Run Text="Compiled September 21, 2024"/><LineBreak/><Run Text="GitHub release - UWP"/><LineBreak/><Run/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" Margin="120,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11"><Run Text="4.0 - Full release"/><LineBreak/><Run Text="Copyright © 2021-2024 ErrorTek"/><LineBreak/><Run Text="Compiled September 21, 2024"/><LineBreak/><Run Text="GitHub release - UWP"/><LineBreak/><Run/></TextBlock>
                             <StackPanel Margin="0,235,0,0">
                                 <HyperlinkButton Content="WinUI 2" Padding="11,6,11,7"/>
                                 <HyperlinkButton Content="Windows Community Toolkit" Padding="11,6,11,7"/>
@@ -2255,7 +2255,7 @@ ToolTipService.ToolTip="Compute Hash">
                                     </StackPanel>
                                 </Button>
                                 <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="Version 2.0"/>
+                                    <TextBlock Text="Version 4.0"/>
                                     <TextBlock Text="Stable Channel"/>
                                 </StackPanel>
                             </StackPanel>
