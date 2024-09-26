@@ -27,9 +27,8 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Rebase onto UTE UWP+ codebase<LineBreak/>
-              • New versioning system<LineBreak/>
-              • Update dependencies
+              • Fix new window not opening bug<LineBreak/>
+              • Remove unnecessary features<LineBreak/>
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
