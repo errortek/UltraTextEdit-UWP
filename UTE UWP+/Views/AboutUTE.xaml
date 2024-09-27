@@ -10,14 +10,14 @@
     <Grid>
         <StackPanel Padding="25">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Source="ms-appx:///Assets/utevericon.png" Width="72" Height="72"/>
-                <TextBlock FontSize="48" Text="UltraTextEdit UWP" FontWeight="SemiBold" Foreground="{StaticResource SystemAccentColor}"/>
+                <Image Source="ms-appx:///Assets/utevericon.png" Width="64" Height="64"/>
+                <TextBlock FontSize="36" Text="UltraTextEdit UWP" FontWeight="SemiBold" Foreground="{StaticResource SystemAccentColor}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock FontSize="24" FontWeight="SemiBold">version 4.1</TextBlock>
-                    <TextBlock FontSize="24">Development semester: <Bold>24H2</Bold></TextBlock>
-                    <TextBlock FontSize="24">Compilation date: September 27, 2024</TextBlock>
+                    <TextBlock FontSize="16" FontWeight="SemiBold">version 4.1</TextBlock>
+                    <TextBlock FontSize="16">Development semester: <Bold>24H2</Bold></TextBlock>
+                    <TextBlock FontSize="16">Compilation date: September 27, 2024</TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Vertical"></StackPanel>
             </StackPanel>

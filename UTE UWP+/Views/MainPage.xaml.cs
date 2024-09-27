@@ -917,7 +917,11 @@ namespace UTE_UWP_.Views
 
 
             AboutUTE aboutUTE = new AboutUTE();
-            Frame.Navigate(typeof(AboutUTE));
+            ContentDialog aboutdialog = new ContentDialog();
+            aboutdialog.DefaultButton = ContentDialogButton.Primary;
+            aboutdialog.PrimaryButtonText = "OK";
+            aboutdialog.Content = aboutUTE;
+            await aboutdialog.ShowAsync();
         }
 
         private void FindButton2_Click(object sender, RoutedEventArgs e)
