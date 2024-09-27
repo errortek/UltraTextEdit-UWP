@@ -908,12 +908,16 @@ namespace UTE_UWP_.Views
 
         private async void uteverclick(object sender, RoutedEventArgs e)
         {
-            utever dialog = new utever();
+            //utever dialog = new utever();
 
-            dialog.DefaultButton = ContentDialogButton.Primary;
+            //dialog.DefaultButton = ContentDialogButton.Primary;
 
 
-            var result = await dialog.ShowAsync();
+            //var result = await dialog.ShowAsync();
+
+
+            AboutUTE aboutUTE = new AboutUTE();
+            Frame.Navigate(typeof(AboutUTE));
         }
 
         private void FindButton2_Click(object sender, RoutedEventArgs e)

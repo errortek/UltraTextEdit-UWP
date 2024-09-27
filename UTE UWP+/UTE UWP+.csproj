@@ -219,6 +219,9 @@
     </Compile>
     <Compile Include="UserControls\MessageBoxesGrid.cs" />
     <Compile Include="UserControls\MessageBoxValidation.cs" />
+    <Compile Include="Views\AboutUTE.xaml.cs">
+      <DependentUpon>AboutUTE.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CmdLineActivationSamplePage.xaml.cs">
       <DependentUpon>CmdLineActivationSamplePage.xaml</DependentUpon>
     </Compile>
@@ -281,6 +284,10 @@
     <Page Include="UserControls\MessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AboutUTE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CmdLineActivationSamplePage.xaml">
       <Generator>MSBuild:Compile</Generator>
