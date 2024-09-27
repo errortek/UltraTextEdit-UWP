@@ -148,31 +148,6 @@ namespace UTE_UWP_.Views
             {
                 LocalSettings.Values["TabbedHideVID"] = "On";
             }
-            if (LocalSettings.Values["NewRibbon"] != null)
-            {
-                if (LocalSettings.Values["NewRibbon"].ToString() == "On")
-                {
-                    ButtonPanel.Visibility = Visibility.Collapsed;
-                    Ribbon.Visibility = Visibility.Visible;
-                    ribbonToggle.IsOn = true;
-                    finditem.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    Ribbon.Visibility = Visibility.Collapsed;
-                    ButtonPanel.Visibility = Visibility.Visible;
-                    ribbonToggle.IsOn = false;
-                    finditem.Visibility = Visibility.Collapsed;
-                }
-            }
-            else
-            {
-                LocalSettings.Values["NewRibbon"] = "On";
-                ButtonPanel.Visibility = Visibility.Collapsed;
-                Ribbon.Visibility = Visibility.Visible;
-                ribbonToggle.IsOn = true;
-                finditem.Visibility = Visibility.Visible;
-            }
             if (LocalSettings.Values["SpellCheck"] != null)
             {
                 if (LocalSettings.Values["SpellCheck"].ToString() == "On")
@@ -694,14 +669,14 @@ namespace UTE_UWP_.Views
             // If you see this, remind me to look into the splitbutton color applying logic
         }
 
-        private void AddLinkButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Windows.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
-                hyperlinkText.AllowFocusOnInteraction = true;
-            editor.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
-            editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)XamlBindingHelper.ConvertValue(typeof(Windows.UI.Color), "#6194c7");
-            AddLinkButton.Flyout.Hide();
-        }
+        //private void AddLinkButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Windows.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
+        //        hyperlinkText.AllowFocusOnInteraction = true;
+        //    editor.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
+        //    editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)XamlBindingHelper.ConvertValue(typeof(Windows.UI.Color), "#6194c7");
+        //    AddLinkButton.Flyout.Hide();
+        //}
 
         private void CopyButton_Click(object sender, RoutedEventArgs e)
         {
@@ -764,13 +739,13 @@ namespace UTE_UWP_.Views
             await DisplayAboutDialog();
         }
 
-        private void FontsCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (editor.Document.Selection != null)
-            {
-                editor.Document.Selection.CharacterFormat.Name = FontsCombo.SelectedValue.ToString();
-            }
-        }
+        //private void FontsCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if (editor.Document.Selection != null)
+        //    {
+        //        editor.Document.Selection.CharacterFormat.Name = FontsCombo.SelectedValue.ToString();
+        //    }
+        //}
 
         private void FindButton_Click(object sender, RoutedEventArgs e)
         {
@@ -830,13 +805,13 @@ namespace UTE_UWP_.Views
             editor.Document.Selection.CharacterFormat.ForegroundColor = color;
 
             // Hide flyout
-            colorPickerButton.Flyout.Hide();
+            //colorPickerButton.Flyout.Hide();
         }
 
         private void CancelColor_Click(object sender, RoutedEventArgs e)
         {
             // Cancel flyout
-            colorPickerButton.Flyout.Hide();
+            //colorPickerButton.Flyout.Hide();
         }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
@@ -952,34 +927,34 @@ namespace UTE_UWP_.Views
 
         }
 
-        private void OnKeyboardAcceleratorInvoked(Windows.UI.Xaml.Input.KeyboardAccelerator sender, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
-        {
-            switch (sender.Key)
-            {
-                case Windows.System.VirtualKey.B:
-                    BoldButton.IsChecked = editor.Document.Selection.CharacterFormat.Bold == FormatEffect.On;
-                    args.Handled = true;
-                    break;
-                case Windows.System.VirtualKey.I:
-                    ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
-                    args.Handled = true;
-                    break;
-                case Windows.System.VirtualKey.U:
-                    UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
-                    args.Handled = true;
-                    break;
-                case Windows.System.VirtualKey.S:
-                    SaveFile(false);
-                    break;
-            }
-        }
+        //private void OnKeyboardAcceleratorInvoked(Windows.UI.Xaml.Input.KeyboardAccelerator sender, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
+        //{
+        //    switch (sender.Key)
+        //    {
+        //        case Windows.System.VirtualKey.B:
+        //            BoldButton.IsChecked = editor.Document.Selection.CharacterFormat.Bold == FormatEffect.On;
+        //            args.Handled = true;
+        //            break;
+        //        case Windows.System.VirtualKey.I:
+        //            ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
+        //            args.Handled = true;
+        //            break;
+        //        case Windows.System.VirtualKey.U:
+        //            UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
+        //            args.Handled = true;
+        //            break;
+        //        case Windows.System.VirtualKey.S:
+        //            SaveFile(false);
+        //            break;
+        //    }
+        //}
 
         private void editor_SelectionChanged(object sender, RoutedEventArgs e)
         {
             var ST = editor.Document.Selection;
-            BoldButton.IsChecked = editor.Document.Selection.CharacterFormat.Bold == FormatEffect.On;
-            ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
-            UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
+            //BoldButton.IsChecked = editor.Document.Selection.CharacterFormat.Bold == FormatEffect.On;
+            //ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
+            //UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
             //Selected words
             if (ST.Length > 0 || ST.Length < 0)
             {
@@ -1029,14 +1004,12 @@ namespace UTE_UWP_.Views
         private void CommentsButton_Click(object sender, RoutedEventArgs e)
         {
             commentsplitview.IsPaneOpen = true;
-            commentstabitem.Visibility = Visibility.Visible;
             CommentsButton.Visibility = Visibility.Visible;
         }
 
         private void closecomments(object sender, RoutedEventArgs e)
         {
             commentsplitview.IsPaneOpen = false;
-            commentstabitem.Visibility = Visibility.Collapsed;
             Comments.Visibility = Visibility.Collapsed;
             CommentsButton.Visibility = Visibility.Collapsed;
         }
@@ -1110,7 +1083,6 @@ namespace UTE_UWP_.Views
             myDocument.GetText(TextGetOptions.None, out oldText);
             editor.Document.Selection.Text = text;
 
-            symbolbut.Flyout.Hide();
             Symbols_Insert.Flyout.Hide();
             editor.Focus(FocusState.Keyboard);
         }
@@ -1194,61 +1166,61 @@ namespace UTE_UWP_.Views
             dialog.ShowAsync();
         }
 
-        private void NoneNumeral_Click(object sender, RoutedEventArgs e)
-        {
-            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.None;
-            myListButton.IsChecked = false;
-            myListButton.Flyout.Hide();
-            editor.Focus(FocusState.Keyboard);
-        }
+        //private void NoneNumeral_Click(object sender, RoutedEventArgs e)
+        //{
+        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.None;
+        //    myListButton.IsChecked = false;
+        //    myListButton.Flyout.Hide();
+        //    editor.Focus(FocusState.Keyboard);
+        //}
 
-        private void DottedNumeral_Click(object sender, RoutedEventArgs e)
-        {
-            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.Bullet;
-            myListButton.IsChecked = true;
-            myListButton.Flyout.Hide();
-            editor.Focus(FocusState.Keyboard);
-        }
+        //private void DottedNumeral_Click(object sender, RoutedEventArgs e)
+        //{
+        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.Bullet;
+        //    myListButton.IsChecked = true;
+        //    myListButton.Flyout.Hide();
+        //    editor.Focus(FocusState.Keyboard);
+        //}
 
-        private void NumberNumeral_Click(object sender, RoutedEventArgs e)
-        {
-            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.Arabic;
-            myListButton.IsChecked = true;
-            myListButton.Flyout.Hide();
-            editor.Focus(FocusState.Keyboard);
-        }
+        //private void NumberNumeral_Click(object sender, RoutedEventArgs e)
+        //{
+        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.Arabic;
+        //    myListButton.IsChecked = true;
+        //    myListButton.Flyout.Hide();
+        //    editor.Focus(FocusState.Keyboard);
+        //}
 
-        private void LetterSmallNumeral_Click(object sender, RoutedEventArgs e)
-        {
-            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseEnglishLetter;
-            myListButton.IsChecked = true;
-            myListButton.Flyout.Hide();
-            editor.Focus(FocusState.Keyboard);
-        }
+        //private void LetterSmallNumeral_Click(object sender, RoutedEventArgs e)
+        //{
+        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseEnglishLetter;
+        //    myListButton.IsChecked = true;
+        //    myListButton.Flyout.Hide();
+        //    editor.Focus(FocusState.Keyboard);
+        //}
 
-        private void LetterBigNumeral_Click(object sender, RoutedEventArgs e)
-        {
-            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseEnglishLetter;
-            myListButton.IsChecked = true;
-            myListButton.Flyout.Hide();
-            editor.Focus(FocusState.Keyboard);
-        }
+        //private void LetterBigNumeral_Click(object sender, RoutedEventArgs e)
+        //{
+        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseEnglishLetter;
+        //    myListButton.IsChecked = true;
+        //    myListButton.Flyout.Hide();
+        //    editor.Focus(FocusState.Keyboard);
+        //}
 
-        private void SmalliNumeral_Click(object sender, RoutedEventArgs e)
-        {
-            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseRoman;
-            myListButton.IsChecked = true;
-            myListButton.Flyout.Hide();
-            editor.Focus(FocusState.Keyboard);
-        }
+        //private void SmalliNumeral_Click(object sender, RoutedEventArgs e)
+        //{
+        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseRoman;
+        //    myListButton.IsChecked = true;
+        //    myListButton.Flyout.Hide();
+        //    editor.Focus(FocusState.Keyboard);
+        //}
 
-        private void BigINumeral_Click(object sender, RoutedEventArgs e)
-        {
-            editor.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseRoman;
-            myListButton.IsChecked = true;
-            myListButton.Flyout.Hide();
-            editor.Focus(FocusState.Keyboard);
-        }
+        //private void BigINumeral_Click(object sender, RoutedEventArgs e)
+        //{
+        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseRoman;
+        //    myListButton.IsChecked = true;
+        //    myListButton.Flyout.Hide();
+        //    editor.Focus(FocusState.Keyboard);
+        //}
 
         private void BackPicker_ColorChanged(object Sender, Windows.UI.Xaml.Controls.ColorChangedEventArgs EvArgs)
         {
@@ -1259,10 +1231,10 @@ namespace UTE_UWP_.Views
                 if (!(ST == null))
                 {
                     _ = ST.CharacterFormat;
-                    var Br = new SolidColorBrush(BackPicker.Color);
-                    var CF = BackPicker.Color;
+                    //var Br = new SolidColorBrush(BackPicker.Color);
+                    //var CF = BackPicker.Color;
                     //if (BackAccent != null) BackAccent.Foreground = Br;
-                    ST.CharacterFormat.BackgroundColor = CF;
+                    //ST.CharacterFormat.BackgroundColor = CF;
                 }
             }
         }
@@ -1276,7 +1248,7 @@ namespace UTE_UWP_.Views
             {
                 _ = ST.CharacterFormat.ForegroundColor;
                 var Br = BTN.Foreground;
-                BackAccent.Foreground = Br;
+                //BackAccent.Foreground = Br;
                 ST.CharacterFormat.BackgroundColor = (BTN.Foreground as SolidColorBrush).Color;
             }
         }
@@ -1288,7 +1260,7 @@ namespace UTE_UWP_.Views
             if (!(ST == null))
             {
                 _ = ST.CharacterFormat.ForegroundColor;
-                BackAccent.Foreground = new SolidColorBrush(Colors.Transparent);
+                //BackAccent.Foreground = new SolidColorBrush(Colors.Transparent);
                 ST.CharacterFormat.BackgroundColor = Colors.Transparent;
             }
         }
@@ -1876,28 +1848,6 @@ namespace UTE_UWP_.Views
             HelpButton.IsChecked = true;
         }
 
-        private void ribbonToggle_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (ribbonToggle.IsOn == true)
-            {
-                var LocalSettings = ApplicationData.Current.LocalSettings;
-                if (LocalSettings.Values["NewRibbon"] != null)
-                {
-                    LocalSettings.Values["NewRibbon"] = "On";
-                    //Frame.Navigate(this.GetType());
-                }
-            }
-            else
-            {
-                var LocalSettings = ApplicationData.Current.LocalSettings;
-                if (LocalSettings.Values["NewRibbon"] != null)
-                {
-                    LocalSettings.Values["NewRibbon"] = "Off";
-                    //Frame.Navigate(this.GetType());
-                }
-            }
-        }
-
         #region Templates
 
         private void Template1_Click(object Sender, RoutedEventArgs EvArgs)
@@ -1918,7 +1868,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = V.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                ////TempFlyout.Hide();
             }
         }
 
@@ -1941,7 +1891,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = V1.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                ////TempFlyout.Hide();
             }
         }
 
@@ -1965,7 +1915,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 22.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                ////TempFlyout.Hide();
             }
         }
 
@@ -1987,7 +1937,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 16.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                ////TempFlyout.Hide();
             }
         }
 
@@ -2009,7 +1959,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 14.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                ////TempFlyout.Hide();
             }
         }
 
@@ -2031,7 +1981,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 18.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                //TempFlyout.Hide();
             }
         }
 
@@ -2053,7 +2003,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 20.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                //TempFlyout.Hide();
             }
         }
 
@@ -2075,7 +2025,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 18.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                //TempFlyout.Hide();
             }
         }
 
@@ -2097,7 +2047,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 16.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                //TempFlyout.Hide();
             }
         }
 
@@ -2119,7 +2069,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 14.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                //TempFlyout.Hide();
             }
         }
 
@@ -2141,7 +2091,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 14.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                //TempFlyout.Hide();
             }
         }
 
@@ -2163,7 +2113,7 @@ namespace UTE_UWP_.Views
                 FSize.Text = 18.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                TempFlyout.Hide();
+                //TempFlyout.Hide();
             }
         }
 
