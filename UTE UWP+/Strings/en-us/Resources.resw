@@ -158,7 +158,7 @@
     <comment>Privacy Statement link content for Settings</comment>
   </data>
   <data name="Settings_PrivacyTermsLink.NavigateUri" xml:space="preserve">
-    <value>https://github.com/jpbandroid/UTE-UWP-Plus</value>
+    <value>https://github.com/jpbandroid/UltraTextEdit-UWP</value>
     <comment>Here is your Privacy Statement url for Settings</comment>
   </data>
   <data name="Settings_Personalization.Text" xml:space="preserve">

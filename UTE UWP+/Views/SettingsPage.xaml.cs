@@ -197,7 +197,7 @@ namespace UTE_UWP_.Views
         private async void GH_Navigate(object sender, RoutedEventArgs e)
         {
             // The URI to launch
-            string uriToLaunch = @"https://github.com/jpbandroid/UTE-UWP-Plus";
+            string uriToLaunch = @"https://github.com/jpbandroid/UltraTextEdit-UWP";
 
             // Create a Uri object from a URI string 
             var uri = new Uri(uriToLaunch);

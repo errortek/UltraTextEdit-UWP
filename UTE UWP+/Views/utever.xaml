@@ -112,7 +112,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
 MIT License
 &#x0a;
                             &#x0a;
-Copyright (c) 2021-2024 jpb (GitHub username jpbandroid)
+Copyright (c) 2021-2024 ErrorTek, Ivirius, and other contributors
 &#x0a;
                             &#x0a;
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -140,7 +140,7 @@ SOFTWARE."/>
                             <TextBlock 
 							TextWrapping="Wrap"
                             Name="OrgText"
-                            Text="Developer: jpb"/>
+                            Text="Developer: ErrorTek"/>
                         </StackPanel>
                     </StackPanel>
                 </muxc:Expander>
