@@ -1012,6 +1012,8 @@ namespace UTE_UWP_.Views
             commentsplitview.IsPaneOpen = false;
             Comments.Visibility = Visibility.Collapsed;
             CommentsButton.Visibility = Visibility.Collapsed;
+            Home.Visibility = Visibility.Visible;
+            EditButton.IsChecked = true;
         }
 
         /* Method to create a table format string which can directly be set to 
