@@ -200,7 +200,7 @@ namespace UTE_UWP_.Views
 
             if (e.WindowActivationState == CoreWindowActivationState.Deactivated)
             {
-                AppTitle.Foreground = inactiveForegroundBrush;
+                AppTitle.Foreground = new SolidColorBrush(Colors.Black);
             }
             else
             {
