@@ -620,7 +620,7 @@
                                 <Grid>
                                     <controls:Ribbon x:Name="Home" VerticalAlignment="Top" HorizontalAlignment="Stretch" CornerRadius="8" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                                         
-                                            <controls:RibbonCollapsibleGroup x:Name="Font" Label="Font" VerticalAlignment="Top" Height="128" Margin="10,2,0,0" CornerRadius="8">
+                                            <controls:RibbonCollapsibleGroup x:Name="Font" Label="Font" VerticalAlignment="Top" CornerRadius="8">
                                             <controls:RibbonCollapsibleGroup.IconSource>
                                                 <FontIconSource Glyph="&#xE8D2;">
                                                 </FontIconSource>
@@ -969,7 +969,7 @@
                                                 <Border BorderThickness="1" Width="3" HorizontalAlignment="Right" Background="{StaticResource DividerStrokeColorDefaultBrush}" CornerRadius="1,1,1,1" Margin="0,-2,0,0"/>
                                             </Grid>
                                         </controls:RibbonCollapsibleGroup>
-                                        <controls:RibbonCollapsibleGroup x:Name="Paragraph" Label="Paragraph" Height="128" RelativePanel.RightOf="Font" Margin="10,2,0,0" Width="Auto">
+                                        <controls:RibbonCollapsibleGroup x:Name="Paragraph" Label="Paragraph" RelativePanel.RightOf="Font" Width="Auto">
                                             <controls:RibbonCollapsibleGroup.IconSource>
                                                 <FontIconSource Glyph="&#xE8E4;">
                                                 </FontIconSource>
