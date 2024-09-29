@@ -535,7 +535,7 @@
                             </MenuFlyoutItem>
                             <MenuFlyoutItem Click="Print_Click" Text="Print"  Icon="Print"/>
                             <MenuFlyoutSeparator />
-                            <MenuFlyoutItem Click="FindButton2_Click" Text="Find/Replace" x:Name="finditem" Visibility="Collapsed">
+                            <MenuFlyoutItem Click="FindButton2_Click" Text="Find/Replace" x:Name="finditem">
                                 <MenuFlyoutItem.Icon>
                                     <FontIcon Glyph="&#xE721;" />
                                 </MenuFlyoutItem.Icon>
