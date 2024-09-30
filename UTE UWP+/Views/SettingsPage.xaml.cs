@@ -285,7 +285,7 @@ namespace UTE_UWP_.Views
                     LocalSettings.Values["TextWrapping"] = TextWrapComboBox.SelectedItem.ToString();
                 } else
                 {
-                    LocalSettings.Values["TextWrapping"] = "No wrap";
+                    LocalSettings.Values["TextWrapping"] = "Wrap";
                 }
             }
         }

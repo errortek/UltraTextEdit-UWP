@@ -84,9 +84,7 @@ namespace UTE_UWP_.Views
                     this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
                 }
 
-            }
-            else
-            {
+            } else {
 
             }
 
@@ -178,7 +176,7 @@ namespace UTE_UWP_.Views
                 }
             } else
             {
-                LocalSettings.Values["TextWrapping"] = "Wrap whole words";
+                LocalSettings.Values["TextWrapping"] = "Wrap";
             }
         }
 

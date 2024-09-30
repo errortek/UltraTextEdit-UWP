@@ -1255,7 +1255,7 @@
             Padding="11"
             FontFamily="Segoe UI"
             IsSpellCheckEnabled="False"
-            TextWrapping="WrapWholeWords"
+            TextWrapping="Wrap"
             TextChanged="RichEditBox_TextChanged" SelectionChanged="editor_SelectionChanged">
                         </RichEditBox>
                         <Grid x:Name="Bottom" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5" Padding="0, 0, 0, 5">
