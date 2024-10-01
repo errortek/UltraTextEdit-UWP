@@ -214,11 +214,6 @@
     <Compile Include="Services\ViewLifetimeControl.cs" />
     <Compile Include="Services\WhatsNewDisplayService.cs" />
     <Compile Include="Services\WindowManagerService.cs" />
-    <Compile Include="UserControls\MessageBox.xaml.cs">
-      <DependentUpon>MessageBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\MessageBoxesGrid.cs" />
-    <Compile Include="UserControls\MessageBoxValidation.cs" />
     <Compile Include="Views\AboutUTE.xaml.cs">
       <DependentUpon>AboutUTE.xaml</DependentUpon>
     </Compile>
@@ -280,10 +275,6 @@
     <Page Include="Styles\TextBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\MessageBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AboutUTE.xaml">
       <SubType>Designer</SubType>
@@ -405,12 +396,6 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
-    <Content Include="Assets\Templates\CreditsTemp.png" />
-    <Content Include="Assets\Templates\EssayTemp.png" />
-    <Content Include="Assets\Templates\ImageEssayTemp.png" />
-    <Content Include="Assets\Templates\ImageGalleryTemp.png" />
-    <Content Include="Assets\Templates\NewspaperTemp.png" />
-    <Content Include="Assets\Templates\ResumeTemp.png" />
     <Content Include="Assets\utevericon.png" />
     <Content Include="Assets\Warning.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
@@ -427,24 +412,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
-    <None Include="Assets\Templates\CreditsTemp.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Assets\Templates\EssayTemp.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Assets\Templates\ImageEssayTemp.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Assets\Templates\ImageGalleryTemp.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Assets\Templates\NewspaperTemp.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Assets\Templates\ResumeTemp.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="jpbAppCert24.pfx" />
     <None Include="jpbAppCertificate-2024.pfx" />
     <None Include="README.md" />
@@ -462,7 +429,10 @@
       <Name>UTE UWP+.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assets\Templates\" />
+    <Folder Include="UserControls\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
