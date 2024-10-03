@@ -26,7 +26,7 @@
 ![{C17FAA16-19F4-4009-BE95-AA9E8A44FDDF}](https://github.com/user-attachments/assets/bb399d91-be8c-4d71-b18d-a591e1d315be)
 ![{825B0DE1-DAF8-4E59-8A94-FDFC110878B0}](https://github.com/user-attachments/assets/f5ae6d15-2650-4c37-adbe-dffd0dfb1514)
 
-## 🙋 Contributing & Feedback
+## 🧪 Contributing & Feedback
 
 There are many ways to contribute:
 
