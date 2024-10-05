@@ -3,10 +3,10 @@
 #### UTE UWP is a modern, lightweight text editor adhering to the Fluent Design Guidelines, using the UWP platform.
 
 <p align="center">
-  <a title="GitHub Releases" target="_blank" href="https://github.com/RiversideValley/{repo name}">
+  <a title="GitHub Releases" target="_blank" href="https://github.com/jpbandroid/UltraTextEdit-UWP">
     <img align="left" src="https://img.shields.io/github/v/release/jpbandroid/UltraTextEdit-UWP?include_prereleases" alt="Release" />
   </a>
-  <a title="Repository Size" target="_blank" href="https://github.com/RiversideValley/{repo name}/activity">
+  <a title="Repository Size" target="_blank" href="https://github.com/jpbandroid/UltraTextEdit-UWP/activity">
     <img align="left" src="https://img.shields.io/github/repo-size/jpbandroid/UltraTextEdit-UWP?color=%23cc0000" alt="Size" />
   </a>
 </p>
