@@ -190,10 +190,6 @@
   <ItemGroup>
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Activation\CommandLineActivationHandler.cs" />
-    <Compile Include="Activation\SchemeActivationConfig.cs" />
-    <Compile Include="Activation\SchemeActivationData.cs" />
-    <Compile Include="Activation\SchemeActivationHandler.cs" />
-    <Compile Include="Activation\WebToAppLinkActivationHandler.cs" />
     <Compile Include="Helpers\BuildInfo.cs" />
     <Compile Include="Helpers\EncryptorsDecryptors.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
@@ -209,7 +205,6 @@
     <Compile Include="Services\ToastNotificationsService.cs" />
     <Compile Include="Services\ToastNotificationsService.Samples.cs" />
     <Compile Include="Services\WhatsNewDisplayService.cs" />
-    <Compile Include="Services\WindowManagerService.cs" />
     <Compile Include="Views\AboutUTE.xaml.cs">
       <DependentUpon>AboutUTE.xaml</DependentUpon>
     </Compile>
