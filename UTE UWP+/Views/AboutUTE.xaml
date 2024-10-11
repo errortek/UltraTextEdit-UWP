@@ -15,11 +15,11 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock FontSize="16" FontWeight="SemiBold">version 4.1.2</TextBlock>
-                    <TextBlock FontSize="16">Development semester: <Bold>24H2</Bold></TextBlock>
-                    <TextBlock FontSize="16">Compilation date: October 11, 2024</TextBlock>
-                    <TextBlock FontSize="16">©️ 2021-2024 ErrorTek, Ivirius, and other contributors</TextBlock>
-                    <TextBlock>Licensed under the <Bold>MIT License</Bold></TextBlock>
+                    <TextBlock FontSize="16" FontWeight="SemiBold" IsTextSelectionEnabled="True">version 4.1.2</TextBlock>
+                    <TextBlock FontSize="16" IsTextSelectionEnabled="True">Development semester: <Bold>24H2</Bold></TextBlock>
+                    <TextBlock FontSize="16" IsTextSelectionEnabled="True">Compilation date: October 11, 2024</TextBlock>
+                    <TextBlock FontSize="16" IsTextSelectionEnabled="True">©️ 2021-2024 ErrorTek, Ivirius, and other contributors</TextBlock>
+                    <TextBlock IsTextSelectionEnabled="True">Licensed under the <Bold>MIT License</Bold></TextBlock>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
