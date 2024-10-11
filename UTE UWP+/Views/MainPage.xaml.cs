@@ -198,7 +198,14 @@ namespace UTE_UWP_.Views
 
             if (e.WindowActivationState == CoreWindowActivationState.Deactivated)
             {
-                AppTitle.Foreground = new SolidColorBrush(Colors.Black);
+                if (App.Current.RequestedTheme == ApplicationTheme.Light)
+                {
+                    AppTitle.Foreground = new SolidColorBrush(Colors.Black);
+                }
+                else
+                {
+                    AppTitle.Foreground = new SolidColorBrush(Colors.White);
+                }
             }
             else
             {
