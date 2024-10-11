@@ -15,7 +15,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock FontSize="16" FontWeight="SemiBold">version 4.1.1</TextBlock>
+                    <TextBlock FontSize="16" FontWeight="SemiBold">version 4.1.2</TextBlock>
                     <TextBlock FontSize="16">Development semester: <Bold>24H2</Bold></TextBlock>
                     <TextBlock FontSize="16">Compilation date: October 1, 2024</TextBlock>
                 </StackPanel>
