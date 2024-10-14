@@ -6,74 +6,124 @@
     xmlns:helper="using:UTE_UWP_.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
-    xmlns:xaml="using:Windows.UI.Xaml"
+    xmlns:xaml="using:Windows.UI.Xaml" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals" xmlns:controls="using:CommunityToolkit.WinUI.Controls" xmlns:controlsold="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
     <Page.Resources>
         <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
     </Page.Resources>
-    <Grid Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="48" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <TextBlock
-            Grid.Row="0"
-            x:Uid="Settings_Title"
-            Style="{StaticResource PageTitleStyle}" />
-
-        <StackPanel
-            Grid.Row="1"
+    <Grid>
+        <Grid
             x:Name="ContentArea">
-            <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
-            <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
-                <TextBlock x:Uid="Settings_Theme" />
+            <ScrollViewer x:Name="view">
+                <StackPanel Orientation="Vertical" Padding="20" Spacing="5">
+                    <TextBlock Text="Settings" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
+                    <TextBlock Text="Editor" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
+                    <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                        <controls:SettingsCard Header="Text wrapping">
+                            <ComboBox x:Name="TextWrapComboBox" SelectionChanged="TextWrapComboBox_SelectionChanged">
+                                <x:String>No wrap</x:String>
+                                <x:String>Wrap</x:String>
+                                <x:String>Wrap whole words</x:String>
+                            </ComboBox>
+                        </controls:SettingsCard>
+                        <controls:SettingsCard Header="Spell check">
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xF87B;" />
+                            </controls:SettingsCard.HeaderIcon>
+                            <CheckBox x:Name="spellcheckBox" Checked="spellcheckBox_Checked" Unchecked="spellcheckBox_Unchecked" Margin="0,0,-100,0"/>
+                        </controls:SettingsCard>
+                    </StackPanel>
+                    <TextBlock Text="Personalization" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
+                    <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                        <controls:SettingsExpander Header="Theme" Description="Change app theme here">
+                            <controls:SettingsExpander.Items>
+                                <controls:SettingsCard HorizontalContentAlignment="Left"
+                                               ContentAlignment="Left">
+                                    <StackPanel>
+                                        <RadioButton 
+x:Uid="Settings_Theme_Light"
+Checked="ThemeChanged_CheckedAsync" 
+IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
+FontSize="15"
+GroupName="AppTheme" >
+                                            <RadioButton.CommandParameter>
+                                                <xaml:ElementTheme>Light</xaml:ElementTheme>
+                                            </RadioButton.CommandParameter>
+                                        </RadioButton>
+                                        <RadioButton 
+x:Uid="Settings_Theme_Dark"
+Checked="ThemeChanged_CheckedAsync" 
+IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
+FontSize="15"
+GroupName="AppTheme">
+                                            <RadioButton.CommandParameter>
+                                                <xaml:ElementTheme>Dark</xaml:ElementTheme>
+                                            </RadioButton.CommandParameter>
+                                        </RadioButton>
+                                        <RadioButton 
+x:Uid="Settings_Theme_Default"
+Checked="ThemeChanged_CheckedAsync"
+IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}"
+FontSize="15"
+GroupName="AppTheme">
+                                            <RadioButton.CommandParameter>
+                                                <xaml:ElementTheme>Default</xaml:ElementTheme>
+                                            </RadioButton.CommandParameter>
+                                        </RadioButton>
+                                    </StackPanel>
+                                </controls:SettingsCard>
+                            </controls:SettingsExpander.Items>
+                        </controls:SettingsExpander>
+                        <controls:SettingsCard x:Name="AccentColorCard" Header="Accent color" Description="Change the app's accent color">
+                            <ComboBox x:Name="AccentBox" ItemsSource="{x:Bind accentcolors}" SelectionChanged="AccentBox_SelectionChanged"/>
+                        </controls:SettingsCard>
+                    </StackPanel>
 
-                <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                    <RadioButton 
-                        x:Uid="Settings_Theme_Light"
-                        Checked="ThemeChanged_CheckedAsync" 
-                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme" >
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Light</xaml:ElementTheme>
-                        </RadioButton.CommandParameter> 
-                    </RadioButton>
-                    <RadioButton 
-                        x:Uid="Settings_Theme_Dark"
-                        Checked="ThemeChanged_CheckedAsync" 
-                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Dark</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
-                    </RadioButton>
-                    <RadioButton 
-                        x:Uid="Settings_Theme_Default"
-                        Checked="ThemeChanged_CheckedAsync"
-                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Default</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
-                    </RadioButton>
+                    <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
+
+                    <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                        <!--<TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind VersionDescription, Mode=OneWay}" />-->
+                        <controls:SettingsCard Header="{x:Bind VersionDescription, Mode=OneWay}" Description="© 2021-2024 ErrorTek, Ivirius">
+                            <controls:SettingsCard.HeaderIcon>
+                                <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.png" ShowAsMonochrome="False"/>
+                            </controls:SettingsCard.HeaderIcon>
+                        </controls:SettingsCard>
+                        <controls:SettingsCard
+                               ActionIconToolTip="Open GitHub repo in browser"
+                               Description="Go there to submit issues, view pull requests, and check out the code!!"
+                               Header="GitHub repo"
+                               IsClickEnabled="True"
+                               IsEnabled="True"
+                            Click="GH_Navigate">
+                            <controls:SettingsCard.ActionIcon>
+                                <FontIcon Glyph="&#xE8A7;"/>
+                            </controls:SettingsCard.ActionIcon>
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xE943;"/>
+                            </controls:SettingsCard.HeaderIcon>
+                        </controls:SettingsCard>
+                        <controls:SettingsCard x:Name="vidsblock"
+Header="Velocity IDs"
+IsClickEnabled="True"
+Click="VIDsButton_Click"
+                                               Margin="0,0,0,80">
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xEC7A;"/>
+                            </controls:SettingsCard.HeaderIcon>
+                        </controls:SettingsCard>
+
+
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
-
-            <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
-
-            <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind VersionDescription, Mode=OneWay}" />
-                <TextBlock
-                    x:Uid="Settings_AboutDescription"
-                    Margin="{StaticResource XSmallTopMargin}"
-                    Style="{ThemeResource BodyTextBlockStyle}" />
-
-                <HyperlinkButton x:Uid="Settings_PrivacyTermsLink" Margin="{StaticResource XSmallTopMargin}" />
-            </StackPanel>
-        </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <controlsold:DropShadowPanel Grid.Row="1" BlurRadius="25" Color="#66000000" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="10, 0, 10, 25" VerticalAlignment="Bottom">
+            <controls:SettingsCard BorderThickness="1" CornerRadius="4,4,4,4" VerticalAlignment="Bottom" Background="{StaticResource AcrylicBackgroundFillColorBaseBrush}">
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <Button Click="SettingsResetButton_Click" Content="Reset app settings" HorizontalAlignment="Right"/>
+                    <Button Content="Save and Restart" Click="SettingsSaveButton_Click" VerticalAlignment="Center" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </controls:SettingsCard>
+        </controlsold:DropShadowPanel>
     </Grid>
 </Page>

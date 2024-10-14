@@ -1,14 +1,26 @@
-﻿using System;
+﻿using MicaForUWP.Media;
+using Microsoft.Graphics.Canvas.Text;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 
 using UTE_UWP_.Helpers;
 using UTE_UWP_.Services;
+using UTE_UWP_.Views;
 
 using Windows.ApplicationModel;
+using Windows.ApplicationModel.Core;
+using Windows.Storage;
+using Windows.UI;
+using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace UTE_UWP_.Views
@@ -18,6 +30,8 @@ namespace UTE_UWP_.Views
     public sealed partial class SettingsPage : Page, INotifyPropertyChanged
     {
         private ElementTheme _elementTheme = ThemeSelectorService.Theme;
+        string RestartArgs;
+
 
         public ElementTheme ElementTheme
         {
@@ -35,9 +49,81 @@ namespace UTE_UWP_.Views
             set { Set(ref _versionDescription, value); }
         }
 
+        public List<string> accentcolors = new List<string>
+        {
+            "Default",
+            "Blue",
+            "Seafoam",
+            "Slate Green",
+            "Crimson",
+            "Lilac"
+        };
+
         public SettingsPage()
         {
             InitializeComponent();
+                
+            this.Background = new SolidColorBrush(Colors.Transparent);
+
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+
+            if ((string)LocalSettings.Values["AccentTheme"] == "Slate Green")
+            {
+                AccentBox.SelectedItem = "Slate Green";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Lilac")
+            {
+                AccentBox.SelectedItem = "Lilac";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Crimson")
+            {
+                AccentBox.SelectedItem = "Crimson";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Seafoam")
+            {
+                AccentBox.SelectedItem = "Seafoam";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Blue")
+            {
+                AccentBox.SelectedItem = "Blue";
+            }
+            if ((string)LocalSettings.Values["AccentTheme"] == "Default")
+            {
+                AccentBox.SelectedItem = "Default";
+            }
+
+
+            if ((string)LocalSettings.Values["TextWrapping"] == "No wrap")
+            {
+                TextWrapComboBox.SelectedItem = "No wrap";
+            }
+            if ((string)LocalSettings.Values["TextWrapping"] == "Wrap")
+            {
+                TextWrapComboBox.SelectedItem = "Wrap";
+            }
+            if ((string)LocalSettings.Values["TextWrapping"] == "Wrap whole words")
+            {
+                TextWrapComboBox.SelectedItem = "Wrap whole words";
+            }
+
+
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                if ((string)LocalSettings.Values["SpellCheck"] == "On")
+                {
+                    spellcheckBox.IsChecked = true;
+
+                }
+                if ((string)LocalSettings.Values["SpellCheck"] == "Off")
+                {
+                    spellcheckBox.IsChecked = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
+                spellcheckBox.IsChecked = false;
+            }
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -84,6 +170,141 @@ namespace UTE_UWP_.Views
             OnPropertyChanged(propertyName);
         }
 
+        public List<string> Fonts;
+
+        #region Appearance
+        public int DocumentViewPadding;
+
+        public string DefaultFont;
+
+        // Modes:
+        // 0. No wrap
+        // 1. Wrap
+        // 2. Wrap whole words
+
+        public int TextWrapping;
+
+        // Modes:
+        // 0. Light
+        // 1. Dark
+        // 2. Default
+
+        public int Theme;
+        #endregion
+
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        private async void GH_Navigate(object sender, RoutedEventArgs e)
+        {
+            // The URI to launch
+            string uriToLaunch = @"https://github.com/jpbandroid/UltraTextEdit-UWP";
+
+            // Create a Uri object from a URI string 
+            var uri = new Uri(uriToLaunch);
+
+            // Launch the URI
+            async void DefaultLaunch()
+            {
+                // Launch the URI
+                var success = await Windows.System.Launcher.LaunchUriAsync(uri);
+
+                if (success)
+                {
+                    // URI launched
+                }
+                else
+                {
+                    // URI launch failed
+                }
+            }
+            DefaultLaunch();
+        }
+
+        private void VIDsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.Current.Content is Frame rootFrame)
+            {
+                rootFrame.Navigate(typeof(VelocityIDsPage));
+            }
+        }
+
+        private void AccentBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (AccentBox.SelectedItem != null)
+            {
+                if ((string)AccentBox.SelectedItem == "Default")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Default";
+                } else if ((string)AccentBox.SelectedItem == "Slate Green")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Slate Green";
+                } else if ((string)AccentBox.SelectedItem == "Lilac")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Lilac";
+                }
+                else if ((string)AccentBox.SelectedItem == "Seafoam")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Seafoam";
+                }
+                else if ((string)AccentBox.SelectedItem == "Blue")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Blue";
+                }
+                else if ((string)AccentBox.SelectedItem == "Crimson")
+                {
+                    LocalSettings.Values["AccentTheme"] = "Crimson";
+                }
+            }   
+        }
+
+        private void spellcheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                LocalSettings.Values["SpellCheck"] = "On";
+            }
+        }
+
+        private void spellcheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["SpellCheck"] != null)
+            {
+                LocalSettings.Values["SpellCheck"] = "Off";
+            }
+        }
+
+        private void TextWrapComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (TextWrapComboBox.SelectedItem != null) {
+                if (LocalSettings.Values["TextWrapping"] != null)
+                {
+                    LocalSettings.Values["TextWrapping"] = TextWrapComboBox.SelectedItem.ToString();
+                } else
+                {
+                    LocalSettings.Values["TextWrapping"] = "Wrap";
+                }
+            }
+        }
+
+        private async void SettingsResetButton_Click(object Sender, RoutedEventArgs EvArgs)
+        {
+            RestartArgs = "e";
+            ApplicationDataContainer LS = ApplicationData.Current.LocalSettings;
+            foreach (KeyValuePair<string, object> item in LS.Values.ToList())
+            {
+                LS.Values.Remove(item.Key);
+            }
+            await CoreApplication.RequestRestartAsync(RestartArgs);
+        }
+
+        private async void SettingsSaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            RestartArgs = "e";
+            await CoreApplication.RequestRestartAsync(RestartArgs);
+        }
     }
 }

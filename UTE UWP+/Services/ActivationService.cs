@@ -93,7 +93,7 @@ namespace UTE_UWP_.Services
         private async Task InitializeAsync()
         {
             await ThemeSelectorService.InitializeAsync().ConfigureAwait(false);
-            await WindowManagerService.Current.InitializeAsync();
+            //await WindowManagerService.Current.InitializeAsync();
         }
 
         private async Task HandleActivationAsync(object activationArgs)
@@ -119,7 +119,7 @@ namespace UTE_UWP_.Services
         private async Task StartupAsync()
         {
             // TODO: This is a sample to demonstrate how to add a UserActivity. Please adapt and move this method call to where you consider convenient in your app.
-            await UserActivityService.AddSampleUserActivity();
+            //await UserActivityService.AddSampleUserActivity();
             await ThemeSelectorService.SetRequestedThemeAsync();
             await FirstRunDisplayService.ShowIfAppropriateAsync();
             await WhatsNewDisplayService.ShowIfAppropriateAsync();
@@ -128,8 +128,8 @@ namespace UTE_UWP_.Services
         private IEnumerable<ActivationHandler> GetActivationHandlers()
         {
             yield return Singleton<ToastNotificationsService>.Instance;
-            yield return Singleton<WebToAppLinkActivationHandler>.Instance;
-            yield return Singleton<SchemeActivationHandler>.Instance;
+            //yield return Singleton<WebToAppLinkActivationHandler>.Instance;
+            //yield return Singleton<SchemeActivationHandler>.Instance;
             yield return Singleton<CommandLineActivationHandler>.Instance;
         }
 

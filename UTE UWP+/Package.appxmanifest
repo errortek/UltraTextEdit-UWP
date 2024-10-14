@@ -12,15 +12,15 @@
   IgnorableNamespaces="uap mp genTemplate uap5 uap3 desktop4 iot2">
 
   <Identity
-    Name="f886852f-63db-4809-a421-3ebf06677b8f"
+    Name="UTE.UWP"
     Publisher="CN=jpb"
-    Version="1.0.0.0" />
+    Version="4.1.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="f886852f-63db-4809-a421-3ebf06677b8f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>UTE_UWP_</DisplayName>
-    <PublisherDisplayName>jpb</PublisherDisplayName>
+    <DisplayName>UTE UWP</DisplayName>
+    <PublisherDisplayName>ErrorTek</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -44,7 +44,7 @@
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="ms-resource:AppDescription"
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" ShortName="UTE UWP"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
 

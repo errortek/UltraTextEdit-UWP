@@ -1,0 +1,49 @@
+﻿<ContentDialog
+    x:Class="UTE_UWP_.TableDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UTE_UWP_"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Title="Insert Table"
+    PrimaryButtonText="OK"
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+        CornerRadius="8"
+    Style="{ThemeResource DefaultContentDialogStyle}">
+
+    <StackPanel>
+        <TextBlock
+                                    Margin="0,0,0,5"
+                                    FontSize="14"
+                                    FontWeight="SemiBold"
+                                    Style="{StaticResource CaptionTextBlockStyle}"
+                                    Text="Rows" />
+
+        <TextBox
+                                    x:Name="rowBox"
+                                    Width="330"
+                                    PlaceholderText="Rows" />
+        <TextBlock
+                                    Margin="0,0,0,5"
+                                    FontSize="14"
+                                    FontWeight="SemiBold"
+                                    Style="{StaticResource CaptionTextBlockStyle}"
+                                    Text="Columns" />
+
+        <TextBox
+                                    x:Name="columnBox"
+                                    Width="330"
+                                    PlaceholderText="Columns" />
+        <muxc:InfoBar
+            x:Name="errorbox1"
+    IsOpen="False"
+    IsIconVisible="True"
+    IsClosable="False"
+    Severity="Error"
+    Title="Error"
+    Message="You have not input an integer (whole number) into the Rows textbox. Please input an integer." />
+    </StackPanel>
+</ContentDialog>
