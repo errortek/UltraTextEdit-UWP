@@ -35,6 +35,7 @@ There are many ways to contribute:
 - [Submit a new feature contribution or bugfix](https://github.com/jpbandroid/UltraTextEdit-UWP/pulls)
 - [File bug reports and feature requests](https://github.com/jpbandroid/UltraTextEdit-UWP/issues/new/choose)
 - Review the [latest commits](https://github.com/jpbandroid/UltraTextEdit-UWP/commits)
+- Join the [Developer Sancutary](https://discord.gg/windows-apps-hub-714581497222398064) Discord server to get the latest product announcements! (the UTE section is found under the #jpb-projects forum channel, in the UltraTextEdit (UWP) forum post!)
 ## 🛠️ Compiling from Source
 
 Compiling the app from source is the best way to make sure that you get the latest features and enhancements. However, some functionality may be incomplete or not functional.
