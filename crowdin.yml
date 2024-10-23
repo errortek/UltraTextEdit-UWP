@@ -1,0 +1,3 @@
+files:
+  - source: /UTE UWP+/Strings/en-us/*.resw
+    translation: /UTE UWP+/Strings/%locale%/%original_file_name%
