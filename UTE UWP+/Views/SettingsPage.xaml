@@ -89,6 +89,20 @@ GroupName="AppTheme">
                             </controls:SettingsCard.HeaderIcon>
                         </controls:SettingsCard>
                         <controls:SettingsCard
+       ActionIconToolTip="Send feedback via Discord"
+       Description="Join the Developer Sanctuary Discord server, in which I have a project channel where you can provide direct feedback to me and talk with other users. The app's forum post is under my channel, #jpbs-projects, titled 'UltraTextEdit (UWP)'."
+       Header="Send feedback via Discord"
+       IsClickEnabled="True"
+       IsEnabled="True"
+    Click="DC_Navigate">
+                            <controls:SettingsCard.ActionIcon>
+                                <FontIcon Glyph="&#xE8A7;"/>
+                            </controls:SettingsCard.ActionIcon>
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xED15;"/>
+                            </controls:SettingsCard.HeaderIcon>
+                        </controls:SettingsCard>
+                        <controls:SettingsCard
                                ActionIconToolTip="Open GitHub repo in browser"
                                Description="Go there to submit issues, view pull requests, and check out the code!!"
                                Header="GitHub repo"

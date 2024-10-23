@@ -1,0 +1,4 @@
+ULTRATEXTEDIT UWP PRIVACY POLICY
+Last updated: 21 October 2024
+
+UltraTextEdit UWP is a text editor app. It does not have any online-enabled features, stores all data locally on the user's device, and does not share any data with either the developer or any third party.
