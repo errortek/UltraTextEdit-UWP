@@ -9,6 +9,7 @@
   <a title="Repository Size" target="_blank" href="https://github.com/jpbandroid/UltraTextEdit-UWP/activity">
     <img align="left" src="https://img.shields.io/github/repo-size/jpbandroid/UltraTextEdit-UWP?color=%23cc0000" alt="Size" />
   </a>
+  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/ultratextedit-uwp"><img src="https://badges.crowdin.net/ultratextedit-uwp/localized.svg"/></a>
 </p>
 <br/>
 
