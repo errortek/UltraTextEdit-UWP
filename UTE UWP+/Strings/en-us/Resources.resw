@@ -125,10 +125,6 @@
     <value>UltraTextEdit UWP</value>
     <comment>Application description</comment>
   </data>
-  <data name="Main_Title.Text" xml:space="preserve">
-    <value>Main</value>
-    <comment>Page title for MainPage</comment>
-  </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
     <value>Choose Theme</value>
     <comment>Choose theme text for Settings</comment>
@@ -149,10 +145,6 @@
     <value>About this application</value>
     <comment>About this application title for Settings</comment>
   </data>
-  <data name="Settings_AboutDescription.Text" xml:space="preserve">
-    <value>Settings page placeholder text.  Your app description goes here.</value>
-    <comment>About this application description for Settings</comment>
-  </data>
   <data name="Settings_PrivacyTermsLink.Content" xml:space="preserve">
     <value>GitHub</value>
     <comment>Privacy Statement link content for Settings</comment>
@@ -168,14 +160,6 @@
   <data name="Settings_Title.Text" xml:space="preserve">
     <value>Settings</value>
     <comment>Page title for SettingsPage</comment>
-  </data>
-  <data name="SchemeActivationSamplePage_Title.Text" xml:space="preserve">
-    <value>SchemeActivationSample</value>
-    <comment>Page Title for URI Scheme Example</comment>
-  </data>
-  <data name="SchemeActivationSamplePage_Description.Text" xml:space="preserve">
-    <value>This is a sample page that will show activation parameters if the app is activated from Deep Linking.</value>
-    <comment>Description text for SchemeActivationSamplePage</comment>
   </data>
   <data name="FirstRun_Body.Text" xml:space="preserve">
     <value>Welcome to UTE UWP!
