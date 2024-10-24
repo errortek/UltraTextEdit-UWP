@@ -125,8 +125,8 @@
     <value>UltraTextEdit UWP</value>
     <comment>Application description</comment>
   </data>
-  <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Wybierz motyw</value>
+  <data name="SettingsTheme.Header" xml:space="preserve">
+    <value>Theme</value>
     <comment>Choose theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Light theme text for Settings</comment>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>O aplikacji</value>
+    <value>About</value>
     <comment>About this application title for Settings</comment>
   </data>
   <data name="Settings_PrivacyTermsLink.Content" xml:space="preserve">
@@ -202,6 +202,14 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <value>* Niezapisane</value>
     <comment>The text of the "* Not Saved" UI element in the title bar. Indicates if the open document is saved or not.</comment>
   </data>
+  <data name="AccentColor.Description" xml:space="preserve">
+    <value>Change the app's accent color</value>
+    <comment>Description of the "Accent color" option in Settings</comment>
+  </data>
+  <data name="AccentColor.Header" xml:space="preserve">
+    <value>Accent color</value>
+    <comment>Title of the "Accent color" option in Settings</comment>
+  </data>
   <data name="CancelButton.Content" xml:space="preserve">
     <value>Cancel</value>
     <comment>Text of "Cancel" buttons</comment>
@@ -229,6 +237,14 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
   <data name="Exit.Text" xml:space="preserve">
     <value>Zamknij</value>
     <comment>Text of the "Exit" option, last option in the "File" dropdown</comment>
+  </data>
+  <data name="Feedback.Description" xml:space="preserve">
+    <value>Join the Developer Sanctuary Discord server, in which I have a project channel where you can provide direct feedback to me and talk with other users. The app's forum post is under my channel, #jpbs-projects, titled 'UltraTextEdit (UWP)'.</value>
+    <comment>Description of the feedback option in Settings</comment>
+  </data>
+  <data name="Feedback.Header" xml:space="preserve">
+    <value>Send feedback via Discord</value>
+    <comment>Title of the feedback option in Settings</comment>
   </data>
   <data name="File.Title" xml:space="preserve">
     <value>Plik</value>
@@ -261,6 +277,18 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
   <data name="FullWordsBox.Content" xml:space="preserve">
     <value>Match whole words</value>
     <comment>Text of the "Match whole words" option</comment>
+  </data>
+  <data name="GitHubRepo.ActionIconToolTip" xml:space="preserve">
+    <value>Open GitHub repo in browser</value>
+    <comment>Tooltip when hovering over the action icon of the GitHub repo link in Settings</comment>
+  </data>
+  <data name="GitHubRepo.Description" xml:space="preserve">
+    <value>Go there to submit issues, view pull requests, and check out the code!!</value>
+    <comment>Description of the GitHub repo link in Settings</comment>
+  </data>
+  <data name="GitHubRepo.Header" xml:space="preserve">
+    <value>GitHub repo</value>
+    <comment>Title of the GitHub repo link in Settings</comment>
   </data>
   <data name="Help.Content" xml:space="preserve">
     <value>Help</value>
@@ -314,9 +342,21 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <value>Zapisz jako</value>
     <comment>Text of the "Save as" option, fourth option in the "File" dropdown</comment>
   </data>
+  <data name="SaveRestart.Content" xml:space="preserve">
+    <value>Save and restart</value>
+    <comment>Text of the "Save and restart button on the Settings bottom pane</comment>
+  </data>
   <data name="Settings.ToolTipService.ToolTip" xml:space="preserve">
     <value>Ustawienia</value>
     <comment>Tooltip for the "Settings" button</comment>
+  </data>
+  <data name="SettingsReset.Content" xml:space="preserve">
+    <value>Reset app settings</value>
+    <comment>Text of the "Reset app settings" button on the Settings bottom pane</comment>
+  </data>
+  <data name="SettingsTheme.Description" xml:space="preserve">
+    <value>Change app theme here</value>
+    <comment>Description of the "Theme" option in Settings</comment>
   </data>
   <data name="Share.ToolTipService.ToolTip" xml:space="preserve">
     <value>Udostępnij</value>
