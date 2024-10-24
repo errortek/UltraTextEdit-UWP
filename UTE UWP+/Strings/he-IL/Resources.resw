@@ -202,9 +202,29 @@ It contains all of UTE UWP's basic features, as well as:
     <value>* Not Saved</value>
     <comment>The text of the "* Not Saved" UI element in the title bar. Indicates if the open document is saved or not.</comment>
   </data>
+  <data name="CancelButton.Content" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Text of "Cancel" buttons</comment>
+  </data>
+  <data name="CaseSensBox.Content" xml:space="preserve">
+    <value>Case sensitive</value>
+    <comment>Text of the "Case sensitive" option</comment>
+  </data>
+  <data name="Close.Label" xml:space="preserve">
+    <value>Close</value>
+    <comment>Text of the "Close" button in the Find/Replace pane</comment>
+  </data>
   <data name="Comment.ToolTipService.ToolTip" xml:space="preserve">
     <value>Comment</value>
     <comment>Tooltip for the "Comment" button</comment>
+  </data>
+  <data name="Comments.Content" xml:space="preserve">
+    <value>Comments</value>
+    <comment>Label of the "Comments" ribbon tab</comment>
+  </data>
+  <data name="Developer.Content" xml:space="preserve">
+    <value>Developer</value>
+    <comment>Label of the "Developer" ribbon tab</comment>
   </data>
   <data name="Exit.Text" xml:space="preserve">
     <value>Exit</value>
@@ -214,9 +234,45 @@ It contains all of UTE UWP's basic features, as well as:
     <value>File</value>
     <comment>Title of the "File" dropdown</comment>
   </data>
+  <data name="FindBox.PlaceholderText" xml:space="preserve">
+    <value>Find</value>
+    <comment>Placeholder text for the Find text box</comment>
+  </data>
+  <data name="FindButton.Content" xml:space="preserve">
+    <value>Find</value>
+    <comment>Text of the "Find" button in the Find/Replace pane</comment>
+  </data>
   <data name="FindReplace.Text" xml:space="preserve">
     <value>Find/Replace</value>
     <comment>Text of the "Find/Replace" option, sixth option in the "File" dropdown</comment>
+  </data>
+  <data name="FindUsageInfo.Title" xml:space="preserve">
+    <value>Usage info</value>
+    <comment>Title of the usage info section of the Find/Replace pane</comment>
+  </data>
+  <data name="FindUsageInfoText.Text" xml:space="preserve">
+    <value>Do not abuse the Find and Replace feature by trying to replace too many characters. Hangs or crashes may occur upon intentional overload.</value>
+    <comment>Text in the usage info section of the Find/Replace pane</comment>
+  </data>
+  <data name="Font.Label" xml:space="preserve">
+    <value>Font</value>
+    <comment>Label of the "Font" ribbon section</comment>
+  </data>
+  <data name="FullWordsBox.Content" xml:space="preserve">
+    <value>Match whole words</value>
+    <comment>Text of the "Match whole words" option</comment>
+  </data>
+  <data name="Help.Content" xml:space="preserve">
+    <value>Help</value>
+    <comment>Label of the "Help" ribbon tab</comment>
+  </data>
+  <data name="Home.Content" xml:space="preserve">
+    <value>Home</value>
+    <comment>Label of the "Home" ribbon tab</comment>
+  </data>
+  <data name="Insert.Content" xml:space="preserve">
+    <value>Insert</value>
+    <comment>Label of the "Insert" ribbon tab</comment>
   </data>
   <data name="NewDoc.Text" xml:space="preserve">
     <value>New Window</value>
@@ -226,6 +282,10 @@ It contains all of UTE UWP's basic features, as well as:
     <value>Open</value>
     <comment>Text of the "Open" option, second option in the "File" dropdown</comment>
   </data>
+  <data name="Paragraph.Label" xml:space="preserve">
+    <value>Paragraph</value>
+    <comment>Label of the "Paragraph" ribbon section</comment>
+  </data>
   <data name="Print.Text" xml:space="preserve">
     <value>Print</value>
     <comment>Text of the "Print" option, fifth option in the "File" dropdown</comment>
@@ -233,6 +293,18 @@ It contains all of UTE UWP's basic features, as well as:
   <data name="Redo.ToolTipService.ToolTip" xml:space="preserve">
     <value>Redo</value>
     <comment>Tooltip for the "Redo" button</comment>
+  </data>
+  <data name="ReplaceAllButton.Content" xml:space="preserve">
+    <value>Replace all</value>
+    <comment>Text of the "Replace all" button in the Find/Replace pane</comment>
+  </data>
+  <data name="ReplaceBox.PlaceholderText" xml:space="preserve">
+    <value>Replace</value>
+    <comment>Placeholder text for the Replace text box</comment>
+  </data>
+  <data name="ReplaceButton.Content" xml:space="preserve">
+    <value>Replace</value>
+    <comment>Text of the "Replace" button in the Find/Replace pane</comment>
   </data>
   <data name="Save.Text" xml:space="preserve">
     <value>Save</value>
