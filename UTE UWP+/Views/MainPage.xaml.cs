@@ -129,23 +129,6 @@ namespace UTE_UWP_.Views
         private void InitializeVIDs()
         {
             ApplicationDataContainer LocalSettings = ApplicationData.Current.LocalSettings;
-            if (LocalSettings.Values["TabbedHideVID"] != null)
-            {
-                if (LocalSettings.Values["TabbedHideVID"].ToString() == "On")
-                {
-                    tabbedwindow.Visibility = Visibility.Collapsed;
-                    untabbedwindow.Text = "New Window";
-                }
-                else
-                {
-                    tabbedwindow.Visibility = Visibility.Visible;
-                    untabbedwindow.Text = "New Untabbed Window";
-                }
-            }
-            else
-            {
-                LocalSettings.Values["TabbedHideVID"] = "On";
-            }
             if (LocalSettings.Values["SpellCheck"] != null)
             {
                 if (LocalSettings.Values["SpellCheck"].ToString() == "On")
@@ -1092,26 +1075,6 @@ namespace UTE_UWP_.Views
 
             Symbols_Insert.Flyout.Hide();
             editor.Focus(FocusState.Keyboard);
-        }
-
-        private async void NewInstance_Click(object sender, RoutedEventArgs e)
-        {
-            ApplicationView currentAV = ApplicationView.GetForCurrentView();
-            CoreApplicationView newAV = CoreApplication.CreateNewView();
-            await newAV.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
-            {
-                var newWindow = Window.Current;
-                var newAppView = ApplicationView.GetForCurrentView();
-                newAppView.Title = $"Untitled - UTE UWP";
-
-                var frame = new Frame();
-                frame.Navigate(typeof(MainPage));
-                newWindow.Content = frame;
-                newWindow.Activate();
-
-                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
-                    ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
-            });
         }
 
         private async void DateInsertionAsync(object sender, RoutedEventArgs e)
