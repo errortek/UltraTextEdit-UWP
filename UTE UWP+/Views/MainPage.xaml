@@ -449,10 +449,10 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="OK" Click="ConfirmColor_Click"
+                    <Button x:Uid="Confirm" Click="ConfirmColor_Click"
                             Style="{StaticResource AccentButtonStyle}"
                         Margin="0,12,2,0" HorizontalAlignment="Stretch"/>
-                    <Button Content="Cancel" Click="CancelColor_Click"
+                    <Button x:Uid="Cancel" Click="CancelColor_Click"
                         Margin="2,12,0,0" HorizontalAlignment="Stretch"
                         Grid.Column="1"/>
                 </Grid>
@@ -490,7 +490,7 @@
                         x:Name="AppTitle"
                         Margin="12,2,4,0"
                         VerticalAlignment="Center"
-                        Text="Untitled - UTE UWP"
+                        x:Uid="MainPageTitle"
                         FontSize="12"
                         FontWeight="Normal" Foreground="{ThemeResource SystemAccentColor}"/>
                         </StackPanel>
@@ -499,8 +499,7 @@
                         x:Name="UnsavedTextBlock"
                         Padding="5,0"
                         VerticalAlignment="Center"
-                        Text="* Not Saved"
-                        ToolTipService.ToolTip="There are unsaved changes." />
+                        x:Uid="Unsaved" />
                 </StackPanel>
 
                 <StackPanel
