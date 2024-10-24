@@ -186,4 +186,20 @@ It contains all of UTE UWP's basic features, as well as:
     <value>OK</value>
     <comment>What's new prompt message primary button text</comment>
   </data>
+  <data name="Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Text for "Cancel" buttons in the app</comment>
+  </data>
+  <data name="Confirm.Text" xml:space="preserve">
+    <value>OK</value>
+    <comment>Text for "OK" buttons in the app</comment>
+  </data>
+  <data name="MainPageTitle.Text" xml:space="preserve">
+    <value>Untitled - UTE UWP</value>
+    <comment>The default title of the MainPage, the main document editing interface.</comment>
+  </data>
+  <data name="Unsaved.Text" xml:space="preserve">
+    <value>* Not Saved</value>
+    <comment>The text of the "* Not Saved" UI element in the title bar. Indicates if the open document is saved or not.</comment>
+  </data>
 </root>
