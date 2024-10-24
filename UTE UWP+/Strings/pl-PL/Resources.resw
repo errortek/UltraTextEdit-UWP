@@ -126,7 +126,7 @@
     <comment>Application description</comment>
   </data>
   <data name="SettingsTheme.Header" xml:space="preserve">
-    <value>Theme</value>
+    <value>Motyw</value>
     <comment>Choose theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Light theme text for Settings</comment>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>About</value>
+    <value>O aplikacji</value>
     <comment>About this application title for Settings</comment>
   </data>
   <data name="Settings_PrivacyTermsLink.Content" xml:space="preserve">
@@ -203,23 +203,23 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>The text of the "* Not Saved" UI element in the title bar. Indicates if the open document is saved or not.</comment>
   </data>
   <data name="AccentColor.Description" xml:space="preserve">
-    <value>Change the app's accent color</value>
+    <value>Zmień kolor akcentu aplikacji</value>
     <comment>Description of the "Accent color" option in Settings</comment>
   </data>
   <data name="AccentColor.Header" xml:space="preserve">
-    <value>Accent color</value>
+    <value>Kolor akcentu</value>
     <comment>Title of the "Accent color" option in Settings</comment>
   </data>
   <data name="CancelButton.Content" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Anuluj</value>
     <comment>Text of "Cancel" buttons</comment>
   </data>
   <data name="CaseSensBox.Content" xml:space="preserve">
-    <value>Case sensitive</value>
+    <value>Rozróżniaj wielkość liter</value>
     <comment>Text of the "Case sensitive" option</comment>
   </data>
   <data name="Close.Label" xml:space="preserve">
-    <value>Close</value>
+    <value>Zamknij</value>
     <comment>Text of the "Close" button in the Find/Replace pane</comment>
   </data>
   <data name="Comment.ToolTipService.ToolTip" xml:space="preserve">
@@ -227,11 +227,11 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>Tooltip for the "Comment" button</comment>
   </data>
   <data name="Comments.Content" xml:space="preserve">
-    <value>Comments</value>
+    <value>Komentarze</value>
     <comment>Label of the "Comments" ribbon tab</comment>
   </data>
   <data name="Developer.Content" xml:space="preserve">
-    <value>Developer</value>
+    <value>Deweloper</value>
     <comment>Label of the "Developer" ribbon tab</comment>
   </data>
   <data name="Exit.Text" xml:space="preserve">
@@ -239,11 +239,11 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>Text of the "Exit" option, last option in the "File" dropdown</comment>
   </data>
   <data name="Feedback.Description" xml:space="preserve">
-    <value>Join the Developer Sanctuary Discord server, in which I have a project channel where you can provide direct feedback to me and talk with other users. The app's forum post is under my channel, #jpbs-projects, titled 'UltraTextEdit (UWP)'.</value>
+    <value>Dołącz do serwera Developer Sanctuary na Discordzie, w którym mam kanał projektowy gdzie możesz przekazać mi bezpośrednie swoje opinie i porozmawiać z innymi użytkownikami aplikacji. Post forumowy aplikacji jest pod moim kanałem, #jpbs-projects, zatytułowany "UltraTextEdit (UWP)".</value>
     <comment>Description of the feedback option in Settings</comment>
   </data>
   <data name="Feedback.Header" xml:space="preserve">
-    <value>Send feedback via Discord</value>
+    <value>Wyślij opinię przez Discorda</value>
     <comment>Title of the feedback option in Settings</comment>
   </data>
   <data name="File.Title" xml:space="preserve">
@@ -251,11 +251,11 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>Title of the "File" dropdown</comment>
   </data>
   <data name="FindBox.PlaceholderText" xml:space="preserve">
-    <value>Find</value>
+    <value>Tekst do wyszukania</value>
     <comment>Placeholder text for the Find text box</comment>
   </data>
   <data name="FindButton.Content" xml:space="preserve">
-    <value>Find</value>
+    <value>Wyszukaj</value>
     <comment>Text of the "Find" button in the Find/Replace pane</comment>
   </data>
   <data name="FindReplace.Text" xml:space="preserve">
@@ -263,43 +263,43 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>Text of the "Find/Replace" option, sixth option in the "File" dropdown</comment>
   </data>
   <data name="FindUsageInfo.Title" xml:space="preserve">
-    <value>Usage info</value>
+    <value>Informacje o użyciu</value>
     <comment>Title of the usage info section of the Find/Replace pane</comment>
   </data>
   <data name="FindUsageInfoText.Text" xml:space="preserve">
-    <value>Do not abuse the Find and Replace feature by trying to replace too many characters. Hangs or crashes may occur upon intentional overload.</value>
+    <value>Nie nadużywaj funkcji Znajdź i Zamień przez próbę zastąpienia zbyt wielu znaków. Zawieszenia lub awarie mogą wystąpić po celowym przeciążeniu.</value>
     <comment>Text in the usage info section of the Find/Replace pane</comment>
   </data>
   <data name="Font.Label" xml:space="preserve">
-    <value>Font</value>
+    <value>Czcionka</value>
     <comment>Label of the "Font" ribbon section</comment>
   </data>
   <data name="FullWordsBox.Content" xml:space="preserve">
-    <value>Match whole words</value>
+    <value>Uwzględnij całe wyrazy</value>
     <comment>Text of the "Match whole words" option</comment>
   </data>
   <data name="GitHubRepo.ActionIconToolTip" xml:space="preserve">
-    <value>Open GitHub repo in browser</value>
+    <value>Otwórz repozytorium GitHub w przeglądarce</value>
     <comment>Tooltip when hovering over the action icon of the GitHub repo link in Settings</comment>
   </data>
   <data name="GitHubRepo.Description" xml:space="preserve">
-    <value>Go there to submit issues, view pull requests, and check out the code!!</value>
+    <value>Przejdź tam, aby przesłać zgłoszenia, wyświetlić Pull Requesty i sprawdzić kod!!</value>
     <comment>Description of the GitHub repo link in Settings</comment>
   </data>
   <data name="GitHubRepo.Header" xml:space="preserve">
-    <value>GitHub repo</value>
+    <value>Repozytorium na GitHub</value>
     <comment>Title of the GitHub repo link in Settings</comment>
   </data>
   <data name="Help.Content" xml:space="preserve">
-    <value>Help</value>
+    <value>Pomoc</value>
     <comment>Label of the "Help" ribbon tab</comment>
   </data>
   <data name="Home.Content" xml:space="preserve">
-    <value>Home</value>
+    <value>Strona główna</value>
     <comment>Label of the "Home" ribbon tab</comment>
   </data>
   <data name="Insert.Content" xml:space="preserve">
-    <value>Insert</value>
+    <value>Wstaw</value>
     <comment>Label of the "Insert" ribbon tab</comment>
   </data>
   <data name="NewDoc.Text" xml:space="preserve">
@@ -311,7 +311,7 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>Text of the "Open" option, second option in the "File" dropdown</comment>
   </data>
   <data name="Paragraph.Label" xml:space="preserve">
-    <value>Paragraph</value>
+    <value>Akapit</value>
     <comment>Label of the "Paragraph" ribbon section</comment>
   </data>
   <data name="Print.Text" xml:space="preserve">
@@ -323,15 +323,15 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>Tooltip for the "Redo" button</comment>
   </data>
   <data name="ReplaceAllButton.Content" xml:space="preserve">
-    <value>Replace all</value>
+    <value>Zamień wszystko</value>
     <comment>Text of the "Replace all" button in the Find/Replace pane</comment>
   </data>
   <data name="ReplaceBox.PlaceholderText" xml:space="preserve">
-    <value>Replace</value>
+    <value>Tekst do zamiany</value>
     <comment>Placeholder text for the Replace text box</comment>
   </data>
   <data name="ReplaceButton.Content" xml:space="preserve">
-    <value>Replace</value>
+    <value>Zamień</value>
     <comment>Text of the "Replace" button in the Find/Replace pane</comment>
   </data>
   <data name="Save.Text" xml:space="preserve">
@@ -343,7 +343,7 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>Text of the "Save as" option, fourth option in the "File" dropdown</comment>
   </data>
   <data name="SaveRestart.Content" xml:space="preserve">
-    <value>Save and restart</value>
+    <value>Zapisz i uruchom ponownie</value>
     <comment>Text of the "Save and restart button on the Settings bottom pane</comment>
   </data>
   <data name="Settings.ToolTipService.ToolTip" xml:space="preserve">
@@ -351,11 +351,11 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>Tooltip for the "Settings" button</comment>
   </data>
   <data name="SettingsReset.Content" xml:space="preserve">
-    <value>Reset app settings</value>
+    <value>Zresetuj ustawienia aplikacji</value>
     <comment>Text of the "Reset app settings" button on the Settings bottom pane</comment>
   </data>
   <data name="SettingsTheme.Description" xml:space="preserve">
-    <value>Change app theme here</value>
+    <value>Zmień motyw aplikacji tutaj</value>
     <comment>Description of the "Theme" option in Settings</comment>
   </data>
   <data name="Share.ToolTipService.ToolTip" xml:space="preserve">
