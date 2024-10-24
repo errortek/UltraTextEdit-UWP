@@ -126,23 +126,23 @@
     <comment>Application description</comment>
   </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Wybierz motyw</value>
+    <value>Choose Theme</value>
     <comment>Choose theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Ciemny</value>
+    <value>Dark</value>
     <comment>Dark theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Default.Content" xml:space="preserve">
-    <value>Domyślny systemu Windows</value>
+    <value>Windows default</value>
     <comment>Windows default theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Jasny</value>
+    <value>Light</value>
     <comment>Light theme text for Settings</comment>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>O aplikacji</value>
+    <value>About this application</value>
     <comment>About this application title for Settings</comment>
   </data>
   <data name="Settings_PrivacyTermsLink.Content" xml:space="preserve">
@@ -154,24 +154,24 @@
     <comment>Here is your Privacy Statement url for Settings</comment>
   </data>
   <data name="Settings_Personalization.Text" xml:space="preserve">
-    <value>Personalizacja</value>
+    <value>Personalization</value>
     <comment>Personalization text for Settings</comment>
   </data>
   <data name="Settings_Title.Text" xml:space="preserve">
-    <value>Ustawienia</value>
+    <value>Settings</value>
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="FirstRun_Body.Text" xml:space="preserve">
-    <value>Witaj w UTE UWP!
-To jest nowsza i bardziej zaawansowana wersja UltraTextEdit UWP, nieoparta na TowPadzie!
-Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
-- Nowe menu ustawień
-- Nowy algorytm wyszukiwana i zamieniania tekstu
-- Zresetowane dialogi pierwszego startu i Co Nowego, tak jak w UTE UWP 22H1!!</value>
+    <value>Welcome to UTE UWP!
+This is a newer and more sophisticated version of UltraTextEedit UWP, not based on the TowPad codebase!
+It contains all of UTE UWP's basic features, as well as:
+- A new, redesigned Settings menu
+- A new Find/Replace algorithm
+- Reset First Run/What's New dialogs, like in UTE UWP 22H1!!</value>
     <comment>First use prompt message body</comment>
   </data>
   <data name="FirstRunDialog.Title" xml:space="preserve">
-    <value>Witaj</value>
+    <value>Welcome</value>
     <comment>First use prompt message title</comment>
   </data>
   <data name="FirstRunDialog.PrimaryButtonText" xml:space="preserve">
@@ -179,11 +179,27 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <comment>First use prompt message primary button text</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
-    <value>Co nowego w tej wersji?</value>
+    <value>What's new in this version</value>
     <comment>What's new prompt message title</comment>
   </data>
   <data name="WhatsNewDialog.PrimaryButtonText" xml:space="preserve">
     <value>OK</value>
     <comment>What's new prompt message primary button text</comment>
+  </data>
+  <data name="Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Text for "Cancel" buttons in the app</comment>
+  </data>
+  <data name="Confirm.Text" xml:space="preserve">
+    <value>OK</value>
+    <comment>Text for "OK" buttons in the app</comment>
+  </data>
+  <data name="MainPageTitle.Text" xml:space="preserve">
+    <value>Untitled - UTE UWP</value>
+    <comment>The default title of the MainPage, the main document editing interface.</comment>
+  </data>
+  <data name="Unsaved.Text" xml:space="preserve">
+    <value>* Not Saved</value>
+    <comment>The text of the "* Not Saved" UI element in the title bar. Indicates if the open document is saved or not.</comment>
   </data>
 </root>
