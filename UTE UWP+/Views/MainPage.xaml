@@ -603,18 +603,18 @@
                     <Grid x:Name="TopMid" CornerRadius="8"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                         <RelativePanel>
                             <StackPanel x:Name="RibbonTabs" Orientation="Horizontal" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
-                                <ToggleButton x:Name="EditButton" Content="Home" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_33" Style="{StaticResource ToolbarToggleButton}" Padding="11,6,11,4"/>
-                                <ToggleButton x:Name="InsertButton" Content="Insert" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_34" Style="{StaticResource ToolbarToggleButton}"  Padding="11,6,11,4"/>
-                                <ToggleButton x:Name="CommentsButton" Content="Comments" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_37" Style="{StaticResource ToolbarContextualToggleButton}" Padding="11,6,11,4"/>
+                                <ToggleButton x:Name="EditButton" x:Uid="Home"  Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_33" Style="{StaticResource ToolbarToggleButton}" Padding="11,6,11,4"/>
+                                <ToggleButton x:Name="InsertButton" x:Uid="Insert"  Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_34" Style="{StaticResource ToolbarToggleButton}"  Padding="11,6,11,4"/>
+                                <ToggleButton x:Name="CommentsButton" x:Uid="Comments" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_37" Style="{StaticResource ToolbarContextualToggleButton}" Padding="11,6,11,4"/>
 
-                                <ToggleButton x:Name="DeveloperButton" Content="Developer" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_36" Style="{StaticResource ToolbarToggleButton}" Padding="11,6,11,4"/>
-                                <ToggleButton x:Name="HelpButton" Content="Help" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_35" Style="{StaticResource ToolbarToggleButton}" Padding="11,6,11,4"/>
+                                <ToggleButton x:Name="DeveloperButton" x:Uid="Developer" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_36" Style="{StaticResource ToolbarToggleButton}" Padding="11,6,11,4"/>
+                                <ToggleButton x:Name="HelpButton" x:Uid="Help" Background="#00000000" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Height="32" Click="Button_Click_35" Style="{StaticResource ToolbarToggleButton}" Padding="11,6,11,4"/>
                             </StackPanel>
                             <Border x:Name="RibbonBorder" RelativePanel.Below="RibbonTabs" VerticalAlignment="Top" BorderBrush="{StaticResource CardStrokeColorDefaultBrush}" BorderThickness="0,1,0,1" HorizontalAlignment="Stretch" Background="{StaticResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                                 <Grid>
                                     <controls:Ribbon x:Name="Home" VerticalAlignment="Top" HorizontalAlignment="Stretch" CornerRadius="8" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                                         
-                                            <controls:RibbonCollapsibleGroup x:Name="Font" Label="Font" VerticalAlignment="Top" CornerRadius="8">
+                                            <controls:RibbonCollapsibleGroup x:Name="Font" x:Uid="Font" VerticalAlignment="Top" CornerRadius="8">
                                             <controls:RibbonCollapsibleGroup.IconSource>
                                                 <FontIconSource Glyph="&#xE8D2;">
                                                 </FontIconSource>
@@ -963,7 +963,7 @@
                                                 <Border BorderThickness="1" Width="3" HorizontalAlignment="Right" Background="{StaticResource DividerStrokeColorDefaultBrush}" CornerRadius="1,1,1,1" Margin="0,-2,0,0"/>
                                             </Grid>
                                         </controls:RibbonCollapsibleGroup>
-                                        <controls:RibbonCollapsibleGroup x:Name="Paragraph" Label="Paragraph" RelativePanel.RightOf="Font" Width="Auto">
+                                        <controls:RibbonCollapsibleGroup x:Name="Paragraph" x:Uid="Paragraph" RelativePanel.RightOf="Font" Width="Auto">
                                             <controls:RibbonCollapsibleGroup.IconSource>
                                                 <FontIconSource Glyph="&#xE8E4;">
                                                 </FontIconSource>
@@ -1213,20 +1213,20 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <StackPanel Orientation="Vertical" Background="Transparent">
-                            <muxc:InfoBar IsOpen="True" Severity="Informational" Title="Usage info">
+                            <muxc:InfoBar IsOpen="True" Severity="Informational" x:Uid="FindUsageInfo">
                                 <muxc:InfoBar.Content>
-                                    <TextBlock Text="Do not abuse the Find and Replace feature by trying to replace too many characters. Hangs or crashes may occur upon intentional overload." TextWrapping="WrapWholeWords"/>
+                                    <TextBlock x:Uid="FindUsageInfoText" TextWrapping="WrapWholeWords"/>
                                 </muxc:InfoBar.Content>
                             </muxc:InfoBar>
-                            <TextBox x:Name="FindTextBox" TextWrapping="Wrap" AcceptsReturn="True" PlaceholderText="Find" Margin="10,10,10,0" Visibility="Visible"/>
-                            <TextBox x:Name="ReplaceBox" TextWrapping="Wrap" AcceptsReturn="True" PlaceholderText="Replace" Margin="10,10,10,0"/>
-                            <CheckBox x:Name="CaseSensBox" Content="Case sensitive" Margin="10,10,0,0"/>
-                            <CheckBox x:Name="FullWordsBox" Content="Match whole words" Margin="10,0,0,0"/>
-                            <Button x:Name="FindBTN" Content="Find" HorizontalAlignment="Stretch" Click="FindBTN_Click"/>
-                            <Button x:Name="RepBTN" Content="Replace" HorizontalAlignment="Stretch" Click="RepBTN_Click"/>
-                            <Button x:Name="RepAllBTN" Content="Replace all" Click="RepAllBTN_Click" HorizontalAlignment="Stretch"/>
-                            <Button x:Name="CancelFindRepBTN" Content="Cancel" HorizontalAlignment="Stretch" Click="CancelFindRepBTN_Click"/>
-                            <AppBarButton HorizontalAlignment="Center" Icon="ClosePane" Label="Close" Click="closepane"/>
+                            <TextBox x:Name="FindTextBox" TextWrapping="Wrap" AcceptsReturn="True" x:Uid="FindBox" Margin="10,10,10,0" Visibility="Visible"/>
+                            <TextBox x:Name="ReplaceBox" TextWrapping="Wrap" AcceptsReturn="True" x:Uid="ReplaceBox" Margin="10,10,10,0"/>
+                            <CheckBox x:Name="CaseSensBox" x:Uid="CaseSensBox" Margin="10,10,0,0"/>
+                            <CheckBox x:Name="FullWordsBox" x:Uid="FullWordsBox" Margin="10,0,0,0"/>
+                            <Button x:Name="FindBTN" x:Uid="FindButton" HorizontalAlignment="Stretch" Click="FindBTN_Click"/>
+                            <Button x:Name="RepBTN" x:Uid="ReplaceButton" HorizontalAlignment="Stretch" Click="RepBTN_Click"/>
+                            <Button x:Name="RepAllBTN" x:Uid="ReplaceAllButton" Click="RepAllBTN_Click" HorizontalAlignment="Stretch"/>
+                            <Button x:Name="CancelFindRepBTN" x:Uid="CancelButton" HorizontalAlignment="Stretch" Click="CancelFindRepBTN_Click"/>
+                            <AppBarButton HorizontalAlignment="Center" Icon="ClosePane" x:Uid="Close" Click="closepane"/>
                         </StackPanel>
                     </Grid>
                 </SplitView.Pane>
