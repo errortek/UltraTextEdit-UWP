@@ -126,23 +126,23 @@
     <comment>Application description</comment>
   </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Choose Theme</value>
+    <value>Wybierz motyw</value>
     <comment>Choose theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>Ciemny</value>
     <comment>Dark theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Default.Content" xml:space="preserve">
-    <value>Windows default</value>
+    <value>Domyślny dla systemu Windows</value>
     <comment>Windows default theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>Jasny</value>
     <comment>Light theme text for Settings</comment>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>About this application</value>
+    <value>O aplikacji</value>
     <comment>About this application title for Settings</comment>
   </data>
   <data name="Settings_PrivacyTermsLink.Content" xml:space="preserve">
@@ -154,24 +154,24 @@
     <comment>Here is your Privacy Statement url for Settings</comment>
   </data>
   <data name="Settings_Personalization.Text" xml:space="preserve">
-    <value>Personalization</value>
+    <value>Personalizacja</value>
     <comment>Personalization text for Settings</comment>
   </data>
   <data name="Settings_Title.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Ustawienia</value>
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="FirstRun_Body.Text" xml:space="preserve">
-    <value>Welcome to UTE UWP!
-This is a newer and more sophisticated version of UltraTextEedit UWP, not based on the TowPad codebase!
-It contains all of UTE UWP's basic features, as well as:
-- A new, redesigned Settings menu
-- A new Find/Replace algorithm
-- Reset First Run/What's New dialogs, like in UTE UWP 22H1!!</value>
+    <value>Witaj w UTE UWP!
+To jest nowsza i bardziej zaawansowana wersja UltraTextEdit UWP, nieoparta na TowPadzie!
+Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
+- Nowe menu ustawień
+- Nowy algorytm wyszukiwana i zamieniania tekstu
+- Zresetowane dialogi pierwszego startu i Co Nowego, tak jak w UTE UWP 22H1!!</value>
     <comment>First use prompt message body</comment>
   </data>
   <data name="FirstRunDialog.Title" xml:space="preserve">
-    <value>Welcome</value>
+    <value>Witaj</value>
     <comment>First use prompt message title</comment>
   </data>
   <data name="FirstRunDialog.PrimaryButtonText" xml:space="preserve">
@@ -179,7 +179,7 @@ It contains all of UTE UWP's basic features, as well as:
     <comment>First use prompt message primary button text</comment>
   </data>
   <data name="WhatsNewDialog.Title" xml:space="preserve">
-    <value>What's new in this version</value>
+    <value>Co nowego w tej wersji?</value>
     <comment>What's new prompt message title</comment>
   </data>
   <data name="WhatsNewDialog.PrimaryButtonText" xml:space="preserve">
@@ -187,7 +187,7 @@ It contains all of UTE UWP's basic features, as well as:
     <comment>What's new prompt message primary button text</comment>
   </data>
   <data name="Cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Anuluj</value>
     <comment>Text for "Cancel" buttons in the app</comment>
   </data>
   <data name="Confirm.Text" xml:space="preserve">
@@ -195,63 +195,135 @@ It contains all of UTE UWP's basic features, as well as:
     <comment>Text for "OK" buttons in the app</comment>
   </data>
   <data name="MainPageTitle.Text" xml:space="preserve">
-    <value>Untitled - UTE UWP</value>
+    <value>Bez tytułu — UTE UWP</value>
     <comment>The default title of the MainPage, the main document editing interface.</comment>
   </data>
   <data name="Unsaved.Text" xml:space="preserve">
-    <value>* Not Saved</value>
+    <value>* Niezapisane</value>
     <comment>The text of the "* Not Saved" UI element in the title bar. Indicates if the open document is saved or not.</comment>
   </data>
+  <data name="CancelButton.Content" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Text of "Cancel" buttons</comment>
+  </data>
+  <data name="CaseSensBox.Content" xml:space="preserve">
+    <value>Case sensitive</value>
+    <comment>Text of the "Case sensitive" option</comment>
+  </data>
+  <data name="Close.Label" xml:space="preserve">
+    <value>Close</value>
+    <comment>Text of the "Close" button in the Find/Replace pane</comment>
+  </data>
   <data name="Comment.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Comment</value>
+    <value>Komentarze</value>
     <comment>Tooltip for the "Comment" button</comment>
   </data>
+  <data name="Comments.Content" xml:space="preserve">
+    <value>Comments</value>
+    <comment>Label of the "Comments" ribbon tab</comment>
+  </data>
+  <data name="Developer.Content" xml:space="preserve">
+    <value>Developer</value>
+    <comment>Label of the "Developer" ribbon tab</comment>
+  </data>
   <data name="Exit.Text" xml:space="preserve">
-    <value>Exit</value>
+    <value>Zamknij</value>
     <comment>Text of the "Exit" option, last option in the "File" dropdown</comment>
   </data>
   <data name="File.Title" xml:space="preserve">
-    <value>File</value>
+    <value>Plik</value>
     <comment>Title of the "File" dropdown</comment>
   </data>
+  <data name="FindBox.PlaceholderText" xml:space="preserve">
+    <value>Find</value>
+    <comment>Placeholder text for the Find text box</comment>
+  </data>
+  <data name="FindButton.Content" xml:space="preserve">
+    <value>Find</value>
+    <comment>Text of the "Find" button in the Find/Replace pane</comment>
+  </data>
   <data name="FindReplace.Text" xml:space="preserve">
-    <value>Find/Replace</value>
+    <value>Znajdź/Zamień</value>
     <comment>Text of the "Find/Replace" option, sixth option in the "File" dropdown</comment>
   </data>
+  <data name="FindUsageInfo.Title" xml:space="preserve">
+    <value>Usage info</value>
+    <comment>Title of the usage info section of the Find/Replace pane</comment>
+  </data>
+  <data name="FindUsageInfoText.Text" xml:space="preserve">
+    <value>Do not abuse the Find and Replace feature by trying to replace too many characters. Hangs or crashes may occur upon intentional overload.</value>
+    <comment>Text in the usage info section of the Find/Replace pane</comment>
+  </data>
+  <data name="Font.Label" xml:space="preserve">
+    <value>Font</value>
+    <comment>Label of the "Font" ribbon section</comment>
+  </data>
+  <data name="FullWordsBox.Content" xml:space="preserve">
+    <value>Match whole words</value>
+    <comment>Text of the "Match whole words" option</comment>
+  </data>
+  <data name="Help.Content" xml:space="preserve">
+    <value>Help</value>
+    <comment>Label of the "Help" ribbon tab</comment>
+  </data>
+  <data name="Home.Content" xml:space="preserve">
+    <value>Home</value>
+    <comment>Label of the "Home" ribbon tab</comment>
+  </data>
+  <data name="Insert.Content" xml:space="preserve">
+    <value>Insert</value>
+    <comment>Label of the "Insert" ribbon tab</comment>
+  </data>
   <data name="NewDoc.Text" xml:space="preserve">
-    <value>New Window</value>
+    <value>Nowe okno</value>
     <comment>Text of the "New Window" option, first option in the "File" dropdown</comment>
   </data>
   <data name="Open.Text" xml:space="preserve">
-    <value>Open</value>
+    <value>Otwórz</value>
     <comment>Text of the "Open" option, second option in the "File" dropdown</comment>
   </data>
+  <data name="Paragraph.Label" xml:space="preserve">
+    <value>Paragraph</value>
+    <comment>Label of the "Paragraph" ribbon section</comment>
+  </data>
   <data name="Print.Text" xml:space="preserve">
-    <value>Print</value>
+    <value>Drukuj</value>
     <comment>Text of the "Print" option, fifth option in the "File" dropdown</comment>
   </data>
   <data name="Redo.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Redo</value>
+    <value>Ponów</value>
     <comment>Tooltip for the "Redo" button</comment>
   </data>
+  <data name="ReplaceAllButton.Content" xml:space="preserve">
+    <value>Replace all</value>
+    <comment>Text of the "Replace all" button in the Find/Replace pane</comment>
+  </data>
+  <data name="ReplaceBox.PlaceholderText" xml:space="preserve">
+    <value>Replace</value>
+    <comment>Placeholder text for the Replace text box</comment>
+  </data>
+  <data name="ReplaceButton.Content" xml:space="preserve">
+    <value>Replace</value>
+    <comment>Text of the "Replace" button in the Find/Replace pane</comment>
+  </data>
   <data name="Save.Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Zapisz</value>
     <comment>Text of the "Save" option, third option in the "File" dropdown</comment>
   </data>
   <data name="SaveAs.Text" xml:space="preserve">
-    <value>Save as</value>
+    <value>Zapisz jako</value>
     <comment>Text of the "Save as" option, fourth option in the "File" dropdown</comment>
   </data>
   <data name="Settings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Settings</value>
+    <value>Ustawienia</value>
     <comment>Tooltip for the "Settings" button</comment>
   </data>
   <data name="Share.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Share</value>
+    <value>Udostępnij</value>
     <comment>Tooltip for the "Share" button</comment>
   </data>
   <data name="Undo.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Undo</value>
+    <value>Cofnij</value>
     <comment>Tooltip for the "Undo" button</comment>
   </data>
 </root>
