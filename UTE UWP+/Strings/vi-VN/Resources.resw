@@ -202,4 +202,56 @@ It contains all of UTE UWP's basic features, as well as:
     <value>* Not Saved</value>
     <comment>The text of the "* Not Saved" UI element in the title bar. Indicates if the open document is saved or not.</comment>
   </data>
+  <data name="Comment.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Comment</value>
+    <comment>Tooltip for the "Comment" button</comment>
+  </data>
+  <data name="Exit.Text" xml:space="preserve">
+    <value>Exit</value>
+    <comment>Text of the "Exit" option, last option in the "File" dropdown</comment>
+  </data>
+  <data name="File.Title" xml:space="preserve">
+    <value>File</value>
+    <comment>Title of the "File" dropdown</comment>
+  </data>
+  <data name="FindReplace.Text" xml:space="preserve">
+    <value>Find/Replace</value>
+    <comment>Text of the "Find/Replace" option, sixth option in the "File" dropdown</comment>
+  </data>
+  <data name="NewDoc.Text" xml:space="preserve">
+    <value>New Window</value>
+    <comment>Text of the "New Window" option, first option in the "File" dropdown</comment>
+  </data>
+  <data name="Open.Text" xml:space="preserve">
+    <value>Open</value>
+    <comment>Text of the "Open" option, second option in the "File" dropdown</comment>
+  </data>
+  <data name="Print.Text" xml:space="preserve">
+    <value>Print</value>
+    <comment>Text of the "Print" option, fifth option in the "File" dropdown</comment>
+  </data>
+  <data name="Redo.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Redo</value>
+    <comment>Tooltip for the "Redo" button</comment>
+  </data>
+  <data name="Save.Text" xml:space="preserve">
+    <value>Save</value>
+    <comment>Text of the "Save" option, third option in the "File" dropdown</comment>
+  </data>
+  <data name="SaveAs.Text" xml:space="preserve">
+    <value>Save as</value>
+    <comment>Text of the "Save as" option, fourth option in the "File" dropdown</comment>
+  </data>
+  <data name="Settings.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Tooltip for the "Settings" button</comment>
+  </data>
+  <data name="Share.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Share</value>
+    <comment>Tooltip for the "Share" button</comment>
+  </data>
+  <data name="Undo.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Undo</value>
+    <comment>Tooltip for the "Undo" button</comment>
+  </data>
 </root>
