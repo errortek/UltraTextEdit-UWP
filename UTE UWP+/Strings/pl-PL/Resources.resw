@@ -125,8 +125,8 @@
     <value>UltraTextEdit UWP</value>
     <comment>Application description</comment>
   </data>
-  <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Wybierz motyw</value>
+  <data name="SettingsTheme.Header" xml:space="preserve">
+    <value>Motyw</value>
     <comment>Choose theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
@@ -134,7 +134,7 @@
     <comment>Dark theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Default.Content" xml:space="preserve">
-    <value>Domyślny systemu Windows</value>
+    <value>Domyślny dla systemu Windows</value>
     <comment>Windows default theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
@@ -185,5 +185,185 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
   <data name="WhatsNewDialog.PrimaryButtonText" xml:space="preserve">
     <value>OK</value>
     <comment>What's new prompt message primary button text</comment>
+  </data>
+  <data name="Cancel.Text" xml:space="preserve">
+    <value>Anuluj</value>
+    <comment>Text for "Cancel" buttons in the app</comment>
+  </data>
+  <data name="Confirm.Text" xml:space="preserve">
+    <value>OK</value>
+    <comment>Text for "OK" buttons in the app</comment>
+  </data>
+  <data name="MainPageTitle.Text" xml:space="preserve">
+    <value>Bez tytułu — UTE UWP</value>
+    <comment>The default title of the MainPage, the main document editing interface.</comment>
+  </data>
+  <data name="Unsaved.Text" xml:space="preserve">
+    <value>* Niezapisane</value>
+    <comment>The text of the "* Not Saved" UI element in the title bar. Indicates if the open document is saved or not.</comment>
+  </data>
+  <data name="AccentColor.Description" xml:space="preserve">
+    <value>Zmień kolor akcentu aplikacji</value>
+    <comment>Description of the "Accent color" option in Settings</comment>
+  </data>
+  <data name="AccentColor.Header" xml:space="preserve">
+    <value>Kolor akcentu</value>
+    <comment>Title of the "Accent color" option in Settings</comment>
+  </data>
+  <data name="CancelButton.Content" xml:space="preserve">
+    <value>Anuluj</value>
+    <comment>Text of "Cancel" buttons</comment>
+  </data>
+  <data name="CaseSensBox.Content" xml:space="preserve">
+    <value>Rozróżniaj wielkość liter</value>
+    <comment>Text of the "Case sensitive" option</comment>
+  </data>
+  <data name="Close.Label" xml:space="preserve">
+    <value>Zamknij</value>
+    <comment>Text of the "Close" button in the Find/Replace pane</comment>
+  </data>
+  <data name="Comment.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Komentarze</value>
+    <comment>Tooltip for the "Comment" button</comment>
+  </data>
+  <data name="Comments.Content" xml:space="preserve">
+    <value>Komentarze</value>
+    <comment>Label of the "Comments" ribbon tab</comment>
+  </data>
+  <data name="Developer.Content" xml:space="preserve">
+    <value>Deweloper</value>
+    <comment>Label of the "Developer" ribbon tab</comment>
+  </data>
+  <data name="Exit.Text" xml:space="preserve">
+    <value>Zamknij</value>
+    <comment>Text of the "Exit" option, last option in the "File" dropdown</comment>
+  </data>
+  <data name="Feedback.Description" xml:space="preserve">
+    <value>Dołącz do serwera Developer Sanctuary na Discordzie, w którym mam kanał projektowy gdzie możesz przekazać mi bezpośrednie swoje opinie i porozmawiać z innymi użytkownikami aplikacji. Post forumowy aplikacji jest pod moim kanałem, #jpbs-projects, zatytułowany "UltraTextEdit (UWP)".</value>
+    <comment>Description of the feedback option in Settings</comment>
+  </data>
+  <data name="Feedback.Header" xml:space="preserve">
+    <value>Wyślij opinię przez Discorda</value>
+    <comment>Title of the feedback option in Settings</comment>
+  </data>
+  <data name="File.Title" xml:space="preserve">
+    <value>Plik</value>
+    <comment>Title of the "File" dropdown</comment>
+  </data>
+  <data name="FindBox.PlaceholderText" xml:space="preserve">
+    <value>Tekst do wyszukania</value>
+    <comment>Placeholder text for the Find text box</comment>
+  </data>
+  <data name="FindButton.Content" xml:space="preserve">
+    <value>Wyszukaj</value>
+    <comment>Text of the "Find" button in the Find/Replace pane</comment>
+  </data>
+  <data name="FindReplace.Text" xml:space="preserve">
+    <value>Znajdź/Zamień</value>
+    <comment>Text of the "Find/Replace" option, sixth option in the "File" dropdown</comment>
+  </data>
+  <data name="FindUsageInfo.Title" xml:space="preserve">
+    <value>Informacje o użyciu</value>
+    <comment>Title of the usage info section of the Find/Replace pane</comment>
+  </data>
+  <data name="FindUsageInfoText.Text" xml:space="preserve">
+    <value>Nie nadużywaj funkcji Znajdź i Zamień przez próbę zastąpienia zbyt wielu znaków. Zawieszenia lub awarie mogą wystąpić po celowym przeciążeniu.</value>
+    <comment>Text in the usage info section of the Find/Replace pane</comment>
+  </data>
+  <data name="Font.Label" xml:space="preserve">
+    <value>Czcionka</value>
+    <comment>Label of the "Font" ribbon section</comment>
+  </data>
+  <data name="FullWordsBox.Content" xml:space="preserve">
+    <value>Uwzględnij całe wyrazy</value>
+    <comment>Text of the "Match whole words" option</comment>
+  </data>
+  <data name="GitHubRepo.ActionIconToolTip" xml:space="preserve">
+    <value>Otwórz repozytorium GitHub w przeglądarce</value>
+    <comment>Tooltip when hovering over the action icon of the GitHub repo link in Settings</comment>
+  </data>
+  <data name="GitHubRepo.Description" xml:space="preserve">
+    <value>Przejdź tam, aby przesłać zgłoszenia, wyświetlić Pull Requesty i sprawdzić kod!!</value>
+    <comment>Description of the GitHub repo link in Settings</comment>
+  </data>
+  <data name="GitHubRepo.Header" xml:space="preserve">
+    <value>Repozytorium na GitHub</value>
+    <comment>Title of the GitHub repo link in Settings</comment>
+  </data>
+  <data name="Help.Content" xml:space="preserve">
+    <value>Pomoc</value>
+    <comment>Label of the "Help" ribbon tab</comment>
+  </data>
+  <data name="Home.Content" xml:space="preserve">
+    <value>Strona główna</value>
+    <comment>Label of the "Home" ribbon tab</comment>
+  </data>
+  <data name="Insert.Content" xml:space="preserve">
+    <value>Wstaw</value>
+    <comment>Label of the "Insert" ribbon tab</comment>
+  </data>
+  <data name="NewDoc.Text" xml:space="preserve">
+    <value>Nowe okno</value>
+    <comment>Text of the "New Window" option, first option in the "File" dropdown</comment>
+  </data>
+  <data name="Open.Text" xml:space="preserve">
+    <value>Otwórz</value>
+    <comment>Text of the "Open" option, second option in the "File" dropdown</comment>
+  </data>
+  <data name="Paragraph.Label" xml:space="preserve">
+    <value>Akapit</value>
+    <comment>Label of the "Paragraph" ribbon section</comment>
+  </data>
+  <data name="Print.Text" xml:space="preserve">
+    <value>Drukuj</value>
+    <comment>Text of the "Print" option, fifth option in the "File" dropdown</comment>
+  </data>
+  <data name="Redo.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ponów</value>
+    <comment>Tooltip for the "Redo" button</comment>
+  </data>
+  <data name="ReplaceAllButton.Content" xml:space="preserve">
+    <value>Zamień wszystko</value>
+    <comment>Text of the "Replace all" button in the Find/Replace pane</comment>
+  </data>
+  <data name="ReplaceBox.PlaceholderText" xml:space="preserve">
+    <value>Tekst do zamiany</value>
+    <comment>Placeholder text for the Replace text box</comment>
+  </data>
+  <data name="ReplaceButton.Content" xml:space="preserve">
+    <value>Zamień</value>
+    <comment>Text of the "Replace" button in the Find/Replace pane</comment>
+  </data>
+  <data name="Save.Text" xml:space="preserve">
+    <value>Zapisz</value>
+    <comment>Text of the "Save" option, third option in the "File" dropdown</comment>
+  </data>
+  <data name="SaveAs.Text" xml:space="preserve">
+    <value>Zapisz jako</value>
+    <comment>Text of the "Save as" option, fourth option in the "File" dropdown</comment>
+  </data>
+  <data name="SaveRestart.Content" xml:space="preserve">
+    <value>Zapisz i uruchom ponownie</value>
+    <comment>Text of the "Save and restart button on the Settings bottom pane</comment>
+  </data>
+  <data name="Settings.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ustawienia</value>
+    <comment>Tooltip for the "Settings" button</comment>
+  </data>
+  <data name="SettingsReset.Content" xml:space="preserve">
+    <value>Zresetuj ustawienia aplikacji</value>
+    <comment>Text of the "Reset app settings" button on the Settings bottom pane</comment>
+  </data>
+  <data name="SettingsTheme.Description" xml:space="preserve">
+    <value>Zmień motyw aplikacji tutaj</value>
+    <comment>Description of the "Theme" option in Settings</comment>
+  </data>
+  <data name="Share.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Udostępnij</value>
+    <comment>Tooltip for the "Share" button</comment>
+  </data>
+  <data name="Undo.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Cofnij</value>
+    <comment>Tooltip for the "Undo" button</comment>
   </data>
 </root>

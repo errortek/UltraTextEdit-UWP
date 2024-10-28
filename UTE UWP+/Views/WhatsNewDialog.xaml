@@ -27,8 +27,8 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Fix new window not opening bug<LineBreak/>
-              • Remove unnecessary features<LineBreak/>
+              • Includes preliminary locaization support (features in Ribbon not localizable yet)<LineBreak/>
+              • Bugfixes, mainly relating to the inactive titlebar while in Dark Mode<LineBreak/>
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
