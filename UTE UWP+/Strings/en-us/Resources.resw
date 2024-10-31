@@ -366,4 +366,86 @@ It contains all of UTE UWP's basic features, as well as:
     <value>Undo</value>
     <comment>Tooltip for the "Undo" button</comment>
   </data>
+  <data name="Date.Text" xml:space="preserve">
+    <value>Date &amp;amp;</value>
+  </data>
+  <data name="DateTimeInsert.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Insert date and time</value>
+    <comment>Tooltip for the "Date &amp; Time" button</comment>
+  </data>
+  <data name="Image.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="InsertButtonText.Text" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="InsertHyperlink.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Insert hyperlink</value>
+    <comment>Tooltip for the "Insert link" button</comment>
+  </data>
+  <data name="InsertImage.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Insert image</value>
+    <comment>Tooltip for the "Insert image" button</comment>
+  </data>
+  <data name="Link.Text" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="SymbolInsert.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Insert symbols</value>
+    <comment>Tooltip for the "Insert symbols" button</comment>
+  </data>
+  <data name="Symbols.Text" xml:space="preserve">
+    <value>Symbols</value>
+  </data>
+  <data name="Time.Text" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="AboutAppTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutAppText.Text" xml:space="preserve">
+    <value>About</value>
+    <comment>The text of the "About" option in the Ribbon</comment>
+  </data>
+  <data name="DegreeSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Degree symbol</value>
+  </data>
+  <data name="DivisionSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Division symbol</value>
+  </data>
+  <data name="LeftArrowSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Left arrow symbol</value>
+  </data>
+  <data name="LowercaseMuSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Lowercase mu (micro) symbol</value>
+  </data>
+  <data name="MoreSymbols.Content" xml:space="preserve">
+    <value>More symbols</value>
+    <comment>The text of the "More symbols" button in the symbols menu</comment>
+  </data>
+  <data name="MultiplicationSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Multiplication symbol</value>
+  </data>
+  <data name="ParagraphSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Paragraph symbol</value>
+  </data>
+  <data name="RightArrowSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Right arrow symbol</value>
+  </data>
+  <data name="SquareRootSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Square root symbol</value>
+  </data>
+  <data name="CloseButtonText.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CommentsButtonText.Text" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="Generate.Text" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="GenerateHash.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Generate hash/Base64</value>
+    <comment>Tooltip for the "Generate Hash/Base64" button</comment>
+  </data>
 </root>

@@ -1028,7 +1028,7 @@
                                         <controls:RibbonGroup>
                                             <Grid>
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,27,0,0" Spacing="10">
-                                                <Button  x:Name="Image_Insert" FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" Click="AddImageButton_Click" ToolTipService.ToolTip="Insert image" CornerRadius="4,4,4,4" VerticalAlignment="Center" Padding="0,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
+                                                <Button  x:Name="Image_Insert" FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" Click="AddImageButton_Click" x:Uid="InsertImage" CornerRadius="4,4,4,4" VerticalAlignment="Center" Padding="0,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
                                                     <Grid Height="48" Margin="0,-3,0,0">
                                                         <Grid Height="55" HorizontalAlignment="Center" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.5,0.5" Margin="0,-14,2,0">
                                                             <Grid.RenderTransform>
@@ -1039,10 +1039,10 @@
                                                             <Border Background="{Binding Foreground, ElementName=LeftInd}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="18" Height="2" Margin="0,0,17,13" CornerRadius="0,0,0,2"/>
                                                             <Border VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="6" Height="6" Margin="0,0,11,13" CornerRadius="0,0,15,0" BorderBrush="{Binding Foreground, ElementName=LeftInd}" BorderThickness="0,0,2,2"/>
                                                         </Grid>
-                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,1"><Run Text="Insert"/><LineBreak/><Run Text="Image"/></TextBlock>
+                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,1"><Run x:Uid="InsertButtonText"/><LineBreak/><Run x:Uid="Image"/></TextBlock>
                                                     </Grid>
                                                 </Button>
-                                                <Button x:Name="LinkInsert"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" ToolTipService.ToolTip="Insert hyperlink" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4">
+                                                <Button x:Name="LinkInsert"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" x:Uid="InsertHyperlink" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4">
                                                     <Button.Flyout>
                                                         <Flyout Placement="Bottom">
                                                             <StackPanel Orientation="Vertical">
@@ -1053,17 +1053,17 @@
                                                     </Button.Flyout>
                                                     <Grid Width="30" Height="45" Margin="4,1,4,-1">
                                                         <TextBlock TextWrapping="Wrap" Text="&#xE167;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
-                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="30"><Run Text="Insert"/><LineBreak/><Run Text="Link"/></TextBlock>
+                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="30"><Run x:Uid="InsertButtonText"/><LineBreak/><Run x:Uid="Link"/></TextBlock>
                                                     </Grid>
                                                 </Button>
-                                                <Button x:Name="DateTimeInsert"  FontFamily="{StaticResource SymbolThemeFontFamily}" Click="DateInsertionAsync" Width="40" Height="53" FontSize="22" ToolTipService.ToolTip="Insert date and time" Padding="0,0,0,0" Margin="0,1,0,0" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}">
+                                                <Button x:Name="DateTimeInsert"  FontFamily="{StaticResource SymbolThemeFontFamily}" Click="DateInsertionAsync" Width="40" Height="53" FontSize="22" x:Uid="DateTimeInsert" Padding="0,0,0,0" Margin="0,1,0,0" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}">
                                                     <Grid Width="30" Height="45" Margin="4,1,4,-1">
-                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="32"><Run Text="Date &amp;"/><LineBreak/><Run Text="Time"/></TextBlock>
+                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="32"><Run x:Uid="Date"/><LineBreak/><Run x:Uid="Time"/></TextBlock>
                                                         <PathIcon Data="M 3 5 C 3 4 4 3 5 3 L 15 3 C 16 3 17 4 17 5 L 17 12 L 16 12 L 16 5 C 16 4.5 15.5 4 15 4 L 5 4 C 4.5 4 4 4.5 4 5 L 4 15 C 4 15.5 4.5 16 5 16 L 12 16 L 12 17 L 5 17 C 4 17 3 16 3 15 M 16.5 13 A 1 1 0 0 0 16.5 20 A 1 1 0 0 0 16.5 13 M 16.5 14 A 1 1 0 0 1 16.5 19 A 1 1 0 0 1 16.5 14 M 17 17 C 16 17 16 17 16 16 L 16 15.5 C 16 14.5 17 14.5 17 15.5 L 17 16 L 17.5 16 C 18.5 16 18.5 17 17.5 17 L 17 17 M 6 7 A 1 1 0 0 0 6 5 A 1 1 0 0 0 6 7 M 10 7 A 1 1 0 0 0 10 5 A 1 1 0 0 0 10 7 M 14 7 A 1 1 0 0 0 14 5 A 1 1 0 0 0 14 7 M 5 8 L 15 8 L 15 9 L 5 9 M 5 10 L 9 10 L 9 11 L 5 11 M 11 10 L 15 10 L 15 11 L 11 11 M 5 12 L 9 12 L 9 13 L 5 13 M 11 12 L 15 12 C 14.18 12.008 13.393 12.538 13 13 L 11 13 M 5 14 L 9 14 L 9 15 L 5 15 M 11 14 L 12.434 14.001 C 12.062 14.47 12 15 12 15 L 11 15" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Top" />
                                                         <PathIcon Data="M 3 5 M 16.5 13 A 1 1 0 0 0 16.5 20 A 1 1 0 0 0 16.5 13 M 16.5 14 A 1 1 0 0 1 16.5 19 A 1 1 0 0 1 16.5 14 M 17 17 C 16 17 16 17 16 16 L 16 15.5 C 16 14.5 17 14.5 17 15.5 L 17 16 L 17.5 16 C 18.5 16 18.5 17 17.5 17 L 17 17" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF5AFF00" />
                                                     </Grid>
                                                 </Button>
-                                                <Button x:Name="Symbols_Insert"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" ToolTipService.ToolTip="Insert symbols" CornerRadius="4,4,4,4" VerticalAlignment="Center" Padding="0,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
+                                                <Button x:Name="Symbols_Insert"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" x:Uid="SymbolInsert" CornerRadius="4,4,4,4" VerticalAlignment="Center" Padding="0,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
                                                     <Grid Height="48" Margin="0,-3,0,0">
                                                         <Grid Height="55" HorizontalAlignment="Center" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.5,0.5" Margin="0,-14,2,0">
                                                             <Grid.RenderTransform>
@@ -1074,7 +1074,7 @@
                                                             <Border Background="{Binding Foreground, ElementName=LeftInd}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="18" Height="2" Margin="0,0,17,13" CornerRadius="0,0,0,2"/>
                                                             <Border VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="6" Height="6" Margin="0,0,11,13" CornerRadius="0,0,15,0" BorderBrush="{Binding Foreground, ElementName=LeftInd}" BorderThickness="0,0,2,2"/>
                                                         </Grid>
-                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,1"><Run Text="Insert"/><LineBreak/><Run Text="symbols"/></TextBlock>
+                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,1"><Run x:Uid="InsertButtonText"/><LineBreak/><Run x:Uid="Symbols"/></TextBlock>
                                                     </Grid>
                                                     <Button.Flyout>
                                                         <Flyout Placement="Bottom" x:Name="symbolsflyout2">
@@ -1095,54 +1095,54 @@
                                                                         <Button
                                         AutomationProperties.Name="Mutiply"
                                         Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Multiplication symbol"
+                                        x:Uid="MultiplicationSymbol"
                                          Content="×">
                                                                         </Button>
-                                                                        <Button
+                                                                        <Button 
                                         AutomationProperties.Name="Divide"
                                         Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Division symbol"
+                                        x:Uid="DivisionSymbol"
                                                 Content="÷">
                                                                         </Button>
                                                                         <Button
                                         AutomationProperties.Name="LeftArrow"
                                         Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Left Arrow symbol"
+                                        x:Uid="LeftArrowSymbol"
                                                 Content="←">
                                                                         </Button>
                                                                         <Button
                                         AutomationProperties.Name="RightArrow"
                                         Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Right Arrow symbol"
+                                        x:Uid="RightArrowSymbol"
                                                 Content="→">
                                                                         </Button>
                                                                         <Button
                                         AutomationProperties.Name="Degree"
                                         Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Degree symbol"
+                                        x:Uid="DegreeSymbol"
                                                 Content="°">
                                                                         </Button>
                                                                         <Button
                                         AutomationProperties.Name="Paragraph"
                                         Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Paragraph symbol"
+                                        x:Uid="ParagraphSymbol"
                                                 Content="§">
                                                                         </Button>
                                                                         <Button
                                         AutomationProperties.Name="Mu"
                                         Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Lowercase mu (micro) symbol"
+                                        x:Uid="LowercaseMuSymbol"
                                                 Content="µ">
                                                                         </Button>
                                                                         <Button
                                         AutomationProperties.Name="SquareRoot"
                                         Click="SymbolButton_Click"
-                                        ToolTipService.ToolTip="Square root symbol"
+                                        x:Uid="SquareRootSymbol"
                                                 Content="√">
                                                                         </Button>
 
                                                                     </VariableSizedWrapGrid>
-                                                                    <Button Content="More symbols" Click="more_symbols" Width="160"/>
+                                                                    <Button x:Uid="MoreSymbols" Click="more_symbols" Width="160"/>
                                                                 </StackPanel>
                                                             </RelativePanel>
                                                         </Flyout>
@@ -1156,10 +1156,10 @@
                                     <controls:Ribbon x:Name="Help">
                                         <controls:RibbonGroup>
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,27,0,0" Spacing="10">
-                                           <Button x:Name="uteverButton"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" ToolTipService.ToolTip="About" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4" Click="uteverclick">
+                                           <Button x:Name="uteverButton"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" x:Uid="AboutAppTooltip" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4" Click="uteverclick">
                                                 <Grid Width="30" Height="45" Margin="4,1,4,-1">
                                                     <TextBlock TextWrapping="Wrap" Text="&#xE897;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
-                                                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="30"><Run Text="About"/></TextBlock>
+                                                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="30"><Run x:Uid="AboutAppText"/></TextBlock>
                                                 </Grid>
                                             </Button>
                                         </StackPanel>
@@ -1168,10 +1168,10 @@
                                     <controls:Ribbon x:Name="Developer"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                                         <controls:RibbonGroup>
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,27,0,0" Spacing="10">
-                                            <Button x:Name="GenerateHash"  FontFamily="{StaticResource SymbolThemeFontFamily}" Click="ComputeHash_Click" Width="80" Height="53" FontSize="22" ToolTipService.ToolTip="Generate hash/Base64" Padding="0,0,0,0" Margin="0,1,0,0" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}">
+                                            <Button x:Name="GenerateHash"  FontFamily="{StaticResource SymbolThemeFontFamily}" Click="ComputeHash_Click" Width="80" Height="53" FontSize="22" x:Uid="GenerateHash" Padding="0,0,0,0" Margin="0,1,0,0" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}">
                                                 <Grid Width="60" Height="45" Margin="4,1,4,-1">
                                                     <TextBlock TextWrapping="Wrap" Text="&#xE943;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
-                                                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="64"><Run Text="Generate"/><LineBreak/><Run Text="Hash/Base64"/></TextBlock>
+                                                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="64"><Run x:Uid="Generate"/><LineBreak/><Run Text="Hash/Base64"/></TextBlock>
                                                 </Grid>
                                             </Button>
                                         </StackPanel>
@@ -1183,7 +1183,7 @@
                                             <Button x:Name="CloseComments"  FontFamily="{StaticResource SymbolThemeFontFamily}" Click="closecomments" Width="80" Height="53" FontSize="22" ToolTipService.ToolTip="Close Comments" Padding="0,0,0,0" Margin="0,1,0,0" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}">
                                                 <Grid Width="60" Height="45" Margin="4,1,4,-1">
                                                     <TextBlock TextWrapping="Wrap" Text="&#xF716;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
-                                                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="64"><Run Text="Close"/><LineBreak/><Run Text="Comments"/></TextBlock>
+                                                    <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="64"><Run x:Uid="CloseButtonText"/><LineBreak/><Run x:Uid="CommentsButtonText"/></TextBlock>
                                                 </Grid>
                                             </Button>
                                         </StackPanel>
