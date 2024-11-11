@@ -27,8 +27,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Fix new window not opening bug<LineBreak/>
-              • Remove unnecessary features<LineBreak/>
+              • Update copyright strings<LineBreak/>
+              • Update dependencies<LineBreak/>
+              • Remove some unused code<LineBreak/>
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
