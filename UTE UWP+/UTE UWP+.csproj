@@ -137,7 +137,7 @@
       <Version>2.0.15</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Common">
-      <Version>8.3.2</Version>
+      <Version>8.4.0-preview1</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Labs.Uwp.Ribbon">
       <Version>0.1.240917-build.1755</Version>

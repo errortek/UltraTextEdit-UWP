@@ -10,7 +10,7 @@
     xmlns:ToolkitControls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
     mc:Ignorable="d"
-    xmlns:appmodel="using:Windows.ApplicationModel" xmlns:diags="using:UltraTextEdit_UWP.UserControls"
+    xmlns:appmodel="using:Windows.ApplicationModel"
     d:DesignHeight="564"
     d:DesignWidth="876">
 
