@@ -720,7 +720,7 @@
                                                             <TextBlock Text="&#xE8BB;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,0,0,0"/>
                                                         </Grid>
                                                     </ToggleButton>
-                                                    <muxc:DropDownButton x:Name="CPDDB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" FontSize="12" Width="50" FontFamily="{StaticResource SymbolThemeFontFamily}" ToolTipService.ToolTip="Font color" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
+                                                    <muxc:DropDownButton x:Name="CPDDB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" FontSize="12" Width="50" FontFamily="{StaticResource SymbolThemeFontFamily}" x:Uid="FontColor" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
                                                         <muxc:DropDownButton.Flyout>
                                                             <Flyout>
                                                                 <StackPanel>
@@ -750,7 +750,7 @@
                                                                                     </Border>
                                                                                 </Button>
                                                                             </StackPanel>
-                                                                            <Button Content="Advanced" HorizontalAlignment="Stretch" Margin="0,5,0,0" Click="Button_Click_32"/>
+                                                                            <Button x:Uid="AdvancedButton" HorizontalAlignment="Stretch" Margin="0,5,0,0" Click="Button_Click_32"/>
                                                                         </StackPanel>
                                                                     </Grid>
                                                                 </StackPanel>
@@ -760,7 +760,7 @@
                                                             <TextBlock TextWrapping="Wrap" Text="&#xE186;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16"/>
                                                         </Grid>
                                                     </muxc:DropDownButton>
-                                                    <muxc:DropDownButton x:Name="Back" Height="30" FontSize="12" Width="50" FontFamily="{StaticResource SymbolThemeFontFamily}" ToolTipService.ToolTip="Text highlight" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
+                                                    <muxc:DropDownButton x:Name="Back" Height="30" FontSize="12" Width="50" FontFamily="{StaticResource SymbolThemeFontFamily}" x:Uid="HighlightColor" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
                                                         <muxc:DropDownButton.Flyout>
                                                             <Flyout>
                                                                 <StackPanel>
@@ -790,7 +790,7 @@
                                                                                     </Border>
                                                                                 </Button>
                                                                             </StackPanel>
-                                                                            <Button Content="Advanced" HorizontalAlignment="Stretch" Margin="0,5,0,0" Click="Button_Click_32"/>
+                                                                            <Button x:Uid="AdvancedButton" HorizontalAlignment="Stretch" Margin="0,5,0,0" Click="Button_Click_32"/>
                                                                         </StackPanel>
                                                                     </Grid>
                                                                 </StackPanel>
@@ -808,14 +808,14 @@
 
                                                         <Button
                                                             x:Name="HTemplate1"
-                                                            Content="Normal"
+                                                            x:Uid="NormalTextTemplate"
                                                             VerticalAlignment="Top"
                                                             Width="80"
                                                             Height="60" 
                                                             Click="Template1_Click" FontSize="11" Margin="5,5,0,0" RequestedTheme="Light" Background="White"/>
                                                         <Button 
                                                             x:Name="HTemplate2"
-                                                            Content="Title" 
+                                                            x:Uid="TitleTextTemplate" 
                                                             VerticalAlignment="Top" 
                                                             Width="80"
                                                             Height="60"
@@ -825,7 +825,7 @@
                                                             Click="Template2_Click" Margin="4,5,0,0" Background="White" RequestedTheme="Light"/>
                                                         <Button
                                                             x:Name="HTemplate9"
-                                                            Content="Content" 
+                                                            x:Uid="ContentTextTemplate" 
                                                             VerticalAlignment="Top"
                                                             Width="80"
                                                             Height="60" 
@@ -838,14 +838,14 @@
 
                                                                     <Button
                 x:Name="HTemplate3"
-                Content="Normal" 
+                x:Uid="NormalTextTemplate" 
                 VerticalAlignment="Top"
                 Width="80"
                 Height="60" 
                 Click="Template1_Click" FontSize="11" Margin="5,5,0,0" RequestedTheme="Light" Background="White"/>
                                                                     <Button 
                 x:Name="HTemplate4"
-                Content="Title" 
+                x:Uid="TitleTextTemplate" 
                 VerticalAlignment="Top" 
                 Width="80"
                 Height="60"
@@ -855,7 +855,7 @@
                 Click="Template2_Click" Margin="89,5,0,0" Background="White" RequestedTheme="Light"/>
                                                                     <Button
                 x:Name="HTemplate5"
-                Content="Content" 
+                x:Uid="ContentTextTemplate" 
                 VerticalAlignment="Top"
                 Width="80"
                 Height="60" 
@@ -863,7 +863,7 @@
                                                                     <Grid>
                                                                         <Button
                     x:Name="PTemplate3" 
-                    Content="Title 2" 
+                    x:Uid="Title2TextTemplate" 
                     VerticalAlignment="Top"
                     Width="80"
                     Height="60"
@@ -872,7 +872,7 @@
                     Click="Template3_Click" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
                                                                         <Button 
                     x:Name="PTemplate4" 
-                    Content="Book&#xA;title"                                                        
+                    x:Uid="BookTitleTextTemplate"                                                        
                     VerticalAlignment="Top"
                     Width="80"
                     Height="60"
@@ -883,7 +883,7 @@
                     Click="Template4_Click" RequestedTheme="Light" Background="White"/>
                                                                         <Button
                     x:Name="PTemplate5"
-                    Content="Header" 
+                    x:Uid="HeaderTextTemplate" 
                     VerticalAlignment="Top"
                     Width="80"
                     Height="60" 
@@ -891,7 +891,7 @@
                     Click="Template5_Click" FontSize="14" FontFamily="Segoe UI" RequestedTheme="Light" Background="White"/>
                                                                         <Button 
                     x:Name="PTemplate6"
-                    Content="Medium" 
+                    x:Uid="MediumTextTemplate" 
                     VerticalAlignment="Top" 
                     Width="80"
                     Height="60"
@@ -902,7 +902,7 @@
                     Click="Template6_Click" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
                                                                         <Button
                     x:Name="PTemplate7" 
-                    Content="Subtitle" 
+                    x:Uid="SubtitleTextTemplate" 
                     VerticalAlignment="Top"
                     Width="80"
                     Height="60"
@@ -911,7 +911,7 @@
                     Click="Template7_Click" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
                                                                         <Button 
                     x:Name="PTemplate8" 
-                    Content="Strong"
+                    x:Uid="StrongTextTemplate"
                     VerticalAlignment="Top"
                     Width="80"
                     Height="60"
@@ -922,7 +922,7 @@
                     Click="Template8_Click" RequestedTheme="Light" Background="White"/>
                                                                         <Button 
                     x:Name="PTemplate10"
-                    Content="Finished" 
+                    x:Uid="FinishedTextTemplate" 
                     VerticalAlignment="Top" 
                     Width="80"
                     Height="60"
@@ -933,7 +933,7 @@
                     Click="Template10_Click" RequestedTheme="Light" Background="White"/>
                                                                         <Button
                     x:Name="PTemplate11" 
-                    Content="Unfinished" 
+                    x:Uid="UnfinishedTextTemplate" 
                     VerticalAlignment="Top"
                     Width="80"
                     Height="60"
@@ -942,7 +942,7 @@
                     Click="Template11_Click" FontWeight="Bold" Padding="0,5,0,6" RequestedTheme="Light" Background="White"/>
                                                                         <Button 
                     x:Name="PTemplate12" 
-                    Content="Quote"
+                    x:Uid="QuoteTextTemplate"
                     VerticalAlignment="Top"
                     Width="80"
                     Height="60"
