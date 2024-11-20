@@ -448,8 +448,18 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <value>Generate hash/Base64</value>
     <comment>Tooltip for the "Generate Hash/Base64" button</comment>
   </data>
+  <data name="AdvancedButton.Content" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
   <data name="BoldButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>Bold (Ctrl + B)</value>
+  </data>
+  <data name="BookTitleTextTemplate.Content" xml:space="preserve">
+    <value>Book
+title</value>
+  </data>
+  <data name="ContentTextTemplate.Content" xml:space="preserve">
+    <value>Content</value>
   </data>
   <data name="DashFlyoutItem.Text" xml:space="preserve">
     <value>Dash</value>
@@ -460,20 +470,41 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
   <data name="DoubleFlyoutItem.Text" xml:space="preserve">
     <value>Double</value>
   </data>
+  <data name="FinishedTextTemplate.Content" xml:space="preserve">
+    <value>Finished</value>
+  </data>
   <data name="FontBox.PlaceholderText" xml:space="preserve">
     <value>Segoe UI (Default)</value>
   </data>
   <data name="FontBox.ToolTipService.ToolTip" xml:space="preserve">
     <value>Font family</value>
   </data>
+  <data name="FontColor.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Font color</value>
+  </data>
   <data name="FontSize.ToolTipService.ToolTip" xml:space="preserve">
     <value>Font size</value>
+  </data>
+  <data name="HeaderTextTemplate.Content" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="HighlightColor.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Highlight color</value>
   </data>
   <data name="ItalicButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>Italic (Ctrl + I)</value>
   </data>
+  <data name="MediumTextTemplate.Content" xml:space="preserve">
+    <value>Medium</value>
+  </data>
   <data name="NoneFlyoutItem.Text" xml:space="preserve">
     <value>None</value>
+  </data>
+  <data name="NormalTextTemplate.Content" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="QuoteTextTemplate.Content" xml:space="preserve">
+    <value>Quote</value>
   </data>
   <data name="SingleFlyoutItem.Text" xml:space="preserve">
     <value>Single</value>
@@ -481,8 +512,14 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
   <data name="StrikethroughButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>Strikethrough (Ctrl + T)</value>
   </data>
+  <data name="StrongTextTemplate.Content" xml:space="preserve">
+    <value>Strong</value>
+  </data>
   <data name="SubscriptButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>Subscript</value>
+  </data>
+  <data name="SubtitleTextTemplate.Content" xml:space="preserve">
+    <value>Subtitle</value>
   </data>
   <data name="SuperscriptButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>Superscript</value>
@@ -490,8 +527,17 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
   <data name="ThickFlyoutItem.Text" xml:space="preserve">
     <value>Thick</value>
   </data>
+  <data name="Title2TextTemplate.Content" xml:space="preserve">
+    <value>Title 2</value>
+  </data>
+  <data name="TitleTextTemplate.Content" xml:space="preserve">
+    <value>Title</value>
+  </data>
   <data name="UnderlineButton.ToolTipService.ToolTip" xml:space="preserve">
     <value>Underline (Ctrl + U)</value>
+  </data>
+  <data name="UnfinishedTextTemplate.Content" xml:space="preserve">
+    <value>Unfinished</value>
   </data>
   <data name="WaveFlyoutItem.Text" xml:space="preserve">
     <value>Wave</value>
