@@ -448,4 +448,52 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <value>Generate hash/Base64</value>
     <comment>Tooltip for the "Generate Hash/Base64" button</comment>
   </data>
+  <data name="BoldButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Bold (Ctrl + B)</value>
+  </data>
+  <data name="DashFlyoutItem.Text" xml:space="preserve">
+    <value>Dash</value>
+  </data>
+  <data name="DottedFlyoutItem.Text" xml:space="preserve">
+    <value>Dotted</value>
+  </data>
+  <data name="DoubleFlyoutItem.Text" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="FontBox.PlaceholderText" xml:space="preserve">
+    <value>Segoe UI (Default)</value>
+  </data>
+  <data name="FontBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Font family</value>
+  </data>
+  <data name="FontSize.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Font size</value>
+  </data>
+  <data name="ItalicButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Italic (Ctrl + I)</value>
+  </data>
+  <data name="NoneFlyoutItem.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="SingleFlyoutItem.Text" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="StrikethroughButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Strikethrough (Ctrl + T)</value>
+  </data>
+  <data name="SubscriptButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Subscript</value>
+  </data>
+  <data name="SuperscriptButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Superscript</value>
+  </data>
+  <data name="ThickFlyoutItem.Text" xml:space="preserve">
+    <value>Thick</value>
+  </data>
+  <data name="UnderlineButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Underline (Ctrl + U)</value>
+  </data>
+  <data name="WaveFlyoutItem.Text" xml:space="preserve">
+    <value>Wave</value>
+  </data>
 </root>
