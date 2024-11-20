@@ -622,9 +622,9 @@
                                             <Grid>
                                                 <Border x:Name="FontBor" BorderThickness="1" VerticalAlignment="Top" Margin="0,42,0,0" Height="27" HorizontalAlignment="Left" CornerRadius="4,4,4,4" Visibility="Collapsed"/>
                                                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,7,0,0">
-                                                    <ComboBox x:Name="FontBox" Width="255" Height="33" SelectionChanged="FontBox_SelectionChanged" ItemsSource="{x:Bind fonts}" Padding="10,2,2,2" FontSize="14" HorizontalContentAlignment="Left" ToolTipService.ToolTip="Font type" PlaceholderText="Segoe UI (Default)"/>
-                                                    <muxc:NumberBox MinWidth="0" x:Name="FSize" Width="147" ValueChanged="NumberBox_ValueChanged" VerticalContentAlignment="Center" FontSize="14" ToolTipService.ToolTip="Font size" VerticalAlignment="Top" Margin="6,0,0,0" Height="33" PlaceholderText="Multiple"/>
-                                                    <muxc:DropDownButton Width="32" Height="20" HorizontalContentAlignment="Left" FontSize="10" ToolTipService.ToolTip="Font size options" FontFamily="{StaticResource SymbolThemeFontFamily}" VerticalAlignment="Center" Padding="0,0,9,0" CornerRadius="4,4,4,4" Margin="-38,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
+                                                    <ComboBox x:Name="FontBox" Width="255" Height="33" SelectionChanged="FontBox_SelectionChanged" x:Uid="FontBox" ItemsSource="{x:Bind fonts}" Padding="10,2,2,2" FontSize="14" HorizontalContentAlignment="Left"/>
+                                                    <muxc:NumberBox MinWidth="0" x:Name="FSize" Width="147" ValueChanged="NumberBox_ValueChanged" VerticalContentAlignment="Center" FontSize="14" x:Uid="FontSize" VerticalAlignment="Top" Margin="6,0,0,0" Height="33" PlaceholderText="Multiple"/>
+                                                    <muxc:DropDownButton Width="32" Height="20" HorizontalContentAlignment="Left" FontSize="10" FontFamily="{StaticResource SymbolThemeFontFamily}" VerticalAlignment="Center" Padding="0,0,9,0" CornerRadius="4,4,4,4" Margin="-38,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
                                                         <muxc:DropDownButton.Flyout>
                                                             <MenuFlyout>
                                                                 <MenuFlyoutItem Text="8" />
@@ -651,20 +651,20 @@
                                                     </muxc:DropDownButton>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0" Spacing="3">
-                                                    <ToggleButton  x:Name="BB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="&#xE19B;" Width="30" Height="30" Click="BoldButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16" Padding="2,3,2,2" ToolTipService.ToolTip="Bold (Ctrl + B)" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                    <ToggleButton x:Name="IB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="&#xE199;" Width="30" Height="30" Click="ItalicButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16" ToolTipService.ToolTip="Italic (Ctrl + I)" CornerRadius="4,4,4,4" Padding="5,5,5,5"  Background="{x:Null}" BorderBrush="{x:Null}"/>
-                                                    <muxc:DropDownButton x:Name="UB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="50" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="14" ToolTipService.ToolTip="Underline (Ctrl + U)" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
+                                                    <ToggleButton  x:Name="BB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="&#xE19B;" Width="30" Height="30" Click="BoldButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16" Padding="2,3,2,2" x:Uid="BoldButton" CornerRadius="4,4,4,4" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                    <ToggleButton x:Name="IB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="&#xE199;" Width="30" Height="30" Click="ItalicButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="16" x:Uid="ItalicButton" CornerRadius="4,4,4,4" Padding="5,5,5,5"  Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                                    <muxc:DropDownButton x:Name="UB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="50" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="14" x:Uid="UnderlineButton" Background="{x:Null}" BorderBrush="{x:Null}" CornerRadius="4,4,4,4" Padding="5,5,5,6">
                                                         <Grid>
                                                             <TextBlock TextWrapping="Wrap" Text="&#xE19A;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
                                                         </Grid>
                                                         <muxc:DropDownButton.Flyout>
                                                             <MenuFlyout x:Name="UnderlineFlyout">
-                                                                <MenuFlyoutItem Text="None" Click="MenuFlyoutItem_Click">
+                                                                <MenuFlyoutItem x:Uid="NoneFlyoutItem" Click="MenuFlyoutItem_Click">
                                                                     <MenuFlyoutItem.Icon>
                                                                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE106;"/>
                                                                     </MenuFlyoutItem.Icon>
                                                                 </MenuFlyoutItem>
-                                                                <MenuFlyoutItem Text="Single" Click="MenuFlyoutItem_Click">
+                                                                <MenuFlyoutItem x:Uid="SingleFlyoutItem" Click="MenuFlyoutItem_Click">
                                                                     <MenuFlyoutItem.Icon>
                                                                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE004;"/>
                                                                     </MenuFlyoutItem.Icon>
@@ -672,27 +672,27 @@
                                                                         <KeyboardAccelerator IsEnabled="False" Modifiers="Control" Key="U"/>
                                                                     </MenuFlyoutItem.KeyboardAccelerators>
                                                                 </MenuFlyoutItem>
-                                                                <MenuFlyoutItem Text="Dash" Click="MenuFlyoutItem_Click">
+                                                                <MenuFlyoutItem x:Uid="DashFlyoutItem" Click="MenuFlyoutItem_Click">
                                                                     <MenuFlyoutItem.Icon>
                                                                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE004;&#xE004;"/>
                                                                     </MenuFlyoutItem.Icon>
                                                                 </MenuFlyoutItem>
-                                                                <MenuFlyoutItem Text="Dotted" Click="MenuFlyoutItem_Click">
+                                                                <MenuFlyoutItem x:Uid="DottedFlyoutItem" Click="MenuFlyoutItem_Click">
                                                                     <MenuFlyoutItem.Icon>
                                                                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE10C;"/>
                                                                     </MenuFlyoutItem.Icon>
                                                                 </MenuFlyoutItem>
-                                                                <MenuFlyoutItem Text="Double" Click="MenuFlyoutItem_Click">
+                                                                <MenuFlyoutItem x:Uid="DoubleFlyoutItem" Click="MenuFlyoutItem_Click">
                                                                     <MenuFlyoutItem.Icon>
                                                                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE94E;"/>
                                                                     </MenuFlyoutItem.Icon>
                                                                 </MenuFlyoutItem>
-                                                                <MenuFlyoutItem Text="Thick" Click="MenuFlyoutItem_Click">
+                                                                <MenuFlyoutItem x:Uid="ThickFlyoutItem" Click="MenuFlyoutItem_Click">
                                                                     <MenuFlyoutItem.Icon>
                                                                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE654;"/>
                                                                     </MenuFlyoutItem.Icon>
                                                                 </MenuFlyoutItem>
-                                                                <MenuFlyoutItem Text="Wave" Click="MenuFlyoutItem_Click">
+                                                                <MenuFlyoutItem x:Uid="WaveFlyoutItem" Click="MenuFlyoutItem_Click">
                                                                     <MenuFlyoutItem.Icon>
                                                                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xF463;"/>
                                                                     </MenuFlyoutItem.Icon>
@@ -700,7 +700,7 @@
                                                             </MenuFlyout>
                                                         </muxc:DropDownButton.Flyout>
                                                     </muxc:DropDownButton>
-                                                    <ToggleButton x:Name="STB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" Click="StrikethroughButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="2,2,2,2" ToolTipService.ToolTip="Strikethrough (Ctrl + T)" CornerRadius="4,4,4,4"  Background="{x:Null}" BorderBrush="{x:Null}">
+                                                    <ToggleButton x:Name="STB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" Click="StrikethroughButton_Click" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="2,2,2,2" x:Uid="StrikethroughButton" CornerRadius="4,4,4,4"  Background="{x:Null}" BorderBrush="{x:Null}">
                                                         <ToggleButton.KeyboardAccelerators>
                                                             <KeyboardAccelerator IsEnabled="True" Key="T" Modifiers="Control"/>
                                                         </ToggleButton.KeyboardAccelerators>
@@ -708,13 +708,13 @@
                                                             <TextBlock TextWrapping="Wrap" Text="&#xEDE0;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
                                                         </Grid>
                                                     </ToggleButton>
-                                                    <ToggleButton x:Name="SubscriptButton" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="0,0,2,2" ToolTipService.ToolTip="Subscript" Click="SubscriptButton_Click" CornerRadius="4,4,4,4"  Background="{x:Null}" BorderBrush="{x:Null}">
+                                                    <ToggleButton x:Name="SubscriptButton" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="0,0,2,2" x:Uid="SubscriptButton" Click="SubscriptButton_Click" CornerRadius="4,4,4,4"  Background="{x:Null}" BorderBrush="{x:Null}">
                                                         <Grid Width="20" Height="20" Margin="0,2,0,0">
                                                             <TextBlock Text="&#xE8BB;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,0,0,0"/>
                                                             <TextBlock FontSize="6" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,2" Text="(1)" Foreground="{ThemeResource SystemAccentColor}" FontWeight="Bold" FontFamily="Segoe UI"/>
                                                         </Grid>
                                                     </ToggleButton>
-                                                    <ToggleButton x:Name="SuperscriptButton" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="0,0,2,2" ToolTipService.ToolTip="Superscript" Click="SuperscriptButton_Click" CornerRadius="4,4,4,4"  Background="{x:Null}" BorderBrush="{x:Null}">
+                                                    <ToggleButton x:Name="SuperscriptButton" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="30" Height="30" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="10" Padding="0,0,2,2" x:Uid="SuperscriptButton" Click="SuperscriptButton_Click" CornerRadius="4,4,4,4"  Background="{x:Null}" BorderBrush="{x:Null}">
                                                         <Grid Width="20" Height="20" Margin="0,2,0,0">
                                                             <TextBlock FontSize="6" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-1,0,0" Text="(1)" Foreground="{ThemeResource SystemAccentColor}" FontWeight="Bold" FontFamily="Segoe UI"/>
                                                             <TextBlock Text="&#xE8BB;" FontFamily="{StaticResource SymbolThemeFontFamily}" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,0,0,0"/>
