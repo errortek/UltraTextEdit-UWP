@@ -115,6 +115,18 @@ GroupName="AppTheme">
                                 <FontIcon Glyph="&#xE943;"/>
                             </controls:SettingsCard.HeaderIcon>
                         </controls:SettingsCard>
+                        <controls:SettingsCard
+       x:Uid="LocalizationContribution"
+       IsClickEnabled="True"
+       IsEnabled="True"
+    Click="LocalizationContrib_Navigate">
+                            <controls:SettingsCard.ActionIcon>
+                                <FontIcon Glyph="&#xE8A7;"/>
+                            </controls:SettingsCard.ActionIcon>
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xE775;"/>
+                            </controls:SettingsCard.HeaderIcon>
+                        </controls:SettingsCard>
                         <controls:SettingsCard x:Name="vidsblock"
 Header="Velocity IDs"
 IsClickEnabled="True"
