@@ -543,33 +543,39 @@ książki</value>
     <value>Falowe</value>
   </data>
   <data name="BulletFlyoutItem.Text" xml:space="preserve">
-    <value>Bullet</value>
+    <value>Punktor</value>
   </data>
   <data name="CenterAlign.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Center</value>
+    <value>Wyśrodkuj</value>
   </data>
   <data name="JustifyAlign.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Justify</value>
+    <value>Wyrównaj</value>
   </data>
   <data name="LeftAlign.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Left</value>
+    <value>Lewo</value>
   </data>
   <data name="ListDropdown.ToolTipService.ToolTip" xml:space="preserve">
-    <value>List</value>
+    <value>Lista</value>
+  </data>
+  <data name="LocalizationContribution.Description" xml:space="preserve">
+    <value>Go to the app's Crowdin page to participate in the app's translation workflow and expand the number of languages available in the app UI</value>
+  </data>
+  <data name="LocalizationContribution.Header" xml:space="preserve">
+    <value>Contribute to translations on Crowdin</value>
   </data>
   <data name="LowercaseFlyoutItem.Text" xml:space="preserve">
-    <value>Lowercase</value>
+    <value>Małe litery</value>
   </data>
   <data name="NumberedFlyoutItem.Text" xml:space="preserve">
-    <value>Numbered</value>
+    <value>Numerowane</value>
   </data>
   <data name="NumeralsFlyoutItem.Text" xml:space="preserve">
-    <value>Roman numerals</value>
+    <value>Cyfry rzymskie</value>
   </data>
   <data name="RightAlign.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Right</value>
+    <value>Prawo</value>
   </data>
   <data name="UppercaseFlyoutItem.Text" xml:space="preserve">
-    <value>Uppercase</value>
+    <value>Duże litery</value>
   </data>
 </root>
