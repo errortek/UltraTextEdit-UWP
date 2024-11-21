@@ -558,10 +558,10 @@ książki</value>
     <value>Lista</value>
   </data>
   <data name="LocalizationContribution.Description" xml:space="preserve">
-    <value>Go to the app's Crowdin page to participate in the app's translation workflow and expand the number of languages available in the app UI</value>
+    <value>Przejdź do strony aplikacji na Crowdin, aby wziąć udział w procesie tłumaczenia aplikacji i poszerzyć liczbę języków dostępnych w interfejsie aplikacji</value>
   </data>
   <data name="LocalizationContribution.Header" xml:space="preserve">
-    <value>Contribute to translations on Crowdin</value>
+    <value>Wspomóż tłumaczenia na Crowdin</value>
   </data>
   <data name="LowercaseFlyoutItem.Text" xml:space="preserve">
     <value>Małe litery</value>
