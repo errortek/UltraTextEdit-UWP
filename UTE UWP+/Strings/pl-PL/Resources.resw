@@ -366,4 +366,216 @@ Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
     <value>Cofnij</value>
     <comment>Tooltip for the "Undo" button</comment>
   </data>
+  <data name="Date.Text" xml:space="preserve">
+    <value>Data &amp;</value>
+  </data>
+  <data name="DateTimeInsert.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wstaw datę i czas</value>
+    <comment>Tooltip for the "Date &amp; Time" button</comment>
+  </data>
+  <data name="Image.Text" xml:space="preserve">
+    <value>Obraz</value>
+  </data>
+  <data name="InsertButtonText.Text" xml:space="preserve">
+    <value>Wstaw</value>
+  </data>
+  <data name="InsertHyperlink.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wstaw link</value>
+    <comment>Tooltip for the "Insert link" button</comment>
+  </data>
+  <data name="InsertImage.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wstaw obraz</value>
+    <comment>Tooltip for the "Insert image" button</comment>
+  </data>
+  <data name="Link.Text" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="SymbolInsert.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wstaw symbole</value>
+    <comment>Tooltip for the "Insert symbols" button</comment>
+  </data>
+  <data name="Symbols.Text" xml:space="preserve">
+    <value>Symbole</value>
+  </data>
+  <data name="Time.Text" xml:space="preserve">
+    <value>Czas</value>
+  </data>
+  <data name="AboutAppTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>O aplikacji</value>
+  </data>
+  <data name="AboutAppText.Text" xml:space="preserve">
+    <value>O aplikacji</value>
+    <comment>The text of the "About" option in the Ribbon</comment>
+  </data>
+  <data name="DegreeSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol stopnia</value>
+  </data>
+  <data name="DivisionSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol dzielenia</value>
+  </data>
+  <data name="LeftArrowSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol strzałki w lewo</value>
+  </data>
+  <data name="LowercaseMuSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol małej litery mu (mikro)</value>
+  </data>
+  <data name="MoreSymbols.Content" xml:space="preserve">
+    <value>Więcej symboli</value>
+    <comment>The text of the "More symbols" button in the symbols menu</comment>
+  </data>
+  <data name="MultiplicationSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol mnożenia</value>
+  </data>
+  <data name="ParagraphSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol akapitu</value>
+  </data>
+  <data name="RightArrowSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol strzałki w prawo</value>
+  </data>
+  <data name="SquareRootSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol pierwiastku (do kwadratu)</value>
+  </data>
+  <data name="CloseButtonText.Text" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="CommentsButtonText.Text" xml:space="preserve">
+    <value>Komentarze</value>
+  </data>
+  <data name="Generate.Text" xml:space="preserve">
+    <value>Generuj</value>
+  </data>
+  <data name="GenerateHash.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Generuj hash/Base64</value>
+    <comment>Tooltip for the "Generate Hash/Base64" button</comment>
+  </data>
+  <data name="AdvancedButton.Content" xml:space="preserve">
+    <value>Zaawansowane</value>
+  </data>
+  <data name="BoldButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Pogrubienie (Ctrl + B)</value>
+  </data>
+  <data name="BookTitleTextTemplate.Content" xml:space="preserve">
+    <value>Tytuł
+książki</value>
+  </data>
+  <data name="ContentTextTemplate.Content" xml:space="preserve">
+    <value>Treść</value>
+  </data>
+  <data name="DashFlyoutItem.Text" xml:space="preserve">
+    <value>Kreskowane</value>
+  </data>
+  <data name="DottedFlyoutItem.Text" xml:space="preserve">
+    <value>Kropkowane</value>
+  </data>
+  <data name="DoubleFlyoutItem.Text" xml:space="preserve">
+    <value>Podwójne</value>
+  </data>
+  <data name="FinishedTextTemplate.Content" xml:space="preserve">
+    <value>Zakończone</value>
+  </data>
+  <data name="FontBox.PlaceholderText" xml:space="preserve">
+    <value>Segoe UI (Domyślna)</value>
+  </data>
+  <data name="FontBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Czcionka</value>
+  </data>
+  <data name="FontColor.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Kolor tekstu</value>
+  </data>
+  <data name="FontSize.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Rozmiar tekstu</value>
+  </data>
+  <data name="HeaderTextTemplate.Content" xml:space="preserve">
+    <value>Nagłówek</value>
+  </data>
+  <data name="HighlightColor.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Kolor podkreślenia</value>
+  </data>
+  <data name="ItalicButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Kursywa (Ctrl + I)</value>
+  </data>
+  <data name="MediumTextTemplate.Content" xml:space="preserve">
+    <value>Średni</value>
+  </data>
+  <data name="NoneFlyoutItem.Text" xml:space="preserve">
+    <value>Brak</value>
+  </data>
+  <data name="NormalTextTemplate.Content" xml:space="preserve">
+    <value>Normalny</value>
+  </data>
+  <data name="QuoteTextTemplate.Content" xml:space="preserve">
+    <value>Cytat</value>
+  </data>
+  <data name="SingleFlyoutItem.Text" xml:space="preserve">
+    <value>Pojedyncze</value>
+  </data>
+  <data name="StrikethroughButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Przekreślenie (Ctrl + T)</value>
+  </data>
+  <data name="StrongTextTemplate.Content" xml:space="preserve">
+    <value>Pogrubiony</value>
+  </data>
+  <data name="SubscriptButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Subskrypt/Indeks dolny</value>
+  </data>
+  <data name="SubtitleTextTemplate.Content" xml:space="preserve">
+    <value>Podtytuł</value>
+  </data>
+  <data name="SuperscriptButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Superskrypt/Indeks górny</value>
+  </data>
+  <data name="ThickFlyoutItem.Text" xml:space="preserve">
+    <value>Grube</value>
+  </data>
+  <data name="Title2TextTemplate.Content" xml:space="preserve">
+    <value>Tytuł 2</value>
+  </data>
+  <data name="TitleTextTemplate.Content" xml:space="preserve">
+    <value>Tytuł</value>
+  </data>
+  <data name="UnderlineButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Podkreślenie (Ctrl + U)</value>
+  </data>
+  <data name="UnfinishedTextTemplate.Content" xml:space="preserve">
+    <value>Niezakończony</value>
+  </data>
+  <data name="WaveFlyoutItem.Text" xml:space="preserve">
+    <value>Falowe</value>
+  </data>
+  <data name="BulletFlyoutItem.Text" xml:space="preserve">
+    <value>Punktor</value>
+  </data>
+  <data name="CenterAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wyśrodkuj</value>
+  </data>
+  <data name="JustifyAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wyrównaj</value>
+  </data>
+  <data name="LeftAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Lewo</value>
+  </data>
+  <data name="ListDropdown.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="LocalizationContribution.Description" xml:space="preserve">
+    <value>Przejdź do strony aplikacji na Crowdin, aby wziąć udział w procesie tłumaczenia aplikacji i poszerzyć liczbę języków dostępnych w interfejsie aplikacji</value>
+  </data>
+  <data name="LocalizationContribution.Header" xml:space="preserve">
+    <value>Wspomóż tłumaczenia na Crowdin</value>
+  </data>
+  <data name="LowercaseFlyoutItem.Text" xml:space="preserve">
+    <value>Małe litery</value>
+  </data>
+  <data name="NumberedFlyoutItem.Text" xml:space="preserve">
+    <value>Numerowane</value>
+  </data>
+  <data name="NumeralsFlyoutItem.Text" xml:space="preserve">
+    <value>Cyfry rzymskie</value>
+  </data>
+  <data name="RightAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Prawo</value>
+  </data>
+  <data name="UppercaseFlyoutItem.Text" xml:space="preserve">
+    <value>Duże litery</value>
+  </data>
 </root>
