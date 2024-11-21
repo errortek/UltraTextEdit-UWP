@@ -542,4 +542,34 @@ title</value>
   <data name="WaveFlyoutItem.Text" xml:space="preserve">
     <value>Wave</value>
   </data>
+  <data name="BulletFlyoutItem.Text" xml:space="preserve">
+    <value>Bullet</value>
+  </data>
+  <data name="CenterAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="JustifyAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Justify</value>
+  </data>
+  <data name="LeftAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="ListDropdown.ToolTipService.ToolTip" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="LowercaseFlyoutItem.Text" xml:space="preserve">
+    <value>Lowercase</value>
+  </data>
+  <data name="NumberedFlyoutItem.Text" xml:space="preserve">
+    <value>Numbered</value>
+  </data>
+  <data name="NumeralsFlyoutItem.Text" xml:space="preserve">
+    <value>Roman numerals</value>
+  </data>
+  <data name="RightAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="UppercaseFlyoutItem.Text" xml:space="preserve">
+    <value>Uppercase</value>
+  </data>
 </root>
