@@ -27,8 +27,9 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="WrapWholeWords">
-              • Includes preliminary locaization support (features in Ribbon not localizable yet)<LineBreak/>
-              • Bugfixes, mainly relating to the inactive titlebar while in Dark Mode<LineBreak/>
+              • Make the vast majority of the app localizable<LineBreak/>
+              • The notification on app launch has been removed<LineBreak/>
+                • Update copyright text<LineBreak/>
             </TextBlock>
         </StackPanel>
     </ScrollViewer>
