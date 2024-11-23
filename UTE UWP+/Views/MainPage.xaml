@@ -1162,16 +1162,16 @@
                                                     <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="30"><Run x:Uid="AboutAppText"/></TextBlock>
                                                 </Grid>
                                             </Button>
-                                                <Button x:Name="firstrunButton"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" x:Uid="FirstRunTooltip" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4" Click="FirstRunClick">
-                                                    <Grid Width="30" Height="45" Margin="4,1,4,-1">
+                                                <Button x:Name="firstrunButton"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="65" Height="53" FontSize="22" x:Uid="FirstRunTooltip" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4" Click="FirstRunClick">
+                                                    <Grid Width="60" Height="45" Margin="4,1,4,-1">
                                                         <TextBlock TextWrapping="Wrap" Text="&#xE897;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
-                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="30"><Run x:Uid="FirstRunText"/></TextBlock>
+                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="45" TextWrapping="WrapWholeWords"><Run x:Uid="FirstRunText"/></TextBlock>
                                                     </Grid>
                                                 </Button>
-                                                <Button x:Name="changelogButton"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="40" Height="53" FontSize="22" x:Uid="ChangelogTooltip" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4" Click="ChangelogClick">
-                                                    <Grid Width="30" Height="45" Margin="4,1,4,-1">
+                                                <Button x:Name="changelogButton"  FontFamily="{StaticResource SymbolThemeFontFamily}" Width="65" Height="53" FontSize="22" x:Uid="ChangelogTooltip" Padding="0,0,0,0" Margin="0,1,0,0" Background="Transparent" BorderBrush="#00000000" CornerRadius="4,4,4,4" Click="ChangelogClick">
+                                                    <Grid Width="60" Height="45" Margin="4,1,4,-1">
                                                         <TextBlock TextWrapping="Wrap" Text="&#xE897;" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16"/>
-                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="30"><Run x:Uid="ChangelogText"/></TextBlock>
+                                                        <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,20,0,0" Width="45" TextWrapping="WrapWholeWords"><Run x:Uid="ChangelogText"/></TextBlock>
                                                     </Grid>
                                                 </Button>
                                             </StackPanel>
