@@ -2156,5 +2156,17 @@ namespace UTE_UWP_.Views
             CommentsButton.IsChecked = false;
             HelpButton.IsChecked = false;
         }
+
+        private async void FirstRunClick(object sender, RoutedEventArgs e)
+        {
+            FirstRunDialog firstrun = new FirstRunDialog();
+            await firstrun.ShowAsync();
+        }
+
+        private async void ChangelogClick(object sender, RoutedEventArgs e)
+        {
+            WhatsNewDialog whatsNew = new WhatsNewDialog();
+            await whatsNew.ShowAsync();
+        }
     }
 }
