@@ -956,7 +956,7 @@ namespace UTE_UWP_.Views
                 SelWordGrid.Visibility = Visibility.Collapsed;
             }
             editor.Document.GetText(TextGetOptions.None, out var text);
-            if (text.Length > 0)
+            if (text.Length > 0 && text != " " && text != "" && text != null)
             {
                 var wordcount = text.Split(new char[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
                 WordCount.Text = $"Word count: {wordcount}";
