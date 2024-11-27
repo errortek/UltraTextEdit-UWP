@@ -578,4 +578,10 @@ title</value>
   <data name="UppercaseFlyoutItem.Text" xml:space="preserve">
     <value>Uppercase</value>
   </data>
+  <data name="ChangelogText.Text" xml:space="preserve">
+    <value>View changelog</value>
+  </data>
+  <data name="FirstRunText.Text" xml:space="preserve">
+    <value>View First Run dialog</value>
+  </data>
 </root>
