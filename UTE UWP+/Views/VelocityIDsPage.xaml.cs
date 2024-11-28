@@ -65,6 +65,24 @@ namespace UTE_UWP_.Views
             }
 
             var LocalSettings = ApplicationData.Current.LocalSettings;
+            if (LocalSettings.Values["DialogsInRibbonVID"] != null)
+            {
+                if ((string)LocalSettings.Values["DialogsInRibbonVID"] == "On")
+                {
+                    dialogsonribbonvidToggle.IsOn = true;
+
+                }
+                if ((string)LocalSettings.Values["DialogsInRibbonVID"] == "Off")
+                {
+                    dialogsonribbonvidToggle.IsOn = false;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["DialogsInRibbonVID"] = "Off";
+                dialogsonribbonvidToggle.IsOn = false;
+            }
+        
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -72,6 +90,26 @@ namespace UTE_UWP_.Views
             if (Window.Current.Content is Frame rootFrame && rootFrame.CanGoBack)
             {
                 rootFrame.GoBack();
+            }
+        }
+
+        private void dialogsonribbonvidToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (dialogsonribbonvidToggle.IsOn == true)
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["DialogsInRibbonVID"] != null)
+                {
+                    LocalSettings.Values["DialogsInRibbonVID"] = "On";
+                }
+            }
+            else
+            {
+                var LocalSettings = ApplicationData.Current.LocalSettings;
+                if (LocalSettings.Values["DialogsInRibbonVID"] != null)
+                {
+                    LocalSettings.Values["DialogsInRibbonVID"] = "Off";
+                }
             }
         }
     }

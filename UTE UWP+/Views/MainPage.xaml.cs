@@ -157,9 +157,25 @@ namespace UTE_UWP_.Views
                 {
                     editor.TextWrapping = TextWrapping.WrapWholeWords;
                 }
-            } else
-            {
+            } else {
                 LocalSettings.Values["TextWrapping"] = "Wrap";
+            }
+            if (LocalSettings.Values["DialogsInRibbonVID"] != null)
+            {
+                if (LocalSettings.Values["DialogsInRibbonVID"].ToString() == "On")
+                {
+                    changelogButton.Visibility = Visibility.Visible;
+                    firstrunButton.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    changelogButton.Visibility = Visibility.Collapsed;
+                    firstrunButton.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["DialogsInRibbonVID"] = "Off";
             }
         }
 
