@@ -2184,5 +2184,16 @@ namespace UTE_UWP_.Views
             WhatsNewDialog whatsNew = new WhatsNewDialog();
             await whatsNew.ShowAsync();
         }
+
+        private void HomeMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            HomeNavView.SelectedItem = HomeItem;
+            HomeMenu.Visibility = Visibility.Visible;
+        }
+
+        private void NavigationView_BackRequested(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewBackRequestedEventArgs args)
+        {
+            HomeMenu.Visibility = Visibility.Collapsed;
+        }
     }
 }
