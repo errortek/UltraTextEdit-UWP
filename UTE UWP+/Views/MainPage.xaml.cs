@@ -69,6 +69,7 @@ namespace UTE_UWP_.Views
                         FallbackColor = Windows.UI.Color.FromArgb(255, 230, 230, 230)
                     };
                     this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+                    HomeMenu.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
                 }
                 else
                 {
@@ -82,6 +83,7 @@ namespace UTE_UWP_.Views
                         FallbackColor = Windows.UI.Color.FromArgb(25, 25, 25, 25)
                     };
                     this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+                    HomeMenu.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
                 }
 
             } else {
