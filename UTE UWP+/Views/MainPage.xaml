@@ -463,10 +463,11 @@
         <RelativePanel Background="{StaticResource TabViewItemHeaderBackground}">
 
             <Border x:Name="HomeMenu" Visibility="Collapsed" Canvas.ZIndex="100" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Background="{ThemeResource AppBarBackgroundThemeBrush}">
-                <muxc:NavigationView x:Name="HomeNavView" BackRequested="NavigationView_BackRequested" IsBackEnabled="True">
+                <muxc:NavigationView x:Name="HomeNavView" BackRequested="NavigationView_BackRequested" SelectionChanged="HomeNavView_SelectionChanged" IsBackEnabled="True">
                     <muxc:NavigationView.MenuItems>
                         <muxc:NavigationViewItem x:Name="HomeItem" Content="Home" Icon="Home"/>
                     </muxc:NavigationView.MenuItems>
+                    <Frame x:Name="HomeMenuContentFrame"/>
                 </muxc:NavigationView>
             </Border>
 

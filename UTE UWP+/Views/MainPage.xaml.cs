@@ -2195,5 +2195,13 @@ namespace UTE_UWP_.Views
         {
             HomeMenu.Visibility = Visibility.Collapsed;
         }
+
+        private void HomeNavView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
+        {
+            if (args.IsSettingsSelected)
+            {
+                HomeMenuContentFrame.Navigate(typeof(SettingsPage));
+            }
+        }
     }
 }
