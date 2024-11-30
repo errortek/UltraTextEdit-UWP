@@ -2188,6 +2188,7 @@ namespace UTE_UWP_.Views
         private void HomeMenuButton_Click(object sender, RoutedEventArgs e)
         {
             HomeNavView.SelectedItem = HomeItem;
+            HomeMenuContentFrame.Navigate(typeof(HomePage));
             HomeMenu.Visibility = Visibility.Visible;
         }
 
@@ -2198,9 +2199,15 @@ namespace UTE_UWP_.Views
 
         private void HomeNavView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
         {
+            var selectedItem = (Microsoft.UI.Xaml.Controls.NavigationViewItem)args.SelectedItem;
+            string selectedItemTag = (string)selectedItem.Tag;
             if (args.IsSettingsSelected)
             {
                 HomeMenuContentFrame.Navigate(typeof(SettingsPage));
+            }
+            if (selectedItemTag == "Home")
+            {
+                HomeMenuContentFrame.Navigate(typeof(HomePage));
             }
         }
     }
