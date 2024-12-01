@@ -358,5 +358,10 @@ namespace UTE_UWP_.Views
             }
             DefaultLaunch();
         }
+
+        public void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

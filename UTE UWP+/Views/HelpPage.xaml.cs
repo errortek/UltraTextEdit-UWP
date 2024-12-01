@@ -41,7 +41,8 @@ namespace UTE_UWP_.Views
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            SettingsPage settingsPage = new SettingsPage();
+            settingsPage.UpdateButton_Click(sender, e);
         }
 
         private void FeedbackButton_Click(object sender, RoutedEventArgs e)

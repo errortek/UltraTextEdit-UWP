@@ -88,6 +88,15 @@ GroupName="AppTheme">
                                 <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.png" ShowAsMonochrome="False"/>
                             </controls:SettingsCard.HeaderIcon>
                         </controls:SettingsCard>
+
+                        <controls:SettingsCard x:Name="updateblock"
+Header="UTE Update"
+IsClickEnabled="True"
+Click="UpdateButton_Click">
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xE895;"/>
+                            </controls:SettingsCard.HeaderIcon>
+                        </controls:SettingsCard>
                         <controls:SettingsCard
                             x:Uid="Feedback"
        IsClickEnabled="True"
