@@ -2224,6 +2224,9 @@ namespace UTE_UWP_.Views
             if (selectedItemTag == "Home")
             {
                 HomeMenuContentFrame.Content = HomePage;
+            } else if (selectedItemTag == "Help")
+            {
+                HomeMenuContentFrame.Navigate(typeof(HelpPage));
             }
         }
 

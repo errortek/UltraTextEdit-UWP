@@ -462,11 +462,14 @@
     <Grid>
         <RelativePanel Background="{StaticResource TabViewItemHeaderBackground}">
 
-            <Border x:Name="HomeMenu" Visibility="Collapsed" Canvas.ZIndex="100" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <Border x:Name="HomeMenu" Visibility="Collapsed" Canvas.ZIndex="100" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Background="{ThemeResource AppBarBackgroundThemeBrush}">
                 <muxc:NavigationView x:Name="HomeNavView" BackRequested="NavigationView_BackRequested" SelectionChanged="HomeNavView_SelectionChanged" IsBackEnabled="True" Background="Transparent">
                     <muxc:NavigationView.MenuItems>
                         <muxc:NavigationViewItem x:Name="HomeItem" Tag="Home" Content="Home" Icon="Home"/>
                     </muxc:NavigationView.MenuItems>
+                    <muxc:NavigationView.FooterMenuItems>
+                        <muxc:NavigationViewItem Content="Help" Tag="Help" Icon="Help" />
+                    </muxc:NavigationView.FooterMenuItems>
                     <Frame x:Name="HomeMenuContentFrame" Background="Transparent">
                         <Grid x:Name="HomePage">
                             <StackPanel Margin="16">
