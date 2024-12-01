@@ -196,6 +196,7 @@
     <Compile Include="Helpers\SettingsHelper.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Helpers\SystemAccentColorSetting.cs" />
+    <Compile Include="Helpers\UTEUpdateLauncher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultActivationHandler.cs" />
@@ -228,6 +229,9 @@
       <DependentUpon>SettingsPageContainer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TableDialog.xaml.cs" />
+    <Compile Include="Views\UTEUpdate.xaml.cs">
+      <DependentUpon>UTEUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\VelocityIDsPage.xaml.cs">
       <DependentUpon>VelocityIDsPage.xaml</DependentUpon>
     </Compile>
@@ -298,6 +302,10 @@
     <Page Include="Views\TableDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UTEUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\VelocityIDsPage.xaml">
       <SubType>Designer</SubType>

@@ -361,7 +361,8 @@ namespace UTE_UWP_.Views
 
         public void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            UTEUpdateLauncher updateLauncher = new UTEUpdateLauncher();
+            updateLauncher.LaunchUTEUpdate();
         }
     }
 }
