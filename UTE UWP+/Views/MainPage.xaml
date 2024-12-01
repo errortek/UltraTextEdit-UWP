@@ -659,7 +659,13 @@
                                             <Grid>
                                                 <Border x:Name="FontBor" BorderThickness="1" VerticalAlignment="Top" Margin="0,42,0,0" Height="27" HorizontalAlignment="Left" CornerRadius="4,4,4,4" Visibility="Collapsed"/>
                                                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,7,0,0">
-                                                    <ComboBox x:Name="FontBox" Width="255" Height="33" SelectionChanged="FontBox_SelectionChanged" x:Uid="FontBox" ItemsSource="{x:Bind fonts}" Padding="10,2,2,2" FontSize="14" HorizontalContentAlignment="Left"/>
+                                                    <ComboBox x:Name="FontBox" Width="255" Height="33" SelectionChanged="FontBox_SelectionChanged" x:Uid="FontBox" ItemsSource="{x:Bind fonts}" Padding="10,2,2,2" FontSize="14" HorizontalContentAlignment="Left">
+                                                        <ComboBox.ItemTemplate>
+                                                            <DataTemplate x:DataType="x:String">
+                                                                <TextBlock FontFamily="{x:Bind}" Text="{x:Bind}" />
+                                                            </DataTemplate>
+                                                        </ComboBox.ItemTemplate>
+                                                    </ComboBox>
                                                     <muxc:NumberBox MinWidth="0" x:Name="FSize" Width="147" ValueChanged="NumberBox_ValueChanged" VerticalContentAlignment="Center" FontSize="14" x:Uid="FontSize" VerticalAlignment="Top" Margin="6,0,0,0" Height="33" PlaceholderText="Multiple"/>
                                                     <muxc:DropDownButton Width="32" Height="20" HorizontalContentAlignment="Left" FontSize="10" FontFamily="{StaticResource SymbolThemeFontFamily}" VerticalAlignment="Center" Padding="0,0,9,0" CornerRadius="4,4,4,4" Margin="-38,0,0,0" Background="Transparent" BorderBrush="{x:Null}">
                                                         <muxc:DropDownButton.Flyout>
