@@ -7,7 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock>UTE 4.2.0.3</TextBlock>
-    </Grid>
+    <StackPanel HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="ms-appx:///Assets/utevericon.png" Height="150" Stretch="None"/>
+            <TextBlock FontSize="36" FontWeight="SemiBold" VerticalAlignment="Center" Foreground="{ThemeResource SystemAccentColor}">UltraTextEdit UWP</TextBlock>
+        </StackPanel>
+        <TextBlock HorizontalTextAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,10">version 4.2.0.3, Preview</TextBlock>
+        <StackPanel>
+            <Button HorizontalAlignment="Center" x:Name="AboutButton" Click="AboutButton_Click">
+                <StackPanel>
+                    <FontIcon Glyph="&#xE897;"/>
+                    <TextBlock>About</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Center" x:Name="ChangelogButton" Click="ChangelogButton_Click">
+                <StackPanel>
+                    <FontIcon Glyph="&#xED0E;"/>
+                    <TextBlock>Changelog</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Center" x:Name="UpdateButton" Click="UpdateButton_Click">
+                <StackPanel>
+                    <FontIcon Glyph="&#xE895;"/>
+                    <TextBlock>Check for updates</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Center" x:Name="FeedbackButton" Click="FeedbackButton_Click">
+                <StackPanel>
+                    <FontIcon Glyph="&#xED15;"/>
+                    <TextBlock>Send feedback</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </StackPanel>
 </Page>

@@ -26,5 +26,28 @@ namespace UTE_UWP_.Views
         {
             this.InitializeComponent();
         }
+
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainPage mainPage = new MainPage();
+            mainPage.uteverclick(sender, e);
+        }
+
+        private void ChangelogButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainPage mainPage = new MainPage();
+            mainPage.ChangelogClick(sender, e);
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FeedbackButton_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsPage settingsPage = new SettingsPage();
+            settingsPage.DC_Navigate(sender, e);
+        }
     }
 }

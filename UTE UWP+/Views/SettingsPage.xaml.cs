@@ -307,7 +307,7 @@ namespace UTE_UWP_.Views
             await CoreApplication.RequestRestartAsync(RestartArgs);
         }
 
-        private void DC_Navigate(object sender, RoutedEventArgs e)
+        public void DC_Navigate(object sender, RoutedEventArgs e)
         {
             // The URI to launch
             string uriToLaunch = @"https://discord.gg/windows-apps-hub-714581497222398064";

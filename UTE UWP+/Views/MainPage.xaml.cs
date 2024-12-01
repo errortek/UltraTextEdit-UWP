@@ -887,7 +887,7 @@ namespace UTE_UWP_.Views
 
 
 
-        private async void uteverclick(object sender, RoutedEventArgs e)
+        public async void uteverclick(object sender, RoutedEventArgs e)
         {
             //utever dialog = new utever();
 
@@ -2181,7 +2181,7 @@ namespace UTE_UWP_.Views
             await firstrun.ShowAsync();
         }
 
-        private async void ChangelogClick(object sender, RoutedEventArgs e)
+        public async void ChangelogClick(object sender, RoutedEventArgs e)
         {
             WhatsNewDialog whatsNew = new WhatsNewDialog();
             await whatsNew.ShowAsync();
