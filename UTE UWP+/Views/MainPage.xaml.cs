@@ -2190,13 +2190,27 @@ namespace UTE_UWP_.Views
         private void HomeMenuButton_Click(object sender, RoutedEventArgs e)
         {
             HomeNavView.SelectedItem = HomeItem;
-            HomeMenuContentFrame.Navigate(typeof(HomePage));
+            HomeMenuContentFrame.Content = HomePage;
             HomeMenu.Visibility = Visibility.Visible;
+            BlankDocumentButton.Visibility = Visibility.Visible;
+            NewDocText.Visibility = Visibility.Collapsed;
         }
 
         private void NavigationView_BackRequested(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewBackRequestedEventArgs args)
         {
             HomeMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void NewDocumentExpander_Expanding(Microsoft.UI.Xaml.Controls.Expander sender, Microsoft.UI.Xaml.Controls.ExpanderExpandingEventArgs args)
+        {
+            BlankDocumentButton.Visibility = Visibility.Collapsed;
+            NewDocText.Visibility = Visibility.Visible;
+        }
+
+        private void NewDocumentExpander_Collapsed(Microsoft.UI.Xaml.Controls.Expander sender, Microsoft.UI.Xaml.Controls.ExpanderCollapsedEventArgs args)
+        {
+            BlankDocumentButton.Visibility = Visibility.Visible;
+            NewDocText.Visibility = Visibility.Collapsed;
         }
 
         private void HomeNavView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
@@ -2209,8 +2223,13 @@ namespace UTE_UWP_.Views
             }
             if (selectedItemTag == "Home")
             {
-                HomeMenuContentFrame.Navigate(typeof(HomePage));
+                HomeMenuContentFrame.Content = HomePage;
             }
+        }
+
+        private void CreateBlankDocument(object sender, RoutedEventArgs e)
+        {
+            editor.Document.SetText(TextSetOptions.None, "");
         }
     }
 }

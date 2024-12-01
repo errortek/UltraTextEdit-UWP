@@ -467,7 +467,27 @@
                     <muxc:NavigationView.MenuItems>
                         <muxc:NavigationViewItem x:Name="HomeItem" Tag="Home" Content="Home" Icon="Home"/>
                     </muxc:NavigationView.MenuItems>
-                    <Frame x:Name="HomeMenuContentFrame" Background="Transparent"/>
+                    <Frame x:Name="HomeMenuContentFrame" Background="Transparent">
+                        <Grid x:Name="HomePage">
+                            <StackPanel Margin="16">
+                                <TextBlock FontSize="36" FontWeight="SemiBold">Welcome!</TextBlock>
+                                <muxc:Expander x:Name="NewDocumentExpander" Expanding="NewDocumentExpander_Expanding" Collapsed="NewDocumentExpander_Collapsed">
+                                    <muxc:Expander.Header>
+                                        <Grid>
+                                            <TextBlock x:Name="NewDocText">Create new document</TextBlock>
+                                            <Button Style="{ThemeResource AccentButtonStyle}" Content="New blank document" Click="CreateBlankDocument" x:Name="BlankDocumentButton" Visibility="Collapsed"/>
+                                        </Grid>
+                                    </muxc:Expander.Header>
+                                    <Button Height="250" Width="200" Click="CreateBlankDocument" Background="Transparent" BorderThickness="0">
+                                        <StackPanel>
+                                            <Rectangle Fill="White" Height="200" Width="150"/>
+                                            <TextBlock Text="Blank" TextAlignment="Center" Margin="0,10,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+                                </muxc:Expander>
+                            </StackPanel>
+                        </Grid>
+                    </Frame>
                 </muxc:NavigationView>
             </Border>
 
@@ -1276,7 +1296,7 @@
             FontFamily="Segoe UI"
             IsSpellCheckEnabled="False"
             TextWrapping="Wrap"
-            TextChanged="RichEditBox_TextChanged" SelectionChanged="editor_SelectionChanged">
+            TextChanged="RichEditBox_TextChanged" SelectionChanged="editor_SelectionChanged" x:FieldModifier="public">
                         </RichEditBox>
                         <Grid x:Name="Bottom" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5" Padding="0, 0, 0, 5">
                             <Border x:Name="StatusBar" BorderThickness="1" CornerRadius="3,3,3,3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="7,0,7,5" Height="35" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
