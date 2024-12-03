@@ -4,13 +4,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UTE_UWP_.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    Height="580"
-    Width="640">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock>UltraTextEdit Update</TextBlock>
+        <RelativePanel Margin="16">
+            <TextBlock x:Name="checkforupdateText" FontSize="36" FontWeight="SemiBold" RelativePanel.AlignLeftWithPanel="True">No updates available</TextBlock>
+            <Button Style="{ThemeResource AccentButtonStyle}" RelativePanel.AlignRightWithPanel="True" Click="CheckForUpdates">Check for updates</Button>
+            <muxc:ProgressBar x:Name="updatecheckProgress" IsIndeterminate="True" Visibility="Collapsed" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"></muxc:ProgressBar>
+</RelativePanel>
     </Grid>
 </Page>

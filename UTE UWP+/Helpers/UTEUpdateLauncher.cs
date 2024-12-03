@@ -28,27 +28,11 @@ namespace UTE_UWP_.Helpers
                 var frame = new Frame();
                 frame.Navigate(typeof(UTEUpdate));
                 newWindow.Content = frame;
-                newWindow.Activated += NewWindow_Activated;
                 newWindow.Activate();
 
                 await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newAppView.Id,
                     ViewSizePreference.UseMinimum, currentAV.Id, ViewSizePreference.UseMinimum);
             });
-        }
-
-        private void NewWindow_Activated(object sender, WindowActivatedEventArgs e)
-        {
-            float DPI = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi;
-
-            Windows.UI.ViewManagement.ApplicationView.PreferredLaunchWindowingMode = Windows.UI.ViewManagement.ApplicationViewWindowingMode.PreferredLaunchViewSize;
-
-            var desiredSize = new Windows.Foundation.Size(((float)640 * 96.0f / DPI), ((float)580 * 96.0f / DPI));
-
-            Windows.UI.ViewManagement.ApplicationView.PreferredLaunchViewSize = desiredSize;
-
-            Window.Current.Activate();
-
-            bool result = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().TryResizeView(desiredSize);
         }
     }
 }

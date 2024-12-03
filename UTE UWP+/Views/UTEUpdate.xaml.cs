@@ -26,5 +26,11 @@ namespace UTE_UWP_.Views
         {
             this.InitializeComponent();
         }
+
+        private void CheckForUpdates(object sender, RoutedEventArgs e)
+        {
+            updatecheckProgress.Visibility = Visibility.Visible;
+            checkforupdateText.Text = "Checking for updates...";
+        }
     }
 }
