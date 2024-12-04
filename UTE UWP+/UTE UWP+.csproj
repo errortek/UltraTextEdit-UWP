@@ -383,6 +383,7 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\UTEUpdate\Version.txt" />
     <Content Include="Assets\utevericon.png" />
     <Content Include="Assets\Warning.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
