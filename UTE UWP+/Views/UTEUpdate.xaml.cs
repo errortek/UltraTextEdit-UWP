@@ -53,6 +53,8 @@ namespace UTE_UWP_.Views
                 checkforupdateText.Text = "No updates available";
                 updatecheckProgress.Visibility = Visibility.Collapsed;
             }
+            stream.Close();
+            reader.Close();
         }
     }
 }

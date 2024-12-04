@@ -12,6 +12,12 @@
         <RelativePanel Margin="16">
             <TextBlock x:Name="checkforupdateText" FontSize="36" FontWeight="SemiBold" RelativePanel.AlignLeftWithPanel="True">No updates available</TextBlock>
             <Button Style="{ThemeResource AccentButtonStyle}" RelativePanel.AlignRightWithPanel="True" Click="CheckForUpdates">Check for updates</Button>
+            <Grid Background="{StaticResource AppBarBackgroundThemeBrush}" BorderThickness="1" Visibility="Collapsed">
+                <StackPanel>
+                    <TextBlock x:Name="NewVersion"/>
+                    <muxc:ProgressBar x:Name="DownloadProgress" IsIndeterminate="False"/>
+                </StackPanel>
+            </Grid>
             <muxc:ProgressBar x:Name="updatecheckProgress" IsIndeterminate="True" Visibility="Collapsed" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"></muxc:ProgressBar>
 </RelativePanel>
     </Grid>
