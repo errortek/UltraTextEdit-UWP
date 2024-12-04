@@ -35,7 +35,7 @@ namespace UTE_UWP_.Views
             updatecheckProgress.Visibility = Visibility.Visible;
             checkforupdateText.Text = "Checking for updates...";
             WebClient client = new WebClient();
-            Stream stream = client.OpenRead("");
+            Stream stream = client.OpenRead("https://raw.githubusercontent.com/errortek/UltraTextEdit-UWP/refs/heads/dev/UTE%20UWP%2B/Assets/UTEUpdate/Version.txt");
             StreamReader reader = new StreamReader(stream);
             var newVersion = new Version(await reader.ReadToEndAsync());
             Package package = Package.Current;
@@ -46,10 +46,12 @@ namespace UTE_UWP_.Views
             if (newVersion.CompareTo(currentVersion) > 0)
             {
                 checkforupdateText.Text = "An update is available";
+                updatecheckProgress.Visibility = Visibility.Collapsed;
             }
             else
             {
                 checkforupdateText.Text = "No updates available";
+                updatecheckProgress.Visibility = Visibility.Collapsed;
             }
         }
     }
