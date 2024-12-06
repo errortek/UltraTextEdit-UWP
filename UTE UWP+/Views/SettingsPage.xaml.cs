@@ -307,7 +307,7 @@ namespace UTE_UWP_.Views
             await CoreApplication.RequestRestartAsync(RestartArgs);
         }
 
-        private void DC_Navigate(object sender, RoutedEventArgs e)
+        public void DC_Navigate(object sender, RoutedEventArgs e)
         {
             // The URI to launch
             string uriToLaunch = @"https://discord.gg/windows-apps-hub-714581497222398064";
@@ -331,6 +331,38 @@ namespace UTE_UWP_.Views
                 }
             }
             DefaultLaunch();
+        }
+
+        private void LocalizationContrib_Navigate(object sender, RoutedEventArgs e)
+        {
+            // The URI to launch
+            string uriToLaunch = @"https://crowdin.com/project/ultratextedit-uwp";
+
+            // Create a Uri object from a URI string 
+            var uri = new Uri(uriToLaunch);
+
+            // Launch the URI
+            async void DefaultLaunch()
+            {
+                // Launch the URI
+                var success = await Windows.System.Launcher.LaunchUriAsync(uri);
+
+                if (success)
+                {
+                    // URI launched
+                }
+                else
+                {
+                    // URI launch failed
+                }
+            }
+            DefaultLaunch();
+        }
+
+        public void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            UTEUpdateLauncher updateLauncher = new UTEUpdateLauncher();
+            updateLauncher.LaunchUTEUpdate();
         }
     }
 }

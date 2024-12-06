@@ -65,6 +65,9 @@
         <ScrollViewer Grid.Row="1" x:Name="view">
             <StackPanel Orientation="Vertical" Padding="20" Spacing="5">
                 <TextBlock Text="Velocity IDs" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
+                <controls:SettingsCard Header="Show the first run and changelog dialog links in the Ribbon">
+                    <ToggleSwitch x:Name="dialogsonribbonvidToggle" OffContent="Off" OnContent="On" Toggled="dialogsonribbonvidToggle_Toggled"/>
+                </controls:SettingsCard>
             </StackPanel>
         </ScrollViewer>
     </Grid>

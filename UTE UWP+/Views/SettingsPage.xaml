@@ -16,7 +16,7 @@
             x:Name="ContentArea">
             <ScrollViewer x:Name="view">
                 <StackPanel Orientation="Vertical" Padding="20" Spacing="5">
-                    <TextBlock Text="Settings" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
+                    <TextBlock x:Uid="Settings_Title" Margin="0,0,0,10" FontSize="32" FontWeight="SemiBold" />
                     <TextBlock Text="Editor" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
                     <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
                         <controls:SettingsCard Header="Text wrapping">
@@ -33,9 +33,9 @@
                             <CheckBox x:Name="spellcheckBox" Checked="spellcheckBox_Checked" Unchecked="spellcheckBox_Unchecked" Margin="0,0,-100,0"/>
                         </controls:SettingsCard>
                     </StackPanel>
-                    <TextBlock Text="Personalization" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
+                    <TextBlock x:Uid="Settings_Personalization" Margin="0,0,0,10" FontSize="18" FontWeight="SemiBold" />
                     <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
-                        <controls:SettingsExpander Header="Theme" Description="Change app theme here">
+                        <controls:SettingsExpander x:Uid="SettingsTheme">
                             <controls:SettingsExpander.Items>
                                 <controls:SettingsCard HorizontalContentAlignment="Left"
                                                ContentAlignment="Left">
@@ -74,7 +74,7 @@ GroupName="AppTheme">
                                 </controls:SettingsCard>
                             </controls:SettingsExpander.Items>
                         </controls:SettingsExpander>
-                        <controls:SettingsCard x:Name="AccentColorCard" Header="Accent color" Description="Change the app's accent color">
+                        <controls:SettingsCard x:Uid="AccentColor">
                             <ComboBox x:Name="AccentBox" ItemsSource="{x:Bind accentcolors}" SelectionChanged="AccentBox_SelectionChanged"/>
                         </controls:SettingsCard>
                     </StackPanel>
@@ -88,10 +88,17 @@ GroupName="AppTheme">
                                 <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.png" ShowAsMonochrome="False"/>
                             </controls:SettingsCard.HeaderIcon>
                         </controls:SettingsCard>
+
+                        <controls:SettingsCard x:Name="updateblock"
+Header="UTE Update"
+IsClickEnabled="True"
+Click="UpdateButton_Click">
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xE895;"/>
+                            </controls:SettingsCard.HeaderIcon>
+                        </controls:SettingsCard>
                         <controls:SettingsCard
-       ActionIconToolTip="Send feedback via Discord"
-       Description="Join the Developer Sanctuary Discord server, in which I have a project channel where you can provide direct feedback to me and talk with other users. The app's forum post is under my channel, #jpbs-projects, titled 'UltraTextEdit (UWP)'."
-       Header="Send feedback via Discord"
+                            x:Uid="Feedback"
        IsClickEnabled="True"
        IsEnabled="True"
     Click="DC_Navigate">
@@ -106,6 +113,7 @@ GroupName="AppTheme">
                                ActionIconToolTip="Open GitHub repo in browser"
                                Description="Go there to submit issues, view pull requests, and check out the code!!"
                                Header="GitHub repo"
+                               x:Uid="GitHubRepo"
                                IsClickEnabled="True"
                                IsEnabled="True"
                             Click="GH_Navigate">
@@ -116,11 +124,22 @@ GroupName="AppTheme">
                                 <FontIcon Glyph="&#xE943;"/>
                             </controls:SettingsCard.HeaderIcon>
                         </controls:SettingsCard>
+                        <controls:SettingsCard
+       x:Uid="LocalizationContribution"
+       IsClickEnabled="True"
+       IsEnabled="True"
+    Click="LocalizationContrib_Navigate">
+                            <controls:SettingsCard.ActionIcon>
+                                <FontIcon Glyph="&#xE8A7;"/>
+                            </controls:SettingsCard.ActionIcon>
+                            <controls:SettingsCard.HeaderIcon>
+                                <FontIcon Glyph="&#xE775;"/>
+                            </controls:SettingsCard.HeaderIcon>
+                        </controls:SettingsCard>
                         <controls:SettingsCard x:Name="vidsblock"
 Header="Velocity IDs"
 IsClickEnabled="True"
-Click="VIDsButton_Click"
-                                               Margin="0,0,0,80">
+Click="VIDsButton_Click">
                             <controls:SettingsCard.HeaderIcon>
                                 <FontIcon Glyph="&#xEC7A;"/>
                             </controls:SettingsCard.HeaderIcon>
@@ -131,13 +150,5 @@ Click="VIDsButton_Click"
                 </StackPanel>
             </ScrollViewer>
         </Grid>
-        <controlsold:DropShadowPanel Grid.Row="1" BlurRadius="25" Color="#66000000" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="10, 0, 10, 25" VerticalAlignment="Bottom">
-            <controls:SettingsCard BorderThickness="1" CornerRadius="4,4,4,4" VerticalAlignment="Bottom" Background="{StaticResource AcrylicBackgroundFillColorBaseBrush}">
-                <StackPanel Orientation="Horizontal" Spacing="10">
-                    <Button Click="SettingsResetButton_Click" Content="Reset app settings" HorizontalAlignment="Right"/>
-                    <Button Content="Save and Restart" Click="SettingsSaveButton_Click" VerticalAlignment="Center" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Right"/>
-                </StackPanel>
-            </controls:SettingsCard>
-        </controlsold:DropShadowPanel>
     </Grid>
 </Page>

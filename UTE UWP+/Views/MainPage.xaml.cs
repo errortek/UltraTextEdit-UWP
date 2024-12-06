@@ -69,6 +69,7 @@ namespace UTE_UWP_.Views
                         FallbackColor = Windows.UI.Color.FromArgb(255, 230, 230, 230)
                     };
                     this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+                    HomeMenu.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
                 }
                 else
                 {
@@ -82,6 +83,7 @@ namespace UTE_UWP_.Views
                         FallbackColor = Windows.UI.Color.FromArgb(25, 25, 25, 25)
                     };
                     this.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
+                    HomeMenu.Background = (Brush)Application.Current.Resources["AppTitleBarBrush"];
                 }
 
             } else {
@@ -157,9 +159,25 @@ namespace UTE_UWP_.Views
                 {
                     editor.TextWrapping = TextWrapping.WrapWholeWords;
                 }
-            } else
-            {
+            } else {
                 LocalSettings.Values["TextWrapping"] = "Wrap";
+            }
+            if (LocalSettings.Values["DialogsInRibbonVID"] != null)
+            {
+                if (LocalSettings.Values["DialogsInRibbonVID"].ToString() == "On")
+                {
+                    changelogButton.Visibility = Visibility.Visible;
+                    firstrunButton.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    changelogButton.Visibility = Visibility.Collapsed;
+                    firstrunButton.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                LocalSettings.Values["DialogsInRibbonVID"] = "Off";
             }
         }
 
@@ -869,7 +887,7 @@ namespace UTE_UWP_.Views
 
 
 
-        private async void uteverclick(object sender, RoutedEventArgs e)
+        public async void uteverclick(object sender, RoutedEventArgs e)
         {
             //utever dialog = new utever();
 
@@ -956,7 +974,7 @@ namespace UTE_UWP_.Views
                 SelWordGrid.Visibility = Visibility.Collapsed;
             }
             editor.Document.GetText(TextGetOptions.None, out var text);
-            if (text.Length > 0)
+            if (text.Length > 0 && text != " " && text != "" && text != null)
             {
                 var wordcount = text.Split(new char[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length;
                 WordCount.Text = $"Word count: {wordcount}";
@@ -2155,6 +2173,66 @@ namespace UTE_UWP_.Views
             DeveloperButton.IsChecked = true;
             CommentsButton.IsChecked = false;
             HelpButton.IsChecked = false;
+        }
+
+        private async void FirstRunClick(object sender, RoutedEventArgs e)
+        {
+            FirstRunDialog firstrun = new FirstRunDialog();
+            await firstrun.ShowAsync();
+        }
+
+        public async void ChangelogClick(object sender, RoutedEventArgs e)
+        {
+            WhatsNewDialog whatsNew = new WhatsNewDialog();
+            await whatsNew.ShowAsync();
+        }
+
+        private void HomeMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            HomeNavView.SelectedItem = HomeItem;
+            HomeMenuContentFrame.Content = HomePage;
+            HomeMenu.Visibility = Visibility.Visible;
+            BlankDocumentButton.Visibility = Visibility.Visible;
+            NewDocText.Visibility = Visibility.Collapsed;
+        }
+
+        private void NavigationView_BackRequested(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewBackRequestedEventArgs args)
+        {
+            HomeMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void NewDocumentExpander_Expanding(Microsoft.UI.Xaml.Controls.Expander sender, Microsoft.UI.Xaml.Controls.ExpanderExpandingEventArgs args)
+        {
+            BlankDocumentButton.Visibility = Visibility.Collapsed;
+            NewDocText.Visibility = Visibility.Visible;
+        }
+
+        private void NewDocumentExpander_Collapsed(Microsoft.UI.Xaml.Controls.Expander sender, Microsoft.UI.Xaml.Controls.ExpanderCollapsedEventArgs args)
+        {
+            BlankDocumentButton.Visibility = Visibility.Visible;
+            NewDocText.Visibility = Visibility.Collapsed;
+        }
+
+        private void HomeNavView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
+        {
+            var selectedItem = (Microsoft.UI.Xaml.Controls.NavigationViewItem)args.SelectedItem;
+            string selectedItemTag = (string)selectedItem.Tag;
+            if (args.IsSettingsSelected)
+            {
+                HomeMenuContentFrame.Navigate(typeof(SettingsPage));
+            }
+            if (selectedItemTag == "Home")
+            {
+                HomeMenuContentFrame.Content = HomePage;
+            } else if (selectedItemTag == "Help")
+            {
+                HomeMenuContentFrame.Navigate(typeof(HelpPage));
+            }
+        }
+
+        private void CreateBlankDocument(object sender, RoutedEventArgs e)
+        {
+            editor.Document.SetText(TextSetOptions.None, "");
         }
     }
 }

@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>UltraTextEdit UWP</value>
+    <comment>Application display name</comment>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>UltraTextEdit UWP</value>
+    <comment>Application description</comment>
+  </data>
+  <data name="SettingsTheme.Header" xml:space="preserve">
+    <value>Motyw</value>
+    <comment>Choose theme text for Settings</comment>
+  </data>
+  <data name="Settings_Theme_Dark.Content" xml:space="preserve">
+    <value>Ciemny</value>
+    <comment>Dark theme text for Settings</comment>
+  </data>
+  <data name="Settings_Theme_Default.Content" xml:space="preserve">
+    <value>Domyślny dla systemu Windows</value>
+    <comment>Windows default theme text for Settings</comment>
+  </data>
+  <data name="Settings_Theme_Light.Content" xml:space="preserve">
+    <value>Jasny</value>
+    <comment>Light theme text for Settings</comment>
+  </data>
+  <data name="Settings_About.Text" xml:space="preserve">
+    <value>O aplikacji</value>
+    <comment>About this application title for Settings</comment>
+  </data>
+  <data name="Settings_PrivacyTermsLink.Content" xml:space="preserve">
+    <value>GitHub</value>
+    <comment>Privacy Statement link content for Settings</comment>
+  </data>
+  <data name="Settings_PrivacyTermsLink.NavigateUri" xml:space="preserve">
+    <value>https://github.com/jpbandroid/UltraTextEdit-UWP</value>
+    <comment>Here is your Privacy Statement url for Settings</comment>
+  </data>
+  <data name="Settings_Personalization.Text" xml:space="preserve">
+    <value>Personalizacja</value>
+    <comment>Personalization text for Settings</comment>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>Ustawienia</value>
+    <comment>Page title for SettingsPage</comment>
+  </data>
+  <data name="FirstRun_Body.Text" xml:space="preserve">
+    <value>Witaj w UTE UWP!
+To jest nowsza i bardziej zaawansowana wersja UltraTextEdit UWP, nieoparta na TowPadzie!
+Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
+- Nowe menu ustawień
+- Nowy algorytm wyszukiwana i zamieniania tekstu
+- Zresetowane dialogi pierwszego startu i Co Nowego, tak jak w UTE UWP 22H1!!</value>
+    <comment>First use prompt message body</comment>
+  </data>
+  <data name="FirstRunDialog.Title" xml:space="preserve">
+    <value>Witaj</value>
+    <comment>First use prompt message title</comment>
+  </data>
+  <data name="FirstRunDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>First use prompt message primary button text</comment>
+  </data>
+  <data name="WhatsNewDialog.Title" xml:space="preserve">
+    <value>Co nowego w tej wersji?</value>
+    <comment>What's new prompt message title</comment>
+  </data>
+  <data name="WhatsNewDialog.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>What's new prompt message primary button text</comment>
+  </data>
+  <data name="Cancel.Text" xml:space="preserve">
+    <value>Anuluj</value>
+    <comment>Text for "Cancel" buttons in the app</comment>
+  </data>
+  <data name="Confirm.Text" xml:space="preserve">
+    <value>OK</value>
+    <comment>Text for "OK" buttons in the app</comment>
+  </data>
+  <data name="MainPageTitle.Text" xml:space="preserve">
+    <value>Bez tytułu — UTE UWP</value>
+    <comment>The default title of the MainPage, the main document editing interface.</comment>
+  </data>
+  <data name="Unsaved.Text" xml:space="preserve">
+    <value>* Niezapisane</value>
+    <comment>The text of the "* Not Saved" UI element in the title bar. Indicates if the open document is saved or not.</comment>
+  </data>
+  <data name="AccentColor.Description" xml:space="preserve">
+    <value>Zmień kolor akcentu aplikacji</value>
+    <comment>Description of the "Accent color" option in Settings</comment>
+  </data>
+  <data name="AccentColor.Header" xml:space="preserve">
+    <value>Kolor akcentu</value>
+    <comment>Title of the "Accent color" option in Settings</comment>
+  </data>
+  <data name="CancelButton.Content" xml:space="preserve">
+    <value>Anuluj</value>
+    <comment>Text of "Cancel" buttons</comment>
+  </data>
+  <data name="CaseSensBox.Content" xml:space="preserve">
+    <value>Rozróżniaj wielkość liter</value>
+    <comment>Text of the "Case sensitive" option</comment>
+  </data>
+  <data name="Close.Label" xml:space="preserve">
+    <value>Zamknij</value>
+    <comment>Text of the "Close" button in the Find/Replace pane</comment>
+  </data>
+  <data name="Comment.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Komentarze</value>
+    <comment>Tooltip for the "Comment" button</comment>
+  </data>
+  <data name="Comments.Content" xml:space="preserve">
+    <value>Komentarze</value>
+    <comment>Label of the "Comments" ribbon tab</comment>
+  </data>
+  <data name="Developer.Content" xml:space="preserve">
+    <value>Deweloper</value>
+    <comment>Label of the "Developer" ribbon tab</comment>
+  </data>
+  <data name="Exit.Text" xml:space="preserve">
+    <value>Zamknij</value>
+    <comment>Text of the "Exit" option, last option in the "File" dropdown</comment>
+  </data>
+  <data name="Feedback.Description" xml:space="preserve">
+    <value>Dołącz do serwera Developer Sanctuary na Discordzie, w którym mam kanał projektowy gdzie możesz przekazać mi bezpośrednie swoje opinie i porozmawiać z innymi użytkownikami aplikacji. Post forumowy aplikacji jest pod moim kanałem, #jpbs-projects, zatytułowany "UltraTextEdit (UWP)".</value>
+    <comment>Description of the feedback option in Settings</comment>
+  </data>
+  <data name="Feedback.Header" xml:space="preserve">
+    <value>Wyślij opinię przez Discorda</value>
+    <comment>Title of the feedback option in Settings</comment>
+  </data>
+  <data name="File.Title" xml:space="preserve">
+    <value>Plik</value>
+    <comment>Title of the "File" dropdown</comment>
+  </data>
+  <data name="FindBox.PlaceholderText" xml:space="preserve">
+    <value>Tekst do wyszukania</value>
+    <comment>Placeholder text for the Find text box</comment>
+  </data>
+  <data name="FindButton.Content" xml:space="preserve">
+    <value>Wyszukaj</value>
+    <comment>Text of the "Find" button in the Find/Replace pane</comment>
+  </data>
+  <data name="FindReplace.Text" xml:space="preserve">
+    <value>Znajdź/Zamień</value>
+    <comment>Text of the "Find/Replace" option, sixth option in the "File" dropdown</comment>
+  </data>
+  <data name="FindUsageInfo.Title" xml:space="preserve">
+    <value>Informacje o użyciu</value>
+    <comment>Title of the usage info section of the Find/Replace pane</comment>
+  </data>
+  <data name="FindUsageInfoText.Text" xml:space="preserve">
+    <value>Nie nadużywaj funkcji Znajdź i Zamień przez próbę zastąpienia zbyt wielu znaków. Zawieszenia lub awarie mogą wystąpić po celowym przeciążeniu.</value>
+    <comment>Text in the usage info section of the Find/Replace pane</comment>
+  </data>
+  <data name="Font.Label" xml:space="preserve">
+    <value>Czcionka</value>
+    <comment>Label of the "Font" ribbon section</comment>
+  </data>
+  <data name="FullWordsBox.Content" xml:space="preserve">
+    <value>Uwzględnij całe wyrazy</value>
+    <comment>Text of the "Match whole words" option</comment>
+  </data>
+  <data name="GitHubRepo.ActionIconToolTip" xml:space="preserve">
+    <value>Otwórz repozytorium GitHub w przeglądarce</value>
+    <comment>Tooltip when hovering over the action icon of the GitHub repo link in Settings</comment>
+  </data>
+  <data name="GitHubRepo.Description" xml:space="preserve">
+    <value>Przejdź tam, aby przesłać zgłoszenia, wyświetlić Pull Requesty i sprawdzić kod!!</value>
+    <comment>Description of the GitHub repo link in Settings</comment>
+  </data>
+  <data name="GitHubRepo.Header" xml:space="preserve">
+    <value>Repozytorium na GitHub</value>
+    <comment>Title of the GitHub repo link in Settings</comment>
+  </data>
+  <data name="Help.Content" xml:space="preserve">
+    <value>Pomoc</value>
+    <comment>Label of the "Help" ribbon tab</comment>
+  </data>
+  <data name="Home.Content" xml:space="preserve">
+    <value>Strona główna</value>
+    <comment>Label of the "Home" ribbon tab</comment>
+  </data>
+  <data name="Insert.Content" xml:space="preserve">
+    <value>Wstaw</value>
+    <comment>Label of the "Insert" ribbon tab</comment>
+  </data>
+  <data name="NewDoc.Text" xml:space="preserve">
+    <value>Nowe okno</value>
+    <comment>Text of the "New Window" option, first option in the "File" dropdown</comment>
+  </data>
+  <data name="Open.Text" xml:space="preserve">
+    <value>Otwórz</value>
+    <comment>Text of the "Open" option, second option in the "File" dropdown</comment>
+  </data>
+  <data name="Paragraph.Label" xml:space="preserve">
+    <value>Akapit</value>
+    <comment>Label of the "Paragraph" ribbon section</comment>
+  </data>
+  <data name="Print.Text" xml:space="preserve">
+    <value>Drukuj</value>
+    <comment>Text of the "Print" option, fifth option in the "File" dropdown</comment>
+  </data>
+  <data name="Redo.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ponów</value>
+    <comment>Tooltip for the "Redo" button</comment>
+  </data>
+  <data name="ReplaceAllButton.Content" xml:space="preserve">
+    <value>Zamień wszystko</value>
+    <comment>Text of the "Replace all" button in the Find/Replace pane</comment>
+  </data>
+  <data name="ReplaceBox.PlaceholderText" xml:space="preserve">
+    <value>Tekst do zamiany</value>
+    <comment>Placeholder text for the Replace text box</comment>
+  </data>
+  <data name="ReplaceButton.Content" xml:space="preserve">
+    <value>Zamień</value>
+    <comment>Text of the "Replace" button in the Find/Replace pane</comment>
+  </data>
+  <data name="Save.Text" xml:space="preserve">
+    <value>Zapisz</value>
+    <comment>Text of the "Save" option, third option in the "File" dropdown</comment>
+  </data>
+  <data name="SaveAs.Text" xml:space="preserve">
+    <value>Zapisz jako</value>
+    <comment>Text of the "Save as" option, fourth option in the "File" dropdown</comment>
+  </data>
+  <data name="SaveRestart.Content" xml:space="preserve">
+    <value>Zapisz i uruchom ponownie</value>
+    <comment>Text of the "Save and restart button on the Settings bottom pane</comment>
+  </data>
+  <data name="Settings.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Ustawienia</value>
+    <comment>Tooltip for the "Settings" button</comment>
+  </data>
+  <data name="SettingsReset.Content" xml:space="preserve">
+    <value>Zresetuj ustawienia aplikacji</value>
+    <comment>Text of the "Reset app settings" button on the Settings bottom pane</comment>
+  </data>
+  <data name="SettingsTheme.Description" xml:space="preserve">
+    <value>Zmień motyw aplikacji tutaj</value>
+    <comment>Description of the "Theme" option in Settings</comment>
+  </data>
+  <data name="Share.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Udostępnij</value>
+    <comment>Tooltip for the "Share" button</comment>
+  </data>
+  <data name="Undo.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Cofnij</value>
+    <comment>Tooltip for the "Undo" button</comment>
+  </data>
+  <data name="Date.Text" xml:space="preserve">
+    <value>Data &amp;</value>
+  </data>
+  <data name="DateTimeInsert.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wstaw datę i czas</value>
+    <comment>Tooltip for the "Date &amp; Time" button</comment>
+  </data>
+  <data name="Image.Text" xml:space="preserve">
+    <value>Obraz</value>
+  </data>
+  <data name="InsertButtonText.Text" xml:space="preserve">
+    <value>Wstaw</value>
+  </data>
+  <data name="InsertHyperlink.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wstaw link</value>
+    <comment>Tooltip for the "Insert link" button</comment>
+  </data>
+  <data name="InsertImage.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wstaw obraz</value>
+    <comment>Tooltip for the "Insert image" button</comment>
+  </data>
+  <data name="Link.Text" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="SymbolInsert.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wstaw symbole</value>
+    <comment>Tooltip for the "Insert symbols" button</comment>
+  </data>
+  <data name="Symbols.Text" xml:space="preserve">
+    <value>Symbole</value>
+  </data>
+  <data name="Time.Text" xml:space="preserve">
+    <value>Czas</value>
+  </data>
+  <data name="AboutAppTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>O aplikacji</value>
+  </data>
+  <data name="AboutAppText.Text" xml:space="preserve">
+    <value>O aplikacji</value>
+    <comment>The text of the "About" option in the Ribbon</comment>
+  </data>
+  <data name="DegreeSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol stopnia</value>
+  </data>
+  <data name="DivisionSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol dzielenia</value>
+  </data>
+  <data name="LeftArrowSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol strzałki w lewo</value>
+  </data>
+  <data name="LowercaseMuSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol małej litery mu (mikro)</value>
+  </data>
+  <data name="MoreSymbols.Content" xml:space="preserve">
+    <value>Więcej symboli</value>
+    <comment>The text of the "More symbols" button in the symbols menu</comment>
+  </data>
+  <data name="MultiplicationSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol mnożenia</value>
+  </data>
+  <data name="ParagraphSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol akapitu</value>
+  </data>
+  <data name="RightArrowSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol strzałki w prawo</value>
+  </data>
+  <data name="SquareRootSymbol.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Symbol pierwiastku (do kwadratu)</value>
+  </data>
+  <data name="CloseButtonText.Text" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="CommentsButtonText.Text" xml:space="preserve">
+    <value>Komentarze</value>
+  </data>
+  <data name="Generate.Text" xml:space="preserve">
+    <value>Generuj</value>
+  </data>
+  <data name="GenerateHash.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Generuj hash/Base64</value>
+    <comment>Tooltip for the "Generate Hash/Base64" button</comment>
+  </data>
+  <data name="AdvancedButton.Content" xml:space="preserve">
+    <value>Zaawansowane</value>
+  </data>
+  <data name="BoldButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Pogrubienie (Ctrl + B)</value>
+  </data>
+  <data name="BookTitleTextTemplate.Content" xml:space="preserve">
+    <value>Tytuł
+książki</value>
+  </data>
+  <data name="ContentTextTemplate.Content" xml:space="preserve">
+    <value>Treść</value>
+  </data>
+  <data name="DashFlyoutItem.Text" xml:space="preserve">
+    <value>Kreskowane</value>
+  </data>
+  <data name="DottedFlyoutItem.Text" xml:space="preserve">
+    <value>Kropkowane</value>
+  </data>
+  <data name="DoubleFlyoutItem.Text" xml:space="preserve">
+    <value>Podwójne</value>
+  </data>
+  <data name="FinishedTextTemplate.Content" xml:space="preserve">
+    <value>Zakończone</value>
+  </data>
+  <data name="FontBox.PlaceholderText" xml:space="preserve">
+    <value>Segoe UI (Domyślna)</value>
+  </data>
+  <data name="FontBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Czcionka</value>
+  </data>
+  <data name="FontColor.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Kolor tekstu</value>
+  </data>
+  <data name="FontSize.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Rozmiar tekstu</value>
+  </data>
+  <data name="HeaderTextTemplate.Content" xml:space="preserve">
+    <value>Nagłówek</value>
+  </data>
+  <data name="HighlightColor.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Kolor podkreślenia</value>
+  </data>
+  <data name="ItalicButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Kursywa (Ctrl + I)</value>
+  </data>
+  <data name="MediumTextTemplate.Content" xml:space="preserve">
+    <value>Średni</value>
+  </data>
+  <data name="NoneFlyoutItem.Text" xml:space="preserve">
+    <value>Brak</value>
+  </data>
+  <data name="NormalTextTemplate.Content" xml:space="preserve">
+    <value>Normalny</value>
+  </data>
+  <data name="QuoteTextTemplate.Content" xml:space="preserve">
+    <value>Cytat</value>
+  </data>
+  <data name="SingleFlyoutItem.Text" xml:space="preserve">
+    <value>Pojedyncze</value>
+  </data>
+  <data name="StrikethroughButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Przekreślenie (Ctrl + T)</value>
+  </data>
+  <data name="StrongTextTemplate.Content" xml:space="preserve">
+    <value>Pogrubiony</value>
+  </data>
+  <data name="SubscriptButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Subskrypt/Indeks dolny</value>
+  </data>
+  <data name="SubtitleTextTemplate.Content" xml:space="preserve">
+    <value>Podtytuł</value>
+  </data>
+  <data name="SuperscriptButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Superskrypt/Indeks górny</value>
+  </data>
+  <data name="ThickFlyoutItem.Text" xml:space="preserve">
+    <value>Grube</value>
+  </data>
+  <data name="Title2TextTemplate.Content" xml:space="preserve">
+    <value>Tytuł 2</value>
+  </data>
+  <data name="TitleTextTemplate.Content" xml:space="preserve">
+    <value>Tytuł</value>
+  </data>
+  <data name="UnderlineButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Podkreślenie (Ctrl + U)</value>
+  </data>
+  <data name="UnfinishedTextTemplate.Content" xml:space="preserve">
+    <value>Niezakończony</value>
+  </data>
+  <data name="WaveFlyoutItem.Text" xml:space="preserve">
+    <value>Falowe</value>
+  </data>
+  <data name="BulletFlyoutItem.Text" xml:space="preserve">
+    <value>Punktor</value>
+  </data>
+  <data name="CenterAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wyśrodkuj</value>
+  </data>
+  <data name="JustifyAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wyrównaj</value>
+  </data>
+  <data name="LeftAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Lewo</value>
+  </data>
+  <data name="ListDropdown.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="LocalizationContribution.Description" xml:space="preserve">
+    <value>Przejdź do strony aplikacji na Crowdin, aby wziąć udział w procesie tłumaczenia aplikacji i poszerzyć liczbę języków dostępnych w interfejsie aplikacji</value>
+  </data>
+  <data name="LocalizationContribution.Header" xml:space="preserve">
+    <value>Wspomóż tłumaczenia na Crowdin</value>
+  </data>
+  <data name="LowercaseFlyoutItem.Text" xml:space="preserve">
+    <value>Małe litery</value>
+  </data>
+  <data name="NumberedFlyoutItem.Text" xml:space="preserve">
+    <value>Numerowane</value>
+  </data>
+  <data name="NumeralsFlyoutItem.Text" xml:space="preserve">
+    <value>Cyfry rzymskie</value>
+  </data>
+  <data name="RightAlign.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Prawo</value>
+  </data>
+  <data name="UppercaseFlyoutItem.Text" xml:space="preserve">
+    <value>Duże litery</value>
+  </data>
+  <data name="ChangelogText.Text" xml:space="preserve">
+    <value>View changelog</value>
+  </data>
+  <data name="FirstRunText.Text" xml:space="preserve">
+    <value>View First Run dialog</value>
+  </data>
+</root>
