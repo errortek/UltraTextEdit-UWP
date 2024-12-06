@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Management.Deployment;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -47,6 +48,13 @@ namespace UTE_UWP_.Views
             {
                 checkforupdateText.Text = "An update is available";
                 updatecheckProgress.Visibility = Visibility.Collapsed;
+                NewUpdateGrid.Visibility = Visibility.Visible;
+                NewVersion.Text = $"UTE {newVersion}";
+                PackageManager packagemanager = new PackageManager();
+                await packagemanager.AddPackageAsync(
+                    new Uri($"https://github.com/errortek/UltraTextEdit-UWP/releases/download/{newVersion}/LatestPrerelease.msixbundle"),
+                    null, DeploymentOptions.ForceApplicationShutdown
+                );
             }
             else
             {
