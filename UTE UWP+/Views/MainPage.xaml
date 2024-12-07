@@ -1266,10 +1266,10 @@
             </RelativePanel>
 
             <SplitView
-            RelativePanel.AlignBottomWithPanel="True"
             RelativePanel.AlignLeftWithPanel="True"
             RelativePanel.AlignRightWithPanel="True"
             RelativePanel.Below="containerPanel"
+                RelativePanel.Above="Bottom"
             muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
             Background="Transparent"
             PaneBackground="Transparent"
@@ -1321,32 +1321,32 @@
             TextWrapping="Wrap"
             TextChanged="RichEditBox_TextChanged" SelectionChanged="editor_SelectionChanged" x:FieldModifier="public">
                         </RichEditBox>
-                        <Grid x:Name="Bottom" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5" Padding="0, 0, 0, 5">
-                            <Border x:Name="StatusBar" BorderThickness="1" CornerRadius="3,3,3,3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="7,0,7,5" Height="35" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                                <Border.BorderBrush>
-                                    <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
-                                        <LinearGradientBrush.RelativeTransform>
-                                            <ScaleTransform CenterY="0.5" ScaleY="-1"/>
-                                        </LinearGradientBrush.RelativeTransform>
-                                        <GradientStop Color="#29000000" Offset="0.33"/>
-                                        <GradientStop Color="#0F000000" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </Border.BorderBrush>
-                                <Grid Margin="0,0,0,-2">
-                                    <StackPanel Orientation="Horizontal" Margin="10,5,0,5">
-                                        <TextBlock x:Name="WordCount" Text="Word count: 0" Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" VerticalAlignment="Center" Padding="0,0,7,0"/>
-                                        <Grid x:Name="SelWordGrid" Margin="5,0,0,0" Padding="0,0,7,0">
-                                            <Border BorderThickness="1" Background="#7FD0D0D0" CornerRadius="1,1,1,1" HorizontalAlignment="Left" Width="3"/>
-                                            <TextBlock x:Name="SelWordCount" Text="Selected words: 0" Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" VerticalAlignment="Center" Margin="8,0,0,0"/>
-                                        </Grid>
-                                    </StackPanel>
-                                </Grid>
-                            </Border>
-                        </Grid>
                     </Grid>
                 </SplitView>
             </SplitView>
             <Grid RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+            </Grid>
+            <Grid x:Name="Bottom" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True"  RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom">
+                <Border x:Name="StatusBar" BorderThickness="1" VerticalAlignment="Bottom" Height="35" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0,3" MappingMode="Absolute">
+                            <LinearGradientBrush.RelativeTransform>
+                                <ScaleTransform CenterY="0.5" ScaleY="-1"/>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#29000000" Offset="0.33"/>
+                            <GradientStop Color="#0F000000" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <Grid>
+                        <StackPanel Orientation="Horizontal"  Margin="10,5,0,5">
+                            <TextBlock x:Name="WordCount" Text="Word count: 0" Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" VerticalAlignment="Center" Padding="0,0,7,0"/>
+                            <Grid x:Name="SelWordGrid" Margin="5,0,0,0" Padding="0,0,7,0">
+                                <Border BorderThickness="1" Background="#7FD0D0D0" CornerRadius="1,1,1,1" HorizontalAlignment="Left" Width="3"/>
+                                <TextBlock x:Name="SelWordCount" Text="Selected words: 0" Foreground="{ThemeResource DefaultTextForegroundThemeBrush}" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Border>
             </Grid>
         </RelativePanel>
     </Grid>
