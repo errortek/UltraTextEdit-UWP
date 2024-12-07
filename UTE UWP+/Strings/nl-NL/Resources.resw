@@ -584,4 +584,10 @@ title</value>
   <data name="FirstRunText.Text" xml:space="preserve">
     <value>View First Run dialog</value>
   </data>
+  <data name="HomeMenuItem.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Table.Text" xml:space="preserve">
+    <value>Table</value>
+  </data>
 </root>
