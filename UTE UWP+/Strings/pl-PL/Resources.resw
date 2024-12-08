@@ -162,12 +162,9 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="FirstRun_Body.Text" xml:space="preserve">
-    <value>Witaj w UTE UWP!
-To jest nowsza i bardziej zaawansowana wersja UltraTextEdit UWP, nieoparta na TowPadzie!
-Zawiera wszystkie podstawowe funkcje UTE UWP, a także:
-- Nowe menu ustawień
-- Nowy algorytm wyszukiwana i zamieniania tekstu
-- Zresetowane dialogi pierwszego startu i Co Nowego, tak jak w UTE UWP 22H1!!</value>
+    <value>Welcome to UTE UWP, a modern, lightweight text editor built to help you get things done.
+UTE is a powerful text editor, featuring many text editing functions, and is also easily customizable!
+It uses the latest WinUI version to give you the most optimal, modern experience, making the app feel cohesive and immersive with Windows 11.</value>
     <comment>First use prompt message body</comment>
   </data>
   <data name="FirstRunDialog.Title" xml:space="preserve">
