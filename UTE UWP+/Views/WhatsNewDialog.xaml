@@ -26,7 +26,7 @@ Style="{StaticResource PivotTitleContentControlStyle}">
     </ContentDialog.TitleTemplate>
     <ScrollViewer>
         <StackPanel>
-            <controls:MarkdownTextBlock Text="{x:Bind changelog}"/>
+            <controls:MarkdownTextBlock Text="{x:Bind changelog}" Background="Transparent"/>
         </StackPanel>
     </ScrollViewer>
 </ContentDialog>
