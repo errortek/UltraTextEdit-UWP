@@ -1,5 +1,1 @@
-- Introduce a Home Menu
-- Introduce a new, revitalized, UTE Update system
-- Introduce a Markdown-based changelog renderer
-- Reintroduce table support
-- Reintroduce the ability to open the What's new and Changelog dialogs from the Ribbon (through a VelocityID)
+- Fix the background of the Markdown text block used to display the changelog
