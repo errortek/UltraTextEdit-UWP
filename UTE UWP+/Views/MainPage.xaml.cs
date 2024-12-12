@@ -2233,5 +2233,26 @@ namespace UTE_UWP_.Views
         {
             editor.Document.SetText(TextSetOptions.None, "");
         }
+
+        private async void CreateImageArticleDocument(object sender, RoutedEventArgs e)
+        {
+            var template = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Templates/ImageArticleTemplate.rtf"));
+            var stream = await template.OpenAsync(FileAccessMode.Read);
+            editor.Document.LoadFromStream(TextSetOptions.FormatRtf, stream);
+        }
+
+        private async void CreateCalendarDocument(object sender, RoutedEventArgs e)
+        {
+            var template = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Templates/CalendarTemplate.rtf"));
+            var stream = await template.OpenAsync(FileAccessMode.Read);
+            editor.Document.LoadFromStream(TextSetOptions.FormatRtf, stream);
+        }
+
+        private async void CreateSongLyricsDocument(object sender, RoutedEventArgs e)
+        {
+            var template = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Templates/SongLyricsTemplate.rtf"));
+            var stream = await template.OpenAsync(FileAccessMode.Read);
+            editor.Document.LoadFromStream(TextSetOptions.FormatRtf, stream);
+        }
     }
 }

@@ -481,13 +481,33 @@
                                             <Button Style="{ThemeResource AccentButtonStyle}" Content="New blank document" Click="CreateBlankDocument" x:Name="BlankDocumentButton" Visibility="Collapsed"/>
                                         </Grid>
                                     </muxc:Expander.Header>
-                                    <Button Height="250" Width="200" Click="CreateBlankDocument" Background="Transparent" BorderThickness="0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Height="250" Width="200" Click="CreateBlankDocument" Background="Transparent" BorderThickness="0">
                                         <StackPanel>
                                             <Rectangle Fill="White" Height="200" Width="150"/>
                                             <TextBlock Text="Blank" TextAlignment="Center" Margin="0,10,0,0"/>
                                         </StackPanel>
-                                    </Button>
-                                </muxc:Expander>
+                                        </Button>
+                                        <Button Height="250" Width="200" Click="CreateImageArticleDocument" Background="Transparent" BorderThickness="0">
+                                            <StackPanel>
+                                                <Rectangle Fill="White" Height="200" Width="150"/>
+                                                <TextBlock Text="Article (with image header)" TextAlignment="Center" Margin="0,10,0,0"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <Button Height="250" Width="200" Click="CreateCalendarDocument" Background="Transparent" BorderThickness="0">
+                                            <StackPanel>
+                                                <Rectangle Fill="White" Height="200" Width="150"/>
+                                                <TextBlock Text="Calendar" TextAlignment="Center" Margin="0,10,0,0"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <Button Height="250" Width="200" Click="CreateSongLyricsDocument" Background="Transparent" BorderThickness="0">
+                                            <StackPanel>
+                                                <Rectangle Fill="White" Height="200" Width="150"/>
+                                                <TextBlock Text="Song lyrics" TextAlignment="Center" Margin="0,10,0,0"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                    </muxc:Expander>
                             </StackPanel>
                         </Grid>
                     </Frame>
