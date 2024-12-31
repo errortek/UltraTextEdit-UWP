@@ -290,23 +290,6 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private async void SettingsResetButton_Click(object Sender, RoutedEventArgs EvArgs)
-        {
-            RestartArgs = "e";
-            ApplicationDataContainer LS = ApplicationData.Current.LocalSettings;
-            foreach (KeyValuePair<string, object> item in LS.Values.ToList())
-            {
-                LS.Values.Remove(item.Key);
-            }
-            await CoreApplication.RequestRestartAsync(RestartArgs);
-        }
-
-        private async void SettingsSaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            RestartArgs = "e";
-            await CoreApplication.RequestRestartAsync(RestartArgs);
-        }
-
         public void DC_Navigate(object sender, RoutedEventArgs e)
         {
             // The URI to launch

@@ -21,7 +21,7 @@
     <PackageCertificateKeyFile>
     </PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <PackageCertificateThumbprint>C211B2ED7E44682F953BB3FADD3225F23E30558E</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>F08AC7CB69ECEFC7E9F55C1DED44BF373000843D</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
@@ -131,10 +131,10 @@
       <Version>3.1.0</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Common">
-      <Version>8.4.0-preview2</Version>
+      <Version>8.4.0</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Labs.Uwp.Ribbon">
-      <Version>0.1.241113-build.1784</Version>
+      <Version>0.1.241129-build.1830</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Uwp.Controls.Segmented">
       <Version>8.2.241112-preview1</Version>
@@ -143,7 +143,7 @@
       <Version>8.2.241112-preview1</Version>
     </PackageReference>
     <PackageReference Include="Markdig">
-      <Version>0.38.0</Version>
+      <Version>0.39.1</Version>
     </PackageReference>
     <PackageReference Include="MicaForUWP">
       <Version>0.2.12</Version>
@@ -170,10 +170,10 @@
       <Version>7.1.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.8.6</Version>
+      <Version>2.8.7-prerelease.241119001</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
-      <Version>2.0.1</Version>
+      <Version>3.0.0-preview2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -397,6 +397,15 @@
     <Content Include="Assets\Changelogs\Latest.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Templates\CalendarTemplate.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Templates\ImageArticleTemplate.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Templates\SongLyricsTemplate.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="jpbAppCert24.pfx" />
     <None Include="jpbAppCertificate-2024.pfx" />
     <None Include="README.md" />
@@ -443,9 +452,7 @@
       <Name>UTE UWP+.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Templates\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

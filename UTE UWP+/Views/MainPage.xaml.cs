@@ -222,12 +222,11 @@ namespace UTE_UWP_.Views
             // Ensure the custom title bar does not overlap window caption controls
             Thickness currMargin = AppTitleBar.Margin;
             AppTitleBar.Margin = new Thickness(currMargin.Left, currMargin.Top, currMargin.Right, currMargin.Bottom);
-            TitleBar.Margin = new Thickness(0, currMargin.Top, coreTitleBar.SystemOverlayRightInset, currMargin.Bottom);
         }
 
-        private void OnCloseRequest(object sender, SystemNavigationCloseRequestedPreviewEventArgs e)
+        private async void OnCloseRequest(object sender, SystemNavigationCloseRequestedPreviewEventArgs e)
         {
-            if (!saved) { e.Handled = true; ShowUnsavedDialog(); }
+            if (!saved) { e.Handled = true; await ShowUnsavedDialog(); }
         }
 
         private void SaveAsButton_Click(object sender, RoutedEventArgs e)
@@ -2233,6 +2232,27 @@ namespace UTE_UWP_.Views
         private void CreateBlankDocument(object sender, RoutedEventArgs e)
         {
             editor.Document.SetText(TextSetOptions.None, "");
+        }
+
+        private async void CreateImageArticleDocument(object sender, RoutedEventArgs e)
+        {
+            var template = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Templates/ImageArticleTemplate.rtf"));
+            var stream = await template.OpenAsync(FileAccessMode.Read);
+            editor.Document.LoadFromStream(TextSetOptions.FormatRtf, stream);
+        }
+
+        private async void CreateCalendarDocument(object sender, RoutedEventArgs e)
+        {
+            var template = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Templates/CalendarTemplate.rtf"));
+            var stream = await template.OpenAsync(FileAccessMode.Read);
+            editor.Document.LoadFromStream(TextSetOptions.FormatRtf, stream);
+        }
+
+        private async void CreateSongLyricsDocument(object sender, RoutedEventArgs e)
+        {
+            var template = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Templates/SongLyricsTemplate.rtf"));
+            var stream = await template.OpenAsync(FileAccessMode.Read);
+            editor.Document.LoadFromStream(TextSetOptions.FormatRtf, stream);
         }
     }
 }

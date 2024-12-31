@@ -1,1 +1,5 @@
-- Fix the background of the Markdown text block used to display the changelog
+- Introduce document templates
+- Make the titlebar draggable
+- UI redesign, with an overhauled textbox and status bar
+- Localization fixes
+- Introduce a new certificate

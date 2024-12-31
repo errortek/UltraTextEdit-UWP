@@ -162,12 +162,9 @@
     <comment>Page title for SettingsPage</comment>
   </data>
   <data name="FirstRun_Body.Text" xml:space="preserve">
-    <value>Welcome to UTE UWP!
-This is a newer and more sophisticated version of UltraTextEedit UWP, not based on the TowPad codebase!
-It contains all of UTE UWP's basic features, as well as:
-- A new, redesigned Settings menu
-- A new Find/Replace algorithm
-- Reset First Run/What's New dialogs, like in UTE UWP 22H1!!</value>
+    <value>Welcome to UTE UWP, a modern, lightweight text editor built to help you get things done.
+UTE is a powerful text editor, featuring many text editing functions, and is also easily customizable!
+It uses the latest WinUI version to give you the most optimal, modern experience, making the app feel cohesive and immersive with Windows 11.</value>
     <comment>First use prompt message body</comment>
   </data>
   <data name="FirstRunDialog.Title" xml:space="preserve">
