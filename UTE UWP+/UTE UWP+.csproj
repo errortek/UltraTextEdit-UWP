@@ -21,7 +21,7 @@
     <PackageCertificateKeyFile>
     </PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <PackageCertificateThumbprint>F08AC7CB69ECEFC7E9F55C1DED44BF373000843D</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>C211B2ED7E44682F953BB3FADD3225F23E30558E</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
