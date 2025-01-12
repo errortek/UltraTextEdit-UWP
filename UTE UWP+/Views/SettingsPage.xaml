@@ -83,7 +83,7 @@ GroupName="AppTheme">
 
                     <StackPanel Margin="{StaticResource XSmallTopMargin}">
                         <!--<TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind VersionDescription, Mode=OneWay}" />-->
-                        <controls:SettingsCard Header="{x:Bind VersionDescription, Mode=OneWay}" Description="© 2021-2024 ErrorTek, Ivirius, and other contributors">
+                        <controls:SettingsCard Header="{x:Bind VersionDescription, Mode=OneWay}" Description="© 2021-2025 ErrorTek, Ivirius, and other contributors">
                             <controls:SettingsCard.HeaderIcon>
                                 <BitmapIcon UriSource="ms-appx:///Assets/Square44x44Logo.png" ShowAsMonochrome="False"/>
                             </controls:SettingsCard.HeaderIcon>
