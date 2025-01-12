@@ -471,9 +471,9 @@
                     <muxc:NavigationView.FooterMenuItems>
                         <muxc:NavigationViewItem Content="Help" Tag="Help" Icon="Help" />
                     </muxc:NavigationView.FooterMenuItems>
-                    <Frame x:Name="HomeMenuContentFrame" Background="Transparent">
-                        <StackPanel>
-                            <Grid x:Name="HomePage">
+                    <StackPanel>
+                        <Frame x:Name="HomeMenuContentFrame" Background="Transparent">
+                            <StackPanel x:Name="HomePage">
                                 <StackPanel Margin="16">
                                     <TextBlock FontSize="36" FontWeight="SemiBold">Welcome!</TextBlock>
                                     <muxc:Expander x:Name="NewDocumentExpander" Expanding="NewDocumentExpander_Expanding" Collapsed="NewDocumentExpander_Collapsed">
@@ -511,8 +511,11 @@
                                         </StackPanel>
                                     </muxc:Expander>
                                 </StackPanel>
-                            </Grid>
-                            <Grid x:Name="NewPage">
+                            </StackPanel>
+                        </Frame>
+                        <Grid x:Name="NewPage" Visibility="Collapsed">
+                            <StackPanel Margin="16">
+                                <TextBlock FontSize="36" FontWeight="SemiBold">New</TextBlock>
                                 <ToolkitControls:UniformGrid>
                                     <Button Height="250" Width="200" Click="CreateBlankDocument" Background="Transparent" BorderThickness="0">
                                         <StackPanel>
@@ -539,9 +542,9 @@
                                         </StackPanel>
                                     </Button>
                                 </ToolkitControls:UniformGrid>
-                            </Grid>
-                        </StackPanel>
-                    </Frame>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
                 </muxc:NavigationView>
             </Border>
             <Grid RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">

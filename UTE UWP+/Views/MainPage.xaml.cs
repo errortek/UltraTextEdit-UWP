@@ -2218,15 +2218,22 @@ namespace UTE_UWP_.Views
             string selectedItemTag = (string)selectedItem.Tag;
             if (args.IsSettingsSelected)
             {
+                HomeMenuContentFrame.Visibility = Visibility.Visible;
+                NewPage.Visibility = Visibility.Collapsed;
                 HomeMenuContentFrame.Navigate(typeof(SettingsPage));
             }
             if (selectedItemTag == "Home")
             {
+                HomeMenuContentFrame.Visibility = Visibility.Visible;
+                NewPage.Visibility = Visibility.Collapsed;
                 HomeMenuContentFrame.Content = HomePage;
             } else if (selectedItemTag == "Help") {
+                HomeMenuContentFrame.Visibility = Visibility.Visible;
+                NewPage.Visibility = Visibility.Collapsed;
                 HomeMenuContentFrame.Navigate(typeof(HelpPage));
             } else if (selectedItemTag == "New") {
-                HomeMenuContentFrame.Content = NewPage;
+                HomeMenuContentFrame.Visibility = Visibility.Collapsed;
+                NewPage.Visibility = Visibility.Visible;
             }
         }
 
