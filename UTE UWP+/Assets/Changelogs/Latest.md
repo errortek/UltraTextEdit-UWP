@@ -1,5 +1,4 @@
-- Introduce document templates
-- Make the titlebar draggable
-- UI redesign, with an overhauled textbox and status bar
-- Localization fixes
+- Add "New" page to Home Menu
+- Fix overflowing text bugs in the Help menu of the Ribbon
+- Update dependencies
 - Introduce a new certificate
