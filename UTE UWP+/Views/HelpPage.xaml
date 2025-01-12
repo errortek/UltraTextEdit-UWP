@@ -12,7 +12,7 @@
             <Image Source="ms-appx:///Assets/utevericon.png" Height="150" Stretch="None"/>
             <TextBlock FontSize="36" FontWeight="SemiBold" VerticalAlignment="Center" Foreground="{ThemeResource SystemAccentColor}">UltraTextEdit UWP</TextBlock>
         </StackPanel>
-        <TextBlock HorizontalTextAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,10">version 4.5</TextBlock>
+        <TextBlock HorizontalTextAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,10">version 4.5.1</TextBlock>
         <StackPanel>
             <Button HorizontalAlignment="Center" x:Name="AboutButton" Click="AboutButton_Click">
                 <StackPanel>
