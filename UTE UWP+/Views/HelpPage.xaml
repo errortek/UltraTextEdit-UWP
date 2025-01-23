@@ -32,12 +32,6 @@
                     <TextBlock>Check for updates</TextBlock>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Center" x:Name="FeedbackButton" Click="FeedbackButton_Click">
-                <StackPanel>
-                    <FontIcon Glyph="&#xED15;"/>
-                    <TextBlock>Send feedback</TextBlock>
-                </StackPanel>
-            </Button>
         </StackPanel>
     </StackPanel>
 </Page>
