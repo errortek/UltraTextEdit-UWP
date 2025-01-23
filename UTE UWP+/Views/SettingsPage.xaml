@@ -98,18 +98,6 @@ Click="UpdateButton_Click">
                             </controls:SettingsCard.HeaderIcon>
                         </controls:SettingsCard>
                         <controls:SettingsCard
-                            x:Uid="Feedback"
-       IsClickEnabled="True"
-       IsEnabled="True"
-    Click="DC_Navigate">
-                            <controls:SettingsCard.ActionIcon>
-                                <FontIcon Glyph="&#xE8A7;"/>
-                            </controls:SettingsCard.ActionIcon>
-                            <controls:SettingsCard.HeaderIcon>
-                                <FontIcon Glyph="&#xED15;"/>
-                            </controls:SettingsCard.HeaderIcon>
-                        </controls:SettingsCard>
-                        <controls:SettingsCard
                                ActionIconToolTip="Open GitHub repo in browser"
                                Description="Go there to submit issues, view pull requests, and check out the code!!"
                                Header="GitHub repo"

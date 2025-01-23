@@ -235,14 +235,6 @@ It uses the latest WinUI version to give you the most optimal, modern experience
     <value>Exit</value>
     <comment>Text of the "Exit" option, last option in the "File" dropdown</comment>
   </data>
-  <data name="Feedback.Description" xml:space="preserve">
-    <value>Join the Developer Sanctuary Discord server, in which I have a project channel where you can provide direct feedback to me and talk with other users. The app's forum post is under my channel, #jpbs-projects, titled 'UltraTextEdit (UWP)'.</value>
-    <comment>Description of the feedback option in Settings</comment>
-  </data>
-  <data name="Feedback.Header" xml:space="preserve">
-    <value>Send feedback via Discord</value>
-    <comment>Title of the feedback option in Settings</comment>
-  </data>
   <data name="File.Title" xml:space="preserve">
     <value>File</value>
     <comment>Title of the "File" dropdown</comment>

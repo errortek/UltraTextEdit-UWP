@@ -44,11 +44,5 @@ namespace UTE_UWP_.Views
             SettingsPage settingsPage = new SettingsPage();
             settingsPage.UpdateButton_Click(sender, e);
         }
-
-        private void FeedbackButton_Click(object sender, RoutedEventArgs e)
-        {
-            SettingsPage settingsPage = new SettingsPage();
-            settingsPage.DC_Navigate(sender, e);
-        }
     }
 }
