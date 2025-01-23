@@ -13,15 +13,14 @@
                 <Image Source="ms-appx:///Assets/utevericon.png" Width="64" Height="64"/>
                 <StackPanel>
                     <TextBlock FontSize="36" Text="UltraTextEdit UWP" FontWeight="SemiBold" Foreground="{StaticResource SystemAccentColor}"/>
-                    <TextBlock TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Text="Preview" FontWeight="SemiBold" Foreground="#fdc326"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock FontSize="16" FontWeight="SemiBold" IsTextSelectionEnabled="True">version 4.5.0.2</TextBlock>
+                    <TextBlock FontSize="16" FontWeight="SemiBold" IsTextSelectionEnabled="True">version 4.5.1</TextBlock>
                     <TextBlock FontSize="16" IsTextSelectionEnabled="True">Development semester: <Bold>25H1</Bold></TextBlock>
-                    <TextBlock FontSize="16" IsTextSelectionEnabled="True">Compilation date: December 19, 2024</TextBlock>
-                    <TextBlock FontSize="16" IsTextSelectionEnabled="True">©️ 2021-2024 ErrorTek, Ivirius, and other contributors</TextBlock>
+                    <TextBlock FontSize="16" IsTextSelectionEnabled="True">Compilation date: January 12, 2025</TextBlock>
+                    <TextBlock FontSize="16" IsTextSelectionEnabled="True">©️ 2021-2025 ErrorTek, Ivirius, and other contributors</TextBlock>
                     <TextBlock IsTextSelectionEnabled="True">Licensed under the <Bold>MIT License</Bold></TextBlock>
                 </StackPanel>
             </StackPanel>

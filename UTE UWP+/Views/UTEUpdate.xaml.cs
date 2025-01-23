@@ -36,7 +36,7 @@ namespace UTE_UWP_.Views
             updatecheckProgress.Visibility = Visibility.Visible;
             checkforupdateText.Text = "Checking for updates...";
             WebClient client = new WebClient();
-            Stream stream = client.OpenRead("https://raw.githubusercontent.com/errortek/UltraTextEdit-UWP/refs/heads/dev/UTE%20UWP%2B/Assets/UTEUpdate/Version.txt");
+            Stream stream = client.OpenRead("https://raw.githubusercontent.com/errortek/UltraTextEdit-UWP/refs/heads/main/UTE%20UWP%2B/Assets/UTEUpdate/Version.txt");
             StreamReader reader = new StreamReader(stream);
             var newVersion = new Version(await reader.ReadToEndAsync());
             Package package = Package.Current;
@@ -52,7 +52,7 @@ namespace UTE_UWP_.Views
                 NewVersion.Text = $"UTE {newVersion}";
                 PackageManager packagemanager = new PackageManager();
                 await packagemanager.AddPackageAsync(
-                    new Uri($"https://github.com/errortek/UltraTextEdit-UWP/releases/download/{newVersion}/LatestPrerelease.msixbundle"),
+                    new Uri($"https://github.com/errortek/UltraTextEdit-UWP/releases/download/{newVersion}/Latest.msixbundle"),
                     null, DeploymentOptions.ForceApplicationShutdown
                 );
             }

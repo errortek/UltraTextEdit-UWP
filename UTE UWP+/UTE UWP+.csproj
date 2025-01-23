@@ -21,7 +21,7 @@
     <PackageCertificateKeyFile>
     </PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <PackageCertificateThumbprint>F08AC7CB69ECEFC7E9F55C1DED44BF373000843D</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>C211B2ED7E44682F953BB3FADD3225F23E30558E</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
@@ -134,7 +134,7 @@
       <Version>8.4.0</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Labs.Uwp.Ribbon">
-      <Version>0.1.241129-build.1830</Version>
+      <Version>0.1.250103-build.1988</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Uwp.Controls.Segmented">
       <Version>8.2.241112-preview1</Version>
@@ -143,7 +143,7 @@
       <Version>8.2.241112-preview1</Version>
     </PackageReference>
     <PackageReference Include="Markdig">
-      <Version>0.39.1</Version>
+      <Version>0.40.0</Version>
     </PackageReference>
     <PackageReference Include="MicaForUWP">
       <Version>0.2.12</Version>

@@ -12,14 +12,14 @@
   IgnorableNamespaces="uap mp genTemplate uap5 uap3 desktop4 iot2">
 
   <Identity
-    Name="UTE.UWP.Preview"
+    Name="UTE.UWP"
     Publisher="CN=jpb"
-    Version="4.5.0.2" />
+    Version="4.5.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="f886852f-63db-4809-a421-3ebf06677b8f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>UTE UWP (Preview)</DisplayName>
+    <DisplayName>UTE UWP</DisplayName>
     <PublisherDisplayName>ErrorTek</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -39,7 +39,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="UTE_UWP_.App">
       <uap:VisualElements
-        DisplayName="UltraTextEdit UWP (Preview)"
+        DisplayName="UltraTextEdit UWP"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="ms-resource:AppDescription"
