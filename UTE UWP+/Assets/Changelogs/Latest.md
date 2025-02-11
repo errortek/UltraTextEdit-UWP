@@ -1,4 +1,1 @@
-- Add "New" page to Home Menu
-- Fix overflowing text bugs in the Help menu of the Ribbon
 - Update dependencies
-- Introduce a new certificate
