@@ -134,7 +134,7 @@
       <Version>8.4.0</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Labs.Uwp.Ribbon">
-      <Version>0.1.250206-build.2040</Version>
+      <Version>0.1.250305-build.2058</Version>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Uwp.Controls.Segmented">
       <Version>8.2.250129-preview2</Version>
@@ -149,7 +149,7 @@
       <Version>0.2.12</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
-      <Version>9.0.1</Version>
+      <Version>10.0.0-preview.1.25080.5</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.Platforms">
       <Version>8.0.0-preview.7.23375.6</Version>
