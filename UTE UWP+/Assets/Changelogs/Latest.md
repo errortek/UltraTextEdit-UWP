@@ -1,1 +1,3 @@
+- Fix text highlighting bug
+- Code cleanup
 - Update dependencies
