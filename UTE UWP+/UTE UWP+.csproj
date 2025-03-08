@@ -189,7 +189,6 @@
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\SettingsHelper.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
-    <Compile Include="Helpers\SystemAccentColorSetting.cs" />
     <Compile Include="Helpers\UTEUpdateLauncher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Services\ActivationService.cs" />
@@ -407,7 +406,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="jpbAppCert24.pfx" />
-    <None Include="jpbAppCertificate-2024.pfx" />
     <None Include="README.md" />
     <PRIResource Include="Strings\el-GR\Resources.resw" />
     <PRIResource Include="Strings\af-ZA\Resources.resw" />

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
-using System.Threading.Tasks;
 
 namespace UTE_UWP_.Helpers
 {
@@ -35,7 +33,5 @@ namespace UTE_UWP_.Helpers
             var hash = new SHA1Managed().ComputeHash(Encoding.UTF8.GetBytes(text));
             return string.Concat(hash.Select(b => b.ToString("x2")));
         }
-
-
     }
-    }
+}

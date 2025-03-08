@@ -1,23 +1,15 @@
-﻿using MicaForUWP.Media;
-using Microsoft.Graphics.Canvas.Text;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 
 using UTE_UWP_.Helpers;
 using UTE_UWP_.Services;
-using UTE_UWP_.Views;
 
 using Windows.ApplicationModel;
-using Windows.ApplicationModel.Core;
 using Windows.Storage;
 using Windows.UI;
-using Windows.UI.Core;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
@@ -25,13 +17,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace UTE_UWP_.Views
 {
-    // TODO: Add other settings as necessary. For help see https://github.com/microsoft/TemplateStudio/blob/main/docs/UWP/pages/settings-codebehind.md
-    // TODO: Change the URL for your privacy policy in the Resource File, currently set to https://YourPrivacyUrlGoesHere
     public sealed partial class SettingsPage : Page, INotifyPropertyChanged
     {
         private ElementTheme _elementTheme = ThemeSelectorService.Theme;
-        string RestartArgs;
-
 
         public ElementTheme ElementTheme
         {

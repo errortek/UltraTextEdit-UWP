@@ -1,8 +1,5 @@
 ﻿using System;
-
 using UTE_UWP_.Services;
-using UTE_UWP_.Helpers;
-
 using Windows.ApplicationModel.Activation;
 using Windows.Storage;
 using Windows.UI;

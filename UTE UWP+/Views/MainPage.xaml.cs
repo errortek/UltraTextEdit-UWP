@@ -1,15 +1,10 @@
 ﻿using MicaForUWP.Media;
 using Microsoft.Graphics.Canvas.Text;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using UTE_UWP_.Helpers;
@@ -18,12 +13,10 @@ using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Graphics.Printing;
-using Windows.Networking.Vpn;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Provider;
 using Windows.Storage.Streams;
-using Windows.System;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Core.Preview;
@@ -31,11 +24,9 @@ using Windows.UI.Text;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Markup;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using SplitButton = Microsoft.UI.Xaml.Controls.SplitButton;
 namespace UTE_UWP_.Views
 {
     public sealed partial class MainPage : Page, INotifyPropertyChanged
@@ -407,24 +398,6 @@ namespace UTE_UWP_.Views
             });
         }
 
-        private void StrikethoughButton_Click(object sender, RoutedEventArgs e)
-        {
-            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
-            if (selectedText != null)
-            {
-                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-                charFormatting.Strikethrough = Windows.UI.Text.FormatEffect.Toggle;
-                selectedText.CharacterFormat = charFormatting;
-            }
-            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
-            if (selectedText2 != null)
-            {
-                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
-                charFormatting2.Strikethrough = Windows.UI.Text.FormatEffect.Toggle;
-                selectedText2.CharacterFormat = charFormatting2;
-            }
-        }
-
         private void SubscriptButton_Click(object sender, RoutedEventArgs e)
         {
             Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
@@ -541,38 +514,6 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private void UnderlineButton_Click(object sender, RoutedEventArgs e)
-        {
-            Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
-            Windows.UI.Text.ITextSelection selectedText2 = comments.Document.Selection;
-            if (selectedText != null)
-            {
-                Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-                if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
-                {
-                    charFormatting.Underline = Windows.UI.Text.UnderlineType.Single;
-                }
-                else
-                {
-                    charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
-                }
-                selectedText.CharacterFormat = charFormatting;
-            }
-            if (selectedText2 != null)
-            {
-                Windows.UI.Text.ITextCharacterFormat charFormatting2 = selectedText2.CharacterFormat;
-                if (charFormatting2.Underline == Windows.UI.Text.UnderlineType.None)
-                {
-                    charFormatting2.Underline = Windows.UI.Text.UnderlineType.Single;
-                }
-                else
-                {
-                    charFormatting2.Underline = Windows.UI.Text.UnderlineType.None;
-                }
-                selectedText2.CharacterFormat = charFormatting2;
-            }
-        }
-
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
         {
             // Open a text file.
@@ -650,26 +591,13 @@ namespace UTE_UWP_.Views
         {
             // Extract the color of the button that was clicked.
             Button clickedColor = (Button)sender;
-            var borderone = (Windows.UI.Xaml.Controls.Border)clickedColor.Content;
-            var bordertwo = (Windows.UI.Xaml.Controls.Border)borderone.Child;
-            var rectangle = (Windows.UI.Xaml.Shapes.Rectangle)bordertwo.Child;
-            var color = (rectangle.Fill as SolidColorBrush).Color;
-            editor.Document.Selection.CharacterFormat.ForegroundColor = color;
-            //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
-            editor.Focus(FocusState.Keyboard);
-        }
-
-        private void ColorButton2_Click(object sender, RoutedEventArgs e)
-        {
-            // Extract the color of the button that was clicked.
-            Button clickedColor = (Button)sender;
             var color = (clickedColor.Background as SolidColorBrush).Color;
             editor.Document.Selection.CharacterFormat.ForegroundColor = color;
             //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
             editor.Focus(FocusState.Keyboard);
         }
 
-        private void HighlightButton2_Click(object sender, RoutedEventArgs e)
+        private void HighlightButton_Click(object sender, RoutedEventArgs e)
         {
             // Extract the color of the button that was clicked.
             Button clickedColor = (Button)sender;
@@ -678,20 +606,6 @@ namespace UTE_UWP_.Views
             //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
             editor.Focus(FocusState.Keyboard);
         }
-
-        private void fontcolorsplitbutton_Click(Microsoft.UI.Xaml.Controls.SplitButton sender, Microsoft.UI.Xaml.Controls.SplitButtonClickEventArgs args)
-        {
-            // If you see this, remind me to look into the splitbutton color applying logic
-        }
-
-        //private void AddLinkButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (Windows.Foundation.Metadata.ApiInformation.IsPropertyPresent("Windows.UI.Xaml.FrameworkElement", "AllowFocusOnInteraction"))
-        //        hyperlinkText.AllowFocusOnInteraction = true;
-        //    editor.Document.Selection.Link = $"\"{hyperlinkText.Text}\"";
-        //    editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)XamlBindingHelper.ConvertValue(typeof(Windows.UI.Color), "#6194c7");
-        //    AddLinkButton.Flyout.Hide();
-        //}
 
         private void CopyButton_Click(object sender, RoutedEventArgs e)
         {
@@ -754,14 +668,6 @@ namespace UTE_UWP_.Views
             await DisplayAboutDialog();
         }
 
-        //private void FontsCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    if (editor.Document.Selection != null)
-        //    {
-        //        editor.Document.Selection.CharacterFormat.Name = FontsCombo.SelectedValue.ToString();
-        //    }
-        //}
-
         private void FindButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -818,15 +724,10 @@ namespace UTE_UWP_.Views
             // Confirm color picker choice and apply color to text
             Windows.UI.Color color = myColorPicker.Color;
             editor.Document.Selection.CharacterFormat.ForegroundColor = color;
-
-            // Hide flyout
-            //colorPickerButton.Flyout.Hide();
         }
 
         private void CancelColor_Click(object sender, RoutedEventArgs e)
         {
-            // Cancel flyout
-            //colorPickerButton.Flyout.Hide();
         }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
@@ -870,19 +771,12 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private void RemoveHighlightButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ReplaceSelected_Click(object sender, RoutedEventArgs e)
         {
-            //editor.Replace(false, replaceBox.Text);
         }
 
         private void ReplaceAll_Click(object sender, RoutedEventArgs e)
         {
-            //editor.Replace(true, find: findBox.Text, replace: replaceBox.Text);
         }
 
         private void FontSizeBox_ValueChanged(Microsoft.UI.Xaml.Controls.NumberBox sender, Microsoft.UI.Xaml.Controls.NumberBoxValueChangedEventArgs args)
@@ -898,14 +792,6 @@ namespace UTE_UWP_.Views
 
         public async void uteverclick(object sender, RoutedEventArgs e)
         {
-            //utever dialog = new utever();
-
-            //dialog.DefaultButton = ContentDialogButton.Primary;
-
-
-            //var result = await dialog.ShowAsync();
-
-
             AboutUTE aboutUTE = new AboutUTE();
             ContentDialog aboutdialog = new ContentDialog();
             aboutdialog.DefaultButton = ContentDialogButton.Primary;
@@ -941,28 +827,6 @@ namespace UTE_UWP_.Views
             else UnsavedTextBlock.Visibility = Visibility.Collapsed;
 
         }
-
-        //private void OnKeyboardAcceleratorInvoked(Windows.UI.Xaml.Input.KeyboardAccelerator sender, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
-        //{
-        //    switch (sender.Key)
-        //    {
-        //        case Windows.System.VirtualKey.B:
-        //            BoldButton.IsChecked = editor.Document.Selection.CharacterFormat.Bold == FormatEffect.On;
-        //            args.Handled = true;
-        //            break;
-        //        case Windows.System.VirtualKey.I:
-        //            ItalicButton.IsChecked = editor.Document.Selection.CharacterFormat.Italic == FormatEffect.On;
-        //            args.Handled = true;
-        //            break;
-        //        case Windows.System.VirtualKey.U:
-        //            UnderlineButton.IsChecked = editor.Document.Selection.CharacterFormat.Underline == UnderlineType.Single;
-        //            args.Handled = true;
-        //            break;
-        //        case Windows.System.VirtualKey.S:
-        //            SaveFile(false);
-        //            break;
-        //    }
-        //}
 
         private void editor_SelectionChanged(object sender, RoutedEventArgs e)
         {
@@ -1073,8 +937,6 @@ namespace UTE_UWP_.Views
 
         }
 
-
-
         private async void AddTableButton_Click(object sender, RoutedEventArgs e)
         {
             var dialogtable = new TableDialog();
@@ -1084,8 +946,6 @@ namespace UTE_UWP_.Views
 
         private void AddSymbolButton_Click(object sender, RoutedEventArgs e)
         {
-            //symbolsflyout.AllowFocusOnInteraction = true;
-            //symbolsflyout.IsOpen = true;
         }
 
         private void SymbolButton_Click(object sender, RoutedEventArgs e)
@@ -1149,137 +1009,6 @@ namespace UTE_UWP_.Views
 
             // Show the ContentDialog
             await dialog.ShowAsync();
-        }
-
-        private async void fr_invoke(object sender, RoutedEventArgs e)
-        {
-            var dialog = new FirstRunDialog();
-            dialog.ShowAsync();
-        }
-
-        private async void WN_invoke(object sender, RoutedEventArgs e)
-        {
-            var dialog = new WhatsNewDialog();
-            dialog.ShowAsync();
-        }
-
-        //private void NoneNumeral_Click(object sender, RoutedEventArgs e)
-        //{
-        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.None;
-        //    myListButton.IsChecked = false;
-        //    myListButton.Flyout.Hide();
-        //    editor.Focus(FocusState.Keyboard);
-        //}
-
-        //private void DottedNumeral_Click(object sender, RoutedEventArgs e)
-        //{
-        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.Bullet;
-        //    myListButton.IsChecked = true;
-        //    myListButton.Flyout.Hide();
-        //    editor.Focus(FocusState.Keyboard);
-        //}
-
-        //private void NumberNumeral_Click(object sender, RoutedEventArgs e)
-        //{
-        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.Arabic;
-        //    myListButton.IsChecked = true;
-        //    myListButton.Flyout.Hide();
-        //    editor.Focus(FocusState.Keyboard);
-        //}
-
-        //private void LetterSmallNumeral_Click(object sender, RoutedEventArgs e)
-        //{
-        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseEnglishLetter;
-        //    myListButton.IsChecked = true;
-        //    myListButton.Flyout.Hide();
-        //    editor.Focus(FocusState.Keyboard);
-        //}
-
-        //private void LetterBigNumeral_Click(object sender, RoutedEventArgs e)
-        //{
-        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseEnglishLetter;
-        //    myListButton.IsChecked = true;
-        //    myListButton.Flyout.Hide();
-        //    editor.Focus(FocusState.Keyboard);
-        //}
-
-        //private void SmalliNumeral_Click(object sender, RoutedEventArgs e)
-        //{
-        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.LowercaseRoman;
-        //    myListButton.IsChecked = true;
-        //    myListButton.Flyout.Hide();
-        //    editor.Focus(FocusState.Keyboard);
-        //}
-
-        //private void BigINumeral_Click(object sender, RoutedEventArgs e)
-        //{
-        //    editor.Document.Selection.ParagraphFormat.ListType = MarkerType.UppercaseRoman;
-        //    myListButton.IsChecked = true;
-        //    myListButton.Flyout.Hide();
-        //    editor.Focus(FocusState.Keyboard);
-        //}
-
-        private void BackPicker_ColorChanged(object Sender, Windows.UI.Xaml.Controls.ColorChangedEventArgs EvArgs)
-        {
-            //Configure font highlight
-            if (!(editor == null))
-            {
-                var ST = editor.Document.Selection;
-                if (!(ST == null))
-                {
-                    _ = ST.CharacterFormat;
-                    //var Br = new SolidColorBrush(BackPicker.Color);
-                    //var CF = BackPicker.Color;
-                    //if (BackAccent != null) BackAccent.Foreground = Br;
-                    //ST.CharacterFormat.BackgroundColor = CF;
-                }
-            }
-        }
-
-        private void HighlightButton_Click(object Sender, RoutedEventArgs EvArgs)
-        {
-            //Configure font color
-            var BTN = Sender as Button;
-            var ST = editor.Document.Selection;
-            if (!(ST == null))
-            {
-                _ = ST.CharacterFormat.ForegroundColor;
-                var Br = BTN.Foreground;
-                //BackAccent.Foreground = Br;
-                ST.CharacterFormat.BackgroundColor = (BTN.Foreground as SolidColorBrush).Color;
-            }
-        }
-
-        private void NullHighlightButton_Click(object Sender, RoutedEventArgs EvArgs)
-        {
-            //Configure font color
-            var ST = editor.Document.Selection;
-            if (!(ST == null))
-            {
-                _ = ST.CharacterFormat.ForegroundColor;
-                //BackAccent.Foreground = new SolidColorBrush(Colors.Transparent);
-                ST.CharacterFormat.BackgroundColor = Colors.Transparent;
-            }
-        }
-
-        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void HyperlinkButton_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void HyperlinkButton_Click_3(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         #region Find and Replace
@@ -1473,125 +1202,6 @@ namespace UTE_UWP_.Views
             }
         }
 
-        private void Autobutton_Click(object sender, RoutedEventArgs e)
-        {
-            // Extract the color of the button that was clicked.
-            var color = Application.Current.Resources["TextFillColorPrimary"];
-            editor.Document.Selection.CharacterFormat.ForegroundColor = (Windows.UI.Color)color;
-            //FontColorMarker.SetValue(ForegroundProperty, new SolidColorBrush(color));
-            editor.Focus(FocusState.Keyboard);
-        }
-
-        private void OB_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuFlyoutItem_Click_35(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void SB_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void SAsB_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DelB_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void PntB_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private async void Button_Click_26(object sender, RoutedEventArgs e)
-        {
-            var uri = new System.Uri("ms-appx:///Assets/Templates/NewspaperTemp.rtf");
-            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
-            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
-            {
-                IBuffer buffer = await FileIO.ReadBufferAsync(file);
-                var reader = DataReader.FromBuffer(buffer);
-                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                string text = reader.ReadString(buffer.Length);
-                // Load the file into the Document property of the RichEditBox.
-                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
-            }
-        }
-
-        private async void Button_Click_21(object sender, RoutedEventArgs e)
-        {
-            var uri = new System.Uri("ms-appx:///Assets/Templates/EssayTemp.rtf");
-            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
-            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
-            {
-                IBuffer buffer = await FileIO.ReadBufferAsync(file);
-                var reader = DataReader.FromBuffer(buffer);
-                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                string text = reader.ReadString(buffer.Length);
-                // Load the file into the Document property of the RichEditBox.
-                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
-            }
-        }
-
-        private async void Button_Click_22(object sender, RoutedEventArgs e)
-        {
-            var uri = new System.Uri("ms-appx:///Assets/Templates/ResumeTemp.rtf");
-            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
-            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
-            {
-                IBuffer buffer = await FileIO.ReadBufferAsync(file);
-                var reader = DataReader.FromBuffer(buffer);
-                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                string text = reader.ReadString(buffer.Length);
-                // Load the file into the Document property of the RichEditBox.
-                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
-            }
-        }
-
-        private async void Button_Click_23(object sender, RoutedEventArgs e)
-        {
-            var uri = new System.Uri("ms-appx:///Assets/Templates/CreditsTemp.rtf");
-            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
-            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
-            {
-                IBuffer buffer = await FileIO.ReadBufferAsync(file);
-                var reader = DataReader.FromBuffer(buffer);
-                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                string text = reader.ReadString(buffer.Length);
-                // Load the file into the Document property of the RichEditBox.
-                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
-            }
-        }
-
-        private async void Button_Click_25(object sender, RoutedEventArgs e)
-        {
-            var uri = new System.Uri("ms-appx:///Assets/Templates/ImageGalleryTemp.rtf");
-            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
-            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
-            {
-                IBuffer buffer = await FileIO.ReadBufferAsync(file);
-                var reader = DataReader.FromBuffer(buffer);
-                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                string text = reader.ReadString(buffer.Length);
-                // Load the file into the Document property of the RichEditBox.
-                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
-            }
-        }
-
-        private void NewFile_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private async void more_symbols(object sender, RoutedEventArgs e)
         {
             // Create a ContentDialog
@@ -1662,21 +1272,6 @@ namespace UTE_UWP_.Views
             dialog.ShowAsync();
         }
 
-        private async void Button_Click_24(object sender, RoutedEventArgs e)
-        {
-            var uri = new System.Uri("ms-appx:///Assets/Templates/ImageEssayTemp.rtf");
-            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
-            using (IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.Read))
-            {
-                IBuffer buffer = await FileIO.ReadBufferAsync(file);
-                var reader = DataReader.FromBuffer(buffer);
-                reader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
-                string text = reader.ReadString(buffer.Length);
-                // Load the file into the Document property of the RichEditBox.
-                editor.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
-            }
-        }
-
         public async Task ShowUnsavedDialog2()
         {
             string fileName = AppTitle.Text.Replace(" - " + "UTE UWP", "");
@@ -1703,12 +1298,6 @@ namespace UTE_UWP_.Views
                 AppTitle.Text = "Untitled" + " - " + "UTE UWP";
                 fileNameWithPath = "";
             }
-        }
-
-        private async void InsertBlank(object sender, RoutedEventArgs e)
-        {
-            await ShowUnsavedDialog2();
-
         }
 
         private void AlignJustifyButton_Click(object sender, RoutedEventArgs e)
@@ -1779,11 +1368,6 @@ namespace UTE_UWP_.Views
 
         }
 
-        private void NullForegroundButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Button_Click_37(object sender, RoutedEventArgs e)
         {
             Home.Visibility = Visibility.Collapsed;
@@ -1796,11 +1380,6 @@ namespace UTE_UWP_.Views
             DeveloperButton.IsChecked = false;
             CommentsButton.IsChecked = true;
             HelpButton.IsChecked = false;
-        }
-
-        private void TextCmdBar_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-
         }
 
         private void Button_Click_33(object sender, RoutedEventArgs e)
@@ -1865,7 +1444,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = V.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                ////TempFlyout.Hide();
             }
         }
 
@@ -1888,7 +1466,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = V1.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                ////TempFlyout.Hide();
             }
         }
 
@@ -1912,7 +1489,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 22.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                ////TempFlyout.Hide();
             }
         }
 
@@ -1934,7 +1510,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 16.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                ////TempFlyout.Hide();
             }
         }
 
@@ -1956,7 +1531,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 14.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                ////TempFlyout.Hide();
             }
         }
 
@@ -1978,7 +1552,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 18.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                //TempFlyout.Hide();
             }
         }
 
@@ -2000,7 +1573,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 20.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                //TempFlyout.Hide();
             }
         }
 
@@ -2022,7 +1594,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 18.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                //TempFlyout.Hide();
             }
         }
 
@@ -2044,7 +1615,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 16.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                //TempFlyout.Hide();
             }
         }
 
@@ -2066,7 +1636,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 14.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                //TempFlyout.Hide();
             }
         }
 
@@ -2088,7 +1657,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 14.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                //TempFlyout.Hide();
             }
         }
 
@@ -2110,7 +1678,6 @@ namespace UTE_UWP_.Views
                 FSize.Text = 18.ToString();
                 CF.Underline = UnderlineType.None;
                 ST.CharacterFormat = CF;
-                //TempFlyout.Hide();
             }
         }
 

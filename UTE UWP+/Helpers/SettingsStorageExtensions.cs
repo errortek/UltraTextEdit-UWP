@@ -1,9 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-
 using UTE_UWP_.Core.Helpers;
-
 using Windows.Storage;
 using Windows.Storage.Streams;
 
@@ -109,7 +107,6 @@ namespace UTE_UWP_.Helpers
                     }
                 }
             }
-
             return null;
         }
 
