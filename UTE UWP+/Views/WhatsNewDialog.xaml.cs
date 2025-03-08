@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using Windows.Storage;
+﻿using System.IO;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -10,7 +8,6 @@ namespace UTE_UWP_.Views
     {
 
         private string changelog;
-        private Uri changelogUri = new Uri("ms-appx:///Assets/Changelogs/Latest.md");
 
         public WhatsNewDialog()
         {

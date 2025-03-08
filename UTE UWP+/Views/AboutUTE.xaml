@@ -18,9 +18,9 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock FontSize="16" FontWeight="SemiBold" IsTextSelectionEnabled="True">version 4.6.0.1</TextBlock>
+                    <TextBlock FontSize="16" FontWeight="SemiBold" IsTextSelectionEnabled="True">version 4.6.0.2</TextBlock>
                     <TextBlock FontSize="16" IsTextSelectionEnabled="True">Development semester: <Bold>25H1</Bold></TextBlock>
-                    <TextBlock FontSize="16" IsTextSelectionEnabled="True">Compilation date: January 23, 2025</TextBlock>
+                    <TextBlock FontSize="16" IsTextSelectionEnabled="True">Compilation date: March 8, 2025</TextBlock>
                     <TextBlock FontSize="16" IsTextSelectionEnabled="True">©️ 2021-2025 ErrorTek, Ivirius, and other contributors</TextBlock>
                     <TextBlock IsTextSelectionEnabled="True">Licensed under the <Bold>MIT License</Bold></TextBlock>
                 </StackPanel>
